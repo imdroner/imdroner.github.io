@@ -1,38 +1,38 @@
 ---
 enable: true
-title: "Why Choose us?"
+title: "왜 우리를 선택해야 할까요?"
 subtitle: >
-          We enable people and businesses to work where they want, 
-          when they want and how they want.
+          우리는 다양한 산업 분야에서 드론 기술을 통해 최적화된 솔루션을 제공하며, 
+          고객의 성공적인 프로젝트를 보장합니다.
 services:
-  - name: "largest Network"
+  - name: "첨단 기술을 통한 혁신"
     description: >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vel mollitia sit.
-                Dicta maxime ullam quos sapiente eveniet odio accusamus.
+                우리는 최신 드론 기술을 활용하여 다양한 산업에 혁신적인 솔루션을 제공합니다. 
+                자동화된 비행과 고급 센서를 통해 복잡한 작업을 더 효율적으로 수행합니다.
     icon: "ti-view-grid"
-  - name: "All Sizes And Budget"
+  - name: "비용 절감과 경제적 이점"
     description: >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vel mollitia sit.
-                Dicta maxime ullam quos sapiente eveniet odio accusamus.
-    icon: "ti-infinite"
-  - name: "Dedicated Account Manager"
+                드론 기술을 도입함으로써, 전통적인 방법보다 비용을 크게 절감할 수 있습니다. 
+                빠른 작업 수행과 최소화된 인력 자원으로, 경제적 부담을 줄일 수 있습니다.
+    icon: "ti-bar-chart"
+  - name: "정확하고 신뢰할 수 있는 데이터"
     description: >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vel mollitia sit.
-                Dicta maxime ullam quos sapiente eveniet odio accusamus.
-    icon: "ti-help-alt"
-  - name: "Easy Payment"
+                드론의 고해상도 카메라와 센서를 이용하여 정확한 데이터 수집이 가능합니다. 
+                이를 통해 보다 신뢰할 수 있는 결과를 제공하며, 의사결정에 필수적인 정확한 정보를 제공합니다.
+    icon: "ti-check-box"
+  - name: "업무 효율성 향상"
     description: >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vel mollitia sit.
-                Dicta maxime ullam quos sapiente eveniet odio accusamus.
-    icon: "ti-credit-card"
-  - name: "Dedicated Locker"
+                드론을 활용한 자동화된 작업으로, 인간의 노력을 최소화하고 업무 속도를 극대화할 수 있습니다. 
+                이로 인해 더 많은 작업을 빠르게 처리할 수 있으며, 생산성이 대폭 향상됩니다.
+    icon: "ti-stats-up"
+  - name: "실시간 모니터링과 빠른 피드백"
     description: >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vel mollitia sit.
-                Dicta maxime ullam quos sapiente eveniet odio accusamus.
-    icon: "ti-lock"
-  - name: "Personalization"
+                드론은 실시간으로 데이터를 전송하고 현장을 모니터링할 수 있어, 빠르고 정확한 피드백을 제공합니다. 
+                이를 통해 프로젝트 진행 상황을 즉시 확인하고 필요한 조치를 취할 수 있습니다.
+    icon: "ti-desktop"
+  - name: "안전성 강화"
     description: >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vel mollitia sit.
-                Dicta maxime ullam quos sapiente eveniet odio accusamus.
-    icon: "ti-image"
+                드론은 사람이 접근하기 어려운 위험한 장소나 고위험 지역에서 작업을 수행할 수 있어, 작업자의 안전을 보장하고 사고를 예방할 수 있습니다. 
+                또한, 드론으로 위험 요소를 미리 감지하여 안전한 환경을 유지할 수 있습니다.
+    icon: "ti-shield"
 ---

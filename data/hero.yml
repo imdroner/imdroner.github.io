@@ -1,11 +1,9 @@
 ---
-title : "<h1>STAY PRODUCTIVE WITH 
-            <br> MODERN WORKSPACE</h1>"
+title : "<h1>정확한 데이터, 높은 효율성</h1>"
 enable: true
 subtitle: >
-        We have the world's largest network of 
-        workspaces and co-working spaces.
+        드론 기술로 스마트한 선택을 돕습니다.
 heroBGimg: "images/hero/hero-bg.jpg"
-heroVideo : "https://vimeo.com/45830194?autoplay=1&rel=0"
-herosVideoDesc: "<span> <strong>coHub. in</strong> 30 Seconds</span>"
+# heroVideo : "https://vimeo.com/45830194?autoplay=1&rel=0"
+# herosVideoDesc: "<span> <strong>coHub. in</strong> 30 Seconds</span>"
 ---

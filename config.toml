@@ -8,15 +8,15 @@ title = '아이엠드론'
 
   # Main Menu
   [[menu.Main]]
-  name = "Exhibition"
+  name = "홈"
+  url= ""
+  weight = 1
+  [[menu.Main]]
+  name = "서비스"
   url= "#gallery"
-  weight = 1
+  weight = 2
   [[menu.Main]]
-  name = "Feature"
-  url= "#service"
-  weight = 1
-  [[menu.Main]]
-  name = "About"
+  name = "소개"
   url= "/about/"
   weight = 3
   [[menu.Main]]
@@ -24,17 +24,10 @@ title = '아이엠드론'
   url= "#blog"
   weight = 4
   [[menu.Main]]
-  name = "Pricing"
-  url= "#pricing"
-  weight = 5
-  [[menu.Main]]
   name = "FAQ"
   url= "#faq"
-  weight = 6
-  [[menu.Main]]
-  name = "문의"
-  url= "/contact/"
-  weight = 7
+  weight = 5
+
 
   # Sitemap Menu
   [[menu.sitemap]]
@@ -55,14 +48,14 @@ title = '아이엠드론'
   googleAnalytics = "G-JZ95FEWF9K"
   logo = "images/logo-new.png"
   footerlogo = "images/logo-new.png"
-  footerDescription = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit quia ab, natus fugiat voluptas saepe ipsum animi officiis in molestiae?"
+  footerDescription = "다양한 산업에 맞춘 혁신적인 드론 서비스로 고객의 성공적인 프로젝트를 함께 만들어 갑니다."
 
   [params.address]
   address = "죽림중앙로 7-39 506호 <br>  전라남도 여수시"
   email = "imdrone.site@gmail.com"
-  openingDesc = "Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours on business days."
-  openingHours = "We are open from 9am — 7pm week days."
-  phone = "010 4829 0039"
+  openingDesc = "언제든지 전화 주시거나 방문해 주세요. 평일 영업일 내에 모든 문의에 신속하게 답변드립니다."
+  openingHours = "9:00 - 18:00"
+  phone = "010-4829-0039"
 
   [params.map]
   APIkey = "AIzaSyC9rV6yesIygoVKTD6QLf_iCa9eiIIHqZ0"

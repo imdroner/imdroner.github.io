@@ -1,13 +1,15 @@
 ---
-title : "Take a look at Our Exibhition"
+title : "우리의 드론 솔루션을 경험해 보세요"
 enable: true
 subtitle: >
-        We are the world’s largest provider of flexible workspace solutions,
-        with customers including some of the most successful entrepreneurs
-description: Images of our Coworking Space
+        우리는 다양한 산업에 맞춘 혁신적인 드론 서비스를 제공하며,
+        고객의 성공적인 프로젝트를 함께 만들어 갑니다.
+description: Images of our Drone Service
 galleryImage: 
  - image: "images/gallery/gallery01.jpg"
  - image: "images/gallery/gallery02.jpg"
  - image: "images/gallery/gallery03.jpg"
+ - image: "images/gallery/gallery04.jpg"
+ - image: "images/gallery/gallery04.jpg"
  - image: "images/gallery/gallery04.jpg"
 ---
