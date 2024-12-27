@@ -1,0 +1,142 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "featureImage",
+          "name": "featureImage",
+          "type": "image"
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "hugo",
+  "frontMatter.content.publicFolder": "static",
+  "frontMatter.preview.host": "http://localhost:1313",
+  "frontMatter.content.pageFolders": [
+    {
+      "path": "[[workspace]]/themes/coHub",
+      "title": "coHub"
+    },
+    {
+      "path": "[[workspace]]/content/contact"
+    },
+    {
+      "path": "[[workspace]]/content/terms"
+    },
+    {
+      "path": "[[workspace]]/content/blog"
+    },
+    {
+      "path": "[[workspace]]/content/privacy"
+    },
+    {
+      "path": "[[workspace]]/content/about"
+    },
+    {
+      "path": "[[workspace]]/themes/coHub/archetypes"
+    },
+    {
+      "path": "[[workspace]]/public/content/terms"
+    },
+    {
+      "path": "[[workspace]]/static/content/contact"
+    },
+    {
+      "path": "[[workspace]]/static/content/terms"
+    },
+    {
+      "path": "[[workspace]]/static/content/privacy"
+    },
+    {
+      "path": "[[workspace]]/public/content/privacy"
+    },
+    {
+      "path": "[[workspace]]/static/content/about"
+    },
+    {
+      "path": "[[workspace]]/static/content/blog"
+    },
+    {
+      "path": "[[workspace]]/public/content/contact"
+    },
+    {
+      "path": "[[workspace]]/public/content/blog"
+    },
+    {
+      "path": "[[workspace]]/public/content/about"
+    },
+    {
+      "path": "[[workspace]]/themes/coHub/exampleSite/content/privacy"
+    },
+    {
+      "path": "[[workspace]]/themes/coHub/exampleSite/content/terms"
+    },
+    {
+      "path": "[[workspace]]/themes/coHub/exampleSite/content/contact"
+    },
+    {
+      "path": "[[workspace]]/themes/coHub/exampleSite/content/blog"
+    },
+    {
+      "path": "[[workspace]]/themes/coHub/exampleSite/static/content/privacy"
+    },
+    {
+      "path": "[[workspace]]/themes/coHub/exampleSite/static/content/contact"
+    },
+    {
+      "path": "[[workspace]]/themes/coHub/exampleSite/static/content/terms"
+    },
+    {
+      "path": "[[workspace]]/themes/coHub/exampleSite/static/content/blog"
+    },
+    {
+      "path": "[[workspace]]/themes/coHub/exampleSite/static/content/about"
+    },
+    {
+      "path": "[[workspace]]/themes/coHub/exampleSite/content/about"
+    }
+  ],
+  "frontMatter.git.enabled": true
+}
