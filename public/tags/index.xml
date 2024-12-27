@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 아이엠드론</title>
-    <link>https://imdroner.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on 아이엠드론</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 27 Dec 2024 08:37:50 +0000</lastBuildDate>
-    <atom:link href="https://imdroner.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>3D모델링</title>
-      <link>https://imdroner.github.io/tags/3d%EB%AA%A8%EB%8D%B8%EB%A7%81/</link>
+      <link>http://localhost:1313/tags/3d%EB%AA%A8%EB%8D%B8%EB%A7%81/</link>
       <pubDate>Fri, 27 Dec 2024 08:37:50 +0000</pubDate>
-      <guid>https://imdroner.github.io/tags/3d%EB%AA%A8%EB%8D%B8%EB%A7%81/</guid>
+      <guid>http://localhost:1313/tags/3d%EB%AA%A8%EB%8D%B8%EB%A7%81/</guid>
       <description></description>
     </item>
     <item>
       <title>가상환경</title>
-      <link>https://imdroner.github.io/tags/%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD/</link>
+      <link>http://localhost:1313/tags/%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD/</link>
       <pubDate>Fri, 27 Dec 2024 08:37:50 +0000</pubDate>
-      <guid>https://imdroner.github.io/tags/%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD/</guid>
+      <guid>http://localhost:1313/tags/%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD/</guid>
       <description></description>
     </item>
     <item>
       <title>가상투어</title>
-      <link>https://imdroner.github.io/tags/%EA%B0%80%EC%83%81%ED%88%AC%EC%96%B4/</link>
+      <link>http://localhost:1313/tags/%EA%B0%80%EC%83%81%ED%88%AC%EC%96%B4/</link>
       <pubDate>Fri, 27 Dec 2024 08:34:49 +0000</pubDate>
-      <guid>https://imdroner.github.io/tags/%EA%B0%80%EC%83%81%ED%88%AC%EC%96%B4/</guid>
+      <guid>http://localhost:1313/tags/%EA%B0%80%EC%83%81%ED%88%AC%EC%96%B4/</guid>
       <description></description>
     </item>
     <item>
       <title>국가정원식물원</title>
-      <link>https://imdroner.github.io/tags/%EA%B5%AD%EA%B0%80%EC%A0%95%EC%9B%90%EC%8B%9D%EB%AC%BC%EC%9B%90/</link>
+      <link>http://localhost:1313/tags/%EA%B5%AD%EA%B0%80%EC%A0%95%EC%9B%90%EC%8B%9D%EB%AC%BC%EC%9B%90/</link>
       <pubDate>Fri, 27 Dec 2024 08:34:49 +0000</pubDate>
-      <guid>https://imdroner.github.io/tags/%EA%B5%AD%EA%B0%80%EC%A0%95%EC%9B%90%EC%8B%9D%EB%AC%BC%EC%9B%90/</guid>
+      <guid>http://localhost:1313/tags/%EA%B5%AD%EA%B0%80%EC%A0%95%EC%9B%90%EC%8B%9D%EB%AC%BC%EC%9B%90/</guid>
       <description></description>
     </item>
     <item>
       <title>Marketing</title>
-      <link>https://imdroner.github.io/tags/marketing/</link>
+      <link>http://localhost:1313/tags/marketing/</link>
       <pubDate>Thu, 06 Jan 2022 11:18:56 +0600</pubDate>
-      <guid>https://imdroner.github.io/tags/marketing/</guid>
+      <guid>http://localhost:1313/tags/marketing/</guid>
       <description></description>
     </item>
     <item>
       <title>News</title>
-      <link>https://imdroner.github.io/tags/news/</link>
+      <link>http://localhost:1313/tags/news/</link>
       <pubDate>Thu, 06 Jan 2022 11:18:56 +0600</pubDate>
-      <guid>https://imdroner.github.io/tags/news/</guid>
+      <guid>http://localhost:1313/tags/news/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Design</title>
-      <link>https://imdroner.github.io/tags/web-design/</link>
+      <link>http://localhost:1313/tags/web-design/</link>
       <pubDate>Thu, 06 Jan 2022 11:18:32 +0600</pubDate>
-      <guid>https://imdroner.github.io/tags/web-design/</guid>
+      <guid>http://localhost:1313/tags/web-design/</guid>
       <description></description>
     </item>
   </channel>
