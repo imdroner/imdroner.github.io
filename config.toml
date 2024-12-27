@@ -1,9 +1,9 @@
-baseURL = 'https://cohub-hugo.netlify.app'
+baseURL = 'https://imdroner.github.io'
 languageCode = 'en-us'
 #paginate = 6
 pagination.pagerSize = 6
 theme= "coHub"
-title = 'coHub'
+title = '아이엠드론'
  
 
   # Main Menu

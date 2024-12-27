@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>About on coHub</title>
-    <link>https://cohub-hugo.netlify.app/about/</link>
-    <description>Recent content in About on coHub</description>
+    <title>About on 아이엠드론</title>
+    <link>https://imdroner.github.io/about/</link>
+    <description>Recent content in About on 아이엠드론</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://cohub-hugo.netlify.app/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://imdroner.github.io/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
