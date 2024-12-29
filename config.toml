@@ -1,4 +1,4 @@
-baseURL = 'https://imdroner.github.io'
+baseURL = 'https://imdrone.site'
 languageCode = 'en-us'
 #paginate = 6
 pagination.pagerSize = 6
@@ -21,7 +21,7 @@ title = '아이엠드론'
   weight = 3
   [[menu.Main]]
   name = "Blog"
-  url= "#blog"
+  url= "/blog/"
   weight = 4
   [[menu.Main]]
   name = "FAQ"
