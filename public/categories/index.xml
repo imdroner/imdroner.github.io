@@ -2,24 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 아이엠드론</title>
-    <link>https://imdrone.site/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on 아이엠드론</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 Dec 2024 08:00:48 +0000</lastBuildDate>
-    <atom:link href="https://imdrone.site/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Dec 2024 08:56:04 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3D 모델링</title>
+      <link>http://localhost:1313/categories/3d-%EB%AA%A8%EB%8D%B8%EB%A7%81/</link>
+      <pubDate>Tue, 31 Dec 2024 08:56:04 +0000</pubDate>
+      <guid>http://localhost:1313/categories/3d-%EB%AA%A8%EB%8D%B8%EB%A7%81/</guid>
+      <description></description>
+    </item>
     <item>
       <title>디지털트윈</title>
-      <link>https://imdrone.site/categories/%EB%94%94%EC%A7%80%ED%84%B8%ED%8A%B8%EC%9C%88/</link>
+      <link>http://localhost:1313/categories/%EB%94%94%EC%A7%80%ED%84%B8%ED%8A%B8%EC%9C%88/</link>
       <pubDate>Tue, 31 Dec 2024 08:00:48 +0000</pubDate>
-      <guid>https://imdrone.site/categories/%EB%94%94%EC%A7%80%ED%84%B8%ED%8A%B8%EC%9C%88/</guid>
+      <guid>http://localhost:1313/categories/%EB%94%94%EC%A7%80%ED%84%B8%ED%8A%B8%EC%9C%88/</guid>
       <description></description>
     </item>
     <item>
       <title>항공촬영</title>
-      <link>https://imdrone.site/categories/%ED%95%AD%EA%B3%B5%EC%B4%AC%EC%98%81/</link>
+      <link>http://localhost:1313/categories/%ED%95%AD%EA%B3%B5%EC%B4%AC%EC%98%81/</link>
       <pubDate>Sat, 28 Dec 2024 03:03:34 +0000</pubDate>
-      <guid>https://imdrone.site/categories/%ED%95%AD%EA%B3%B5%EC%B4%AC%EC%98%81/</guid>
+      <guid>http://localhost:1313/categories/%ED%95%AD%EA%B3%B5%EC%B4%AC%EC%98%81/</guid>
       <description></description>
     </item>
   </channel>
