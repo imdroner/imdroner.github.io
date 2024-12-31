@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 아이엠드론</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>https://imdrone.site/categories/</link>
     <description>Recent content in Categories on 아이엠드론</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 28 Dec 2024 03:03:34 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://imdrone.site/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>항공촬영</title>
-      <link>http://localhost:1313/categories/%ED%95%AD%EA%B3%B5%EC%B4%AC%EC%98%81/</link>
+      <link>https://imdrone.site/categories/%ED%95%AD%EA%B3%B5%EC%B4%AC%EC%98%81/</link>
       <pubDate>Sat, 28 Dec 2024 03:03:34 +0000</pubDate>
-      <guid>http://localhost:1313/categories/%ED%95%AD%EA%B3%B5%EC%B4%AC%EC%98%81/</guid>
+      <guid>https://imdrone.site/categories/%ED%95%AD%EA%B3%B5%EC%B4%AC%EC%98%81/</guid>
       <description></description>
     </item>
   </channel>
