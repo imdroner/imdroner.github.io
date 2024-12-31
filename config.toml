@@ -20,7 +20,7 @@ title = '아이엠드론'
   url= "/about/"
   weight = 3
   [[menu.Main]]
-  name = "Blog"
+  name = "포트폴리오"
   url= "/blog/"
   weight = 4
   [[menu.Main]]
@@ -67,21 +67,7 @@ title = '아이엠드론'
   [[params.social]]
   icon = "ti-youtube"
   url = "https://www.youtube.com/@imdrone6824/"
-  [[params.social]]
-  icon = "ti-facebook"
-  url = "https://www.facebook.com/"
-  weight = 1
-  [[params.social]]
-  icon = "ti-twitter-alt"
-  url = "https://twitter.com/"
-  weight = 2
-  [[params.social]]
-  icon = "ti-dribbble"
-  url = "https://dribbble.com/"
-  weight = 3
-  [[params.social]]
+    [[params.social]]
   icon = "ti-instagram"
-  url = "https://www.instagram.com/"
-  weight = 4
-  
-  
+  url = "https://www.instagram.com/imdrone_official"
+  weight = 1

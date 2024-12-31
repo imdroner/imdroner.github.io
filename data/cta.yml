@@ -1,6 +1,7 @@
 ---
 enable: true
 title: "우리의 드론 서비스를 직접 확인해보세요"
-buttonTarget: contact
-priceLink: "#pricing"
+buttonTarget: "#contact"
+priceLink: "#contact"
 ---
+
