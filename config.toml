@@ -1,4 +1,4 @@
-baseURL = 'https://imdrone.site'
+baseURL = 'https://imdrone.co.kr'
 languageCode = 'en-us'
 #paginate = 6
 pagination.pagerSize = 6
@@ -43,7 +43,7 @@ title = '아이엠드론'
   # theme_overrides = "css/overrides.css"
   aboutPageURL = "blog"
   contactLink = "contact"
-  copyright = "© {year} <a href=\"https://imdrone.site/\" target=\"_blank\">아이엠드론 </a>"
+  copyright = "© {year} <a href=\"https://imdrone.co.kr/\" target=\"_blank\">아이엠드론 </a>"
   fabFormURL =  "https://fabform.io/f/u00kv3-"
   googleAnalytics = "G-JZ95FEWF9K"
   logo = "images/logo-new.png"
@@ -55,7 +55,7 @@ title = '아이엠드론'
   email = "imdrone.site@gmail.com"
   openingDesc = "언제든지 전화 주시거나 방문해 주세요. 평일 영업일 내에 모든 문의에 신속하게 답변드립니다."
   openingHours = "9:00 - 18:00"
-  phone = "010-4829-0039"
+  phone = "010-4790-6650"
 
   [params.map]
   APIkey = "AIzaSyC9rV6yesIygoVKTD6QLf_iCa9eiIIHqZ0"
