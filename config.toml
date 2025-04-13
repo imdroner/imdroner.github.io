@@ -1,4 +1,4 @@
-baseURL = 'https://imdrone.co.kr'
+baseURL = 'https://imdrone.site'
 languageCode = 'en-us'
 #paginate = 6
 pagination.pagerSize = 6
@@ -43,7 +43,7 @@ title = '아이엠드론'
   # theme_overrides = "css/overrides.css"
   aboutPageURL = "blog"
   contactLink = "contact"
-  copyright = "© {year} <a href=\"https://imdrone.co.kr/\" target=\"_blank\">아이엠드론 </a>"
+  copyright = "© {year} <a href=\"https://imdrone.site/\" target=\"_blank\">아이엠드론 </a>"
   fabFormURL =  "https://fabform.io/f/u00kv3-"
   googleAnalytics = "G-JZ95FEWF9K"
   logo = "images/logo-new.png"
