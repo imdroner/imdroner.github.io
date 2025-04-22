@@ -2,7 +2,7 @@
   "name": "imdroner.github.io",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://imdroner.github.io",
+  "homepage": "https://imdroner.github.io/imdroner.github.io",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
