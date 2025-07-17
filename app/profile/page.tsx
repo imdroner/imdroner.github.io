@@ -20,6 +20,7 @@ export default function ProfilePage() {
                 </div>
             </section>
             {/* 기본정보 */}
+            {/* 기본정보 */}
             {personalData.map((section, idx) => (
                 <section className="mb-8" key={idx}>
                     <h3 className="text-lg font-semibold mb-2">{section.title}</h3>
