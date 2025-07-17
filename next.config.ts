@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
   output: "export",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/imdroner.github.io" : "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "https://imdroner.github.io/imdroner.github.io" : "",
   images: { unoptimized: true }
 };
 
