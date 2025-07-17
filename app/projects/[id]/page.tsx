@@ -2,15 +2,11 @@ import { projects } from '@/data/projects';
 import { notFound } from 'next/navigation';
 import ProjectImages from '@/components/ProjectImages';
 
-interface Props {
-    params: { id: string };
-}
-
 export function generateStaticParams() {
     return projects.map((project) => ({ id: project.id }));
 }
 
-export default function ProjectDetailPage({ params }: Props) {
+export default function ProjectDetailPage({ params }: any) {
     const project = projects.find((p) => p.id === params.id);
     if (!project) return notFound();
 
