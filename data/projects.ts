@@ -12,25 +12,15 @@ export type Project = {
 
 export const projects: Project[] = [
     {
-        id: 'drone-shooting',
-        title: '드론 항공 촬영',
-        thumbnail: '/images/project1.jpg',
-        shortDesc: '항공 촬영 및 영상 편집 프로젝트',
-        detailDesc: '최신 드론을 활용한 고화질 항공 촬영과 영상 편집을 진행하였습니다. 다양한 환경에서의 촬영 경험과 후반 작업 노하우를 바탕으로 고객의 니즈에 맞는 결과물을 제공하였습니다.',
-        images: ['/images/project1-1.jpg', '/images/project1-2.jpg', '/images/project1-3.jpg', '/images/project1-4.jpg'],
-        video: 'https://youtu.be/f21v-XBDO74',
-        tags: ['드론', '촬영', '영상'],
-        date: '2023-05',
-    },
-    {
-        id: 'mapping-service',
-        title: '드론 맵핑 서비스',
+        id: 'geobukseong-digital-twin',
+        title: '거북선 모형 디지털 트윈',
         thumbnail: '/images/project2.jpg',
-        shortDesc: '드론을 활용한 3D 맵핑 및 데이터 분석',
-        detailDesc: '드론으로 촬영한 데이터를 바탕으로 3D 맵핑 및 지형 분석 서비스를 제공하였습니다. 정밀한 데이터 처리와 시각화 기술을 적용하였습니다.',
-        images: ['/images/project2-1.jpg', '/images/project2-2.jpg'],
-        tags: ['드론', '맵핑', '3D'],
-        date: '2022-11',
+        shortDesc: '드론으로 만든 3D 거북선! 여수 거북선 모형을 디지털 트윈으로 제작하였습니다',
+        detailDesc: '전라남도 여수시의 거북선 모형을 디지털 트윈으로 구현하였습니다. 거북선 모형의 모든 부분을 3D 모델링하여 디지털 트윈으로 구현하였습니다.',
+        images: ['/images/project2-1.jpg', '/images/project2-2.jpg', '/images/project2-3.jpg', '/images/project2-4.jpg', '/images/project2-5.jpg', '/images/project2-6.jpg', '/images/project2-7.jpg', '/images/project2-8.jpg', '/images/project2-9.jpg', '/images/project2-10.jpg'],
+        video: 'https://youtu.be/tX5jBvwOt0U',
+        tags: ['디지털 트윈', '3D 모델링', '거북선', '드론촬영', '문화유산', '디지털문화재'],
+        date: '2025-07',
     },
     {
         id: 'lee-su-sin-statue',

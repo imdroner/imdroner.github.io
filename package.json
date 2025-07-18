@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
+    "deploy": "touch out/.nojekyll && echo imdrone.site > out/CNAME && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "gh-pages": "^6.3.0",
