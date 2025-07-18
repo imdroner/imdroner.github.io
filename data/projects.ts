@@ -17,7 +17,7 @@ export const projects: Project[] = [
         thumbnail: '/images/project1.jpg',
         shortDesc: '항공 촬영 및 영상 편집 프로젝트',
         detailDesc: '최신 드론을 활용한 고화질 항공 촬영과 영상 편집을 진행하였습니다. 다양한 환경에서의 촬영 경험과 후반 작업 노하우를 바탕으로 고객의 니즈에 맞는 결과물을 제공하였습니다.',
-        images: ['/images/project1-1.jpg', '/images/project1-2.jpg', '/images/project1-3.jpg'],
+        images: ['/images/project1-1.jpg', '/images/project1-2.jpg', '/images/project1-3.jpg', '/images/project1-4.jpg'],
         video: 'https://youtu.be/f21v-XBDO74',
         tags: ['드론', '촬영', '영상'],
         date: '2023-05',
@@ -32,5 +32,16 @@ export const projects: Project[] = [
         tags: ['드론', '맵핑', '3D'],
         date: '2022-11',
     },
+    {
+        id: 'lee-su-sin-statue',
+        title: '이순신 장군 동상 디지털 트윈',
+        thumbnail: '/images/project3.jpg',
+        shortDesc: '전라남도 여수시의 이순신 장군 동상을 디지털 트윈으로 구현하였습니다.',
+        detailDesc: '드론으로 촬영한 이순신 장군 동상을 디지털 트윈으로 구현하였습니다. 동상의 모든 부분을 3D 모델링하여 디지털 트윈으로 구현하였습니다.',
+        images: ['/images/project3-1.jpg', '/images/project3-2.jpg', '/images/project3-3.jpg', '/images/project3-4.jpg'],
+        video: 'https://youtu.be/e11n_fCiVlE',
+        tags: ['디지털 트윈', '3D 모델링', '이순신 장군'],
+        date: '2025-07',
+    }
     // 추가 프로젝트는 여기에...
 ]; 

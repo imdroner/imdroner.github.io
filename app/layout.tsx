@@ -17,20 +17,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${generalData.name}l ${generalData.jobTitle}`,
+  title: `${generalData.name} | ${generalData.jobTitle}`,
   description: `${generalData.about}`,
   openGraph: {
     type: "website",
     locale: "ko_KR",
     url: "https://imdrone.site",
     siteName: `${generalData.name}`,
-    title: generalData.about,
+    title: `${generalData.name} | ${generalData.jobTitle}`,
     description: generalData.about,
     images: [
       {
-        url: "",
-        width: 1200,
-        height: 630,
+        url: "https://imdrone.site/images/og-image.jpg", // 실제 존재하는 대표 이미지 경로로 수정
+        width: 1024,
+        height: 683,
         alt: `${generalData.name} - ${generalData.jobTitle}`,
       },
     ],
