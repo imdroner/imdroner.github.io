@@ -18,7 +18,8 @@ export default function ContactPage() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M2 8.5C2 6.01472 4.01472 4 6.5 4h11C19.9853 4 22 6.01472 22 8.5v7c0 2.4853-2.0147 4.5-4.5 4.5h-11C4.01472 20 2 17.9853 2 15.5v-7z" />
                             <path strokeLinecap="round" strokeLinejoin="round" d="M6 8h.01M6 12h.01M6 16h.01M10 8h4M10 12h4M10 16h4" />
                         </svg>
-                        <span className="text-gray-700 dark:text-gray-300 font-medium text-base">010-4790-6650</span>
+                        <a href="tel:010-4790-6650" className="text-blue-600 text-base font-medium">010-4790-6650</a>
+
                     </div>
                 </div>
                 {/* 이메일 카드 */}
