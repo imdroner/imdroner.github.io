@@ -22,6 +22,11 @@ export const generalData = {
             value: "youtube.com/@imdrone6824",
             href: "https://www.youtube.com/@imdrone6824",
         },
+        {
+            label: "Blog",
+            value: "blog.imdrone.site",
+            href: "http://blog.imdrone.site",
+        },
 
         // {
         //   label: "Read.CV",

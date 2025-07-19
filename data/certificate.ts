@@ -22,6 +22,12 @@ export const certificateData = [
                 description: "",
             },
             {
+                title: "드론 라이트쇼",
+                subTitle: "기획&설계, 콘텐츠 디자인, 알고리즘 개발, 3D 시뮬레이션",
+                level: "",
+                description: "",
+            },
+            {
                 title: "항공촬영",
                 subTitle: "모니터링, 공정관리, 행사촬영",
                 level: "",
