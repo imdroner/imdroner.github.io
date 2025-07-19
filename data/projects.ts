@@ -32,6 +32,17 @@ export const projects: Project[] = [
         video: 'https://youtu.be/e11n_fCiVlE',
         tags: ['디지털 트윈', '3D 모델링', '이순신 장군'],
         date: '2025-07',
+    },
+    {
+        id: 'suncheonman-ocheon-green-square',
+        title: '순천만 국가정원 오천 그린스퀘어 3D 가상투어',
+        thumbnail: '/images/greensquare.jpg',
+        shortDesc: '순천만 국가정원 오천 그린스퀘어를 3D 가상투어로 구현하였습니다.',
+        detailDesc: '순천만 국가정원 오천 그린스퀘어를 3D 가상환경에서 즐겨보세요. 그린스퀘어의 모든 부분을 3D 모델링하여 가상투어로 구현하였습니다.',
+        images: ['/images/greensquare1.jpg', '/images/greensquare2.jpg', '/images/greensquare3.jpg', '/images/greensquare4.jpg', '/images/greensquare5.jpg', '/images/greensquare6.jpg'],
+        video: 'https://youtu.be/Rflm48dLh60',
+        tags: ['3D 가상투어', '순천만국가정원', '오천그린스퀘어', '드론촬영', '디지털투어'],
+        date: '2024-04',
     }
     // 추가 프로젝트는 여기에...
 ]; 

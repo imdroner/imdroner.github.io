@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 
 const navItems = [
     { href: '/', label: '홈' },
-    { href: '/projects', label: '프로젝트' },
+    { href: '/projects', label: '포트폴리오' },
     { href: '/profile', label: '프로필' },
     { href: '/contact', label: '문의' },
 ];
