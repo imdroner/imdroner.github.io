@@ -36,13 +36,13 @@ export default function ContactPage() {
                         <a href="mailto:imdrone.site@gmail.com" className="text-blue-600 underline text-base font-medium">imdrone.site@gmail.com</a>
                     </div>
                 </div>
-                {/* SNS 카드 */}
+                {/* 소셜네트워크 카드 */}
                 <div className="bg-white dark:bg-neutral-900 rounded-xl shadow p-6">
                     <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
                         <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2M9 12l2 2 4-4" />
                         </svg>
-                        SNS
+                        소셜네트워크
                     </h2>
                     <ul className="space-y-3">
                         {generalData.contacts.filter(c => c.label !== 'Email').map((contact) => (
@@ -61,6 +61,22 @@ export default function ContactPage() {
                                 <a href={contact.href} className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">{contact.value}</a>
                             </li>
                         ))}
+                        {/* Blog 정보 추가 */}
+                        <li className="flex items-center gap-3">
+                            <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 20h9" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 3.5a2.121 2.121 0 113 3L7 19l-4 1 1-4 12.5-12.5z" />
+                            </svg>
+                            <span className="font-medium text-gray-700 dark:text-gray-300">Blog:</span>
+                            <a
+                                href="http://blog.imdrone.site"
+                                className="text-blue-600 underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                blog.imdrone.site
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <p className="text-xs text-gray-400 mt-6 text-center">※ 문의는 이메일 또는 SNS로 연락해 주세요.</p>

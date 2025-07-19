@@ -10,8 +10,14 @@ export const certificateData = [
                 description: "",
             },
             {
+                title: "디지털트윈",
+                subTitle: "건축, 문화재, 에너지, 환경",
+                level: "",
+                description: "",
+            },
+            {
                 title: "드론 관제시스템",
-                subTitle: "산불감시, 안전관제, 시설점검",
+                subTitle: "산불감시, 안전관제, 시설점검, 교통관제",
                 level: "",
                 description: "",
             },
@@ -23,7 +29,7 @@ export const certificateData = [
             },
             {
                 title: "스마트 농업",
-                subTitle: "드론 방제, 식생관리, 산림관리",
+                subTitle: "항공방제, 식생관리, 산림관리",
                 level: "",
                 description: "",
             },
@@ -35,22 +41,22 @@ export const certificateData = [
             },
 
             {
-                title: "파이썬 개발",
-                subTitle: "",
+                title: "파이썬",
+                subTitle: "데이터 분석, 머신러닝, 딥러닝, 웹 개발",
                 level: "",
                 description: "",
             },
             {
                 title: "모바일 앱 개발",
-                subTitle: "Flutter, Dart",
+                subTitle: "Flutter, Dart, React Native",
                 level: "",
                 description: "",
             },
             {
                 title: "영상제작",
-                subTitle: "",
+                subTitle: "Davinci Resolve, Final Cut Pro X",
                 level: "",
-                description: "Davinci Resolve, Final Cut Pro X",
+                description: "",
             },
 
 
@@ -63,8 +69,8 @@ export const certificateData = [
             {
                 title: "초경량비행장지 지도조종자 자격",
                 subTitle: "한국교통안전공단",
-                level: "",
-                description: "교관과정 수료",
+                level: "교관과정 수료",
+                description: "",
             },
 
             {
@@ -89,6 +95,12 @@ export const certificateData = [
                 title: "드론정비사",
                 subTitle: "",
                 level: "2급",
+                description: "",
+            },
+            {
+                title: "AI GPT 교육전문가",
+                subTitle: "한국직업능력연구원",
+                level: "1급",
                 description: "",
             },
         ],

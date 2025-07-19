@@ -20,13 +20,13 @@ export const activityData = [
                 title: "여수시사이클연맹",
                 subTitle: "이사",
                 date: "2025 - ",
-                description: "",
+                description: "여수시 체육회",
             },
             {
                 title: "여수시장 표창",
-                subTitle: "",
+                subTitle: "()",
                 date: "2025",
-                description: "",
+                description: "여수시청",
             },
 
 

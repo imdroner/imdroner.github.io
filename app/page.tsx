@@ -84,6 +84,14 @@ export default function HomePage() {
                   <div className="w-2 h-2 bg-red-500 rounded-full"></div>
                   <span className="text-gray-700 dark:text-gray-300">시각 콘텐츠 제작</span>
                 </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                  <span className="text-gray-700 dark:text-gray-300">항공측량</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
+                  <span className="text-gray-700 dark:text-gray-300">항공방제</span>
+                </div>
               </div>
             </div>
 
@@ -123,13 +131,13 @@ export default function HomePage() {
               )}
             </div>
 
-            {/* 연락처 카드 */}
+            {/* 소셜네트워크 카드 */}
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center gap-3 mb-4">
                 <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 0c2.21 0 4 4.477 4 10s-1.79 10-4 10-4-4.477-4-10 1.79-10 4-10zm0 0v20" />
                 </svg>
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">연락처</h3>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">소셜네트워크</h3>
               </div>
               <div className="space-y-3">
                 {generalData.contacts.map((contact) => (
@@ -141,7 +149,7 @@ export default function HomePage() {
                     )}
                     {contact.label === 'Instagram' && (
                       <svg className="w-4 h-4 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.418-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.928.875 1.418 2.026 1.418 3.323s-.49 2.448-1.418 3.244c-.875.807-2.026 1.297-3.323 1.297zm7.83-9.781c-.49 0-.928-.175-1.297-.49-.368-.315-.49-.753-.49-1.243 0-.49.122-.928.49-1.243.369-.315.807-.49 1.297-.49s.928.175 1.297.49c.368.315.49.753.49 1.243 0 .49-.122.928-.49 1.243-.369.315-.807.49-1.297.49zm-7.83 1.418c-.49 0-.928.175-1.297.49-.368-.315-.49-.753-.49-1.243s.122.928.49 1.243c.369.315.807.49 1.297.49s.928-.175 1.297-.49c.368-.315.49-.753.49-1.243s-.122-.928-.49-1.243c-.369-.315-.807-.49-1.297-.49z" />
+                        <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.418-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.928.875 1.418 2.026 1.418 3.323s-.49 2.448-1.418 3.244c-.875.807-2.026 1.297-3.323 1.297zm7.83-9.781c-.49 0-.928-.175-1.297-.49-.368-.315-.49-.753-.49-1.243 0-.49.122-.928.49-1.243.369-.315.807-.49 1.297-.49s.928.175 1.297.49c.368.315.49.753.49 1.243 0 .49-.122.928-.49 1.243-.369.315-.807.49-1.297.49zm-7.83 1.418c-.49 0-.928.175-1.297.49-.368.315-.49.753-.49-1.243s.122-.928.49-1.243c.369.315.807.49 1.297.49s.928-.175 1.297-.49c.368-.315.49-.753.49-1.243s-.122-.928-.49-1.243c-.369-.315-.807-.49-1.297-.49z" />
                       </svg>
                     )}
                     {contact.label === 'Youtube' && (
@@ -160,6 +168,22 @@ export default function HomePage() {
                     </a>
                   </div>
                 ))}
+                {/* Blog 정보 추가 */}
+                <div className="flex items-center gap-3">
+                  <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 20h9" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 3.5a2.121 2.121 0 113 3L7 19l-4 1 1-4 12.5-12.5z" />
+                  </svg>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">Blog</span>
+                  <a
+                    href="http://blog.imdrone.site"
+                    className="text-blue-600 dark:text-blue-400 hover:underline text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    blog.imdrone.site
+                  </a>
+                </div>
               </div>
             </div>
           </div>

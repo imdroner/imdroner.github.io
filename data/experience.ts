@@ -5,14 +5,14 @@ export const experienceData = [
         transcription: "Work Experience",
         items: [
             {
-                title: "드론운영 및 유지보슈 용역",
+                title: "드론운영 및 유지보수 용역",
                 subTitle: "전남보건환경연구원 동부지원",
-                date: "2025 - ",
+                date: "2025",
                 description: "",
             },
             {
                 title: "다중드론 제어기술을 활용한 교량점검 실증",
-                subTitle: "전남테크노파크",
+                subTitle: "전남테크노파크, 고흥군청",
                 date: "2024",
                 description: "",
             },
@@ -24,7 +24,7 @@ export const experienceData = [
             },
             {
                 title: "별바다 치유문화 청소년 플랫폼 드론라이트쇼 용역",
-                subTitle: "완도군청",
+                subTitle: "완도군청, 대한드론협회",
                 date: "2024",
                 description: "",
             },
@@ -66,7 +66,7 @@ export const experienceData = [
             },
             {
                 title: "다중드론 제어기술을 활용한 교량점검 실증",
-                subTitle: "전남테크노파크",
+                subTitle: "전남테크노파크, 고흥군청",
                 date: "2023",
                 description: "",
             },
@@ -101,7 +101,7 @@ export const experienceData = [
                 description: "",
             },
             {
-                title: "고인돌 축제 드론라이트쇼 용역",
+                title: "고창 고인돌 축제 드론라이트쇼 용역",
                 subTitle: "고창군청",
                 date: "2023",
                 description: "",
@@ -132,14 +132,14 @@ export const experienceData = [
             },
             {
                 title: "드론을 이용한 유해조수 퇴치 및 포획 실증",
-                subTitle: "고흥군청",
+                subTitle: "전남테크노파크, 고흥군청",
                 date: "2023",
                 description: "",
             },
             {
                 title: "율촌공장 공사기록용 지상 및 항공촬영 용역",
                 subTitle: "포스코필바라",
-                date: "2022",
+                date: "2022 - 2023",
                 description: "",
             },
             {
