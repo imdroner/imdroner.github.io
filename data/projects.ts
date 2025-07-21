@@ -8,6 +8,7 @@ export type Project = {
     video?: string;
     tags?: string[];
     date?: string;
+    model?: string; // 3D 모델 파일 경로
 };
 
 export const projects: Project[] = [
@@ -21,6 +22,7 @@ export const projects: Project[] = [
         video: 'https://youtu.be/tX5jBvwOt0U',
         tags: ['디지털 트윈', '3D 모델링', '거북선', '드론촬영', '문화유산', '디지털문화재'],
         date: '2025-07',
+        model: 'geobukseon.glb' // 모델 파일 이름만 지정
     },
     {
         id: 'lee-su-sin-statue',
