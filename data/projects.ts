@@ -19,7 +19,7 @@ export const projects: Project[] = [
         thumbnail: '/images/gochang_dolmen.jpg',
         shortDesc: '드론으로 만든 3D 고인돌공원, 디지털 트윈과 항공 VR 영상을 제작하였습니다.',
         detailDesc: '세계유산도시 고창의 고인돌공원을 3D 모델링하여 디지털 트윈으로 구현하였습니다. 고인돌공원의 모든 부분을 3D 모델링하여 디지털 트윈으로 구현하였습니다. 항공 VR영상으로 고인돌공원을 360도 시점으로 감상해보세요.',
-        images: ['/images/gochang_dolmen2406.jpg', '/images/gochang_dolmen2433.jpg', '/images/gochang_dolmen2443.jpg'],
+        images: ['/images/gochang_dolmen2406.jpg', '/images/gochang_dolmen2406_model.jpg', '/images/gochang_dolmen2433.jpg', '/images/gochang_dolmen2433_model.jpg', '/images/gochang_dolmen2443.jpg', '/images/gochang_dolmen2443_model.jpg'],
         video: 'https://youtu.be/Ly4w88UTTgk',
         video360: '/videos/gochang360.mp4', // 로컬 360 비디오 파일
         model: '/models/gochang_dolmen2443.glb',
