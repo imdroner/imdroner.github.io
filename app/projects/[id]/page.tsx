@@ -2,6 +2,7 @@ import { projects } from '@/data/projects';
 import { notFound } from 'next/navigation';
 import ProjectImages from '@/components/ProjectImages';
 import Video360Player from '@/components/Video360Player';
+import ModelViewer from '@/components/ModelViewer';
 
 export function generateStaticParams() {
     return projects.map((project) => ({ id: project.id }));
@@ -49,31 +50,54 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
             {/* 추가 이미지 (클라이언트 컴포넌트) */}
             {project.images && project.images.length > 0 && (
-                <ProjectImages
-                    images={project.images}
-                    title={project.title}
-                />
+                <div className="mb-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-gray-100">프로젝트 이미지</h3>
+                    <ProjectImages
+                        images={project.images}
+                        title={project.title}
+                    />
+                </div>
             )}
 
             {/* 유튜브 영상 */}
             {project.video && (
-                <div className="aspect-video mb-6">
-                    <iframe
-                        src={getYoutubeEmbedUrl(project.video)}
-                        title={project.title}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="w-full h-full rounded"
-                    ></iframe>
+                <div className="mb-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-gray-100">프로젝트 영상</h3>
+                    <div className="aspect-video">
+                        <iframe
+                            src={getYoutubeEmbedUrl(project.video)}
+                            title={project.title}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="w-full h-full rounded"
+                        ></iframe>
+                    </div>
+                </div>
+            )}
+
+            {/* 3D 모델 뷰어 */}
+            {project.model && (
+                <div className="mb-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-gray-100">3D 모델 뷰어</h3>
+                    <div className="aspect-video">
+                        <ModelViewer
+                            src={project.model}
+                            alt={project.title}
+                            className="w-full h-full rounded"
+                        />
+                    </div>
                 </div>
             )}
 
             {/* 360 비디오 */}
             {project.video360 && (
-                <Video360Player
-                    videoUrl={project.video360}
-                    title={project.title}
-                />
+                <div className="mb-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-gray-100">360° VR 영상</h3>
+                    <Video360Player
+                        videoUrl={project.video360}
+                        title={project.title}
+                    />
+                </div>
             )}
         </main>
     );
