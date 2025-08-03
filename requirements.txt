@@ -1,0 +1,34 @@
+# Next.js Portfolio Website Dependencies
+# Core Framework
+next==15.3.1
+react==19.0.0
+react-dom==19.0.0
+
+# 3D Visualization Libraries
+@egjs/react-view360==4.0.0-beta.7
+@types/three==0.178.1
+three==0.178.0
+
+# Deployment
+gh-pages==6.3.0
+
+# Styling and UI
+next-themes==0.4.6
+postcss==8.5.3
+
+# Development Dependencies
+@tailwindcss/postcss==4.1.4
+@types/node==20
+@types/react==19
+@types/react-dom==19
+autoprefixer==10.4.21
+tailwindcss==4.1.4
+typescript==5
+
+# Node.js Version Requirement
+# Node.js >= 18.17.0
+
+# System Requirements
+# - Modern web browser with WebGL support
+# - Internet connection for external resources
+# - Sufficient RAM for 3D model rendering (recommended: 4GB+) 
