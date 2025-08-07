@@ -21,7 +21,7 @@ export const projects: Project[] = [
         detailDesc: '세계유산도시 고창의 고인돌공원을 3D 모델링하여 디지털 트윈으로 구현하였습니다. 고인돌공원의 모든 부분을 3D 모델링하여 디지털 트윈으로 구현하였습니다. 항공 VR영상으로 고인돌공원을 360도 시점으로 감상해보세요.',
         images: ['/images/gochang_dolmen2406.jpg', '/images/gochang_dolmen2406_model.jpg', '/images/gochang_dolmen2433.jpg', '/images/gochang_dolmen2433_model.jpg', '/images/gochang_dolmen2443.jpg', '/images/gochang_dolmen2443_model.jpg'],
         video: 'https://youtu.be/Ly4w88UTTgk',
-        video360: '/videos/gochang360.mp4', // 로컬 360 비디오 파일
+        video360: 'http://archive.imdrone.site:2025/gochang360.mp4', // 로컬 360 비디오 파일
         model: '/models/gochang_dolmen2443.glb',
         tags: ['고인돌공원', '항공VR', '세계유산도시', '디지털투어', '3D모델링', '디지털트윈'],
         date: '2025-07',
