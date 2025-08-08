@@ -89,14 +89,19 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 </div>
             )}
 
-            {/* 360 비디오 */}
+            {/* 360° VR 영상 */}
             {project.video360 && (
                 <div className="mb-12 pt-8 border-t border-gray-200 dark:border-gray-700">
                     <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-gray-100">360° VR 영상</h3>
-                    <Video360Player
-                        videoUrl={project.video360}
-                        title={project.title}
-                    />
+                    <div className="aspect-video">
+                        <iframe
+                            src={getYoutubeEmbedUrl(project.video360)}
+                            title={project.title}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="w-full h-full rounded"
+                        ></iframe>
+                    </div>
                 </div>
             )}
         </main>
