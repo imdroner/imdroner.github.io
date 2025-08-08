@@ -71,6 +71,10 @@ export default function HomePage() {
                   <span className="text-gray-700 dark:text-gray-300">드론 촬영 및 운용</span>
                 </div>
                 <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
+                  <span className="text-gray-700 dark:text-gray-300">드론 안전관제 시스템</span>
+                </div>
+                <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
                   <span className="text-gray-700 dark:text-gray-300">3D 모델링</span>
                 </div>
