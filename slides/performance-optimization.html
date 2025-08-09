@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성능 최적화</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.css">
+    <style>
+        .reveal .slides section h1,
+        .reveal .slides section h2,
+        .reveal .slides section h3 {
+            color: #2c3e50;
+        }
+
+        .reveal .slides section {
+            text-align: left;
+        }
+
+        .code-block {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>성능 최적화</h1>
+                <p>웹 애플리케이션 성능 향상 전략</p>
+            </section>
+
+            <section>
+                <h2>성능 최적화의 중요성</h2>
+                <ul>
+                    <li>사용자 경험 향상</li>
+                    <li>검색 엔진 최적화 (SEO)</li>
+                    <li>전환율 증가</li>
+                    <li>서버 비용 절약</li>
+                    <li>모바일 사용자 만족도</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>성능 측정 지표</h2>
+                <ul>
+                    <li><strong>First Contentful Paint (FCP):</strong> 첫 번째 콘텐츠가 그려지는 시간</li>
+                    <li><strong>Largest Contentful Paint (LCP):</strong> 가장 큰 콘텐츠가 그려지는 시간</li>
+                    <li><strong>First Input Delay (FID):</strong> 첫 번째 입력 지연 시간</li>
+                    <li><strong>Cumulative Layout Shift (CLS):</strong> 누적 레이아웃 이동</li>
+                    <li><strong>Time to Interactive (TTI):</strong> 상호작용 가능한 시간</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>프론트엔드 최적화</h2>
+                <ul>
+                    <li><strong>코드 분할:</strong> 번들 크기 최적화</li>
+                    <li><strong>이미지 최적화:</strong> 압축, WebP 포맷, lazy loading</li>
+                    <li><strong>캐싱:</strong> 브라우저 캐시, CDN 활용</li>
+                    <li><strong>CSS/JS 최적화:</strong> 미니피케이션, 압축</li>
+                    <li><strong>폰트 최적화:</strong> 폰트 로딩 최적화</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>백엔드 최적화</h2>
+                <ul>
+                    <li><strong>데이터베이스 최적화:</strong> 인덱싱, 쿼리 최적화</li>
+                    <li><strong>캐싱:</strong> Redis, Memcached 활용</li>
+                    <li><strong>CDN:</strong> 정적 자원 분산</li>
+                    <li><strong>로드 밸런싱:</strong> 트래픽 분산</li>
+                    <li><strong>API 최적화:</strong> 응답 시간 단축</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>모니터링 및 분석</h2>
+                <ul>
+                    <li><strong>실시간 모니터링:</strong> 성능 지표 추적</li>
+                    <li><strong>사용자 분석:</strong> 실제 사용자 경험 측정</li>
+                    <li><strong>오류 추적:</strong> 성능 문제 식별</li>
+                    <li><strong>A/B 테스트:</strong> 최적화 효과 검증</li>
+                    <li><strong>성능 예산:</strong> 성능 목표 설정</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>최적화 도구</h2>
+                <ul>
+                    <li><strong>Lighthouse:</strong> 성능 감사</li>
+                    <li><strong>WebPageTest:</strong> 상세 성능 분석</li>
+                    <li><strong>GTmetrix:</strong> 성능 점수</li>
+                    <li><strong>PageSpeed Insights:</strong> Google 성능 분석</li>
+                    <li><strong>Chrome DevTools:</strong> 개발자 도구</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide'
+        });
+    </script>
+</body>
+
+</html>

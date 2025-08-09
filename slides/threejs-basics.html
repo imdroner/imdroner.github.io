@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js 기초</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.css">
+    <style>
+        .reveal .slides section h1,
+        .reveal .slides section h2,
+        .reveal .slides section h3 {
+            color: #2c3e50;
+        }
+
+        .reveal .slides section {
+            text-align: left;
+        }
+
+        .code-block {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Three.js 기초</h1>
+                <p>3D 웹 그래픽 라이브러리</p>
+            </section>
+
+            <section>
+                <h2>Three.js란?</h2>
+                <ul>
+                    <li>JavaScript 3D 라이브러리</li>
+                    <li>WebGL을 기반으로 함</li>
+                    <li>3D 그래픽을 쉽게 구현할 수 있음</li>
+                    <li>게임, 시각화, 인터랙티브 웹에 활용</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>기본 구성 요소</h2>
+                <ul>
+                    <li><strong>Scene:</strong> 3D 공간</li>
+                    <li><strong>Camera:</strong> 뷰포트</li>
+                    <li><strong>Renderer:</strong> 렌더링 엔진</li>
+                    <li><strong>Mesh:</strong> 3D 객체</li>
+                    <li><strong>Light:</strong> 조명</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>기본 설정</h2>
+                <div class="code-block">
+                    // Scene 생성<br>
+                    const scene = new THREE.Scene();<br><br>
+                    // Camera 생성<br>
+                    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1,
+                    1000);<br><br>
+                    // Renderer 생성<br>
+                    const renderer = new THREE.WebGLRenderer();<br>
+                    renderer.setSize(window.innerWidth, window.innerHeight);<br>
+                    document.body.appendChild(renderer.domElement);
+                </div>
+            </section>
+
+            <section>
+                <h2>3D 객체 생성</h2>
+                <div class="code-block">
+                    // Geometry 생성<br>
+                    const geometry = new THREE.BoxGeometry();<br><br>
+                    // Material 생성<br>
+                    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });<br><br>
+                    // Mesh 생성<br>
+                    const cube = new THREE.Mesh(geometry, material);<br>
+                    scene.add(cube);
+                </div>
+            </section>
+
+            <section>
+                <h2>애니메이션</h2>
+                <div class="code-block">
+                    function animate() {<br>
+                    &nbsp;&nbsp;requestAnimationFrame(animate);<br><br>
+                    &nbsp;&nbsp;// 회전 애니메이션<br>
+                    &nbsp;&nbsp;cube.rotation.x += 0.01;<br>
+                    &nbsp;&nbsp;cube.rotation.y += 0.01;<br><br>
+                    &nbsp;&nbsp;renderer.render(scene, camera);<br>
+                    }<br>
+                    animate();
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide'
+        });
+    </script>
+</body>
+
+</html>
