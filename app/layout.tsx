@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { generalData } from "@/data/general";
 import Navbar from "@/components/navbar";
+import FloatingLockIcon from "@/components/FloatingLockIcon";
 
 
 const geistSans = Geist({
@@ -85,6 +86,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-100 dark:bg-neutral-900`}
       >
         <Navbar />
+        <FloatingLockIcon />
         {children}
       </body>
     </html>

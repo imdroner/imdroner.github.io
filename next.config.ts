@@ -8,31 +8,6 @@ const nextConfig: NextConfig = {
   assetPrefix: process.env.NODE_ENV === "production" ? `/${repoName}/` : "",
   basePath: process.env.NODE_ENV === "production" ? `/${repoName}` : "",
   images: { unoptimized: true },
-  async headers() {
-    return [
-      {
-        source: '/models/:path*',
-        headers: [
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: '*',
-          },
-          {
-            key: 'Access-Control-Allow-Methods',
-            value: 'GET, OPTIONS',
-          },
-          {
-            key: 'Access-Control-Allow-Headers',
-            value: 'Content-Type',
-          },
-          {
-            key: 'Content-Type',
-            value: 'model/gltf-binary',
-          },
-        ],
-      },
-    ];
-  },
 };
 
 export default nextConfig;
