@@ -1,188 +1,401 @@
-import { generalData } from '@/data/general';
-import { projects } from '@/data/projects';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
+import { services } from '@/data/services';
+import { projects } from '@/data/projects';
+import { testimonials } from '@/data/testimonials';
+import { featuredProducts } from '@/data/products';
+import { 
+  Award, 
+  Building2, 
+  Camera,
+  CheckCircle2,
+  ChevronRight,
+  Database,
+  Film,
+  Fuel,
+  Radio,
+  Shield,
+  ShoppingBag,
+  Sparkles,
+  Sprout,
+  Star,
+  Zap,
+  ArrowRight
+} from 'lucide-react';
+
+const iconMap: { [key: string]: any } = {
+  Camera,
+  Building2,
+  Zap,
+  Radio,
+  Shield,
+  Sprout,
+  Fuel,
+  Film
+};
 
 export default function HomePage() {
-  const latestProject = projects[0];
-
   return (
     <main className="min-h-screen">
       {/* 히어로 섹션 */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
-        <div className="relative max-w-4xl mx-auto px-4 text-center">
-          <div className="mb-8 flex justify-center">
-            <div className="flex items-center justify-center shadow-lg rounded-xl">
-              <img
-                src={generalData.avatar}
-                alt={generalData.name}
-                className="w-auto h-auto max-w-xs max-h-60 object-contain shadow-2xl border-4 border-white dark:border-gray-700"
-              />
+      <section className="relative min-h-screen flex items-center py-20">
+        {/* 배경 이미지 */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/hero/hero-bg.jpg"
+            alt="아이엠드론 배경"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
+          <div className="max-w-4xl mb-16 lg:mb-20">
+            <Badge variant="outline" className="mb-6 lg:mb-8 bg-white/10 border-white/30 text-white hover:bg-white/20">
+              <Sparkles className="h-3 w-3 mr-1" />
+              Professional Drone Solutions
+            </Badge>
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 lg:mb-8 text-white leading-tight">
+              From Flight to Insight
+            </h1>
+            <p className="text-xl lg:text-2xl text-white/90 mb-10 lg:mb-12 leading-relaxed">
+              단순한 항공촬영을 넘어, 건설·에너지·농업·공공안전 현장을 데이터로 관리합니다.<br />
+              서비스는 온라인으로 예약하고, 필요한 드론·장비는 바로 구매하세요.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button size="lg" className="text-lg bg-blue-600 text-white hover:bg-blue-700" asChild>
+                <Link href="#services">
+                  서비스 보기
+                  <ChevronRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" className="text-lg bg-transparent text-white border-white hover:bg-white/10" asChild>
+                <Link href="#products">
+                  제품 보기
+                  <ShoppingBag className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
             </div>
           </div>
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            {generalData.name}
-          </h1>
-          <p className="text-2xl text-gray-700 dark:text-gray-300 mb-6 font-medium">
-            {generalData.jobTitle} / 대표
-          </p>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-            {generalData.about.split('.')[0]}.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <Link
-              href="/projects"
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              포트폴리오 보기
-            </Link>
-            <Link
-              href="/profile"
-              className="px-8 py-3 rounded-full bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg border border-gray-200 dark:border-gray-600"
-            >
-              프로필 보기
-            </Link>
-            <Link
-              href="/contact"
-              className="px-8 py-3 rounded-full bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg border border-gray-200 dark:border-gray-600"
-            >
-              문의하기
-            </Link>
+
+          {/* 특징 배지 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="text-center hover:shadow-lg transition-shadow bg-white/10 backdrop-blur border-white/20">
+              <CardContent className="pt-6">
+                <Award className="h-12 w-12 text-white mx-auto mb-4" />
+                <h3 className="font-semibold mb-2 text-white">Certified Drone Experts</h3>
+                <p className="text-sm text-white/80">
+                  국가자격취득·보험 가입 전문 조종자가 직접 운영합니다.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow bg-white/10 backdrop-blur border-white/20">
+              <CardContent className="pt-6">
+                <Shield className="h-12 w-12 text-white mx-auto mb-4" />
+                <h3 className="font-semibold mb-2 text-white">Safety First Operation</h3>
+                <p className="text-sm text-white/80">
+                  비행 전 사전 점검과 리스크 분석으로 안전 우선 운영 원칙을 지킵니다.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow bg-white/10 backdrop-blur border-white/20">
+              <CardContent className="pt-6">
+                <CheckCircle2 className="h-12 w-12 text-white mx-auto mb-4" />
+                <h3 className="font-semibold mb-2 text-white">Industry-Proven Projects</h3>
+                <p className="text-sm text-white/80">
+                  다양한 산업 현장에서 검증된 실적을 보유하고 있습니다.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow bg-white/10 backdrop-blur border-white/20">
+              <CardContent className="pt-6">
+                <Sparkles className="h-12 w-12 text-white mx-auto mb-4" />
+                <h3 className="font-semibold mb-2 text-white">Expert Pre-Sales Support</h3>
+                <p className="text-sm text-white/80">
+                  구매 전 상담을 통해 용도에 맞는 제품을 추천해드립니다.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* 카드 섹션 */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {/* 회사 간략 소개 */}
+      <section className="py-20 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="mb-12">
+            <Badge variant="outline" className="mb-4">About Us</Badge>
+            <h2 className="text-4xl font-bold mb-4">아이엠드론을 선택해야 하는 이유</h2>
+            <p className="text-xl text-muted-foreground">
+              전문성과 신뢰성을 갖춘 드론 솔루션 파트너
+            </p>
+          </div>
 
-            {/* 스킬 카드 */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-center gap-3 mb-4">
-                <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">전문 분야</h3>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span className="text-gray-700 dark:text-gray-300">드론 촬영 및 운용</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                  <span className="text-gray-700 dark:text-gray-300">드론 안전관제 시스템</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span className="text-gray-700 dark:text-gray-300">3D 모델링</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-gray-700 dark:text-gray-300">디지털 트윈</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                  <span className="text-gray-700 dark:text-gray-300">문화유산 디지털화</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                  <span className="text-gray-700 dark:text-gray-300">시각 콘텐츠 제작</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                  <span className="text-gray-700 dark:text-gray-300">항공측량</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
-                  <span className="text-gray-700 dark:text-gray-300">항공방제</span>
-                </div>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <Award className="h-10 w-10 text-primary mb-4" />
+                <CardTitle>Certified Drone Experts</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  국가자격보유, 보험 가입을 완료한 전문 조종 인력이 직접 운용합니다.
+                </p>
+              </CardContent>
+            </Card>
 
-            {/* 최근 프로젝트 카드 */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-center gap-3 mb-4">
-                <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">최근 프로젝트</h3>
-              </div>
-              {latestProject && (
-                <div className="space-y-4">
-                  <img
-                    src={latestProject.thumbnail}
-                    alt={latestProject.title}
-                    className="w-full h-32 object-cover rounded-lg"
-                  />
-                  <div>
-                    <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">{latestProject.title}</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{latestProject.shortDesc}</p>
-                    <div className="flex flex-wrap gap-1 mb-3">
-                      {latestProject.tags?.slice(0, 3).map((tag, index) => (
-                        <span key={index} className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">
+            <Card className="hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <CheckCircle2 className="h-10 w-10 text-primary mb-4" />
+                <CardTitle>Industry-Proven Solutions</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  건설·에너지·농업·공공안전 등 다양한 산업 현장에서 검증된 프로젝트 경험을 보유하고 있습니다.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <Database className="h-10 w-10 text-primary mb-4" />
+                <CardTitle>Data-Driven Results</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  촬영·점검·관제 데이터를 리포트·지도·3D 모델로 제공해 실제 의사결정에 활용할 수 있습니다.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <ShoppingBag className="h-10 w-10 text-primary mb-4" />
+                <CardTitle>One-Stop Service & Store</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  드론 서비스 상담·운영부터 드론·장비 구매까지, 홈페이지와 쇼핑몰에서 한 번에 이용할 수 있습니다.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* 주요 서비스 */}
+      <section id="services" className="py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="mb-12">
+            <Badge variant="outline" className="mb-4">Our Services</Badge>
+            <h2 className="text-4xl font-bold mb-4">주요 서비스</h2>
+            <p className="text-xl text-muted-foreground">
+              산업별 맞춤형 드론 솔루션을 제공합니다
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service) => {
+              return (
+                <Card key={service.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                      {service.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      {service.description}
+                    </p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button variant="ghost" className="w-full" asChild>
+                      <Link href={service.link}>
+                        더보기
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* 최근 프로젝트 */}
+      <section className="py-20 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="mb-12">
+            <Badge variant="outline" className="mb-4">Recent Projects</Badge>
+            <h2 className="text-4xl font-bold mb-4">최근 프로젝트</h2>
+            <p className="text-xl text-muted-foreground">
+              다양한 산업 현장에서 성공적으로 완료한 프로젝트들
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.slice(0, 3).map((project) => (
+              <Link key={project.id} href={`/projects/${project.id}`} className="group">
+                <Card className="h-full overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={project.thumbnail}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                     <Badge variant="white" className="absolute top-4 right-4">
+                      {project.date}
+                    </Badge>
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </CardTitle>
+                    <CardDescription className="line-clamp-2">
+                      {project.shortDesc}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardFooter>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags?.slice(0, 3).map((tag) => (
+                        <Badge key={tag} variant="secondary">
                           {tag}
-                        </span>
+                        </Badge>
                       ))}
                     </div>
-                    <Link
-                      href={`/projects/${latestProject.id}`}
-                      className="text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium"
-                    >
-                      자세히 보기 →
-                    </Link>
+                  </CardFooter>
+                </Card>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-12">
+            <Button size="lg" className="text-lg bg-blue-600 text-white hover:bg-blue-700" asChild>
+              <Link href="/projects">
+                모든 프로젝트 보기
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* 고객 후기 */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="mb-12">
+            <Badge variant="outline" className="mb-4">Testimonials</Badge>
+            <h2 className="text-4xl font-bold mb-4">고객 후기</h2>
+            <p className="text-xl text-muted-foreground">
+              고객들의 생생한 경험을 들어보세요
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial) => (
+              <Card key={testimonial.id} className="hover:shadow-xl transition-shadow">
+                <CardHeader>
+                  <div className="flex items-center gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    ))}
                   </div>
+                  <CardTitle className="text-lg">{testimonial.name}</CardTitle>
+                  <CardDescription>
+                    {testimonial.role} · {testimonial.company}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground italic">
+                    "{testimonial.content}"
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* 추천 제품 */}
+      <section id="products" className="py-20 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="mb-12">
+            <Badge variant="outline" className="mb-4">Featured Products</Badge>
+            <h2 className="text-4xl font-bold mb-4">추천 제품</h2>
+            <p className="text-xl text-muted-foreground">
+              기업용 드론 및 장비를 합리적인 가격에 만나보세요
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredProducts.map((product) => (
+              <Card key={product.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <div className="relative h-48 bg-white overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-contain p-4 transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <Badge variant="outline" className="absolute top-4 right-4">
+                    {product.category}
+                  </Badge>
                 </div>
-              )}
-            </div>
+                <CardHeader>
+                  <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                    {product.name}
+                  </CardTitle>
+                  <CardDescription>{product.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {product.features.slice(0, 3).map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm">
+                        <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                        <span className="text-muted-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full" variant="outline" asChild>
+                    <Link href={product.link}>
+                      자세히 보기
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
 
-            {/* 소셜네트워크 카드 */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-center gap-3 mb-4">
-                <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 0c2.21 0 4 4.477 4 10s-1.79 10-4 10-4-4.477-4-10 1.79-10 4-10zm0 0v20" />
-                </svg>
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">소셜네트워크</h3>
-              </div>
-              <div className="space-y-3">
-                {generalData.contacts.map((contact) => (
-                  <div key={contact.label} className="flex items-center gap-3">
-                    {contact.label === 'Email' && (
-                      <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    )}
-                    {contact.label === 'Instagram' && (
-                      <svg className="w-4 h-4 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.418-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.928.875 1.418 2.026 1.418 3.323s-.49 2.448-1.418 3.244c-.875.807-2.026 1.297-3.323 1.297zm7.83-9.781c-.49 0-.928-.175-1.297-.49-.368-.315-.49-.753-.49-1.243 0-.49.122-.928.49-1.243.369-.315.807-.49 1.297-.49s.928.175 1.297.49c.368.315.49.753.49 1.243 0 .49-.122.928-.49 1.243-.369.315-.807.49-1.297.49zm-7.83 1.418c-.49 0-.928.175-1.297.49-.368.315-.49.753-.49-1.243s.122-.928.49-1.243c.369.315.807.49 1.297.49s.928-.175 1.297-.49c.368-.315.49-.753.49-1.243s-.122-.928-.49-1.243c-.369-.315-.807-.49-1.297-.49z" />
-                      </svg>
-                    )}
-                    {contact.label === 'Youtube' && (
-                      <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                      </svg>
-                    )}
-                    {contact.label === 'Blog' && (
-                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 20h9" />
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 3.5a2.121 2.121 0 113 3L7 19l-4 1 1-4 12.5-12.5z" />
-                      </svg>
-                    )}
-                    <span className="text-sm text-gray-600 dark:text-gray-400">{contact.label}</span>
-                    <a
-                      href={contact.href}
-                      className="text-blue-600 dark:text-blue-400 hover:underline text-sm"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {contact.value}
-                    </a>
-                  </div>
-                ))}
-
-              </div>
-            </div>
+          <div className="mt-12">
+            <Button size="lg" className="text-lg bg-blue-600 text-white hover:bg-blue-700" asChild>
+              <Link href="/products">
+                전체 제품 보기
+                <ShoppingBag className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

@@ -3,6 +3,10 @@ import { notFound } from 'next/navigation';
 import ProjectImages from '@/components/ProjectImages';
 import Video360Player from '@/components/Video360Player';
 import ModelViewer from '@/components/ModelViewer';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
+import { Calendar, Image, Video, Box, Glasses } from 'lucide-react';
 
 export function generateStaticParams() {
     return projects.map((project) => ({ id: project.id }));
@@ -27,83 +31,148 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
     return (
         <main className="max-w-5xl mx-auto px-4 py-12">
-            <h1 className="text-3xl font-bold mb-2">{project.title}</h1>
-            <div className="text-sm text-gray-400 mb-4">{project.date}</div>
-
-            {/* 썸네일 */}
-            <div className="w-full aspect-video rounded overflow-hidden mb-6 bg-gray-100 dark:bg-neutral-800">
-                <img
-                    src={project.thumbnail}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                />
+            {/* 헤더 */}
+            <div className="mb-8">
+                <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
+                <div className="flex items-center gap-2 mb-4">
+                    <Calendar className="h-4 w-4 text-muted-foreground" />
+                    <Badge variant="outline">{project.date}</Badge>
+                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                    {project.detailDesc}
+                </p>
             </div>
 
-            <p className="mb-4 text-gray-100 dark:text-gray-200">{project.detailDesc}</p>
-
             {/* 태그 */}
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-8">
                 {project.tags?.map((tag) => (
-                    <span key={tag} className="text-xs bg-transparent text-blue-700 dark:text-blue-200 rounded px-2 py-0.5 border border-blue-200 dark:border-blue-700">#{tag}</span>
+                    <Badge key={tag} variant="secondary">
+                        #{tag}
+                    </Badge>
                 ))}
             </div>
 
-            {/* 추가 이미지 (클라이언트 컴포넌트) */}
-            {project.images && project.images.length > 0 && (
-                <div className="mb-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-                    <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-gray-100">프로젝트 이미지</h3>
-                    <ProjectImages
-                        images={project.images}
-                        title={project.title}
+            <Separator className="my-8" />
+
+            {/* 썸네일 */}
+            <Card className="mb-8 overflow-hidden">
+                <div className="w-full aspect-video bg-muted">
+                    <img
+                        src={project.thumbnail}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
                     />
                 </div>
+            </Card>
+
+            {/* 추가 이미지 */}
+            {project.images && project.images.length > 0 && (
+                <>
+                    <Separator className="my-8" />
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-2">
+                                <Image className="h-5 w-5 text-primary" />
+                                프로젝트 이미지
+                            </CardTitle>
+                            <CardDescription>
+                                총 {project.images.length}개의 이미지
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <ProjectImages
+                                images={project.images}
+                                title={project.title}
+                            />
+                        </CardContent>
+                    </Card>
+                </>
             )}
 
             {/* 유튜브 영상 */}
             {project.video && (
-                <div className="mb-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-                    <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-gray-100">프로젝트 영상</h3>
-                    <div className="aspect-video">
-                        <iframe
-                            src={getYoutubeEmbedUrl(project.video)}
-                            title={project.title}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            className="w-full h-full rounded"
-                        ></iframe>
-                    </div>
-                </div>
+                <>
+                    <Separator className="my-8" />
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-2">
+                                <Video className="h-5 w-5 text-primary" />
+                                프로젝트 영상
+                            </CardTitle>
+                            <CardDescription>
+                                유튜브 영상으로 프로젝트를 자세히 확인하세요
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="aspect-video rounded-lg overflow-hidden bg-black">
+                                <iframe
+                                    src={getYoutubeEmbedUrl(project.video)}
+                                    title={project.title}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    className="w-full h-full"
+                                ></iframe>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </>
             )}
 
             {/* 3D 모델 뷰어 */}
             {project.model && (
-                <div className="mb-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-                    <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-gray-100">3D 모델 뷰어</h3>
-                    <div className="aspect-video">
-                        <ModelViewer
-                            src={project.model}
-                            alt={project.title}
-                            className="w-full h-full rounded"
-                        />
-                    </div>
-                </div>
+                <>
+                    <Separator className="my-8" />
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-2">
+                                <Box className="h-5 w-5 text-primary" />
+                                3D 모델 뷰어
+                            </CardTitle>
+                            <CardDescription>
+                                마우스로 드래그하여 3D 모델을 회전하고 확대/축소할 수 있습니다
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="aspect-video rounded-lg overflow-hidden bg-muted">
+                                <ModelViewer
+                                    src={project.model}
+                                    alt={project.title}
+                                    className="w-full h-full"
+                                />
+                            </div>
+                        </CardContent>
+                    </Card>
+                </>
             )}
 
             {/* 360° VR 영상 */}
             {project.video360 && (
-                <div className="mb-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-                    <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-gray-100">360° VR 영상</h3>
-                    <div className="aspect-video">
-                        <iframe
-                            src={getYoutubeEmbedUrl(project.video360)}
-                            title={project.title}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            className="w-full h-full rounded"
-                        ></iframe>
-                    </div>
-                </div>
+                <>
+                    <Separator className="my-8" />
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-2">
+                                <Glasses className="h-5 w-5 text-primary" />
+                                360° VR 영상
+                            </CardTitle>
+                            <CardDescription>
+                                360도 파노라마 영상으로 현장을 생생하게 체험하세요
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="aspect-video rounded-lg overflow-hidden bg-black">
+                                <iframe
+                                    src={getYoutubeEmbedUrl(project.video360)}
+                                    title={`${project.title} - 360° VR`}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    className="w-full h-full"
+                                ></iframe>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </>
             )}
         </main>
     );
-} 
+}

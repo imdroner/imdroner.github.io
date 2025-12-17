@@ -1,5 +1,7 @@
 import { projects } from '@/data/projects';
 import Link from 'next/link';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 export default function ProjectsPage() {
     return (
@@ -10,32 +12,46 @@ export default function ProjectsPage() {
                     <Link
                         key={project.id}
                         href={`/projects/${project.id}`}
-                        className="group block border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow bg-white dark:bg-neutral-900 hover:-translate-y-1 duration-200"
                         prefetch={false}
+                        className="group"
                     >
-                        <div className="relative w-full h-48 overflow-hidden">
-                            <img
-                                src={project.thumbnail}
-                                alt={project.title}
-                                className="w-full h-full object-cover"
-                                loading="lazy"
-                            />
-                            <div className="absolute top-2 right-2 bg-white/80 dark:bg-neutral-800/80 text-xs px-2 py-0.5 rounded shadow">
-                                {project.date}
+                        <Card className="h-full overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                            <div className="relative w-full h-48 overflow-hidden">
+                                <img
+                                    src={project.thumbnail}
+                                    alt={project.title}
+                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                                    loading="lazy"
+                                />
+                                {project.date && (
+                                    <div className="absolute top-2 right-2">
+                                        <Badge variant="secondary" className="backdrop-blur-sm bg-background/80">
+                                            {project.date}
+                                        </Badge>
+                                    </div>
+                                )}
                             </div>
-                        </div>
-                        <div className="p-4">
-                            <h2 className="text-lg font-semibold mb-1 group-hover:text-blue-600 transition-colors">{project.title}</h2>
-                            <p className="text-gray-600 dark:text-gray-400 text-sm mb-3 line-clamp-2">{project.shortDesc}</p>
-                            <div className="flex flex-wrap gap-2 mt-2">
-                                {project.tags?.map((tag) => (
-                                    <span key={tag} className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 rounded px-2 py-0.5 font-medium">#{tag}</span>
-                                ))}
-                            </div>
-                        </div>
+                            <CardHeader>
+                                <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
+                                    {project.title}
+                                </CardTitle>
+                                <CardDescription className="line-clamp-2">
+                                    {project.shortDesc}
+                                </CardDescription>
+                            </CardHeader>
+                            <CardFooter>
+                                <div className="flex flex-wrap gap-2">
+                                    {project.tags?.map((tag) => (
+                                        <Badge key={tag} variant="outline">
+                                            #{tag}
+                                        </Badge>
+                                    ))}
+                                </div>
+                            </CardFooter>
+                        </Card>
                     </Link>
                 ))}
             </div>
         </main>
     );
-} 
+}

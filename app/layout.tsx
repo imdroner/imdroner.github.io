@@ -5,6 +5,7 @@ import "./globals.css";
 import { generalData } from "@/data/general";
 import Navbar from "@/components/navbar";
 import FloatingLockIcon from "@/components/FloatingLockIcon";
+import Footer from "@/components/Footer";
 
 
 const geistSans = Geist({
@@ -18,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${generalData.name} | ${generalData.jobTitle}`,
+  title: `${generalData.jobTitle}`,
   description: `${generalData.about}`,
   openGraph: {
     type: "website",
@@ -88,6 +89,7 @@ export default function RootLayout({
         <Navbar />
         <FloatingLockIcon />
         {children}
+        <Footer />
       </body>
     </html>
   );

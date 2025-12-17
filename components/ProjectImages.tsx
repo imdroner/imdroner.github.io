@@ -1,48 +1,44 @@
 'use client';
-import React, { useState } from 'react';
-import ImageModal from '@/components/ImageModal';
 
-export default function ProjectImages({
-    thumbnail,
-    images,
-    title,
-}: {
-    thumbnail?: string;
-    images?: string[];
+import { useState } from 'react';
+import ImageModal from './ImageModal';
+import { Card, CardContent } from '@/components/ui/card';
+
+interface ProjectImagesProps {
+    images: string[];
     title: string;
-}) {
-    const [modalImg, setModalImg] = useState<string | null>(null);
+}
+
+export default function ProjectImages({ images, title }: ProjectImagesProps) {
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     return (
-        <>
-            {thumbnail && (
-                <div className="w-full aspect-video rounded overflow-hidden mb-6 bg-gray-100 dark:bg-neutral-800">
-                    <img
-                        src={thumbnail}
-                        alt={title}
-                        className="w-full h-full object-cover cursor-pointer"
-                        onClick={() => setModalImg(thumbnail)}
-                    />
-                </div>
-            )}
-            {images && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                    {images.map((img, idx) => (
-                        <div
-                            key={idx}
-                            className="aspect-video rounded overflow-hidden bg-gray-100 dark:bg-neutral-800 cursor-pointer"
-                            onClick={() => setModalImg(img)}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {images.map((image, index) => (
+                <Card key={index} className="overflow-hidden group hover:shadow-lg transition-shadow">
+                    <CardContent className="p-0">
+                        <ImageModal
+                            src={image}
+                            alt={`${title} - 이미지 ${index + 1}`}
+                            allImages={images}
+                            currentIndex={currentIndex}
+                            onNavigate={setCurrentIndex}
                         >
-                            <img
-                                src={img}
-                                alt={title + ' image ' + (idx + 1)}
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-                    ))}
-                </div>
-            )}
-            <ImageModal img={modalImg} onClose={() => setModalImg(null)} />
-        </>
+                            <button 
+                                className="w-full h-48 overflow-hidden cursor-zoom-in"
+                                onClick={() => setCurrentIndex(index)}
+                            >
+                                <img
+                                    src={image}
+                                    alt={`${title} - 이미지 ${index + 1}`}
+                                    className="w-full h-full object-cover transition-transform group-hover:scale-110"
+                                    loading="lazy"
+                                />
+                            </button>
+                        </ImageModal>
+                    </CardContent>
+                </Card>
+            ))}
+        </div>
     );
 }
