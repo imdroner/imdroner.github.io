@@ -4,9 +4,13 @@ import {
   Dialog,
   DialogContent,
   DialogTrigger,
+  DialogTitle,
 } from '@/components/ui/dialog';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
+import { useSwipeable } from 'react-swipeable';
+import { useState, useEffect } from 'react';
 
 interface ImageModalProps {
   src: string;
@@ -25,19 +29,56 @@ export default function ImageModal({
   currentIndex,
   onNavigate 
 }: ImageModalProps) {
-  const handlePrevious = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  // 애니메이션 상태
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [animationDirection, setAnimationDirection] = useState<'left' | 'right' | null>(null);
+
+  const handlePrevious = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
     if (onNavigate && currentIndex !== undefined && currentIndex > 0) {
+      setAnimationDirection('right');
+      setIsAnimating(true);
       onNavigate(currentIndex - 1);
     }
   };
 
-  const handleNext = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleNext = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
     if (onNavigate && currentIndex !== undefined && allImages && currentIndex < allImages.length - 1) {
+      setAnimationDirection('left');
+      setIsAnimating(true);
       onNavigate(currentIndex + 1);
     }
   };
+
+  // 애니메이션 완료 후 상태 리셋
+  useEffect(() => {
+    if (isAnimating) {
+      const timer = setTimeout(() => {
+        setIsAnimating(false);
+        setAnimationDirection(null);
+      }, 300); // 애니메이션 지속 시간과 동일
+      return () => clearTimeout(timer);
+    }
+  }, [isAnimating]);
+
+  // 스와이프 제스처 핸들러
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => handleNext(),
+    onSwipedRight: () => handlePrevious(),
+    preventScrollOnSwipe: true,
+    trackMouse: true, // 마우스 드래그도 지원
+  });
+
+  // currentIndex가 있으면 allImages에서 현재 이미지를 가져오고, 없으면 src 사용
+  const currentImage = allImages && currentIndex !== undefined 
+    ? allImages[currentIndex] 
+    : src;
+  
+  // alt 텍스트도 동적으로 생성
+  const currentAlt = allImages && currentIndex !== undefined
+    ? `${alt.split(' - 이미지')[0]} - 이미지 ${currentIndex + 1}`
+    : alt;
 
   return (
     <Dialog>
@@ -53,11 +94,24 @@ export default function ImageModal({
         )}
       </DialogTrigger>
       <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 border-0">
-        <div className="relative w-full h-full flex items-center justify-center bg-black/90">
+        <VisuallyHidden>
+          <DialogTitle>{currentAlt}</DialogTitle>
+        </VisuallyHidden>
+        <div 
+          {...swipeHandlers}
+          className="relative w-full h-full flex items-center justify-center bg-black/90"
+        >
           <img
-            src={src}
-            alt={alt}
-            className="max-w-full max-h-[90vh] object-contain"
+            key={currentIndex} // 키 변경으로 애니메이션 트리거
+            src={currentImage}
+            alt={currentAlt}
+            className={`max-w-full max-h-[90vh] object-contain transition-all duration-100 ${
+              isAnimating 
+                ? animationDirection === 'left' 
+                  ? 'opacity-0 -translate-x-10' 
+                  : 'opacity-0 translate-x-10'
+                : 'opacity-100 translate-x-0'
+            }`}
           />
           
           {/* 네비게이션 버튼 */}

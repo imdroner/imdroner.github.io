@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
   Accordion,
   AccordionContent,
@@ -20,6 +21,7 @@ import {
   Lightbulb,
   ChevronRight
 } from 'lucide-react';
+import { teamMembers } from '@/data/team';
 import { generalData } from '@/data/general';
 import { experienceData } from '@/data/experience';
 import { certificateData } from '@/data/certificate';
@@ -58,7 +60,7 @@ export default function AboutPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="max-w-3xl">
-            <Badge variant="outline" className="mb-6 bg-white/10 border-white/30 text-white hover:bg-white/20">About Us</Badge>
+            <Badge variant="hero" className="mb-6">About Us</Badge>
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-white">
               아이엠드론
             </h1>
@@ -92,7 +94,7 @@ export default function AboutPage() {
 
             {/* 우측 4개 그리드 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="hover:shadow-xl transition-shadow">
+              <Card variant="hover-xl">
                 <CardHeader>
                   <Award className="h-10 w-10 text-primary mb-4" />
                   <CardTitle>Certified Drone Experts</CardTitle>
@@ -104,7 +106,7 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-xl transition-shadow">
+              <Card variant="hover-xl">
                 <CardHeader>
                   <CheckCircle2 className="h-10 w-10 text-primary mb-4" />
                   <CardTitle>Industry-Proven Solutions</CardTitle>
@@ -116,7 +118,7 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-xl transition-shadow">
+              <Card variant="hover-xl">
                 <CardHeader>
                   <Database className="h-10 w-10 text-primary mb-4" />
                   <CardTitle>Data-Driven Results</CardTitle>
@@ -128,7 +130,7 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-xl transition-shadow">
+              <Card variant="hover-xl">
                 <CardHeader>
                   <ShoppingBag className="h-10 w-10 text-primary mb-4" />
                   <CardTitle>One-Stop Service & Store</CardTitle>
@@ -155,7 +157,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="hover:shadow-xl transition-shadow">
+            <Card variant="hover-xl">
               <CardHeader>
                 <Eye className="h-12 w-12 text-primary mb-4" />
                 <CardTitle className="text-2xl">비전</CardTitle>
@@ -168,7 +170,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-shadow">
+            <Card variant="hover-xl">
               <CardHeader>
                 <Target className="h-12 w-12 text-primary mb-4" />
                 <CardTitle className="text-2xl">미션</CardTitle>
@@ -191,7 +193,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-shadow">
+            <Card variant="hover-xl">
               <CardHeader>
                 <Lightbulb className="h-12 w-12 text-primary mb-4" />
                 <CardTitle className="text-2xl">핵심 가치</CardTitle>
@@ -242,7 +244,7 @@ export default function AboutPage() {
                 <AccordionContent className="flex flex-col gap-4 text-balance">
                   <div className="space-y-4 pt-4">
                     {experiencesByYear[year].map((item, idx) => (
-                      <Card key={idx} className="hover:shadow-md transition-shadow">
+                      <Card key={idx} variant="hover-sm">
                         <CardHeader>
                           <div className="flex gap-4">
                             <div className="flex-shrink-0 w-16 text-center">
@@ -274,42 +276,64 @@ export default function AboutPage() {
           <div className="mb-12">
             <Badge variant="outline" className="mb-4">Our Team</Badge>
             <h2 className="text-4xl font-bold mb-4">팀 소개</h2>
-
+            <p className="text-xl text-muted-foreground">
+              아이엠드론을 이끌어가는 전문가들을 만나보세요.
+            </p>
           </div>
 
-          <div className="max-w-md mx-auto">
-            <Card className="hover:shadow-2xl transition-all duration-300">
-              <div className="flex flex-col items-center text-center p-8 space-y-6">
-                {/* 프로필 이미지 */}
-                <div className="relative w-32 h-32 rounded-full overflow-hidden bg-muted border-2 border-border">
-                  <img
-                    src={generalData.avatar}
-                    alt={generalData.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                
-                {/* 정보 */}
-                <div className="space-y-3">
-                  <Badge className="mb-2">{generalData.position}</Badge>
-                  <h3 className="text-2xl font-bold">{generalData.name}</h3>
-                  <p className="text-base text-muted-foreground">{generalData.jobTitle}</p>
-                </div>
-                
-                {/* 설명 */}
-                <p className="text-muted-foreground leading-relaxed">
-                  드론 기술과 시각화 역량을 기반으로 다양한 산업 현장에서 혁신적인 솔루션을 제공하고 있습니다.
-                </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {teamMembers.map((member) => (
+              <Card key={member.id} className="hover:shadow-2xl transition-all duration-300">
+                <div className="flex flex-col items-center text-center p-8 space-y-6">
+                  {/* 프로필 이미지 */}
+                  <Avatar className="w-32 h-32">
+                    <AvatarImage src={member.avatar} alt={member.name} />
+                    <AvatarFallback className="text-2xl">{member.name.substring(0, 2)}</AvatarFallback>
+                  </Avatar>
+                  
+                  {/* 정보 */}
+                  <div className="space-y-3">
+                    <Badge className="mb-2">{member.role}</Badge>
+                    <h3 className="text-2xl font-bold">{member.name}</h3>
+                    <p className="text-base text-muted-foreground">{member.position}</p>
+                  </div>
+                  
+                  {/* 설명 */}
+                  <p className="text-muted-foreground leading-relaxed">
+                    {member.shortBio}
+                  </p>
 
-                {/* 버튼 */}
-                <Button asChild className="w-full">
-                  <Link href="/profile">
-                    프로필 보기
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-            </Card>
+                  {/* 전문 분야 태그 */}
+                  {member.tags && member.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {member.tags.slice(0, 3).map((tag) => (
+                        <Badge key={tag} variant="outline" className="text-xs">
+                          #{tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* 버튼 */}
+                  <Button asChild className="w-full">
+                    <Link href={`/team/${member.id}`}>
+                      프로필 보기
+                      <ChevronRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          {/* 팀 페이지로 이동 */}
+          <div className="mt-12 text-center">
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/team">
+                전체 팀원 보기
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -332,7 +356,7 @@ export default function AboutPage() {
             <h3 className="text-2xl font-bold mb-6">{certificateData[0].title}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {certificateData[0].items.map((skill, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
+                <Card key={index} variant="hover-lg">
                   <CardHeader>
                     <CardTitle className="text-lg">{skill.title}</CardTitle>
                     <CardDescription>{skill.subTitle}</CardDescription>
@@ -353,7 +377,7 @@ export default function AboutPage() {
                 { name: '교관과정훈련이수증명서', image: '/images/about/certificates/instructor-certificate.jpg' },
                 { name: '소프트웨어사업자', image: '/images/about/certificates/software-business.jpg' },
               ].map((cert, index) => (
-                <Card key={index} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <Card key={index} variant="lift" className="group overflow-hidden">
                   <div className="relative aspect-[3/4] bg-muted overflow-hidden">
                     <img
                       src={cert.image}

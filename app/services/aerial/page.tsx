@@ -178,7 +178,7 @@ export default function AerialServicePage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="max-w-4xl">
-            <Badge variant="outline" className="mb-6 bg-white/10 border-white/30 text-white hover:bg-white/20">
+            <Badge variant="hero" className="mb-6">
               <Camera className="h-3 w-3 mr-1" />
               Aerial Photography & Premium Video
             </Badge>
@@ -203,13 +203,13 @@ export default function AerialServicePage() {
 
             {/* 버튼 */}
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="text-lg bg-blue-600 text-white hover:bg-blue-700" asChild>
+              <Button size="lg" variant="primary-blue" asChild>
                 <Link href="#contact">
                   상담하기
                   <Phone className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-lg bg-transparent text-white border-white hover:bg-white/10" asChild>
+              <Button size="lg" variant="hero-outline" asChild>
                 <Link href="/projects">
                   포트폴리오
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -224,7 +224,7 @@ export default function AerialServicePage() {
       <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center hover:shadow-lg transition-shadow">
+            <Card variant="hover-lg" className="text-center">
               <CardContent className="pt-6">
                 <Award className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Certified Drone Experts</h3>
@@ -234,7 +234,7 @@ export default function AerialServicePage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
+            <Card variant="hover-lg" className="text-center">
               <CardContent className="pt-6">
                 <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Safety First Operation</h3>
@@ -244,7 +244,7 @@ export default function AerialServicePage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
+            <Card variant="hover-lg" className="text-center">
               <CardContent className="pt-6">
                 <CheckCircle2 className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Industry-Proven Projects</h3>
@@ -254,7 +254,7 @@ export default function AerialServicePage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
+            <Card variant="hover-lg" className="text-center">
               <CardContent className="pt-6">
                 <Sparkles className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Expert Pre-Sales Support</h3>
@@ -275,7 +275,7 @@ export default function AerialServicePage() {
           <div className="mb-12">
             <Badge variant="outline" className="mb-4">Overview</Badge>
             <h2 className="text-4xl font-bold mb-4">항공촬영 서비스란?</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl">
+            <p className="text-xl text-muted-foreground leading-relaxed">
               아이엠드론의 항공촬영 서비스는 부동산, 골프장, 요트·마리나, 관광지, 산업 현장, 이벤트 등 다양한 공간과 순간을 하늘에서 입체적으로 담아내는 영상·사진 제작 서비스입니다. 단순한 항공촬영에 그치지 않고, 촬영 목적 분석부터 후반편집까지 포함한 토털 패키지로 제공하여, 바로 활용 가능한 결과물을 전달합니다.
             </p>
           </div>
@@ -284,7 +284,7 @@ export default function AerialServicePage() {
             {overviewSteps.map((step, index) => {
               const Icon = step.icon;
               return (
-                <Card key={index} className="hover:shadow-xl transition-shadow">
+                <Card key={index} variant="hover-xl">
                   <CardHeader>
                     <Icon className="h-10 w-10 text-primary mb-4" />
                     <CardTitle className="text-lg">{step.title}</CardTitle>
@@ -308,13 +308,13 @@ export default function AerialServicePage() {
             <Badge variant="outline" className="mb-4">Shooting Fields</Badge>
             <h2 className="text-4xl font-bold mb-4">주요 촬영 분야</h2>
             <p className="text-xl text-muted-foreground">
-              이런 촬영에 특히 잘 어울립니다
+              이런 촬영에 특히 잘 어울립니다.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {shootingFields.map((field, index) => (
-              <Card key={index} className="hover:shadow-xl transition-shadow">
+              <Card key={index} variant="hover-xl">
                 <CardHeader>
                   <CardTitle className="text-xl">{field.title}</CardTitle>
                 </CardHeader>
@@ -339,7 +339,7 @@ export default function AerialServicePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {strengths.map((strength, index) => (
-              <Card key={index} className="hover:shadow-xl transition-shadow">
+              <Card key={index} variant="hover-xl">
                 <CardHeader>
                   <CheckCircle2 className="h-8 w-8 text-primary mb-3" />
                   <CardTitle className="text-xl">{strength.title}</CardTitle>
@@ -365,7 +365,7 @@ export default function AerialServicePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {processSteps.map((process, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} variant="hover-lg">
                 <CardHeader>
                   <Badge className="mb-3 w-fit">{process.step}</Badge>
                   <CardTitle className="text-lg">{process.title}</CardTitle>
@@ -393,7 +393,7 @@ export default function AerialServicePage() {
             {deliverables.map((item, index) => {
               const Icon = item.icon;
               return (
-                <Card key={index} className="hover:shadow-xl transition-shadow">
+                <Card key={index} variant="hover-xl">
                   <CardHeader>
                     <Icon className="h-10 w-10 text-primary mb-4" />
                     <CardTitle className="text-lg">{item.title}</CardTitle>
@@ -419,7 +419,7 @@ export default function AerialServicePage() {
 
       {/* 견적 안내 */}
       <section className="py-20 bg-muted/50">
-        <div className="max-w-5xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="mb-12">
             <Badge variant="outline" className="mb-4">Estimate</Badge>
             <h2 className="text-4xl font-bold mb-4">견적은 이렇게 산출됩니다</h2>
@@ -465,7 +465,7 @@ export default function AerialServicePage() {
 
       {/* FAQ */}
       <section className="py-20">
-        <div className="max-w-5xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="mb-12">
             <Badge variant="outline" className="mb-4">FAQ</Badge>
             <h2 className="text-4xl font-bold mb-4">자주 묻는 질문</h2>
@@ -493,18 +493,18 @@ export default function AerialServicePage() {
       {/* CTA (행동 유도) */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-            당신의 공간과 순간을 하늘에서 기록해 보세요
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-foreground dark:text-white">
+            당신의 공간과 순간을 하늘에서 기록해 보세요.
           </h2>
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+          <p className="text-xl text-foreground mb-8 leading-relaxed dark:text-white">
             한 번의 항공촬영이, 부동산 분양률 상승과 브랜드 인지도 향상,<br />
             그리고 도시·현장을 보여 주는 새로운 관점을 만들어 냅니다.
           </p>
-          <p className="text-lg text-muted-foreground mb-8">
-            아이엠드론과 함께 <strong className="text-foreground">비행에서 인사이트까지(From Flight to Insight)</strong><br />
+          <p className="text-lg text-foreground mb-8 dark:text-white">
+            아이엠드론과 함께 <strong className="font-semibold">비행에서 인사이트까지(From Flight to Insight)</strong><br />
             이어지는 항공촬영을 시작해 보세요.
           </p>
-          <Button size="lg" asChild>
+          <Button size="lg" variant="primary-blue" asChild>
             <Link href="/contact">
               항공촬영 상담 요청하기
               <ArrowRight className="ml-2 h-5 w-5" />

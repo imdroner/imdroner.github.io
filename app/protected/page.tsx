@@ -129,7 +129,7 @@ export default function ProtectedPage() {
                                         href={`/presentations/${presentation.id}`}
                                         className="group"
                                     >
-                                        <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                                        <Card variant="lift" className="h-full">
                                             <div className="relative h-48 flex items-center justify-center bg-gradient-to-br from-muted to-background">
                                                 {getPresentationIcon(presentation.id)}
                                                 <div className="absolute top-3 right-3">

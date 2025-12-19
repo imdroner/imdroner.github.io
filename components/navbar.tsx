@@ -20,7 +20,9 @@ const navItems = [
     { href: '/', label: '홈' },
     { href: '/about', label: '소개' },
     { href: '/projects', label: '포트폴리오' },
-    { href: '/profile', label: '프로필' },
+    { href: '/products', label: '제품 구매' },
+    // { href: '/team', label: '팀' },
+    { href: '/faq', label: 'FAQ' },
     { href: '/contact', label: '문의' },
 ];
 
@@ -114,7 +116,7 @@ export default function Navbar() {
                                 서비스
                             </NavigationMenuTrigger>
                             <NavigationMenuContent>
-                                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+                                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white dark:bg-black text-gray-900 dark:text-white">
                                     {services.map((service) => {
                                         const Icon = iconMap[service.icon];
                                         return (

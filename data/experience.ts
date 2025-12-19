@@ -39,7 +39,7 @@ export const experienceData = [
             {
                 title: "홍수조절지 식생분포 분석 용역",
                 subTitle: "",
-                client: "한국수자원공사 영산강보관리단단",
+                client: "한국수자원공사 영산강보관리단",
                 year: "2025",
                 month: "08",
                 description: "",
@@ -85,7 +85,7 @@ export const experienceData = [
                 description: "",
             },            
             {
-                title: "동아보건대학교 드론라이트쇼 운영 용역역",
+                title: "동아보건대학교 드론라이트쇼 운영 용역",
                 subTitle: "",
                 client: "동아보건대학교",
                 year: "2024",

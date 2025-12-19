@@ -24,7 +24,7 @@ export const activityData = [
             },
             {
                 title: "여수시장 표창",
-                subTitle: "()",
+                subTitle: "",
                 date: "2025",
                 description: "여수시청",
             },

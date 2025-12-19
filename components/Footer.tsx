@@ -73,6 +73,16 @@ export default function Footer() {
                   스마트 농업 & NDVI
                 </Link>
               </li>
+              <li>
+                <Link href="/services/hydrogen" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  수소 연료전지 & 응용 솔루션
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/contents" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  홈페이지 & 미디어 콘텐츠
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -87,7 +97,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/projects" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  프로젝트
+                  포트폴리오
                 </Link>
               </li>
               <li>
@@ -170,7 +180,7 @@ export default function Footer() {
             <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               이용약관
             </Link>
-            <Link href="/sitemap" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+            <Link href="/site-map" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               사이트맵
             </Link>
           </div>

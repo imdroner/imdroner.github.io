@@ -54,7 +54,7 @@ export default function HomePage() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
           <div className="max-w-4xl mb-16 lg:mb-20">
-            <Badge variant="outline" className="mb-6 lg:mb-8 bg-white/10 border-white/30 text-white hover:bg-white/20">
+            <Badge variant="hero" className="mb-6 lg:mb-8">
               <Sparkles className="h-3 w-3 mr-1" />
               Professional Drone Solutions
             </Badge>
@@ -66,13 +66,13 @@ export default function HomePage() {
               서비스는 온라인으로 예약하고, 필요한 드론·장비는 바로 구매하세요.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="text-lg bg-blue-600 text-white hover:bg-blue-700" asChild>
+              <Button size="lg" variant="primary-blue" asChild>
                 <Link href="#services">
                   서비스 보기
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-lg bg-transparent text-white border-white hover:bg-white/10" asChild>
+              <Button size="lg" variant="hero-outline" asChild>
                 <Link href="#products">
                   제품 보기
                   <ShoppingBag className="ml-2 h-5 w-5" />
@@ -83,7 +83,7 @@ export default function HomePage() {
 
           {/* 특징 배지 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center hover:shadow-lg transition-shadow bg-white/10 backdrop-blur border-white/20">
+            <Card variant="glass" className="text-center hover:shadow-lg">
               <CardContent className="pt-6">
                 <Award className="h-12 w-12 text-white mx-auto mb-4" />
                 <h3 className="font-semibold mb-2 text-white">Certified Drone Experts</h3>
@@ -93,7 +93,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow bg-white/10 backdrop-blur border-white/20">
+            <Card variant="glass" className="text-center hover:shadow-lg">
               <CardContent className="pt-6">
                 <Shield className="h-12 w-12 text-white mx-auto mb-4" />
                 <h3 className="font-semibold mb-2 text-white">Safety First Operation</h3>
@@ -103,7 +103,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow bg-white/10 backdrop-blur border-white/20">
+            <Card variant="glass" className="text-center hover:shadow-lg">
               <CardContent className="pt-6">
                 <CheckCircle2 className="h-12 w-12 text-white mx-auto mb-4" />
                 <h3 className="font-semibold mb-2 text-white">Industry-Proven Projects</h3>
@@ -113,7 +113,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow bg-white/10 backdrop-blur border-white/20">
+            <Card variant="glass" className="text-center hover:shadow-lg">
               <CardContent className="pt-6">
                 <Sparkles className="h-12 w-12 text-white mx-auto mb-4" />
                 <h3 className="font-semibold mb-2 text-white">Expert Pre-Sales Support</h3>
@@ -138,7 +138,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="hover:shadow-xl transition-shadow">
+            <Card variant="hover-xl">
               <CardHeader>
                 <Award className="h-10 w-10 text-primary mb-4" />
                 <CardTitle>Certified Drone Experts</CardTitle>
@@ -150,7 +150,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-shadow">
+            <Card variant="hover-xl">
               <CardHeader>
                 <CheckCircle2 className="h-10 w-10 text-primary mb-4" />
                 <CardTitle>Industry-Proven Solutions</CardTitle>
@@ -162,7 +162,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-shadow">
+            <Card variant="hover-xl">
               <CardHeader>
                 <Database className="h-10 w-10 text-primary mb-4" />
                 <CardTitle>Data-Driven Results</CardTitle>
@@ -174,7 +174,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl transition-shadow">
+            <Card variant="hover-xl">
               <CardHeader>
                 <ShoppingBag className="h-10 w-10 text-primary mb-4" />
                 <CardTitle>One-Stop Service & Store</CardTitle>
@@ -203,7 +203,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service) => {
               return (
-                <Card key={service.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <Card key={service.id} variant="lift" className="group overflow-hidden">
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={service.image}
@@ -253,7 +253,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.slice(0, 3).map((project) => (
               <Link key={project.id} href={`/projects/${project.id}`} className="group">
-                <Card className="h-full overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                <Card variant="lift" className="h-full overflow-hidden hover:shadow-2xl">
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={project.thumbnail}
@@ -287,7 +287,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-12">
-            <Button size="lg" className="text-lg bg-blue-600 text-white hover:bg-blue-700" asChild>
+            <Button size="lg" variant="primary-blue" asChild>
               <Link href="/projects">
                 모든 프로젝트 보기
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -312,7 +312,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="hover:shadow-xl transition-shadow">
+              <Card key={testimonial.id} variant="hover-xl">
                 <CardHeader>
                   <div className="flex items-center gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -350,7 +350,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredProducts.map((product) => (
-              <Card key={product.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+              <Card key={product.id} variant="lift" className="group overflow-hidden">
                 <div className="relative h-48 bg-white overflow-hidden">
                   <img
                     src={product.image}
@@ -379,7 +379,7 @@ export default function HomePage() {
                 </CardContent>
                 <CardFooter>
                   <Button className="w-full" variant="outline" asChild>
-                    <Link href={product.link}>
+                    <Link href={`/products/${product.id}`}>
                       자세히 보기
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -390,7 +390,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-12">
-            <Button size="lg" className="text-lg bg-blue-600 text-white hover:bg-blue-700" asChild>
+            <Button size="lg" variant="primary-blue" asChild>
               <Link href="/products">
                 전체 제품 보기
                 <ShoppingBag className="ml-2 h-5 w-5" />

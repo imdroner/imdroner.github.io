@@ -26,7 +26,9 @@ export default function FloatingLockIcon() {
                 size="icon"
                 className={cn(
                     "rounded-full shadow-lg hover:shadow-xl transition-all duration-200",
-                    pathname === '/protected' && "bg-primary text-primary-foreground"
+                    pathname === '/protected' 
+                        ? "bg-primary text-primary-foreground" 
+                        : "text-foreground dark:text-white"
                 )}
                 asChild
             >
