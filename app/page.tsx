@@ -7,6 +7,7 @@ import { services } from '@/data/services';
 import { projects } from '@/data/projects';
 import { testimonials } from '@/data/testimonials';
 import { featuredProducts } from '@/data/products';
+import { blogPosts } from '@/data/blog';
 import { 
   Award, 
   Building2, 
@@ -23,7 +24,10 @@ import {
   Sprout,
   Star,
   Zap,
-  ArrowRight
+  ArrowRight,
+  BookOpen,
+  Calendar,
+  Clock
 } from 'lucide-react';
 
 const iconMap: { [key: string]: any } = {
@@ -291,6 +295,78 @@ export default function HomePage() {
               <Link href="/projects">
                 모든 프로젝트 보기
                 <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* 최신 블로그 */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="mb-12">
+            <Badge variant="outline" className="mb-4">Latest Blog Posts</Badge>
+            <h2 className="text-4xl font-bold mb-4">드론 인사이트</h2>
+            <p className="text-xl text-muted-foreground">
+              드론 산업의 최신 동향과 전문가 노하우를 공유합니다
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.slice(0, 3).map((post) => (
+              <Link key={post.id} href={`/blog/${post.id}`} className="group">
+                <Card variant="lift" className="h-full overflow-hidden hover:shadow-2xl">
+                  <div className="relative h-48 overflow-hidden bg-muted">
+                    <img
+                      src={post.thumbnail}
+                      alt={post.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <Badge variant="white" className="absolute top-4 right-4">
+                      {post.category}
+                    </Badge>
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
+                      {post.title}
+                    </CardTitle>
+                    <CardDescription className="line-clamp-2">
+                      {post.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                      <div className="flex items-center gap-1">
+                        <Calendar className="h-4 w-4" />
+                        <span>{post.date}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Clock className="h-4 w-4" />
+                        <span>{post.readTime}</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                  <CardFooter>
+                    <div className="flex flex-wrap gap-2">
+                      {post.tags.slice(0, 3).map((tag) => (
+                        <Badge key={tag} variant="outline" className="text-xs">
+                          #{tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardFooter>
+                </Card>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-12">
+            <Button size="lg" variant="primary-blue" asChild>
+              <Link href="/blog">
+                모든 글 보기
+                <BookOpen className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </div>

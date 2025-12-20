@@ -24,7 +24,8 @@ import {
   Zap,
   Radio
 } from 'lucide-react';
-import { products } from '@/data/products';
+import { products, heroProducts } from '@/data/products';
+import ProductHeroSlider from '@/components/ProductHeroSlider';
 
 export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -71,57 +72,34 @@ export default function ProductsPage() {
     return filtered;
   }, [searchQuery, selectedCategory]);
 
-  // 통계
-  const stats = useMemo(() => {
-    return [
-      {
-        label: '전체 제품',
-        value: products.length,
-        icon: Package,
-        color: 'text-blue-600'
-      },
-      {
-        label: '카테고리',
-        value: categories.length - 1, // '전체' 제외
-        icon: ShoppingBag,
-        color: 'text-green-600'
-      },
-      {
-        label: '검색 결과',
-        value: filteredProducts.length,
-        icon: Search,
-        color: 'text-orange-600'
-      }
-    ];
-  }, [categories.length, filteredProducts.length]);
+  // // 통계
+  // const stats = useMemo(() => {
+  //   return [
+  //     {
+  //       label: '전체 제품',
+  //       value: products.length,
+  //       icon: Package,
+  //       color: 'text-blue-600'
+  //     },
+  //     {
+  //       label: '카테고리',
+  //       value: categories.length - 1, // '전체' 제외
+  //       icon: ShoppingBag,
+  //       color: 'text-green-600'
+  //     },
+  //     {
+  //       label: '검색 결과',
+  //       value: filteredProducts.length,
+  //       icon: Search,
+  //       color: 'text-orange-600'
+  //     }
+  //   ];
+  // }, [categories.length, filteredProducts.length]);
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: 'url(/images/team/team-hero.webp)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'brightness(0.4)'
-          }}
-        />
-        <div className="relative z-10 text-center px-4 py-20">
-          <Badge variant="hero" className="mb-6 text-base px-6 py-2">
-            <ShoppingBag className="h-4 w-4 mr-2" />
-            Products
-          </Badge>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            제품 구매
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            엔터프라이즈급 드론 장비와 솔루션<br />
-            전문가를 위한 최고의 선택
-          </p>
-        </div>
-      </section>
+      {/* Hero Slider Section */}
+      <ProductHeroSlider products={heroProducts} />
 
       {/* Statistics Section */}
       {/* <section className="py-12 bg-muted/50">
@@ -225,8 +203,15 @@ export default function ProductsPage() {
                 <Card key={product.id} variant="hover-lg" className="flex flex-col">
                   <CardHeader>
                     <div className="aspect-video w-full bg-muted rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-                      <Package className="h-20 w-20 text-muted-foreground/30" />
-                      {/* 실제 이미지가 있다면: <img src={product.image} alt={product.name} /> */}
+                      {product.image ? (
+                        <img 
+                          src={product.image} 
+                          alt={product.name} 
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <Package className="h-20 w-20 text-muted-foreground/30" />
+                      )}
                     </div>
                     <Badge variant="outline" className="w-fit mb-2">
                       {product.category}
@@ -255,8 +240,11 @@ export default function ProductsPage() {
 
                   <CardFooter className="flex flex-col gap-3">
                     <div className="w-full">
-                      <p className="text-2xl font-bold text-center mb-3">
-                        {product.price}
+                      <p className="text-xl font-bold text-center mb-3">
+                        {product.price === 0 
+                          ? '견적 문의' 
+                          : `₩${product.price.toLocaleString('ko-KR')}`
+                        }
                       </p>
                     </div>
                     <div className="w-full flex gap-2">

@@ -185,17 +185,18 @@ export default function Mavic3EnterprisePage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: 'url(/images/team/team-hero.webp)',
-            backgroundSize: 'cover',
+            backgroundImage: 'url(/images/products/mavic3-enterprise.jpg)',
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
-            filter: 'brightness(0.4)'
           }}
         />
-        <div className="relative z-10 text-center px-4 py-20">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/60 to-black/20"></div>
+        <div className="relative z-10 container mx-auto px-4 py-20">
           <Badge variant="hero" className="mb-6 text-base px-6 py-2">
             <Package className="h-4 w-4 mr-2" />
             Enterprise Drone
@@ -203,19 +204,19 @@ export default function Mavic3EnterprisePage() {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
             DJI Mavic 3 Enterprise
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-xl md:text-2xl text-white/90 mx-auto leading-relaxed mb-8">
             산업용 촬영 및 점검에 최적화된 전문가급 기업용 드론
           </p>
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
+          <div className="flex flex-wrap  gap-4 mb-8">
             {keyPoints.map((point, index) => (
-              <Badge key={index} variant="secondary" className="text-base px-4 py-2">
+              <Badge key={index} variant="hero" className="text-base px-4 py-2">
                 <CheckCircle2 className="h-4 w-4 mr-2" />
                 {point}
               </Badge>
             ))}
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="gap-2 text-lg px-8 py-6">
+          <div className="flex flex-col sm:flex-row gap-4 ">
+            <Button asChild size="lg" variant="primary-blue" className="gap-2 text-lg px-8 py-6">
               <Link href="/contact">
                 <Mail className="h-5 w-5" />
                 견적 문의하기
@@ -251,7 +252,7 @@ export default function Mavic3EnterprisePage() {
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <Card key={index} variant="hover" className="text-center">
+                <Card key={index} variant="hover-lg" className="text-center">
                   <CardHeader>
                     <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                       <IconComponent className="h-8 w-8 text-primary" />
@@ -333,7 +334,7 @@ export default function Mavic3EnterprisePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {useCases.map((useCase, index) => (
-              <Card key={index} variant="hover">
+              <Card key={index} variant="hover-lg">
                 <CardHeader>
                   <CardTitle className="text-xl">{useCase.title}</CardTitle>
                 </CardHeader>
@@ -395,7 +396,7 @@ export default function Mavic3EnterprisePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {whyChoose.map((reason, index) => (
-              <Card key={index} variant="hover">
+              <Card key={index} variant="hover-lg">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <CheckCircle2 className="h-6 w-6 text-green-600" />
@@ -446,12 +447,13 @@ export default function Mavic3EnterprisePage() {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: 'url(/images/team/team-hero.webp)',
-            backgroundSize: 'cover',
+            backgroundImage: 'url(/images/products/mavic3-enterprise.png)',
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
-            filter: 'brightness(0.3)'
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/60 to-black/20"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <Badge variant="hero" className="mb-6 text-base px-6 py-2">
             <Mail className="h-4 w-4 mr-2" />
@@ -466,7 +468,7 @@ export default function Mavic3EnterprisePage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button asChild size="lg" variant="secondary" className="gap-2 text-lg px-8 py-6">
+            <Button asChild size="lg" variant="primary-blue" className="gap-2 text-lg px-8 py-6">
               <Link href="/contact">
                 <Mail className="h-5 w-5" />
                 견적 문의하기

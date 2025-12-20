@@ -113,7 +113,7 @@ export default function ContactPage() {
         <div 
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: 'url(/images/team/team-hero.webp)',
+            backgroundImage: 'url(/images/contact/contact-hero.webp)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'brightness(0.4)'

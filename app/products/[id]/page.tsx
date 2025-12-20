@@ -85,7 +85,12 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                 <Card variant="hover-lg">
                                     <CardContent className="p-6">
                                         <p className="text-sm text-muted-foreground mb-2">가격</p>
-                                        <p className="text-2xl font-bold text-primary">{product.price}</p>
+                                        <p className="text-2xl font-bold text-primary">
+                                            {product.price === 0 
+                                                ? '견적 문의' 
+                                                : `₩${product.price.toLocaleString('ko-KR')}`
+                                            }
+                                        </p>
                                     </CardContent>
                                 </Card>
                             </div>

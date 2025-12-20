@@ -220,7 +220,30 @@ export default function FAQPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/10 via-background to-background">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+          <Badge variant="secondary" className="mb-6">
+            Frequently Asked Questions
+          </Badge>
+            <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-foreground leading-tight">
+            자주 묻는 질문
+            </h1>
+            <p className="text-xl lg:text-2xl text-muted-foreground mb-8 leading-relaxed">
+            고객님들이 자주 궁금해하시는 내용을 정리했습니다.<br />
+            원하시는 카테고리를 선택하여 확인해보세요.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      {/* <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 z-0"
           style={{
@@ -242,7 +265,7 @@ export default function FAQPage() {
             원하시는 카테고리를 선택하여 확인해보세요.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Category Cards */}
       <section className="py-20 bg-muted/50">

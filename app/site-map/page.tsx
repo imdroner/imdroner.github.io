@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Separator } from '@/components/ui/separator';
 import { projects } from '@/data/projects';
 import { products } from '@/data/products';
+import { blogPosts } from '@/data/blog';
 import {
   Home,
   Building2,
@@ -17,7 +18,8 @@ import {
   Map,
   ExternalLink,
   Calendar,
-  ShoppingBag
+  ShoppingBag,
+  BookOpen
 } from 'lucide-react';
 
 export const metadata = {
@@ -36,7 +38,7 @@ export const metadata = {
 };
 
 export default function SitemapPage() {
-  const lastUpdated = '2025년 12월 19일';
+  const lastUpdated = '2025년 12월 20일';
   
   // JSON-LD 구조화 데이터
   const breadcrumbJsonLd = {
@@ -119,6 +121,28 @@ export default function SitemapPage() {
             title: `외 ${projects.length - 5}개 프로젝트`, 
             url: '/projects', 
             description: '나머지 프로젝트는 포트폴리오 페이지에서 확인하세요' 
+          }
+        ] : [])
+      ]
+    },
+    {
+      category: '블로그',
+      icon: BookOpen,
+      color: 'text-indigo-600',
+      pages: [
+        { title: '블로그 목록', url: '/blog', description: '드론 산업 인사이트 및 전문가 노하우' },
+        // 최신 블로그 포스트 3개 표시
+        ...blogPosts.slice(0, 3).map(post => ({
+          title: post.title,
+          url: `/blog/${post.id}`,
+          description: post.description
+        })),
+        // 블로그 포스트가 3개보다 많으면 "더보기" 표시
+        ...(blogPosts.length > 3 ? [
+          { 
+            title: `외 ${blogPosts.length - 3}개 글`, 
+            url: '/blog', 
+            description: '나머지 글은 블로그 페이지에서 확인하세요' 
           }
         ] : [])
       ]

@@ -19,11 +19,12 @@ import { Camera, Building2, Zap, Radio, Shield, Sprout, Fuel, Film } from 'lucid
 const navItems = [
     { href: '/', label: '홈' },
     { href: '/about', label: '소개' },
+    // 서비스는 드롭다운으로 별도 처리
     { href: '/projects', label: '포트폴리오' },
-    { href: '/products', label: '제품 구매' },
-    // { href: '/team', label: '팀' },
-    { href: '/faq', label: 'FAQ' },
+    { href: '/products', label: '제품' },
+    { href: '/blog', label: '뉴스' },
     { href: '/contact', label: '문의' },
+    { href: '/faq', label: 'FAQ' },
 ];
 
 const iconMap: Record<string, any> = {
@@ -45,7 +46,13 @@ export default function Navbar() {
         setMounted(true);
     }, []);
 
-    const isActive = (href: string) => pathname === href;
+    const isActive = (href: string) => {
+        // 하위 경로를 포함하는 페이지들
+        if (href === '/blog' || href === '/projects' || href === '/products') {
+            return pathname.startsWith(href);
+        }
+        return pathname === href;
+    };
     const isServiceActive = pathname.startsWith('/services');
 
     if (!mounted) {
@@ -149,7 +156,7 @@ export default function Navbar() {
                             </NavigationMenuContent>
                         </NavigationMenuItem>
 
-                        {/* 포트폴리오, 프로필, 문의 */}
+                        {/* 포트폴리오, 제품, 뉴스, 문의, FAQ */}
                         {navItems.slice(2).map((item) => (
                             <NavigationMenuItem key={item.href}>
                                 <NavigationMenuLink asChild>
