@@ -87,7 +87,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-100 dark:bg-neutral-900`}
       >
         <Navbar />
-        <FloatingLockIcon />
+        {/* <FloatingLockIcon /> */}
         {children}
         <Footer />
       </body>
