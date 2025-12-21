@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import ProductDetailHero from '@/components/ProductDetailHero';
@@ -8,112 +8,171 @@ import ProductCTA from '@/components/ProductCTA';
 import { products, getRelatedProducts } from '@/data/products';
 import {
   CheckCircle2,
-  Layers,
-  Gauge,
   Camera,
+  Flame,
+  Shield,
+  Search,
+  Thermometer,
+  Sparkles,
   Phone,
   Mail,
   Package,
   ArrowRight,
-  Map,
-  Zap,
-  Eye,
+  Clock,
+  Gauge,
+  Radio,
+  MapPin,
   ChevronLeft,
   Check,
-  Mountain,
-  Building,
-  Lightbulb,
-  Target
+  Moon,
+  Zap,
+  Eye
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'DJI Zenmuse L2 | 아이엠드론',
-  description: '고정밀 3D 데이터 수집을 위한 차세대 LiDAR 시스템. 수직 4cm, 수평 5cm 정확도',
+  title: 'DJI Mavic 3 Thermal | 아이엠드론',
+  description: '열화상 기능을 갖춘 소방·수색·야간 작업용 드론. 640×512 열화상 카메라, 48MP 광각 카메라, 56배 하이브리드 줌',
 };
 
-export default function ZenmuseL2Page() {
-  const product = products.find(p => p.id === 'dji-zenmuse-l2');
+export default function Mavic3ThermalPage() {
+  const product = products.find(p => p.id === 'dji-mavic-3-thermal');
   if (!product) return null;
 
   // 관련 상품 가져오기
-  const relatedProducts = getRelatedProducts('dji-zenmuse-l2', 3);
+  const relatedProducts = getRelatedProducts('dji-mavic-3-thermal', 3);
 
   const keyPoints = [
-    '수직 4cm, 수평 5cm 고정밀도',
-    '최대 2.5km² 단일 비행 커버',
-    '5회 반사 지원'
-  ];
-
-  const features = [
-    { icon: Gauge, title: '고정밀도', description: '수직 4cm, 수평 5cm의 탁월한 정확도로 cm급 측량 데이터 제공' },
-    { icon: Zap, title: '우수한 효율성', description: '단일 비행으로 최대 2.5km²의 면적을 커버하여 작업 시간 대폭 단축' },
-    { icon: Target, title: '뛰어난 침투력', description: '더 작은 레이저 스팟 사이즈로 더 밀집된 포인트 클라우드 생성' },
-    { icon: Eye, title: '450m 탐지 범위', description: '50% 반사율 조건에서 최대 450m까지 탐지하여 높은 고도에서도 정밀 측정' },
-    { icon: Layers, title: '5회 반사 지원', description: '더 많은 지면 포인트를 포착하여 복잡한 지형에서도 정확한 데이터 제공' },
-    { icon: Camera, title: '4/3 CMOS RGB', description: '20MP 고해상도 RGB 매핑 카메라로 컬러 정보 동시 수집' }
+    '640×512 픽셀 열화상 카메라',
+    '48MP 광각 카메라 고해상도 촬영',
+    '소방·수색·야간 작업 전문'
   ];
 
   const applications = [
-    { 
-      title: '지형 및 토목 측량', 
-      description: '산림, 도로, 하천 등 대규모 지형을 빠르게 스캔하여 정밀한 DEM(Digital Elevation Model)을 생성합니다. 5회 반사 지원으로 식생 아래 지형까지 정확하게 측정할 수 있습니다.',
-      icon: Mountain
+    {
+      icon: Flame,
+      title: '소방 및 화재 대응',
+      description: '화재 현장의 열원 탐지 및 피해 상황 파악',
+      details: [
+        '화재 발생 지점 정확한 파악',
+        '잔불 및 열원 탐지',
+        '연기 투과 가시성 확보',
+        '안전 거리에서 상황 모니터링'
+      ]
     },
-    { 
-      title: '건설 현장 모니터링', 
-      description: '토공량 계산, 구조물 검측, 진척도 관리를 위한 정밀 3D 데이터를 수집합니다. cm급 정확도로 미세한 변화도 감지하여 정확한 공정 관리가 가능합니다.',
-      icon: Building
+    {
+      icon: Search,
+      title: '수색 구조',
+      description: '실종자 수색 및 야간 구조 작업',
+      details: [
+        '인명 열 신호 탐지',
+        '야간 및 악천후 수색',
+        '넓은 지역 신속 탐색',
+        '고음량 스피커로 소통'
+      ]
     },
-    { 
-      title: '송전선로 점검', 
-      description: '송전선과 주변 식생 간 거리를 정확하게 측정하여 안전 관리를 수행합니다. 정기적인 스캔으로 식생 성장을 모니터링하고 예방적 유지보수를 실시합니다.',
-      icon: Zap
+    {
+      icon: Shield,
+      title: '시설물 열화상 점검',
+      description: '전력, 태양광, 건물 등의 열 이상 탐지',
+      details: [
+        '태양광 패널 핫스팟 탐지',
+        '전력 설비 과열 확인',
+        '건물 단열 결함 점검',
+        '기계 설비 열화상 진단'
+      ]
     },
-    { 
-      title: '문화재 디지털 보존', 
-      description: '역사적 건축물과 유적지를 정밀하게 3D 스캔하여 디지털로 보존합니다. 고해상도 RGB 카메라로 텍스처 정보도 함께 기록하여 완벽한 디지털 복원이 가능합니다.',
-      icon: Lightbulb
+    {
+      icon: Moon,
+      title: '야간 작업',
+      description: '열화상으로 야간 점검 및 감시 수행',
+      details: [
+        '완전 암흑 환경 작업',
+        '동물 및 침입자 탐지',
+        '야간 경계 임무',
+        '저조도 촬영 지원'
+      ]
+    }
+  ];
+
+  const features = [
+    {
+      title: '640×512 열화상 카메라',
+      description: '30Hz 고해상도 열화상 센서로 정밀한 온도 측정과 열 분포 파악이 가능합니다. 연기나 어둠 속에서도 명확한 시야를 확보할 수 있습니다.',
+      icon: Thermometer
+    },
+    {
+      title: '48MP 광각 카메라',
+      description: '1/2인치 CMOS 센서를 탑재하여 고해상도 이미지와 4K 동영상 촬영이 가능합니다. 열화상과 함께 정확한 현장 기록을 제공합니다.',
+      icon: Camera
+    },
+    {
+      title: '56배 하이브리드 줌',
+      description: '광학 줌과 디지털 줌을 결합한 56배 하이브리드 줌으로 안전 거리에서도 세밀한 부분까지 확인할 수 있습니다.',
+      icon: Eye
+    },
+    {
+      title: 'RTK 센티미터급 정밀도',
+      description: 'RTK 모듈을 통해 수평 1cm+1ppm, 수직 1.5cm+1ppm의 정확도로 정밀한 위치 데이터를 제공합니다.',
+      icon: MapPin
+    },
+    {
+      title: '45분 비행시간',
+      description: '최대 45분의 긴 비행시간으로 넓은 지역을 탐색하거나 긴 시간 동안 모니터링할 수 있습니다.',
+      icon: Clock
+    },
+    {
+      title: 'DJI O3 Enterprise 전송',
+      description: '최대 15km(FCC) 전송 거리와 안정적인 영상 전송으로 넓은 범위에서 임무를 수행할 수 있습니다.',
+      icon: Radio
     }
   ];
 
   const technicalAdvantages = [
     {
-      title: '프레임 LiDAR',
-      description: '프레임 방식의 LiDAR 스캐너로 더 균일한 포인트 분포와 더 밀집된 포인트 클라우드를 생성합니다.',
-      icon: Layers
-    },
-    {
-      title: '고정밀 IMU 시스템',
-      description: 'DJI 자체 개발 고정밀 IMU 시스템으로 비행 중 자세 변화를 정확하게 보정하여 데이터 정확도를 향상시킵니다.',
-      icon: Gauge
-    },
-    {
-      title: '턴키 솔루션',
-      description: 'DJI Terra와 완벽하게 통합되어 데이터 수집부터 후처리까지 원스톱 솔루션을 제공합니다.',
+      title: '컴팩트하고 휴대 가능',
+      description: '920g의 가벼운 무게와 접이식 디자인으로 어디든 쉽게 휴대하고 신속하게 출동할 수 있습니다.',
       icon: Package
+    },
+    {
+      title: '고음량 스피커',
+      description: '100dB 고출력 스피커를 탑재하여 수색 현장에서 실종자와 소통하거나 경고 방송을 송출할 수 있습니다.',
+      icon: Radio
+    },
+    {
+      title: '다양한 열화상 모드',
+      description: '화이트 핫, 블랙 핫, 레인보우 등 다양한 컬러 팔레트로 상황에 맞는 최적의 열화상 이미지를 제공합니다.',
+      icon: Sparkles
+    }
+  ];
+
+  const useCases = [
+    {
+      title: '도시 화재 진압',
+      description: 'Mavic 3 Thermal로 화재 현장의 열원을 실시간으로 파악하여 소방대원의 진입 경로를 안내하고, 잔불을 탐지하여 완전 진화를 확인합니다. 연기로 가려진 구역도 열화상으로 명확하게 파악할 수 있습니다.',
+      icon: Flame
+    },
+    {
+      title: '산악 조난자 수색',
+      description: '산악 지역에서 실종자를 수색할 때 열화상 카메라로 인명의 열 신호를 탐지합니다. 야간이나 악천후에도 넓은 지역을 신속하게 탐색하여 골든타임 내 구조 가능성을 높입니다.',
+      icon: Search
+    },
+    {
+      title: '태양광 발전소 점검',
+      description: '태양광 패널의 핫스팟, 과열 셀, 결함 모듈을 열화상으로 탐지합니다. 넓은 발전소를 빠르게 스캔하여 유지보수 비용을 절감하고 발전 효율을 최적화할 수 있습니다.',
+      icon: Zap
+    },
+    {
+      title: '전력 인프라 점검',
+      description: '송전탑, 변전소 설비의 과열 부위를 열화상으로 조기에 발견하여 전력 사고를 예방합니다. 고압 전류가 흐르는 위험 구역에 접근하지 않고도 안전하게 점검할 수 있습니다.',
+      icon: Shield
     }
   ];
 
   const workflow = [
-    { step: '1', title: '경로 계획', description: 'DJI Terra에서 측량 지역을 지정하고 자동 경로 생성' },
-    { step: '2', title: '자동 비행', description: 'Matrice 350/400 RTK에 장착하여 자동 비행 수행' },
-    { step: '3', title: '데이터 수집', description: 'LiDAR 점군 데이터와 RGB 이미지 동시 수집' },
-    { step: '4', title: '후처리', description: 'DJI Terra로 점군 데이터 처리 및 3D 모델 생성' }
-  ];
-
-  const compatibility = [
-    {
-      model: 'DJI Matrice 400 RTK',
-      description: '차세대 플래그십 산업용 드론'
-    },
-    {
-      model: 'DJI Matrice 350 RTK',
-      description: '고성능 산업용 드론 플랫폼'
-    },
-    {
-      model: 'DJI Matrice 300 RTK',
-      description: '검증된 산업용 드론 (DJI RC Plus 필요)'
-    }
+    { step: '1', title: '신속 전개', description: '접이식 디자인으로 15분 이내 현장 도착 및 비행 준비 완료' },
+    { step: '2', title: '열화상 스캔', description: '640×512 열화상 센서로 대상 지역 또는 시설물 스캔' },
+    { step: '3', title: '이상 탐지', description: '온도 이상 부위 자동 탐지 및 정밀 줌 촬영' },
+    { step: '4', title: '보고서 작성', description: '열화상 이미지 및 위치 데이터 기반 점검 보고서 생성' }
   ];
 
   return (
@@ -142,7 +201,7 @@ export default function ZenmuseL2Page() {
           <div className="text-center max-w-4xl mx-auto mb-16">
             <Badge variant="outline" className="mb-4">Product Overview</Badge>
             <h2 className="text-4xl font-bold mb-6">
-              고정밀 항공 LiDAR의 새로운 기준
+              열화상 기능을 갖춘 공공 안전 드론
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
               {product.detailDescription}
@@ -179,9 +238,9 @@ export default function ZenmuseL2Page() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <Badge variant="outline" className="mb-4">Applications</Badge>
-            <h2 className="text-4xl font-bold mb-4">산업 분야별 활용</h2>
+            <h2 className="text-4xl font-bold mb-4">주요 활용 분야</h2>
             <p className="text-xl text-muted-foreground">
-              다양한 산업 현장에서 검증된 고정밀 측량 솔루션
+              열화상 기능으로 다양한 임무를 수행합니다
             </p>
           </div>
 
@@ -197,13 +256,19 @@ export default function ZenmuseL2Page() {
                       </div>
                       <div className="flex-1">
                         <CardTitle className="text-2xl mb-2">{app.title}</CardTitle>
+                        <CardDescription className="text-base">{app.description}</CardDescription>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {app.description}
-                    </p>
+                    <ul className="space-y-2">
+                      {app.details.map((detail, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <Check className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
+                          <span className="text-sm text-muted-foreground">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               );
@@ -221,7 +286,7 @@ export default function ZenmuseL2Page() {
             <Badge variant="outline" className="mb-4">Technology</Badge>
             <h2 className="text-4xl font-bold mb-4">핵심 기술</h2>
             <p className="text-xl text-muted-foreground">
-              DJI만의 독자적인 기술로 더욱 정확하고 효율적인 데이터 수집
+              현장 작업을 위한 최적화된 기술
             </p>
           </div>
 
@@ -250,28 +315,38 @@ export default function ZenmuseL2Page() {
 
       <Separator />
 
-      {/* Compatibility */}
+      {/* Use Cases */}
       <section className="py-20 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4">Compatibility</Badge>
-            <h2 className="text-4xl font-bold mb-4">호환 기체</h2>
+            <Badge variant="outline" className="mb-4">Use Cases</Badge>
+            <h2 className="text-4xl font-bold mb-4">실제 활용 사례</h2>
             <p className="text-xl text-muted-foreground">
-              DJI Matrice 시리즈와 완벽하게 호환
+              다양한 현장에서 검증된 성능
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {compatibility.map((item, index) => (
-              <Card key={index} variant="hover-lg">
-                <CardHeader>
-                  <CardTitle className="text-xl">{item.model}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {useCases.map((useCase, index) => {
+              const IconComponent = useCase.icon;
+              return (
+                <Card key={index} variant="hover-lg">
+                  <CardHeader>
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 rounded-lg bg-primary/10">
+                        <IconComponent className="h-8 w-8 text-primary" />
+                      </div>
+                      <CardTitle className="text-xl">{useCase.title}</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {useCase.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -285,7 +360,7 @@ export default function ZenmuseL2Page() {
             <Badge variant="outline" className="mb-4">Workflow</Badge>
             <h2 className="text-4xl font-bold mb-4">작업 프로세스</h2>
             <p className="text-xl text-muted-foreground">
-              간단하고 직관적인 4단계 워크플로우
+              신속하고 체계적인 4단계 워크플로우
             </p>
           </div>
 
@@ -356,8 +431,8 @@ export default function ZenmuseL2Page() {
                   <CardHeader>
                     <div className="aspect-square bg-white rounded-lg mb-4 flex items-center justify-center overflow-hidden">
                       {relatedProduct.image ? (
-                        <img 
-                          src={relatedProduct.image} 
+                        <img
+                          src={relatedProduct.image}
                           alt={relatedProduct.name}
                           className="w-full h-full object-contain p-4"
                         />

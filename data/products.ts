@@ -230,6 +230,7 @@ export const products: Product[] = [
             { label: '작동 온도', value: '-20°C ~ 50°C' }
         ]
     },
+
     {
         id: 'dji-zenmuse-l2',
         name: 'DJI Zenmuse L2',
@@ -274,7 +275,7 @@ export const products: Product[] = [
         name: 'DJI Zenmuse P1',
         category: '페이로드',
         description: '항공 측량을 위한 풀프레임 카메라 시스템',
-        detailDescription: 'DJI Zenmuse P1은 항공 측량 전용 풀프레임 카메라입니다. 45MP 고해상도 센서와 기계식 셔터로 비행 중 왜곡 없는 이미지를 촬영할 수 있습니다. 3cm GSD(100m 고도)의 정확도로 정밀 측량과 3D 모델링이 가능합니다.',
+        detailDescription: 'DJI Zenmuse P1은 교환 가능한 고정 초점 렌즈가 장착된 풀프레임 센서를 3축 안정화 짐벌에 통합했습니다. 포토그래메트리 비행 임무를 위해 설계되어 효율성과 정확도를 완전히 새로운 수준으로 끌어올립니다. GCP 없이도 수평 3cm, 수직 5cm의 정확도를 제공하며, 단일 비행으로 최대 3km²를 커버할 수 있습니다.',
         price: 7025000,
         image: '/images/products/dji-zenmuse-p1/dji-zenmuse-p1.webp',
         images: [
@@ -283,15 +284,34 @@ export const products: Product[] = [
             '/images/products/dji-zenmuse-p1/dji-zenmuse-p1-2.webp',
             '/images/products/dji-zenmuse-p1/dji-zenmuse-p1-3.webp',
         ],
-        tags: ['페이로드', '측량', 'RTK', '3D모델링', 'Matrice', '45MP', '풀프레임'],
+        hasDetailedPage: true,
+        hero: false,
+        featured: false,
+        tags: ['페이로드', '측량', 'RTK', '3D모델링', 'Matrice', '45MP', '풀프레임', '포토그래메트리'],
         createdAt: '2025-08-20',
         features: [
             '45MP 풀프레임 센서',
-            '3cm GSD (100m 고도)',
-            '고정밀 타임싱크',
-            'RTK 모듈 통합',
-            '다양한 렌즈 지원',
-            '기계식 셔터'
+            'GCP 없이 수평 3cm / 수직 5cm 정확도',
+            '단일 비행으로 3km² 커버',
+            '3축 안정화 짐벌 및 스마트 경사 촬영',
+            '글로벌 기계식 셔터 (1/2000초)',
+            'TimeSync 2.0 마이크로초 수준 동기화',
+            '교환 가능한 고정 초점 렌즈',
+            'Matrice 300 RTK / 350 RTK 호환'
+        ],
+        specifications: [
+            { label: '센서', value: '풀프레임 35mm CMOS (36mm × 24mm)' },
+            { label: '유효 픽셀', value: '45MP (8192 × 5460)' },
+            { label: '셔터', value: '글로벌 기계식 셔터' },
+            { label: '셔터 속도', value: '1/2000초' },
+            { label: '렌즈', value: '24mm / 35mm / 50mm 고정 초점' },
+            { label: 'GSD (100m 고도)', value: '3cm (24mm 렌즈 기준)' },
+            { label: 'GCP 없는 정확도', value: '수평 3cm / 수직 5cm' },
+            { label: '커버리지', value: '단일 비행 3km²' },
+            { label: '짐벌', value: '3축 안정화' },
+            { label: '동기화', value: 'TimeSync 2.0 (마이크로초 수준)' },
+            { label: '지원 기체', value: 'Matrice 300 RTK / 350 RTK' },
+            { label: '무게', value: '약 1.3kg (렌즈 포함)' }
         ]
     },
 
