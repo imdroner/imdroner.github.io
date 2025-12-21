@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import ProductImageGallery from '@/components/ProductImageGallery';
+import ProductCTA from '@/components/ProductCTA';
 import { products } from '@/data/products';
 import {
   CheckCircle2,
@@ -275,30 +276,7 @@ export default function Matrice30TComboPage() {
         </div>
       </section>
 
-      <section className="relative py-20 overflow-hidden">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: 'url(/images/team/team-hero.webp)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'brightness(0.3)'
-          }}
-        />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            DJI Matrice 30T Combo<br />구매 상담을 시작하세요
-          </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="secondary" className="gap-2">
-              <Link href="/contact"><Mail className="h-5 w-5" />견적 문의하기</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="gap-2 bg-white/10 hover:bg-white/20 text-white border-white/30">
-              <a href="tel:010-4790-6650"><Phone className="h-5 w-5" />전화 상담</a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ProductCTA productName={product.name} />
 
       <section className="py-12 bg-muted/50">
         <div className="max-w-4xl mx-auto px-4 text-center">
