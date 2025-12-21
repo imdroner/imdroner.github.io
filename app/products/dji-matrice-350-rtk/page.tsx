@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import ProductImageGallery from '@/components/ProductImageGallery';
+import { products, getRelatedProducts } from '@/data/products';
 import {
   CheckCircle2,
   Shield,
@@ -16,7 +18,9 @@ import {
   Clock,
   Droplets,
   Layers,
-  Eye
+  Eye,
+  ChevronLeft,
+  Check
 } from 'lucide-react';
 
 export const metadata = {
@@ -25,6 +29,12 @@ export const metadata = {
 };
 
 export default function Matrice300RTKPage() {
+  const product = products.find(p => p.id === 'dji-matrice-350-rtk');
+  if (!product) return null;
+
+  // 관련 상품 가져오기
+  const relatedProducts = getRelatedProducts('dji-matrice-350-rtk', 3);
+
   const keyPoints = [
     '최대 55분 비행시간',
     '듀얼 페이로드 시스템',
@@ -193,52 +203,125 @@ export default function Matrice300RTKPage() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: 'url(/images/team/team-hero.webp)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'brightness(0.4)'
-          }}
-        />
-        <div className="relative z-10 text-center px-4 py-20">
-          <Badge variant="hero" className="mb-6 text-base px-6 py-2">
-            <Package className="h-4 w-4 mr-2" />
-            Industrial Drone
-          </Badge>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            DJI Matrice 300 RTK
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
-            건설·점검·측량 등 산업 현장을 위한 고성능 드론
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {keyPoints.map((point, index) => (
-              <Badge key={index} variant="secondary" className="text-base px-4 py-2">
-                <CheckCircle2 className="h-4 w-4 mr-2" />
-                {point}
-              </Badge>
-            ))}
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="gap-2 text-lg px-8 py-6">
-              <Link href="/contact">
-                <Mail className="h-5 w-5" />
-                견적 문의하기
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="gap-2 text-lg px-8 py-6 bg-white/10 hover:bg-white/20 text-white border-white/30">
-              <a href="tel:010-4790-6650">
-                <Phone className="h-5 w-5" />
-                전화 상담
-              </a>
-            </Button>
+      {/* Breadcrumb */}
+      <section className="bg-muted/50 py-6">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Link href="/" className="hover:text-primary">홈</Link>
+            <ChevronLeft className="h-4 w-4 rotate-180" />
+            <Link href="/products" className="hover:text-primary">제품 구매</Link>
+            <ChevronLeft className="h-4 w-4 rotate-180" />
+            <span className="text-foreground font-medium">{product.name}</span>
           </div>
         </div>
       </section>
+
+      {/* Main Content */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-10 gap-12">
+            {/* Left Column - Image Gallery (6/10) */}
+            <div className="lg:col-span-6">
+              <ProductImageGallery 
+                images={product.images && product.images.length > 0 ? product.images : [product.image]}
+                productName={product.name}
+              />
+            </div>
+
+            {/* Right Column - Details (4/10) */}
+            <div className="lg:col-span-4">
+              {/* Category Badge */}
+              <Badge variant="outline" className="mb-4 text-sm px-4 py-1">
+                {product.category}
+              </Badge>
+
+              {/* Product Name */}
+              <h1 className="text-2xl md:text-4xl font-bold mb-6">
+                {product.name}
+              </h1>
+
+              {/* Short Description */}
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                {product.description}
+              </p>
+
+              {/* Price */}
+              <div className="mb-8">
+                <Card variant="default">
+                  <CardContent className="p-4">
+                    <p className="text-sm text-muted-foreground mb-2">가격</p>
+                    <p className="text-lg font-bold text-primary">
+                      {product.price === 0 
+                        ? '견적 문의' 
+                        : `₩${product.price.toLocaleString('ko-KR')}`
+                      }
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <Button asChild size="lg" className="flex-1 gap-2" variant="primary-blue">
+                  <Link href="/contact">
+                    <Mail className="h-5 w-5" />
+                    견적 문의하기
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="flex-1 gap-2">
+                  <a href="tel:010-4790-6650">
+                    <Phone className="h-5 w-5" />
+                    전화 상담
+                  </a>
+                </Button>
+              </div>
+
+              {/* Key Features */}
+              <Card className="mb-8">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-lg">
+                    주요 특징
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {product.features.map((feature, index) => (
+                      <li key={index} className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+
+              {/* Trust Badges */}
+              <div className="grid grid-cols-3 gap-4 mb-8">
+                <Card className="text-center">
+                  <CardContent className="p-4">
+                    <div className="font-bold text-primary mb-1">정품 보증</div>
+                    <p className="text-xs text-muted-foreground">100% 정품</p>
+                  </CardContent>
+                </Card>
+                <Card className="text-center">
+                  <CardContent className="p-4">
+                    <div className="font-bold text-primary mb-1">기술 지원</div>
+                    <p className="text-xs text-muted-foreground">전문가 상담</p>
+                  </CardContent>
+                </Card>
+                <Card className="text-center">
+                  <CardContent className="p-4">
+                    <div className="font-bold text-primary mb-1">신속 A/S</div>
+                    <p className="text-xs text-muted-foreground">빠른 처리</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Separator />
 
       {/* Introduction */}
       <section className="py-20">
@@ -260,7 +343,7 @@ export default function Matrice300RTKPage() {
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <Card key={index} variant="hover" className="text-center">
+                <Card key={index} variant="hover-lg" className="text-center">
                   <CardHeader>
                     <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                       <IconComponent className="h-8 w-8 text-primary" />
@@ -342,7 +425,7 @@ export default function Matrice300RTKPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {payloadOptions.map((payload, index) => (
-              <Card key={index} variant="hover">
+              <Card key={index} variant="hover-lg">
                 <CardHeader>
                   <CardTitle className="text-xl">{payload.name}</CardTitle>
                   <CardDescription>{payload.description}</CardDescription>
@@ -378,7 +461,7 @@ export default function Matrice300RTKPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {useCases.map((useCase, index) => (
-              <Card key={index} variant="hover">
+              <Card key={index} variant="hover-lg">
                 <CardHeader>
                   <CardTitle className="text-xl">{useCase.title}</CardTitle>
                 </CardHeader>
@@ -437,7 +520,7 @@ export default function Matrice300RTKPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {whyChoose.map((reason, index) => (
-              <Card key={index} variant="hover">
+              <Card key={index} variant="hover-lg">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <CheckCircle2 className="h-6 w-6 text-green-600" />
@@ -511,20 +594,55 @@ export default function Matrice300RTKPage() {
         </div>
       </section>
 
-      {/* Related Products */}
-      <section className="py-12 bg-muted/50">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-lg text-muted-foreground mb-4">
-            다른 제품도 함께 살펴보세요
-          </p>
-          <Button asChild variant="outline" size="lg" className="gap-2">
-            <Link href="/products">
-              모든 제품 보기
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
-      </section>
+      {/* Related Products - Dynamic */}
+      {relatedProducts.length > 0 && (
+        <section className="py-12 bg-muted/50">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-8">함께 보면 좋은 제품</h2>
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              {relatedProducts.map((relatedProduct) => (
+                <Card key={relatedProduct.id} variant="hover-lg">
+                  <CardHeader>
+                    <div className="aspect-square bg-white rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                      {relatedProduct.image ? (
+                        <img 
+                          src={relatedProduct.image} 
+                          alt={relatedProduct.name}
+                          className="w-full h-full object-contain p-4"
+                        />
+                      ) : (
+                        <Package className="h-20 w-20 text-muted-foreground/30" />
+                      )}
+                    </div>
+                    <Badge variant="outline" className="w-fit mb-2">
+                      {relatedProduct.category}
+                    </Badge>
+                    <CardTitle>{relatedProduct.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground mb-4 line-clamp-2">
+                      {relatedProduct.description}
+                    </p>
+                    <Button asChild variant="outline" className="w-full">
+                      <Link href={`/products/${relatedProduct.id}`}>
+                        자세히 보기
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <div className="text-center">
+              <Button asChild variant="outline" size="lg" className="gap-2">
+                <Link href="/products">
+                  모든 제품 보기
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      )}
     </main>
   );
 }

@@ -30,8 +30,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function TeamMemberPage({ params }: { params: { id: string } }) {
-  const member = teamMembers.find(m => m.id === params.id);
+export default async function TeamMemberPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const member = teamMembers.find(m => m.id === id);
 
   if (!member) {
     notFound();

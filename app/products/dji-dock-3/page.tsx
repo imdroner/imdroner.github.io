@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import { products, getRelatedProducts } from '@/data/products';
+import ProductImageGallery from '@/components/ProductImageGallery';
 import {
   CheckCircle2,
   Server,
@@ -17,7 +19,9 @@ import {
   Cloud,
   Radio,
   Battery,
-  Cpu
+  Cpu,
+  ChevronLeft,
+  Check
 } from 'lucide-react';
 
 export const metadata = {
@@ -26,6 +30,12 @@ export const metadata = {
 };
 
 export default function DJIDock3Page() {
+  // 제품 데이터 가져오기
+  const product = products.find(p => p.id === 'dji-dock-3')!;
+  
+  // 관련 상품 가져오기
+  const relatedProducts = getRelatedProducts('dji-dock-3', 3);
+
   const keyPoints = [
     '차량 탑재 배치 지원',
     '24/7 무인 자동 운영',
@@ -114,99 +124,151 @@ export default function DJIDock3Page() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: 'url(/images/team/team-hero.webp)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'brightness(0.4)'
-          }}
-        />
-        <div className="relative z-10 text-center px-4 py-20">
-          <Badge variant="hero" className="mb-6 text-base px-6 py-2">
-            <Server className="h-4 w-4 mr-2" />
-            Autonomous System
-          </Badge>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            DJI Dock 3
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
-            차량 탑재 지원, 24/7 원격 무인 운영을 위한 혁신적인 드론 도킹 스테이션
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {keyPoints.map((point, index) => (
-              <Badge key={index} variant="secondary" className="text-base px-4 py-2">
-                <CheckCircle2 className="h-4 w-4 mr-2" />
-                {point}
-              </Badge>
-            ))}
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="gap-2 text-lg px-8 py-6">
-              <Link href="/contact">
-                <Mail className="h-5 w-5" />
-                견적 문의하기
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="gap-2 text-lg px-8 py-6 bg-white/10 hover:bg-white/20 text-white border-white/30">
-              <a href="tel:010-4790-6650">
-                <Phone className="h-5 w-5" />
-                전화 상담
-              </a>
-            </Button>
+      {/* Breadcrumb */}
+      <section className="bg-muted/50 py-6">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Link href="/" className="hover:text-primary">홈</Link>
+            <ChevronLeft className="h-4 w-4 rotate-180" />
+            <Link href="/products" className="hover:text-primary">제품 구매</Link>
+            <ChevronLeft className="h-4 w-4 rotate-180" />
+            <span className="text-foreground font-medium">{product.name}</span>
           </div>
         </div>
       </section>
 
-      {/* Product Description */}
-      <section className="py-20 px-4 bg-background">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">업계 최초 차량 탑재 지원 드론 도킹 시스템</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              DJI Dock 3는 Matrice 4D 또는 Matrice 4TD 고성능 드론과 함께 작동하여 24/7 원격 운영을 지원하는 차세대 자동화 시스템입니다. 
-              업계 최초로 <strong>차량 탑재 배치</strong>를 지원하여 고정형 설치와 이동형 배치 모두 가능합니다. 
-              DJI FlightHub 2의 지능형 기능과 통합되어 작업 시간 및 인건비를 대폭 절감하며, 
-              완전 무인 자동 이착륙, 배터리 충전, 실시간 데이터 전송을 통해 효율성을 극대화합니다.
-            </p>
-          </div>
+      {/* Main Content */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-10 gap-12">
+            {/* Left Column - Image Gallery (6/10) */}
+            <div className="lg:col-span-6">
+              <ProductImageGallery 
+                images={product.images && product.images.length > 0 ? product.images : [product.image]}
+                productName={product.name}
+              />
+            </div>
 
-          {/* Price Card */}
-          <Card className="mb-16 border-primary/20 shadow-lg">
-            <CardContent className="p-8">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div>
-                  <p className="text-sm text-muted-foreground mb-2">시스템 가격</p>
-                  <p className="text-4xl font-bold text-primary">₩17,853,000</p>
-                  <p className="text-sm text-muted-foreground mt-2">* Dock 본체 + Matrice 4D/4TD 드론 포함</p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button asChild size="lg" className="gap-2">
-                    <Link href="/contact">
-                      <Mail className="h-5 w-5" />
-                      견적 문의
-                    </Link>
-                  </Button>
-                  <Button asChild size="lg" variant="outline" className="gap-2">
-                    <a href="tel:010-4790-6650">
-                      <Phone className="h-5 w-5" />
-                      전화 상담
-                    </a>
-                  </Button>
-                </div>
+            {/* Right Column - Details (4/10) */}
+            <div className="lg:col-span-4">
+              {/* Category Badge */}
+              <Badge variant="outline" className="mb-4 text-sm px-4 py-1">
+                {product.category}
+              </Badge>
+
+              {/* Product Name */}
+              <h1 className="text-2xl md:text-4xl font-bold mb-6">
+                {product.name}
+              </h1>
+
+              {/* Short Description */}
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                {product.description}
+              </p>
+
+              {/* Price */}
+              <div className="mb-8">
+                <Card variant="default">
+                  <CardContent className="p-4">
+                    <p className="text-sm text-muted-foreground mb-2">가격</p>
+                    <p className="text-lg font-bold text-primary">
+                      {product.price === 0 
+                        ? '견적 문의' 
+                        : `₩${product.price.toLocaleString('ko-KR')}`
+                      }
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <Button asChild size="lg" className="flex-1 gap-2" variant="primary-blue">
+                  <Link href="/contact">
+                    <Mail className="h-5 w-5" />
+                    견적 문의하기
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="flex-1 gap-2">
+                  <a href="tel:010-4790-6650">
+                    <Phone className="h-5 w-5" />
+                    전화 상담
+                  </a>
+                </Button>
+              </div>
+
+              {/* Key Features */}
+              <Card className="mb-8">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-lg">
+                    주요 특징
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {product.features.map((feature, index) => (
+                      <li key={index} className="flex items-start gap-2 text-sm">
+                        <Check className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+
+              {/* Trust Badges */}
+              <div className="grid grid-cols-3 gap-4 mb-8">
+                <Card className="text-center">
+                  <CardContent className="p-4">
+                    <div className="font-bold text-primary mb-1">정품 보증</div>
+                    <p className="text-xs text-muted-foreground">100% 정품</p>
+                  </CardContent>
+                </Card>
+                <Card className="text-center">
+                  <CardContent className="p-4">
+                    <div className="font-bold text-primary mb-1">기술 지원</div>
+                    <p className="text-xs text-muted-foreground">전문가 상담</p>
+                  </CardContent>
+                </Card>
+                <Card className="text-center">
+                  <CardContent className="p-4">
+                    <div className="font-bold text-primary mb-1">신속 A/S</div>
+                    <p className="text-xs text-muted-foreground">빠른 처리</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* Product Description */}
+      <section className="py-12 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-4">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl">업계 최초 차량 탑재 지원 드론 도킹 시스템</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                DJI Dock 3는 Matrice 4D 또는 Matrice 4TD 고성능 드론과 함께 작동하여 24/7 원격 운영을 지원하는 차세대 자동화 시스템입니다. 
+                업계 최초로 <strong>차량 탑재 배치</strong>를 지원하여 고정형 설치와 이동형 배치 모두 가능합니다. 
+                DJI FlightHub 2의 지능형 기능과 통합되어 작업 시간 및 인건비를 대폭 절감하며, 
+                완전 무인 자동 이착륙, 배터리 충전, 실시간 데이터 전송을 통해 효율성을 극대화합니다.
+              </p>
             </CardContent>
           </Card>
         </div>
       </section>
 
+      <Separator />
+
       {/* Key Features */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-center mb-16">핵심 기능</h2>
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">핵심 기능</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon;
@@ -228,10 +290,12 @@ export default function DJIDock3Page() {
         </div>
       </section>
 
+      <Separator />
+
       {/* System Components */}
-      <section className="py-20 px-4 bg-background">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-center mb-16">시스템 구성</h2>
+      <section className="py-12 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">시스템 구성</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {systemComponents.map((component, index) => (
               <Card key={index} variant="hover-lg">
@@ -254,10 +318,12 @@ export default function DJIDock3Page() {
         </div>
       </section>
 
+      <Separator />
+
       {/* Advantages */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-center mb-16">DJI Dock 3의 장점</h2>
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">DJI Dock 3의 장점</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {advantages.map((advantage, index) => {
               const Icon = advantage.icon;
@@ -281,10 +347,12 @@ export default function DJIDock3Page() {
         </div>
       </section>
 
+      <Separator />
+
       {/* Applications */}
-      <section className="py-20 px-4 bg-background">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-center mb-16">활용 분야</h2>
+      <section className="py-12 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">활용 분야</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {applications.map((app, index) => (
               <Card key={index} variant="hover-lg" className="group">
@@ -306,10 +374,12 @@ export default function DJIDock3Page() {
         </div>
       </section>
 
+      <Separator />
+
       {/* Specifications */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold text-center mb-16">제품 사양</h2>
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">제품 사양</h2>
           <Card>
             <CardContent className="p-8">
               <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
@@ -325,101 +395,107 @@ export default function DJIDock3Page() {
         </div>
       </section>
 
+      <Separator />
+
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-primary text-primary-foreground">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold mb-6">DJI Dock 3로 무인 자동 운영을 시작하세요</h2>
-          <p className="text-xl mb-12 opacity-90 leading-relaxed">
-            24/7 원격 드론 운영으로 작업 효율을 극대화하고 비용을 절감하세요.
-            <br />
-            차량 탑재 지원으로 어디서든 유연하게 배치할 수 있습니다.
+      <section className="relative py-20 overflow-hidden">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: 'url(/images/team/team-hero.webp)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: 'brightness(0.3)'
+          }}
+        />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            구매 상담이 필요하신가요?
+          </h2>
+          <p className="text-xl text-white/90 mb-8 leading-relaxed">
+            전문 컨설턴트가 귀사의 요구사항에 맞는<br />
+            최적의 솔루션을 제안해드립니다
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button asChild size="lg" variant="secondary" className="gap-2 text-lg px-8 py-6">
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" variant="primary-blue" className="gap-2 text-lg px-8 py-6">
               <Link href="/contact">
                 <Mail className="h-5 w-5" />
                 견적 문의하기
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="gap-2 text-lg px-8 py-6 bg-white/10 hover:bg-white/20 border-white/30">
+            <Button asChild size="lg" variant="outline" className="gap-2 text-lg px-8 py-6 bg-white/10 hover:bg-white/20 text-white border-white/30">
               <a href="tel:010-4790-6650">
                 <Phone className="h-5 w-5" />
-                010-4790-6650
+                전화 상담
               </a>
             </Button>
           </div>
-          
-          <Separator className="my-12 bg-white/20" />
-          
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold mb-2">24/7</div>
-              <div className="text-sm opacity-80">무인 자동 운영</div>
+
+          <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center text-white/80">
+            <div className="flex items-center gap-2">
+              <Check className="h-5 w-5 text-green-400" />
+              <span>무료 현장 데모</span>
             </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">IP56</div>
-              <div className="text-sm opacity-80">방진방수 등급</div>
+            <div className="flex items-center gap-2">
+              <Check className="h-5 w-5 text-green-400" />
+              <span>맞춤형 견적 제공</span>
             </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">-35°C ~ 50°C</div>
-              <div className="text-sm opacity-80">작동 온도 범위</div>
+            <div className="flex items-center gap-2">
+              <Check className="h-5 w-5 text-green-400" />
+              <span>24시간 이내 답변</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Related Products */}
-      <section className="py-20 px-4 bg-background">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-center mb-16">함께 보면 좋은 제품</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card variant="hover-lg">
-              <CardHeader>
-                <div className="aspect-square bg-white rounded-lg mb-4 flex items-center justify-center p-4">
-                  <Package className="h-20 w-20 text-muted-foreground/30" />
-                </div>
-                <CardTitle>DJI Matrice 4D Series</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">Dock 3와 완벽 호환되는 고성능 산업용 드론</p>
-                <Button asChild variant="outline" className="w-full">
-                  <Link href="/products">자세히 보기</Link>
-                </Button>
-              </CardContent>
-            </Card>
+      <Separator />
 
-            <Card variant="hover-lg">
-              <CardHeader>
-                <div className="aspect-square bg-white rounded-lg mb-4 flex items-center justify-center p-4">
-                  <Cloud className="h-20 w-20 text-muted-foreground/30" />
-                </div>
-                <CardTitle>DJI FlightHub 2</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">원격 임무 관리 및 클라우드 플랫폼</p>
-                <Button asChild variant="outline" className="w-full">
-                  <Link href="/products">자세히 보기</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card variant="hover-lg">
-              <CardHeader>
-                <div className="aspect-square bg-white rounded-lg mb-4 flex items-center justify-center p-4">
-                  <Battery className="h-20 w-20 text-muted-foreground/30" />
-                </div>
-                <CardTitle>DJI Battery Station</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">고속 배터리 충전 및 관리 솔루션</p>
-                <Button asChild variant="outline" className="w-full">
-                  <Link href="/products">자세히 보기</Link>
-                </Button>
-              </CardContent>
-            </Card>
+      {/* Related Products - Dynamic */}
+      {relatedProducts.length > 0 && (
+        <section className="py-12">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-8">함께 보면 좋은 제품</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {relatedProducts.map((relatedProduct) => (
+                <Card key={relatedProduct.id} variant="hover-lg">
+                  <CardHeader>
+                    <div className="aspect-square bg-white rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                      {relatedProduct.image ? (
+                        <img 
+                          src={relatedProduct.image} 
+                          alt={relatedProduct.name}
+                          className="w-full h-full object-contain p-4"
+                        />
+                      ) : (
+                        <Package className="h-20 w-20 text-muted-foreground/30" />
+                      )}
+                    </div>
+                    <Badge variant="outline" className="w-fit mb-2">
+                      {relatedProduct.category}
+                    </Badge>
+                    <CardTitle>{relatedProduct.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground mb-4 line-clamp-2">
+                      {relatedProduct.description}
+                    </p>
+                    <Button asChild variant="outline" className="w-full">
+                      <Link href={
+                        relatedProduct.hasDetailedPage 
+                          ? `/products/${relatedProduct.id}` 
+                          : `/products/${relatedProduct.id}`
+                      }>
+                        자세히 보기
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </main>
   );
 }

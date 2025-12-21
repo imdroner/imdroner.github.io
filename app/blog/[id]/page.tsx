@@ -32,8 +32,9 @@ export async function generateStaticParams() {
 }
 
 // 메타데이터 생성
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.id === params.id);
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const post = blogPosts.find((p) => p.id === id);
 
   if (!post) {
     return {
@@ -56,8 +57,9 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   };
 }
 
-export default async function BlogPostPage({ params }: { params: { id: string } }) {
-  const post = blogPosts.find((p) => p.id === params.id);
+export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const post = blogPosts.find((p) => p.id === id);
 
   if (!post) {
     notFound();
@@ -67,7 +69,7 @@ export default async function BlogPostPage({ params }: { params: { id: string } 
   const author = teamMembers.find((member) => member.id === post.authorId);
 
   // MDX 파일 읽기
-  const filePath = path.join(process.cwd(), 'content/blog', `${params.id}.mdx`);
+  const filePath = path.join(process.cwd(), 'content/blog', `${id}.mdx`);
   let fileContent = '';
   let content = '';
   let frontmatter: any = {};

@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
+import ProductImageGallery from '@/components/ProductImageGallery';
 import { 
   Package, 
   Check, 
@@ -52,19 +53,17 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             {/* Main Content */}
             <section className="py-12">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        {/* Left Column - Image */}
-                        <div>
-                            <Card className="overflow-hidden sticky top-24">
-                                <div className="aspect-square bg-muted flex items-center justify-center">
-                                    <Package className="h-32 w-32 text-muted-foreground/30" />
-                                    {/* 실제 이미지: <img src={product.image} alt={product.name} /> */}
-                                </div>
-                            </Card>
+                    <div className="grid grid-cols-1 lg:grid-cols-10 gap-12">
+                        {/* Left Column - Image Gallery (6/10) */}
+                        <div className="lg:col-span-6">
+                            <ProductImageGallery 
+                                images={product.images && product.images.length > 0 ? product.images : [product.image]}
+                                productName={product.name}
+                            />
                         </div>
 
-                        {/* Right Column - Details */}
-                        <div>
+                        {/* Right Column - Details (3/10) */}
+                        <div className="lg:col-span-4">
                             {/* Category Badge */}
                             <Badge variant="outline" className="mb-4 text-sm px-4 py-1">
                                 {product.category}
@@ -82,7 +81,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
                             {/* Price */}
                             <div className="mb-8">
-                                <Card variant="hover-lg">
+                                <Card variant="default">
                                     <CardContent className="p-4">
                                         <p className="text-sm text-muted-foreground mb-2">가격</p>
                                         <p className="text-lg font-bold text-primary">
