@@ -18,11 +18,11 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'DJI Matrice 30T | 아이엠드론',
+  title: 'DJI Matrice 30T Combo | 아이엠드론',
   description: '열화상 카메라 탑재로 야간 점검 및 수색 작업에 최적화된 올인원 산업용 드론',
 };
 
-export default function Matrice30TPage() {
+export default function Matrice30TComboPage() {
   const keyPoints = [
     '640×512 열화상 센서',
     '48MP 광각 + 200배 줌',
@@ -74,7 +74,7 @@ export default function Matrice30TPage() {
             Thermal Drone
           </Badge>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            DJI Matrice 30T
+            DJI Matrice 30T Combo 
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
             열화상 카메라 탑재로 야간 점검 및 수색 작업에 최적화
@@ -112,7 +112,7 @@ export default function Matrice30TPage() {
               열화상이 통합된 올인원 솔루션
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              DJI Matrice 30T는 640×512 열화상 센서, 48MP 광각 카메라, 200배 하이브리드 줌 카메라를 
+              DJI Matrice 30T Combo는 640×512 열화상 센서, 48MP 광각 카메라, 200배 하이브리드 줌 카메라를 
               하나의 기체에 통합한 올인원 솔루션입니다. 야간 작업, 수색 구조, 시설물 점검 등 다양한 임무를 
               한 대로 완벽하게 수행할 수 있습니다.
             </p>
@@ -122,7 +122,7 @@ export default function Matrice30TPage() {
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <Card key={index} variant="hover" className="text-center">
+                <Card key={index} variant="hover-lg" className="text-center">
                   <CardHeader>
                     <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                       <IconComponent className="h-8 w-8 text-primary" />
@@ -152,7 +152,7 @@ export default function Matrice30TPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {applications.map((app, index) => (
-              <Card key={index} variant="hover">
+              <Card key={index} variant="hover-lg">
                 <CardHeader>
                   <CardTitle className="text-xl">{app.title}</CardTitle>
                 </CardHeader>
@@ -206,7 +206,7 @@ export default function Matrice30TPage() {
         />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            DJI Matrice 30T<br />구매 상담을 시작하세요
+            DJI Matrice 30T Combo<br />구매 상담을 시작하세요
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" variant="secondary" className="gap-2">

@@ -15,6 +15,37 @@ export interface Product {
 
 export const products: Product[] = [
     {
+        id: 'dji-dock-3',
+        name: 'DJI Dock 3',
+        category: '자동화 시스템',
+        description: '차량 탑재 지원, 24/7 원격 무인 운영을 위한 혁신적인 드론 도킹 스테이션',
+        detailDescription: 'DJI Dock 3는 Matrice 4D 또는 Matrice 4TD 고성능 드론과 함께 작동하여 24/7 원격 운영을 지원하는 차세대 자동화 시스템입니다. 업계 최초로 차량 탑재 배치를 지원하여 다양한 환경에 유연하게 적응할 수 있습니다. DJI FlightHub 2의 지능형 기능과 통합되어 작업 시간 및 인건비를 대폭 절감하며, 완전 무인 자동 이착륙, 배터리 충전, 실시간 데이터 전송을 통해 효율성을 극대화합니다.',
+        price: 17853000,
+        image: '/images/products/dji-dock-3.webp',
+        hasDetailedPage: true,
+        featured: true,
+        features: [
+            'Matrice 4D/4TD 드론 탑재',
+            '차량 탑재 배치 지원 (업계 최초)',
+            '24/7 완전 무인 자동 운영',
+            'DJI FlightHub 2 지능형 통합',
+            '초장거리 전송 지원',
+            '날씨 대응 시스템',
+            'IP56 방진방수 등급',
+            '클라우드 실시간 데이터 전송'
+        ],
+        specifications: [
+            { label: '호환 드론', value: 'Matrice 4D Series, Matrice 4TD Series' },
+            { label: '배치 방식', value: '고정 설치 / 차량 탑재' },
+            { label: '방진방수', value: 'IP56' },
+            { label: '작동 온도', value: '-35°C ~ 50°C' },
+            { label: '풍속 저항', value: '최대 15m/s (이착륙 시)' },
+            { label: '전송 시스템', value: 'O3 Enterprise' },
+            { label: '관리 플랫폼', value: 'DJI FlightHub 2' },
+            { label: '자동화 기능', value: '자동 이착륙, 충전, 데이터 전송' }
+        ]
+    },
+    {
         id: 'dji-mavic-3-enterprise',
         name: 'DJI Mavic 3 Enterprise',
         category: '기업용 드론',
@@ -44,44 +75,15 @@ export const products: Product[] = [
             { label: '작동 온도', value: '-20°C ~ 50°C' }
         ]
     },
+
     {
-        id: 'dji-matrice-350-rtk',
-        name: 'DJI Matrice 350 RTK',
-        category: '산업용 드론',
-        description: '건설·점검·측량 등 산업 현장을 위한 고성능 드론',
-        detailDescription: 'DJI Matrice 350 RTK는 산업용 드론의 새로운 기준을 제시합니다. IP45 방진방수 등급과 듀얼 페이로드 시스템으로 어떤 환경에서도 안정적인 작업이 가능합니다. 고정밀 RTK와 6방향 감지 시스템으로 안전성과 정확성을 극대화했습니다.',
-        price: 11000000,
-        image: '/images/products/matrice-350.png',
-        hasDetailedPage: true,
-        hero: true,
-        featured: true,
-        features: [
-            '최대 55분 비행시간',
-            '듀얼 페이로드 시스템',
-            'IP55 방진방수 등급',
-            '고정밀 RTK 측위',
-            '6방향 감지 및 위치 지정',
-            '최대 15km 전송 거리'
-        ],
-        specifications: [
-            { label: '무게', value: '약 6.47kg (배터리 포함)' },
-            { label: '최대 비행시간', value: '55분' },
-            { label: '최대 전송거리', value: '20km (FCC)' },
-            { label: '페이로드', value: '듀얼 하향, 싱글 상향' },
-            { label: '최대 탑재 중량', value: '2.7kg' },
-            { label: 'RTK', value: '수평: 1cm+1ppm, 수직: 1.5cm+1ppm' },
-            { label: '방진방수', value: 'IP55' },
-            { label: '작동 온도', value: '-20°C ~ 50°C' }
-        ]
-    },
-    {
-        id: 'dji-matrice-30t',
-        name: 'DJI Matrice 30T',
+        id: 'dji-matrice-30t-combo',
+        name: 'DJI Matrice 30T Combo',
         category: '산업용 드론',
         description: '열화상 카메라 탑재로 야간 점검 및 수색 작업에 최적화',
         detailDescription: 'DJI Matrice 30T는 열화상 센서를 탑재한 올인원 솔루션입니다. 640×512 열화상 센서와 48MP 광각 카메라, 200배 하이브리드 줌을 하나의 기체에 통합하여 야간 작업, 수색 구조, 시설물 점검 등 다양한 임무를 수행할 수 있습니다.',
-        price: 15800000,
-        image: '',
+        price: 11353000,
+        image: '/images/products/dji-matrice-30t-combo.jpg',
         hasDetailedPage: true,
         hero: true,
         featured: true,
@@ -110,8 +112,10 @@ export const products: Product[] = [
         category: '산업용 드론',
         description: '차세대 산업용 드론 플랫폼, 향상된 성능과 안전성',
         detailDescription: 'DJI Matrice 350 RTK는 M300 RTK의 뒤를 잇는 차세대 산업용 드론입니다. O3 Enterprise 전송 시스템으로 최대 20km 전송 거리를 지원하며, 트리플 페이로드와 향상된 장애물 감지로 더욱 안전하고 효율적인 작업이 가능합니다.',
-        price: 0,
-        image: '',
+        price: 11000000,
+        image: '/images/products/dji-matrice-350-rtk.jpg',
+        hasDetailedPage: true,
+        hero: true,
         featured: true,
         features: [
             '최대 55분 비행시간',
@@ -139,7 +143,7 @@ export const products: Product[] = [
         description: '휴대성과 열화상 기능을 겸비한 점검 전문 드론',
         detailDescription: 'DJI Mavic 3 Thermal은 컴팩트한 폼 팩터에 열화상 센서를 탑재한 점검 전문 드론입니다. 640×512 열화상 센서와 4/3 CMOS 카메라, 56배 하이브리드 줌을 통해 태양광 패널, 전력 시설, 건물 등의 열화상 점검을 효율적으로 수행할 수 있습니다.',
         price: 0,
-        image: '',
+        image: '/images/products/dji-mavic-3-thermal.jpg',
         features: [
             '640×512 열화상 센서',
             '4/3 CMOS 광각 카메라',
@@ -159,41 +163,7 @@ export const products: Product[] = [
             { label: '작동 온도', value: '-20°C ~ 50°C' }
         ]
     },
-    {
-        id: 'dji-agras-t40',
-        name: 'DJI Agras T40',
-        category: '농업용 드론',
-        description: '대규모 농업 작업을 위한 고성능 농업 드론',
-        detailDescription: 'DJI Agras T40는 대규모 농업 현장을 위한 최고 성능의 농업 드론입니다. 40kg 페이로드와 듀얼 원자 스프레이 시스템으로 시간당 300무(약 10만㎡) 작업이 가능합니다. 지형 추적 레이더와 완전 자동 작업 시스템으로 효율성을 극대화했습니다.',
-        price: 0,
-        image: '',
-        hasDetailedPage: true,
-        features: [
-            '40kg 페이로드',
-            '시간당 300무 작업',
-            '듀얼 원자 스프레이',
-            '지형 추적 레이더',
-            '완전 자동 작업',
-            '50L 탱크 용량'
-        ]
-    },
-    {
-        id: 'dji-dock-2',
-        name: 'DJI Dock 2',
-        category: '자동화 시스템',
-        description: '무인 자동 드론 운영을 위한 차세대 도킹 스테이션',
-        detailDescription: 'DJI Dock 2는 완전 무인 자동 드론 운영을 실현하는 혁신적인 솔루션입니다. 원격에서 드론을 자동으로 이착륙시키고, 배터리를 충전하며, 실시간으로 데이터를 전송할 수 있습니다. 날씨 대응 시스템과 클라우드 통합으로 24/7 무인 작업이 가능합니다.',
-        price: 0,
-        image: '',
-        features: [
-            '완전 자동 이착륙',
-            '원격 작업 관리',
-            '실시간 데이터 전송',
-            '날씨 대응 시스템',
-            '클라우드 통합',
-            'IP55 방진방수'
-        ]
-    },
+
     {
         id: 'dji-zenmuse-h20n',
         name: 'DJI Zenmuse H20N',

@@ -66,26 +66,26 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                         {/* Right Column - Details */}
                         <div>
                             {/* Category Badge */}
-                            <Badge variant="outline" className="mb-4 text-base px-4 py-1">
+                            <Badge variant="outline" className="mb-4 text-sm px-4 py-1">
                                 {product.category}
                             </Badge>
 
                             {/* Product Name */}
-                            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                            <h1 className="text-2xl md:text-4xl font-bold mb-6">
                                 {product.name}
                             </h1>
 
                             {/* Short Description */}
-                            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+                            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                                 {product.description}
                             </p>
 
                             {/* Price */}
                             <div className="mb-8">
                                 <Card variant="hover-lg">
-                                    <CardContent className="p-6">
+                                    <CardContent className="p-4">
                                         <p className="text-sm text-muted-foreground mb-2">가격</p>
-                                        <p className="text-2xl font-bold text-primary">
+                                        <p className="text-lg font-bold text-primary">
                                             {product.price === 0 
                                                 ? '견적 문의' 
                                                 : `₩${product.price.toLocaleString('ko-KR')}`
@@ -114,17 +114,16 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                             {/* Key Features */}
                             <Card className="mb-8">
                                 <CardHeader>
-                                    <CardTitle className="flex items-center gap-2">
-                                        <Check className="h-5 w-5 text-primary" />
+                                    <CardTitle className="flex items-center gap-2 text-lg">
                                         주요 특징
                                     </CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <ul className="space-y-3">
+                                    <ul className="space-y-2">
                                         {product.features.map((feature, index) => (
-                                            <li key={index} className="flex items-start gap-3">
-                                                <Check className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                                                <span className="text-base">{feature}</span>
+                                            <li key={index} className="flex items-start gap-2 text-sm">
+                                                <Check className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                                <span className="text-sm">{feature}</span>
                                             </li>
                                         ))}
                                     </ul>
