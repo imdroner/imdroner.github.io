@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'solar-farm-drone-guide',
+    title: '태양광 발전소 관리를 위한 최적의 드론 선택 가이드',
+    description: 'Mavic 3T, Matrice 4T, Matrice 4TD를 비교 분석하여 태양광 발전소 점검에 가장 적합한 드론을 선택하는 방법을 알아봅니다. 열화상 성능, 운영 효율성, 비용 효율을 중심으로 상세 비교합니다.',
+    thumbnail: '/images/blog/solar-farm-drone-guide.webp',
+    date: '2025-12-22',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '교육/가이드',
+    tags: ['태양광', '열화상', 'Mavic 3T', 'Matrice 4T', 'DJI Dock', '시설물점검'],
+    readTime: '14분',
+  },
+  {
     id: 'drone-regulations-2025',
     title: '2025년 개정된 드론 법규 완벽 가이드',
     description: '최신 드론 관련 법규와 준수사항을 상세히 알아봅니다. 드론 조종자 자격증, 비행 승인 절차, 금지 구역 등 필수 정보를 제공합니다.',
