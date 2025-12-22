@@ -14,7 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { teamMembers } from '@/data/team';
 import BlogImage from '@/components/BlogImage';
 import ShareButtons from '@/components/ShareButtons';
-import { mdxComponents } from '@/components/mdx-components';
+import { useMDXComponents } from '@/mdx-components';
 import {
   Calendar,
   Clock,
@@ -64,6 +64,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
   if (!post) {
     notFound();
   }
+
+  // MDX 컴포넌트 가져오기
+  const components = useMDXComponents({});
 
   // 작성자 정보 가져오기
   const author = teamMembers.find((member) => member.id === post.authorId);
@@ -145,7 +148,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
         <article className="prose prose-lg dark:prose-invert max-w-none mb-12">
           <MDXRemote 
             source={content} 
-            components={mdxComponents}
+            components={components}
             options={{
               mdxOptions: {
                 remarkPlugins: [remarkGfm],
