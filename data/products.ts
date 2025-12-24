@@ -9,6 +9,7 @@ export interface Product {
     images?: string[]; // 제품 갤러리 이미지들
     features: string[];
     specifications?: { label: string; value: string }[];
+    specificationUrl?: string; // 상세 규격서 페이지 URL
     hasDetailedPage?: boolean; // 개별 페이지 존재 여부
     featured?: boolean; // 메인 페이지 추천 제품
     hero?: boolean; // Hero 슬라이드 대상 제품
@@ -17,6 +18,92 @@ export interface Product {
 }
 
 export const products: Product[] = [
+    {
+        id: 'dji-matrice-400',
+        name: 'DJI Matrice 400',
+        category: '산업용 드론',
+        description: '장시간 비행과 전력선급 장애물 감지를 갖춘 엔터프라이즈 플래그십 드론 플랫폼',
+        detailDescription: 'DJI Matrice 400은 엔터프라이즈 플래그십 드론 플랫폼으로, 59분의 놀라운 비행 시간, 최대 6kg의 페이로드 용량, 그리고 회전식 LiDAR 및 mmWave 레이더를 통합한 전력선급 장애물 감지 시스템을 자랑합니다. O4 Enterprise Enhanced 비디오 전송과 공중 릴레이 비디오 전송을 지원하여 안전한 운용과 손쉬운 작업을 보장합니다. 스마트 감지와 가시광선 및 열화상 이미징, AR 프로젝션, 선박 이착륙 등 고급 자동화 기능을 결합하여 긴급 대응, 전력 점검, 매핑, AEC 분야에서 탁월한 성능을 발휘합니다.',
+        price: 16322900, // 견적 문의
+        image: '/images/products/dji-matrice-400/dji-matrice-400.webp',
+        images: [
+            '/images/products/dji-matrice-400/dji-matrice-400.webp',
+            '/images/products/dji-matrice-400/dji-matrice-400-1.webp',
+            '/images/products/dji-matrice-400/dji-matrice-400-2.webp',
+            '/images/products/dji-matrice-400/dji-matrice-400-3.webp',
+            '/images/products/dji-matrice-400/dji-matrice-400-4.webp',
+            '/images/products/dji-matrice-400/dji-matrice-400-5.webp',
+        ],
+        hasDetailedPage: true,
+        hero: true,
+        featured: true,
+        tags: ['Matrice', '장시간비행', 'LiDAR', 'mmWave', '페이로드', '전력점검', 'O4Enterprise', '긴급대응', '매핑', 'AEC'],
+        createdAt: '2025-12-25',
+        features: [
+            '최대 59분 장시간 비행',
+            '최대 6kg 페이로드 용량',
+            '회전식 LiDAR + mmWave 레이더 (전력선급 장애물 감지)',
+            'O4 Enterprise Enhanced 비디오 전송',
+            '공중 릴레이 비디오 전송 지원',
+            '스마트 감지 (가시광선 + 열화상)',
+            'AR 프로젝션 기능',
+            '선박 이착륙 지원'
+        ],
+        specifications: [
+            { label: '최대 비행시간', value: '59분 (페이로드 없음)' },
+            { label: '최대 페이로드', value: '6kg' },
+            { label: '장애물 감지', value: '회전식 LiDAR + mmWave 레이더' },
+            { label: '전송 시스템', value: 'O4 Enterprise Enhanced' },
+            { label: '비디오 전송', value: '공중 릴레이 전송 지원' },
+            { label: '센싱 시스템', value: '가시광선 + 열화상 이미징' },
+            { label: '특수 기능', value: 'AR 프로젝션, 선박 이착륙' },
+            { label: '적용 분야', value: '긴급 대응, 전력 점검, 매핑, AEC' }
+        ]
+    },
+    {
+        id: 'dji-matrice-4t',
+        name: 'DJI Matrice 4T',
+        category: '산업용 드론',
+        description: '차세대 플래그십 멀티센서 엔터프라이즈 드론',
+        detailDescription: 'DJI Matrice 4 Series는 컴팩트하면서도 지능형 멀티센서를 탑재한 차세대 플래그십 엔터프라이즈 드론입니다. Matrice 4T는 광학 + 열화상 + 레이저 거리 측정기를 통합한 멀티센서 시스템으로 전력, 긴급 대응, 공공 안전, 산림 보호 등 다양한 산업 분야에 최적화되어 있습니다. 향상된 센싱 기능과 AI 기반 스마트 기능으로 안전하고 효율적인 비행 작업을 실현합니다.',
+        price: 0, // 견적 문의
+        image: '/images/products/dji-matrice-4t/dji-matrice-4t.webp',
+        images: [
+            '/images/products/dji-matrice-4t/dji-matrice-4t.webp',
+            '/images/products/dji-matrice-4t/dji-matrice-4t-1.webp',
+            '/images/products/dji-matrice-4t/dji-matrice-4t-2.webp',
+            '/images/products/dji-matrice-4t/dji-matrice-4t-3.webp',
+            '/images/products/dji-matrice-4t/dji-matrice-4t-4.webp',
+            '/images/products/dji-matrice-4t/dji-matrice-4t-5.webp',
+        ],
+        hasDetailedPage: true,
+        hero: false,
+        featured: true,
+        specificationUrl: '/specifications/matrice-4t',
+        tags: ['Matrice', '열화상', '점검', 'AI', '레이저거리측정', '태양광', '멀티센서', 'O4Enterprise', '공공안전', '긴급대응'],
+        createdAt: '2025-12-20',
+        features: [
+            '멀티센서 시스템 (광학 + 열화상 + 레이저)',
+            'AI 기반 스마트 감지 및 측정',
+            '640×512 열화상 카메라',
+            '레이저 거리 측정기 (최대 1,800m)',
+            '최대 49분 비행시간',
+            'O4 Enterprise 전송 시스템 (최대 25km)',
+            '향상된 장애물 감지 및 안전 기능',
+            '컴팩트하고 휴대 가능한 디자인'
+        ],
+        specifications: [
+            { label: '무게', value: '1,219g (배터리, 프로펠러 포함)' },
+            { label: '최대 비행시간', value: '49분 (표준 프로펠러, 무풍)' },
+            { label: '열화상 카메라', value: '640×512, f/1.0, 53mm' },
+            { label: '광각 카메라', value: '1/1.3" CMOS, 48MP, f/1.7, 24mm' },
+            { label: '레이저 거리측정기', value: '1,800m (1Hz)' },
+            { label: '전송 시스템', value: 'O4 Enterprise' },
+            { label: '최대 전송거리', value: '25km (FCC) / 12km (CE)' },
+            { label: 'GNSS', value: 'GPS + Galileo + BeiDou + GLONASS' },
+            { label: '작동 온도', value: '-10°C ~ 40°C' }
+        ]
+    },
     {
         id: 'dji-dock-3',
         name: 'DJI Dock 3',
@@ -75,7 +162,7 @@ export const products: Product[] = [
             '/images/products/dji-matrice-30t-combo/dji-matrice-30t-combo-3.webp',
         ],
         hasDetailedPage: true,
-        hero: true,
+        hero: false,
         featured: true,
         tags: ['열화상', '야간작업', '수색구조', '점검', 'Matrice', '레이저거리측정'],
         createdAt: '2025-11-10',
@@ -203,7 +290,7 @@ export const products: Product[] = [
             '/images/products/mavic3-enterprise/mavic3-enterprise-6.webp',
         ],
         hasDetailedPage: true,
-        hero: true,
+        hero: false,
         featured: true,
         tags: ['RTK', '점검', '촬영', '측량', 'Mavic3', '기계식셔터'],
         createdAt: '2025-11-04',

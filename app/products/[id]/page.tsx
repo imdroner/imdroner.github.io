@@ -15,7 +15,8 @@ import {
   ChevronLeft,
   FileText,
   ShoppingBag,
-  ArrowRight
+  ArrowRight,
+  ExternalLink
 } from 'lucide-react';
 
 export function generateStaticParams() {
@@ -85,13 +86,26 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                         <div className="max-w-7xl mx-auto px-4">
                             <Card>
                                 <CardHeader>
-                                    <CardTitle className="flex items-center gap-2 text-2xl">
-                                        <Package className="h-6 w-6 text-primary" />
-                                        제품 사양
-                                    </CardTitle>
-                                    <CardDescription>
-                                        상세한 기술 스펙을 확인하세요
-                                    </CardDescription>
+                                    <div className="flex items-center justify-between">
+                                        <div>
+                                            <CardTitle className="flex items-center gap-2 text-2xl">
+                                                <Package className="h-6 w-6 text-primary" />
+                                                제품 사양
+                                            </CardTitle>
+                                            <CardDescription className="mt-2">
+                                                상세한 기술 스펙을 확인하세요
+                                            </CardDescription>
+                                        </div>
+                                        {product.specificationUrl && (
+                                            <Button asChild variant="outline" className="gap-2">
+                                                <Link href={product.specificationUrl}>
+                                                    <FileText className="h-4 w-4" />
+                                                    상세 규격서 보기
+                                                    <ExternalLink className="h-3 w-3" />
+                                                </Link>
+                                            </Button>
+                                        )}
+                                    </div>
                                 </CardHeader>
                                 <CardContent>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -109,6 +123,20 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                                             </div>
                                         ))}
                                     </div>
+                                    {product.specificationUrl && (
+                                        <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                                            <p className="text-sm text-muted-foreground mb-3">
+                                                더 자세한 제품 사양과 스펙이 필요하신가요?
+                                            </p>
+                                            <Button asChild className="w-full sm:w-auto gap-2">
+                                                <Link href={product.specificationUrl}>
+                                                    <FileText className="h-4 w-4" />
+                                                    전체 규격서 확인하기
+                                                    <ArrowRight className="h-4 w-4" />
+                                                </Link>
+                                            </Button>
+                                        </div>
+                                    )}
                                 </CardContent>
                             </Card>
                         </div>
