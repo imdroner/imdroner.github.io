@@ -43,13 +43,16 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   }
 
   return {
-    title: `${post.title} | 아이엠드론 블로그`,
+    title: `${post.title} | 아이엠드론`,
     description: post.description,
     openGraph: {
-      title: post.title,
-      description: post.description,
-      images: [post.thumbnail],
       type: 'article',
+      locale: 'ko_KR',
+      url: `https://imdrone.site/blog/${post.id}`,
+      siteName: '아이엠드론',
+      title: `${post.title} | 아이엠드론`,
+      description: post.description,
+      images: [{ url: `https://imdrone.site${post.thumbnail}`, width: 1200, height: 630 }],
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,

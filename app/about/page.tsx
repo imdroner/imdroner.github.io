@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -25,6 +26,19 @@ import { teamMembers } from '@/data/team';
 import { generalData } from '@/data/general';
 import { experienceData } from '@/data/experience';
 import { certificateData } from '@/data/certificate';
+
+export const metadata: Metadata = {
+  title: '아이엠드론 소개 | 아이엠드론',
+  description: '드론 서비스 전문 기업 아이엠드론을 소개합니다.',
+  openGraph: {
+    type: 'website',
+    locale: 'ko_KR',
+    url: 'https://imdrone.site/about',
+    siteName: '아이엠드론',
+    title: '아이엠드론 소개 | 아이엠드론',
+    description: '드론 서비스 전문 기업 아이엠드론을 소개합니다.',
+  },
+};
 
 export default function AboutPage() {
   // 연혁 데이터를 연도별로 그룹화
@@ -65,7 +79,7 @@ export default function AboutPage() {
               아이엠드론
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              {generalData.about}
+              {generalData.bio}
             </p>
           </div>
         </div>

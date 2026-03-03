@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -23,6 +24,19 @@ import {
   Clock,
   CheckCircle2
 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: '자주 묻는 질문 | 아이엠드론',
+  description: '드론 서비스 이용에 관한 자주 묻는 질문',
+  openGraph: {
+    type: 'website',
+    locale: 'ko_KR',
+    url: 'https://imdrone.site/faq',
+    siteName: '아이엠드론',
+    title: '자주 묻는 질문 | 아이엠드론',
+    description: '드론 서비스 이용에 관한 자주 묻는 질문',
+  },
+};
 
 export default function FAQPage() {
   const categories = [

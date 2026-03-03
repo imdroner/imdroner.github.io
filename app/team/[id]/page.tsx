@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { teamMembers, educationData, certificateData, experienceData, activityData } from '@/data/team';
 import { notFound } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -28,6 +29,27 @@ export async function generateStaticParams() {
   return teamMembers.map((member) => ({
     id: member.id,
   }));
+}
+
+export async function generateMetadata(
+  { params }: { params: Promise<{ id: string }> }
+): Promise<Metadata> {
+  const { id } = await params;
+  const member = teamMembers.find(m => m.id === id);
+  if (!member) return { title: '아이엠드론 팀' };
+  return {
+    title: `${member.name} | 아이엠드론`,
+    description: member.shortBio,
+    openGraph: {
+      type: 'website',
+      locale: 'ko_KR',
+      url: `https://imdrone.site/team/${member.id}`,
+      siteName: '아이엠드론',
+      title: `${member.name} | 아이엠드론`,
+      description: member.shortBio,
+      images: [{ url: `https://imdrone.site${member.avatar}`, width: 1200, height: 630 }],
+    },
+  };
 }
 
 export default async function TeamMemberPage({ params }: { params: Promise<{ id: string }> }) {

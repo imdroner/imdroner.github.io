@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { services } from '@/data/services';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -31,6 +33,22 @@ import {
   Building,
   Flame
 } from 'lucide-react';
+
+const service = services.find(s => s.id === 'control')!;
+
+export const metadata: Metadata = {
+  title: `${service.title} | 아이엠드론`,
+  description: service.description,
+  openGraph: {
+    type: 'website',
+    locale: 'ko_KR',
+    url: 'https://imdrone.site/services/control',
+    siteName: '아이엠드론',
+    title: `${service.title} | 아이엠드론`,
+    description: service.description,
+    images: [{ url: `https://imdrone.site${service.image}`, width: 1200, height: 630 }],
+  },
+};
 
 export default function ControlServicePage() {
   const keyPoints = [

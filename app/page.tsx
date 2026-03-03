@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { generalData } from '@/data/general';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -29,6 +31,19 @@ import {
   Calendar,
   Clock
 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: '아이엠드론',
+  description: generalData.about,
+  openGraph: {
+    type: 'website',
+    locale: 'ko_KR',
+    url: 'https://imdrone.site',
+    siteName: '아이엠드론',
+    title: '아이엠드론',
+    description: generalData.about,
+  },
+};
 
 const iconMap: { [key: string]: any } = {
   Camera,

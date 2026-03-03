@@ -1,6 +1,20 @@
+import type { Metadata } from 'next';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+
+export const metadata: Metadata = {
+  title: '개인정보처리방침 | 아이엠드론',
+  description: '아이엠드론 개인정보처리방침',
+  openGraph: {
+    type: 'website',
+    locale: 'ko_KR',
+    url: 'https://imdrone.site/privacy',
+    siteName: '아이엠드론',
+    title: '개인정보처리방침 | 아이엠드론',
+    description: '아이엠드론 개인정보처리방침',
+  },
+};
 
 export default function PrivacyPage() {
   const lastUpdated = '2025년 12월 19일';

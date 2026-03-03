@@ -41,7 +41,7 @@ export const teamMembers: TeamMember[] = [
     position: generalData.position,
     avatar: generalData.avatar,
     thumbnail: generalData.avatar, // 동일 이미지 사용
-    bio: generalData.about,
+    bio: generalData.bio,
     shortBio: '드론 전문가 · 국가자격 보유 · 다양한 산업 현장 검증 실적',
     email: personalData[0]?.items?.find(item => item.label === '이메일')?.title,
     phone: personalData[0]?.items?.find(item => item.label === '연락처')?.title,

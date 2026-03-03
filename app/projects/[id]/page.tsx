@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { projects } from '@/data/projects';
 import { notFound } from 'next/navigation';
 import ProjectImages from '@/components/ProjectImages';
@@ -10,6 +11,27 @@ import { Calendar, Image, Video, Box, Glasses } from 'lucide-react';
 
 export function generateStaticParams() {
     return projects.map((project) => ({ id: project.id }));
+}
+
+export async function generateMetadata(
+  { params }: { params: Promise<{ id: string }> }
+): Promise<Metadata> {
+  const { id } = await params;
+  const project = projects.find(p => p.id === id);
+  if (!project) return { title: '아이엠드론 포트폴리오' };
+  return {
+    title: `${project.title} | 아이엠드론`,
+    description: project.shortDesc,
+    openGraph: {
+      type: 'website',
+      locale: 'ko_KR',
+      url: `https://imdrone.site/projects/${project.id}`,
+      siteName: '아이엠드론',
+      title: `${project.title} | 아이엠드론`,
+      description: project.shortDesc,
+      images: [{ url: `https://imdrone.site${project.thumbnail}`, width: 1200, height: 630 }],
+    },
+  };
 }
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ id: string }> }) {

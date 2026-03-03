@@ -25,15 +25,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ko_KR",
     url: "https://imdrone.site",
-    siteName: `${generalData.name}`,
-    title: `${generalData.name} | ${generalData.jobTitle}`,
+    siteName: `${generalData.jobTitle}`,
+    title: `${generalData.jobTitle} | ${generalData.name}`,
     description: generalData.about,
     images: [
       {
-        url: "https://imdrone.site/images/og-image.jpg", // 실제 존재하는 대표 이미지 경로로 수정
-        width: 1024,
-        height: 683,
-        alt: `${generalData.name} - ${generalData.jobTitle}`,
+        url: "https://imdrone.site/images/og-image.png", // 실제 존재하는 대표 이미지 경로로 수정
+        width: 512,
+        height: 512,
+        alt: `${generalData.jobTitle} - ${generalData.name}`,
       },
     ],
   },

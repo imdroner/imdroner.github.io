@@ -1,6 +1,20 @@
+import type { Metadata } from 'next';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+
+export const metadata: Metadata = {
+  title: '이용약관 | 아이엠드론',
+  description: '아이엠드론 서비스 이용약관',
+  openGraph: {
+    type: 'website',
+    locale: 'ko_KR',
+    url: 'https://imdrone.site/terms',
+    siteName: '아이엠드론',
+    title: '이용약관 | 아이엠드론',
+    description: '아이엠드론 서비스 이용약관',
+  },
+};
 
 export default function TermsPage() {
   const lastUpdated = '2025년 12월 19일';

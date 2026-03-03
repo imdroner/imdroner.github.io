@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { generalData } from '@/data/general';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -24,6 +25,19 @@ import {
   Headphones,
   ChevronRight
 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: '문의하기 | 아이엠드론',
+  description: '드론 서비스 상담 및 견적 문의',
+  openGraph: {
+    type: 'website',
+    locale: 'ko_KR',
+    url: 'https://imdrone.site/contact',
+    siteName: '아이엠드론',
+    title: '문의하기 | 아이엠드론',
+    description: '드론 서비스 상담 및 견적 문의',
+  },
+};
 
 export default function ContactPage() {
   const contactMethods = [
