@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 import { projects } from '@/data/projects';
 import { notFound } from 'next/navigation';
 import ProjectImages from '@/components/ProjectImages';
@@ -18,18 +19,21 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { id } = await params;
   const project = projects.find(p => p.id === id);
-  if (!project) return { title: '아이엠드론 포트폴리오' };
+  if (!project) return { title: `${SITE_NAME} 포트폴리오` };
   return {
-    title: `${project.title} | 아이엠드론`,
+    title: `${project.title} | ${SITE_NAME}`,
     description: project.shortDesc,
+    alternates: {
+      canonical: `/projects/${project.id}`,
+    },
     openGraph: {
       type: 'website',
       locale: 'ko_KR',
-      url: `https://imdrone.site/projects/${project.id}`,
-      siteName: '아이엠드론',
-      title: `${project.title} | 아이엠드론`,
+      url: `${SITE_URL}/projects/${project.id}`,
+      siteName: SITE_NAME,
+      title: `${project.title} | ${SITE_NAME}`,
       description: project.shortDesc,
-      images: [{ url: `https://imdrone.site${project.thumbnail}`, width: 1200, height: 630 }],
+      images: [{ url: `${SITE_URL}${project.thumbnail}`, width: 1200, height: 630 }],
     },
   };
 }

@@ -1,17 +1,21 @@
 import type { Metadata } from 'next';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 
 export const metadata: Metadata = {
-  title: '개인정보처리방침 | 아이엠드론',
+  alternates: {
+    canonical: "/privacy",
+  },
+  title: `개인정보처리방침 | ${SITE_NAME}`,
   description: '아이엠드론 개인정보처리방침',
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://imdrone.site/privacy',
-    siteName: '아이엠드론',
-    title: '개인정보처리방침 | 아이엠드론',
+    url: `${SITE_URL}/privacy`,
+    siteName: SITE_NAME,
+    title: `개인정보처리방침 | ${SITE_NAME}`,
     description: '아이엠드론 개인정보처리방침',
   },
 };

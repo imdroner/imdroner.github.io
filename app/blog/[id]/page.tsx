@@ -23,6 +23,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 
 // 정적 경로 생성
 export async function generateStaticParams() {
@@ -43,16 +44,19 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   }
 
   return {
-    title: `${post.title} | 아이엠드론`,
+    title: `${post.title} | ${SITE_NAME}`,
     description: post.description,
+    alternates: {
+      canonical: `/blog/${post.id}`,
+    },
     openGraph: {
       type: 'article',
       locale: 'ko_KR',
-      url: `https://imdrone.site/blog/${post.id}`,
-      siteName: '아이엠드론',
-      title: `${post.title} | 아이엠드론`,
+      url: `${SITE_URL}/blog/${post.id}`,
+      siteName: SITE_NAME,
+      title: `${post.title} | ${SITE_NAME}`,
       description: post.description,
-      images: [{ url: `https://imdrone.site${post.thumbnail}`, width: 1200, height: 630 }],
+      images: [{ url: `${SITE_URL}${post.thumbnail}`, width: 1200, height: 630 }],
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,

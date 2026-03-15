@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 import { generalData } from '@/data/general';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -33,14 +34,17 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '아이엠드론',
+  alternates: {
+    canonical: "/",
+  },
+  title: SITE_NAME,
   description: generalData.about,
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://imdrone.site',
-    siteName: '아이엠드론',
-    title: '아이엠드론',
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: SITE_NAME,
     description: generalData.about,
   },
 };

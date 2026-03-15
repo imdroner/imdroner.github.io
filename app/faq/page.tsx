@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -26,14 +27,17 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '자주 묻는 질문 | 아이엠드론',
+  alternates: {
+    canonical: "/faq",
+  },
+  title: `자주 묻는 질문 | ${SITE_NAME}`,
   description: '드론 서비스 이용에 관한 자주 묻는 질문',
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://imdrone.site/faq',
-    siteName: '아이엠드론',
-    title: '자주 묻는 질문 | 아이엠드론',
+    url: `${SITE_URL}/faq`,
+    siteName: SITE_NAME,
+    title: `자주 묻는 질문 | ${SITE_NAME}`,
     description: '드론 서비스 이용에 관한 자주 묻는 질문',
   },
 };

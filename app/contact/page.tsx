@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 import Link from 'next/link';
 import { generalData } from '@/data/general';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -27,14 +28,17 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '문의하기 | 아이엠드론',
+  alternates: {
+    canonical: "/contact",
+  },
+  title: `문의하기 | ${SITE_NAME}`,
   description: '드론 서비스 상담 및 견적 문의',
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://imdrone.site/contact',
-    siteName: '아이엠드론',
-    title: '문의하기 | 아이엠드론',
+    url: `${SITE_URL}/contact`,
+    siteName: SITE_NAME,
+    title: `문의하기 | ${SITE_NAME}`,
     description: '드론 서비스 상담 및 견적 문의',
   },
 };
@@ -45,8 +49,10 @@ export default function ContactPage() {
       icon: Phone,
       title: '전화 문의',
       description: '빠른 상담이 필요하신 경우',
-      value: '010-4790-6650',
-      href: 'tel:010-4790-6650',
+      value: '061-920-9297',
+      href: 'tel:061-920-9297',
+      subValue: '010-4790-6650',
+      subHref: 'tel:010-4790-6650',
       color: 'text-blue-600',
       available: '평일 09:00 - 18:00'
     },
@@ -175,14 +181,24 @@ export default function ContactPage() {
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <a 
-                      href={method.href}
-                      className="block text-lg font-bold text-primary hover:underline"
-                      target={method.icon === MessageSquare ? '_blank' : undefined}
-                      rel={method.icon === MessageSquare ? 'noopener noreferrer' : undefined}
-                    >
-                      {method.value}
-                    </a>
+                    <div className="space-y-1">
+                      <a
+                        href={method.href}
+                        className="block text-lg font-bold text-primary hover:underline"
+                        target={method.icon === MessageSquare ? '_blank' : undefined}
+                        rel={method.icon === MessageSquare ? 'noopener noreferrer' : undefined}
+                      >
+                        {method.value}
+                      </a>
+                      {'subValue' in method && method.subValue && (
+                        <a
+                          href={method.subHref as string}
+                          className="block text-base font-semibold text-primary hover:underline"
+                        >
+                          {method.subValue as string}
+                        </a>
+                      )}
+                    </div>
                     <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                       <Clock className="h-4 w-4" />
                       <span>{method.available}</span>
@@ -400,7 +416,7 @@ export default function ContactPage() {
               size="lg" 
               className="bg-white text-blue-600 hover:bg-white/90 text-lg px-8 py-6"
             >
-              <a href="tel:010-4790-6650">
+              <a href="tel:061-920-9297">
                 <Phone className="mr-2 h-5 w-5" />
                 전화 상담하기
               </a>

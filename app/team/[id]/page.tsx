@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 import { teamMembers, educationData, certificateData, experienceData, activityData } from '@/data/team';
 import { notFound } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -36,18 +37,21 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { id } = await params;
   const member = teamMembers.find(m => m.id === id);
-  if (!member) return { title: '아이엠드론 팀' };
+  if (!member) return { title: `${SITE_NAME} 팀` };
   return {
-    title: `${member.name} | 아이엠드론`,
+    title: `${member.name} | ${SITE_NAME}`,
     description: member.shortBio,
+    alternates: {
+      canonical: `/team/${member.id}`,
+    },
     openGraph: {
       type: 'website',
       locale: 'ko_KR',
-      url: `https://imdrone.site/team/${member.id}`,
-      siteName: '아이엠드론',
-      title: `${member.name} | 아이엠드론`,
+      url: `${SITE_URL}/team/${member.id}`,
+      siteName: SITE_NAME,
+      title: `${member.name} | ${SITE_NAME}`,
       description: member.shortBio,
-      images: [{ url: `https://imdrone.site${member.avatar}`, width: 1200, height: 630 }],
+      images: [{ url: `${SITE_URL}${member.avatar}`, width: 1200, height: 630 }],
     },
   };
 }

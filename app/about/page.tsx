@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -28,14 +29,17 @@ import { experienceData } from '@/data/experience';
 import { certificateData } from '@/data/certificate';
 
 export const metadata: Metadata = {
-  title: '아이엠드론 소개 | 아이엠드론',
+  alternates: {
+    canonical: "/about",
+  },
+  title: `아이엠드론 소개 | ${SITE_NAME}`,
   description: '드론 서비스 전문 기업 아이엠드론을 소개합니다.',
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://imdrone.site/about',
-    siteName: '아이엠드론',
-    title: '아이엠드론 소개 | 아이엠드론',
+    url: `${SITE_URL}/about`,
+    siteName: SITE_NAME,
+    title: `아이엠드론 소개 | ${SITE_NAME}`,
     description: '드론 서비스 전문 기업 아이엠드론을 소개합니다.',
   },
 };

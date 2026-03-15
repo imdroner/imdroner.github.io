@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 import { services } from '@/data/services';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -37,16 +38,19 @@ import {
 const service = services.find(s => s.id === 'control')!;
 
 export const metadata: Metadata = {
-  title: `${service.title} | 아이엠드론`,
+  alternates: {
+    canonical: "/services/control",
+  },
+  title: `${service.title} | ${SITE_NAME}`,
   description: service.description,
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://imdrone.site/services/control',
-    siteName: '아이엠드론',
-    title: `${service.title} | 아이엠드론`,
+    url: `${SITE_URL}/services/control`,
+    siteName: SITE_NAME,
+    title: `${service.title} | ${SITE_NAME}`,
     description: service.description,
-    images: [{ url: `https://imdrone.site${service.image}`, width: 1200, height: 630 }],
+    images: [{ url: `${SITE_URL}${service.image}`, width: 1200, height: 630 }],
   },
 };
 

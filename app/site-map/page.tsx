@@ -93,6 +93,7 @@ export default function SitemapPage() {
       icon: Drone,
       color: 'text-purple-600',
       pages: [
+        { title: '서비스 전체 목록', url: '/services', description: '아이엠드론의 모든 드론 서비스 한눈에 보기' },
         { title: '항공촬영 & 프리미엄 영상', url: '/services/aerial', description: '4K 드론 촬영 및 시네마급 영상 제작' },
         { title: '건설·건축 모니터링', url: '/services/construction', description: '현장 진척도 관리 및 항공측량' },
         { title: '에너지 설비 드론 점검', url: '/services/energy', description: '태양광·풍력 발전소 점검 및 진단' },

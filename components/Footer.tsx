@@ -131,6 +131,10 @@ export default function Footer() {
                 <Phone className="h-5 w-5 text-muted-foreground mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm font-medium">전화</p>
+                  <a href="tel:061-920-9297" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    061-920-9297
+                  </a>
+                  <br />
                   <a href="tel:010-4790-6650" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     010-4790-6650
                   </a>

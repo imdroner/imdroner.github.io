@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import {
   NavigationMenu,
@@ -24,7 +24,8 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 import { services } from '@/data/services';
-import { Camera, Building2, Zap, Radio, Shield, Sprout, Fuel, Film, Menu, ChevronDown, X } from 'lucide-react';
+import { Menu, ChevronDown, X } from 'lucide-react';
+import { serviceIconMap } from '@/lib/service-icons';
 import { useIsMobile } from '@/app/hooks/use-mobile';
 
 const navItems = [
@@ -38,19 +39,10 @@ const navItems = [
     { href: '/faq', label: 'FAQ' },
 ];
 
-const iconMap: Record<string, any> = {
-    Camera,
-    Building2,
-    Zap,
-    Radio,
-    Shield,
-    Sprout,
-    Fuel,
-    Film,
-};
 
 export default function Navbar() {
     const pathname = usePathname();
+    const router = useRouter();
     const [mounted, setMounted] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
@@ -126,27 +118,42 @@ export default function Navbar() {
                                         </Link>
                                     ))}
 
-                                    {/* 서비스 */}
+                                    {/* 서비스: 텍스트 클릭 → /services 이동, 화살표 클릭 → 서브메뉴 토글 */}
                                     <div className="space-y-2">
-                                        <button
-                                            onClick={() => setServicesOpen(!servicesOpen)}
-                                            className={cn(
-                                                "w-full flex items-center justify-between px-4 py-3 rounded-lg text-base font-medium transition-colors",
-                                                isServiceActive
-                                                    ? "bg-blue-600 text-white"
-                                                    : "text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
-                                            )}
-                                        >
-                                            서비스
-                                            <ChevronDown className={cn(
-                                                "h-4 w-4 transition-transform duration-200",
-                                                servicesOpen && "rotate-180"
-                                            )} />
-                                        </button>
+                                        <div className={cn(
+                                            "flex items-center rounded-lg transition-colors",
+                                            isServiceActive
+                                                ? "bg-blue-600 text-white"
+                                                : "text-gray-900 dark:text-white"
+                                        )}>
+                                            <Link
+                                                href="/services"
+                                                onClick={() => setIsOpen(false)}
+                                                className={cn(
+                                                    "flex-1 px-4 py-3 text-base font-medium rounded-l-lg transition-colors",
+                                                    !isServiceActive && "hover:bg-gray-100 dark:hover:bg-gray-800"
+                                                )}
+                                            >
+                                                서비스
+                                            </Link>
+                                            <button
+                                                onClick={() => setServicesOpen(!servicesOpen)}
+                                                className={cn(
+                                                    "px-3 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-r-lg transition-colors",
+                                                    isServiceActive && "hover:bg-blue-700"
+                                                )}
+                                                aria-label="서비스 서브메뉴 열기"
+                                            >
+                                                <ChevronDown className={cn(
+                                                    "h-4 w-4 transition-transform duration-200",
+                                                    servicesOpen && "rotate-180"
+                                                )} />
+                                            </button>
+                                        </div>
                                         {servicesOpen && (
                                             <div className="ml-2 flex flex-col gap-1 border-l-2 border-gray-200 dark:border-gray-700 pl-3">
                                                 {services.map((service) => {
-                                                    const Icon = iconMap[service.icon];
+                                                    const Icon = serviceIconMap[service.icon];
                                                     return (
                                                         <Link
                                                             key={service.id}
@@ -228,20 +235,26 @@ export default function Navbar() {
                             </NavigationMenuItem>
                         ))}
 
-                        {/* 서비스 드롭다운 */}
+                        {/* 서비스 드롭다운: hover → 서브메뉴 열기, click → /services 이동 */}
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger 
+                            <NavigationMenuTrigger
                                 className={cn(
                                     "text-gray-900 dark:text-white",
                                     isServiceActive && "bg-blue-600 text-white hover:bg-blue-700 data-[state=open]:bg-blue-600 dark:bg-blue-500"
                                 )}
+                                onClick={(e) => {
+                                    // Radix는 composeEventHandlers로 props.onClick을 먼저 실행한 뒤
+                                    // event.defaultPrevented이면 내부 토글 핸들러를 건너뜀
+                                    e.preventDefault();
+                                    router.push('/services');
+                                }}
                             >
                                 서비스
                             </NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white dark:bg-black text-gray-900 dark:text-white">
                                     {services.map((service) => {
-                                        const Icon = iconMap[service.icon];
+                                        const Icon = serviceIconMap[service.icon];
                                         return (
                                             <li key={service.id}>
                                                 <NavigationMenuLink asChild>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -19,18 +20,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: `${generalData.jobTitle}`,
   description: `${generalData.about}`,
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: "https://imdrone.site",
+    url: SITE_URL,
     siteName: `${generalData.jobTitle}`,
     title: `${generalData.jobTitle} | ${generalData.name}`,
     description: generalData.about,
     images: [
       {
-        url: "https://imdrone.site/images/og-image.png", // 실제 존재하는 대표 이미지 경로로 수정
+        url: `${SITE_URL}/images/og-image.png`, // 실제 존재하는 대표 이미지 경로로 수정
         width: 512,
         height: 512,
         alt: `${generalData.jobTitle} - ${generalData.name}`,

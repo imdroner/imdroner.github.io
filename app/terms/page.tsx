@@ -1,17 +1,21 @@
 import type { Metadata } from 'next';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 
 export const metadata: Metadata = {
-  title: '이용약관 | 아이엠드론',
+  alternates: {
+    canonical: "/terms",
+  },
+  title: `이용약관 | ${SITE_NAME}`,
   description: '아이엠드론 서비스 이용약관',
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://imdrone.site/terms',
-    siteName: '아이엠드론',
-    title: '이용약관 | 아이엠드론',
+    url: `${SITE_URL}/terms`,
+    siteName: SITE_NAME,
+    title: `이용약관 | ${SITE_NAME}`,
     description: '아이엠드론 서비스 이용약관',
   },
 };
