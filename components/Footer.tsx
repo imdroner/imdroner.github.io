@@ -138,6 +138,9 @@ export default function Footer() {
                   <a href="tel:010-4790-6650" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     010-4790-6650
                   </a>
+                  <a href="tel:061-920-9297" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    061-920-9297
+                  </a>
                 </div>
               </li>
               <li className="flex items-start gap-2">
