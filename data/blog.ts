@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'dji-thermal-drone-comparison',
+    title: 'DJI 열화상 드론 4종 비교: Mavic 3T · Matrice 4T · Matrice 30T · Matrice 4TD',
+    description: 'DJI 대표 열화상 드론 4종의 기체 무게, 열화상 해상도, 비행시간, 카메라 시스템을 비교표로 정리했습니다. 초경량비행장치 조종자 자격 몇 종이 필요한지도 함께 안내합니다.',
+    thumbnail: '/images/blog/enterprise-drone-comparison.webp',
+    date: '2026-04-10',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '교육/가이드',
+    tags: ['열화상드론', 'Mavic 3T', 'Matrice 4T', 'Matrice 30T', 'Matrice 4TD', '드론자격증', '기종비교'],
+    readTime: '12분',
+  },
+  {
     id: 'solar-farm-drone-guide',
     title: '태양광 발전소 관리를 위한 최적의 드론 선택 가이드',
     description: 'Mavic 3T, Matrice 4T, Matrice 4TD를 비교 분석하여 태양광 발전소 점검에 가장 적합한 드론을 선택하는 방법을 알아봅니다. 열화상 성능, 운영 효율성, 비용 효율을 중심으로 상세 비교합니다.',
