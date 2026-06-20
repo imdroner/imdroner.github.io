@@ -24,7 +24,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 'drone-data-operations-construction-bim-2026',
     title: '상시 운영과 3D 데이터로 바뀌는 드론 서비스: 건설 현장부터 BIM까지',
-    description: 'DJI Enterprise, PIX4D, DroneDeploy의 공식 자료를 바탕으로 드론 서비스가 단발성 촬영에서 정기 모니터링, 원격 관제, 포토그래메트리 자동화, BIM 연계 데이터 운영으로 확장되는 흐름을 정리했습니다.',
+    description: '아이엠드론은 DJI Enterprise, PIX4D, DroneDeploy의 공식 자료를 바탕으로 드론 서비스가 정기 모니터링, 원격 관제, 3D 매핑, BIM 연계 데이터 운영으로 확장되는 흐름과 현장 적용 방향을 소개합니다.',
     thumbnail: '/images/blog/3d-modeling-guide.webp',
     date: '2026-06-20',
     author: '박영진',
