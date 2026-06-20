@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'drone-data-operations-construction-bim-2026',
+    title: '상시 운영과 3D 데이터로 바뀌는 드론 서비스: 건설 현장부터 BIM까지',
+    description: 'DJI Enterprise, PIX4D, DroneDeploy의 공식 자료를 바탕으로 드론 서비스가 단발성 촬영에서 정기 모니터링, 원격 관제, 포토그래메트리 자동화, BIM 연계 데이터 운영으로 확장되는 흐름을 정리했습니다.',
+    thumbnail: '/images/blog/3d-modeling-guide.webp',
+    date: '2026-06-20',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['드론관제', '건설모니터링', '포토그래메트리', 'BIM', '포인트클라우드', 'DJI Dock', 'PIX4D', 'DroneDeploy'],
+    readTime: '9분',
+  },
+  {
     id: 'dji-thermal-drone-comparison',
     title: 'DJI 열화상 드론 4종 비교: Mavic 3T · Matrice 4T · Matrice 30T · Matrice 4TD',
     description: 'DJI 대표 열화상 드론 4종의 기체 무게, 열화상 해상도, 비행시간, 카메라 시스템을 비교표로 정리했습니다. 초경량비행장치 조종자 자격 몇 종이 필요한지도 함께 안내합니다.',
