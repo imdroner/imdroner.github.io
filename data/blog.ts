@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'drone-remote-operations-ai-copilot-2026',
+    title: '원격 관제와 AI 보조: 드론 서비스가 현장 운영 플랫폼으로 바뀌는 이유',
+    description: 'DJI FlightHub 2의 AI Copilot 업데이트와 Matrice 4D C6 준수 흐름을 바탕으로, 드론 서비스가 단순 촬영에서 원격 관제·정기 점검·데이터 운영 플랫폼으로 확장되는 방향을 소개합니다.',
+    thumbnail: '/images/blog/dji-flighthub-2-ai-copilot-2026.png',
+    date: '2026-06-20',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['드론관제', '원격관제', 'AI Copilot', 'FlightHub 2', 'Matrice 4D', 'DJI Enterprise', '시설점검', '드론운영'],
+    readTime: '8분',
+  },
+  {
     id: 'construction-drone-monitoring-record-2026',
     title: '건설 현장 드론 모니터링은 어떻게 공정·안전·분쟁 대응 자료가 되는가',
     description: '아이엠드론은 DJI Enterprise, DroneDeploy, PIX4D의 공식 자료를 바탕으로 건설 현장 드론 모니터링이 정기 기록, 공정 관리, 안전 점검, 3D 매핑, BIM 연계 자료로 확장되는 방향을 소개합니다.',
