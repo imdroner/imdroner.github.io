@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'drone-data-record-system-2026',
+    title: '건설·점검 현장에서 드론 데이터가 ‘기록 체계’가 되어야 하는 이유',
+    description: 'DroneDeploy와 PIX4D의 2026년 공식 자료를 바탕으로, 건설·점검 현장에서 드론 데이터가 사진 납품을 넘어 반복 가능한 기록 체계와 데이터 처리 파이프라인으로 왜 확장되어야 하는지 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-progress-monitoring-workload.webp',
+    date: '2026-06-21',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['건설모니터링', '시설점검', 'DroneDeploy', 'PIX4D', '드론데이터', '현장기록', '포토그래메트리', '정사영상'],
+    readTime: '7분',
+  },
+  {
     id: 'drone-remote-operations-ai-copilot-2026',
     title: '원격 관제와 AI 보조: 드론 서비스가 현장 운영 플랫폼으로 바뀌는 이유',
     description: 'DJI FlightHub 2의 AI Copilot 업데이트와 Matrice 4D C6 준수 흐름을 바탕으로, 드론 서비스가 단순 촬영에서 원격 관제·정기 점검·데이터 운영 플랫폼으로 확장되는 방향을 소개합니다.',
