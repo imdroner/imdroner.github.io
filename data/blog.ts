@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-06-22-drone-station-construction-monitoring',
+    title: '대형 건설 현장에 드론 스테이션이 필요한 이유',
+    description: '2026년 6월 기준 DJI Enterprise Insights와 DroneDeploy의 공식 자료를 바탕으로, 대형 건설 현장에서 드론 스테이션·자동 순찰·검색 가능한 기록 체계가 왜 함께 설계돼야 하는지 소개합니다.',
+    thumbnail: '/images/blog/dji-o4-ground-station-24-7-construction-monitoring.webp',
+    date: '2026-06-22',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['건설모니터링', '드론스테이션', 'DJI O4', 'DJI Dock 3', '원격관제', '현장기록', '스마트건설'],
+    readTime: '6분',
+  },
+  {
     id: 'drone-data-record-system-2026',
     title: '건설·점검 현장에서 드론 데이터가 ‘기록 체계’가 되어야 하는 이유',
     description: 'DroneDeploy와 PIX4D의 2026년 공식 자료를 바탕으로, 건설·점검 현장에서 드론 데이터가 사진 납품을 넘어 반복 가능한 기록 체계와 데이터 처리 파이프라인으로 왜 확장되어야 하는지 소개합니다.',
