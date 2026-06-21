@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-06-22-drone-data-service-4-trends',
+    title: '촬영을 넘어 상시 운영으로: 드론 데이터 서비스가 바뀌는 4가지 방향',
+    description: 'DJI Enterprise, DroneDeploy, PIX4D의 공식 자료를 바탕으로 드론 서비스가 통신·관제 인프라, 건설 현장 기록, 데이터 처리 자동화, 농업·환경 3D 데이터로 확장되는 흐름을 소개합니다.',
+    thumbnail: '/images/blog/dji-o4-ground-station-24-7-construction-monitoring.webp',
+    date: '2026-06-22',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['드론데이터', '드론관제', '건설모니터링', '포토그래메트리', 'LiDAR', 'PIX4D', 'DroneDeploy', 'DJI Enterprise'],
+    readTime: '8분',
+  },
+  {
     id: '2026-06-22-drone-station-construction-monitoring',
     title: '대형 건설 현장에 드론 스테이션이 필요한 이유',
     description: '2026년 6월 기준 DJI Enterprise Insights와 DroneDeploy의 공식 자료를 바탕으로, 대형 건설 현장에서 드론 스테이션·자동 순찰·검색 가능한 기록 체계가 왜 함께 설계돼야 하는지 소개합니다.',
