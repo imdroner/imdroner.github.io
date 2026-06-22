@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-06-23-critical-infrastructure-drone-risk',
+    title: '중요 인프라 드론 점검, 왜 기체보다 운영 리스크 검토가 먼저일까요?',
+    description: '2026년 6월 기준 DroneDeploy와 DJI Enterprise의 공식 자료를 바탕으로, 중요 인프라·에너지 시설 드론 점검에서 비행 가능성 검토, 통신 인프라, 규정 준수형 장비, 데이터 보안 설계가 왜 먼저 필요한지 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-faa-section-2209-critical-infrastructure.webp',
+    date: '2026-06-23',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['중요인프라', '시설점검', '드론규제', 'DJI O4', 'Matrice 4D', '에너지점검', '원격관제', 'DroneDeploy'],
+    readTime: '7분',
+  },
+  {
     id: '2026-06-22-drone-data-service-4-trends',
     title: '촬영을 넘어 상시 운영으로: 드론 데이터 서비스가 바뀌는 4가지 방향',
     description: 'DJI Enterprise, DroneDeploy, PIX4D의 공식 자료를 바탕으로 드론 서비스가 통신·관제 인프라, 건설 현장 기록, 데이터 처리 자동화, 농업·환경 3D 데이터로 확장되는 흐름을 소개합니다.',
