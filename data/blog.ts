@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-06-24-tree-inventory-3d-mapping',
+    title: '산림·농업 드론 매핑, 이제는 NDVI보다 3D 수목 인벤토리가 중요한 이유',
+    description: '2026년 6월 기준으로 확인한 PIX4D 공식 자료를 바탕으로, 산림·농업·환경 현장에서 드론 매핑이 NDVI를 넘어 3D 수목 인벤토리, 좌표 기반 기록, 고품질 정사영상으로 확장되는 흐름을 소개합니다.',
+    thumbnail: '/images/blog/pix4d-tree-inventory-flight-path.webp',
+    date: '2026-06-24',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['수목인벤토리', '산림드론', '스마트농업', '환경모니터링', 'PIX4Dmatic', '포토그래메트리', '정사영상', '3D매핑'],
+    readTime: '6분',
+  },
+  {
     id: '2026-06-23-critical-infrastructure-drone-risk',
     title: '중요 인프라 드론 점검, 왜 기체보다 운영 리스크 검토가 먼저일까요?',
     description: '2026년 6월 기준 DroneDeploy와 DJI Enterprise의 공식 자료를 바탕으로, 중요 인프라·에너지 시설 드론 점검에서 비행 가능성 검토, 통신 인프라, 규정 준수형 장비, 데이터 보안 설계가 왜 먼저 필요한지 소개합니다.',
