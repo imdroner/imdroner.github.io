@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-06-25-exhaust-stack-drone-inspection',
+    title: '배기 스택·플랜트 점검, 왜 드론 결과물이 3D 기록이어야 할까요?',
+    description: '2026년 6월 기준으로 확인한 PIX4D와 DJI Enterprise 공식 자료를 바탕으로, 배기 스택·굴뚝·플랜트 점검에서 드론 촬영이 3D 기록과 안정적 원격 운용 설계로 확장되는 이유를 소개합니다.',
+    thumbnail: '/images/blog/pix4d-exhaust-stack-inspection-national-grid.webp',
+    date: '2026-06-25',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['배기스택점검', '플랜트점검', '시설물점검', 'PIX4Dcloud', 'GaussianSplatting', 'DJI O4', '원격관제', '에너지점검'],
+    readTime: '6분',
+  },
+  {
     id: '2026-06-24-tree-inventory-3d-mapping',
     title: '산림·농업 드론 매핑, 이제는 NDVI보다 3D 수목 인벤토리가 중요한 이유',
     description: '2026년 6월 기준으로 확인한 PIX4D 공식 자료를 바탕으로, 산림·농업·환경 현장에서 드론 매핑이 NDVI를 넘어 3D 수목 인벤토리, 좌표 기반 기록, 고품질 정사영상으로 확장되는 흐름을 소개합니다.',
