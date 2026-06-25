@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-06-26-energy-facility-drone-automation',
+    title: '에너지·산업설비 점검, 왜 드론 자동 순찰 체계를 먼저 설계해야 할까요?',
+    description: '2026년 6월 기준으로 확인한 DJI Enterprise Insights 공식 자료를 바탕으로, 에너지·산업설비 점검에서 드론 도입의 핵심이 자동 순찰, 통신 안정성, 원격 데이터 관리 체계에 있는 이유를 소개합니다.',
+    thumbnail: '/images/blog/dji-dock-oil-gas-inspection-automation.webp',
+    date: '2026-06-26',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['에너지점검', '산업설비점검', 'DJI Dock', '원격관제', '시설물점검', '드론자동화', 'O4 Ground Station', '산업단지점검'],
+    readTime: '6분',
+  },
+  {
     id: '2026-06-25-exhaust-stack-drone-inspection',
     title: '배기 스택·플랜트 점검, 왜 드론 결과물이 3D 기록이어야 할까요?',
     description: '2026년 6월 기준으로 확인한 PIX4D와 DJI Enterprise 공식 자료를 바탕으로, 배기 스택·굴뚝·플랜트 점검에서 드론 촬영이 3D 기록과 안정적 원격 운용 설계로 확장되는 이유를 소개합니다.',
