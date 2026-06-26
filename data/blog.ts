@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-06-27-smart-agriculture-basemap-layers',
+    title: '스마트농업 드론 데이터, 왜 NDVI만으로는 부족할까요?',
+    description: '2026년 6월 24일 PIX4D 공식 자료를 바탕으로, 스마트농업 드론 데이터가 베이스맵 레이어, 위성 데이터, 처방지도, 작업 경계 연계까지 확장되는 이유를 소개합니다.',
+    thumbnail: '/images/blog/pix4dfields-2-13-basemap-layers-hero.webp',
+    date: '2026-06-27',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['스마트농업', 'PIX4Dfields', 'NDVI', '정밀농업', '위성데이터', '처방지도', '환경모니터링', '필지경계'],
+    readTime: '6분',
+  },
+  {
     id: '2026-06-26-energy-facility-drone-automation',
     title: '에너지·산업설비 점검, 왜 드론 자동 순찰 체계를 먼저 설계해야 할까요?',
     description: '2026년 6월 기준으로 확인한 DJI Enterprise Insights 공식 자료를 바탕으로, 에너지·산업설비 점검에서 드론 도입의 핵심이 자동 순찰, 통신 안정성, 원격 데이터 관리 체계에 있는 이유를 소개합니다.',
