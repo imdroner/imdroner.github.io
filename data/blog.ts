@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-06-29-drone-processing-pipeline',
+    title: '반복 현장 드론 매핑, 왜 촬영보다 처리 파이프라인이 먼저일까요?',
+    description: '2026년 6월 17일 PIX4D와 2026년 5월 25일 DroneDeploy 공식 자료를 바탕으로, 반복 현장 드론 매핑에서 처리 자동화, QA, BIM 연계가 고객 납기와 활용도를 어떻게 바꾸는지 소개합니다.',
+    thumbnail: '/images/blog/pix4d-firmatek-processing-pipeline-hero.webp',
+    date: '2026-06-29',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['포토그래메트리', '드론데이터처리', 'PIX4Dengine', '건설BIM', '포인트클라우드', 'QA자동화', '현장모니터링', 'DroneDeploy'],
+    readTime: '6분',
+  },
+  {
     id: '2026-06-28-site-inspection-workflow',
     title: '건설·시설 점검, 왜 현장팀이 바로 쓰는 기록 워크플로우가 먼저일까요?',
     description: '2026년 6월 24일 DroneDeploy 공식 자료를 바탕으로, 건설·시설 점검에서 드론 데이터의 경쟁력이 촬영 장비보다 현장 기록 속도, 오프라인 대응, 체크리스트·보고 워크플로우에 있는 이유를 소개합니다.',
