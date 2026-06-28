@@ -401,6 +401,138 @@ export const products: Product[] = [
             { label: '무게', value: '약 1.3kg (렌즈 포함)' }
         ]
     },
+    {
+        id: 'dji-mavic-4-pro',
+        name: 'DJI Mavic 4 Pro',
+        category: '카메라 드론',
+        description: '트리플 렌즈 플래그십 카메라 드론',
+        detailDescription: '프로급 항공 촬영을 위한 DJI 플래그십 카메라 드론입니다. 고화질 항공 촬영, 여행·홍보 영상, 콘텐츠 제작 현장에서 유연하게 활용할 수 있습니다.',
+        price: 0,
+        image: '/images/products/dji-mavic-4-pro/dji-mavic-4-pro.png',
+        images: [
+            '/images/products/dji-mavic-4-pro/dji-mavic-4-pro.png',
+        ],
+        hasDetailedPage: true,
+        tags: ['DJI', 'Mavic', '카메라드론', '항공촬영', '콘텐츠제작'],
+        createdAt: '2026-06-28',
+        features: [
+            '트리플 렌즈 플래그십 카메라 시스템',
+            '고화질 항공 사진·영상 촬영',
+            'O4 계열 장거리 영상 전송',
+            '전방위 장애물 감지',
+            '전문 콘텐츠 제작 및 홍보 영상에 적합'
+        ]
+    },
+    {
+        id: 'dji-air-3s',
+        name: 'DJI Air 3S',
+        category: '카메라 드론',
+        description: '듀얼 카메라와 휴대성을 갖춘 올인원 촬영 드론',
+        detailDescription: 'DJI Air 3S는 휴대성과 촬영 성능의 균형이 뛰어난 카메라 드론으로, 현장 기록·홍보 콘텐츠·교육용 촬영 등 다양한 목적에 활용할 수 있습니다.',
+        price: 0,
+        image: '/images/products/dji-air-3s/dji-air-3s.png',
+        images: [
+            '/images/products/dji-air-3s/dji-air-3s.png',
+        ],
+        hasDetailedPage: true,
+        tags: ['DJI', 'Air', '카메라드론', '항공촬영'],
+        createdAt: '2026-06-28',
+        features: [
+            '듀얼 카메라 촬영 시스템',
+            '휴대하기 쉬운 접이식 디자인',
+            'O4 영상 전송 지원',
+            '장시간 비행 및 스마트 촬영 기능',
+            '현장 기록과 콘텐츠 제작에 적합'
+        ]
+    },
+    {
+        id: 'dji-mini-5-pro',
+        name: 'DJI Mini 5 Pro',
+        category: '카메라 드론',
+        description: '대형 CMOS 센서를 탑재한 초경량 미니 카메라 드론',
+        detailDescription: 'DJI Mini 5 Pro는 초경량 기체에 고성능 카메라와 지능형 비행 기능을 결합한 미니 카메라 드론입니다. 휴대성이 중요한 촬영 업무에 적합합니다.',
+        price: 0,
+        image: '/images/products/dji-mini-5-pro/dji-mini-5-pro.png',
+        images: [
+            '/images/products/dji-mini-5-pro/dji-mini-5-pro.png',
+        ],
+        hasDetailedPage: true,
+        tags: ['DJI', 'Mini', '카메라드론', '초경량', '항공촬영'],
+        createdAt: '2026-06-28',
+        features: [
+            '초경량 미니 드론 폼팩터',
+            '대형 CMOS 카메라 기반 고화질 촬영',
+            '전방위 장애물 감지',
+            'O4 계열 영상 전송',
+            '여행·홍보·현장 스케치 촬영에 적합'
+        ]
+    },
+    {
+        id: 'dji-avata-360',
+        name: 'DJI Avata 360',
+        category: '카메라 드론',
+        description: '8K 플래그십 360° FPV 촬영 드론',
+        detailDescription: 'DJI Avata 360은 몰입감 있는 항공 영상과 역동적인 360° 촬영을 위한 FPV 계열 카메라 드론입니다. 공간 소개와 실감형 콘텐츠 제작에 활용할 수 있습니다.',
+        price: 0,
+        image: '/images/products/dji-avata-360/dji-avata-360.png',
+        images: [
+            '/images/products/dji-avata-360/dji-avata-360.png',
+        ],
+        hasDetailedPage: true,
+        tags: ['DJI', 'Avata', 'FPV', '360촬영', '콘텐츠제작'],
+        createdAt: '2026-06-28',
+        features: [
+            '8K 360° 항공 촬영',
+            '몰입형 FPV 비행 경험',
+            'O4+ 영상 전송',
+            '프로펠러 가드 기반 안정성',
+            '실감형 콘텐츠와 공간 홍보에 적합'
+        ]
+    },
+    {
+        id: 'dji-avata-2',
+        name: 'DJI Avata 2',
+        category: '카메라 드론',
+        description: '몰입형 FPV 비행과 역동적 촬영을 위한 드론',
+        detailDescription: 'DJI Avata 2는 FPV 비행 경험과 역동적인 영상 촬영에 특화된 카메라 드론입니다. 스포츠·시설·브랜드 영상 제작에 활용할 수 있습니다.',
+        price: 0,
+        image: '/images/products/dji-avata-2/dji-avata-2.png',
+        images: [
+            '/images/products/dji-avata-2/dji-avata-2.png',
+        ],
+        hasDetailedPage: true,
+        tags: ['DJI', 'Avata', 'FPV', '항공촬영'],
+        createdAt: '2026-06-28',
+        features: [
+            '몰입형 FPV 촬영',
+            '컴팩트한 덕트형 디자인',
+            '고화질 초광각 영상',
+            '직관적인 조종 경험',
+            '역동적인 홍보 영상 제작에 적합'
+        ]
+    },
+    {
+        id: 'dji-lito-x1',
+        name: 'DJI Lito X1',
+        category: '카메라 드론',
+        description: '입문자도 쉽게 다룰 수 있는 카메라 드론',
+        detailDescription: 'DJI Lito X1은 간편한 비행과 촬영을 목표로 한 카메라 드론입니다. 빠른 현장 스케치와 일상형 콘텐츠 제작에 적합합니다.',
+        price: 0,
+        image: '/images/products/dji-lito-x1/dji-lito-x1.png',
+        images: [
+            '/images/products/dji-lito-x1/dji-lito-x1.png',
+        ],
+        hasDetailedPage: true,
+        tags: ['DJI', 'Lito', '카메라드론', '입문자'],
+        createdAt: '2026-06-28',
+        features: [
+            '쉬운 비행 조작',
+            '컴팩트한 휴대성',
+            '자동 촬영 기능',
+            '입문자 친화적 구성',
+            '가벼운 현장 기록 촬영에 적합'
+        ]
+    },
 
 
 
