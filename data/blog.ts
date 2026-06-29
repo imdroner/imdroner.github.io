@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-06-30-drone-site-data-speed',
+    title: '건설·시설 현장 드론 데이터, 왜 ‘빨리 열리고 바로 찾는 기록’이어야 할까요?',
+    description: '2026년 4월 30일과 2026년 6월 24일 DroneDeploy 공식 자료를 바탕으로, 건설·시설 현장에서 드론 데이터의 가치가 빠른 파노라마 열람, 검색 가능한 기록, 모바일 점검 워크플로우에서 어떻게 갈리는지 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-april-2026-quarterly-release-hero.webp',
+    date: '2026-06-30',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['건설모니터링', '시설물점검', '현장파노라마', 'DroneDeploy', 'BIM', '현장기록', '오프라인기록', '디지털점검'],
+    readTime: '6분',
+  },
+  {
     id: '2026-06-29-drone-processing-pipeline',
     title: '반복 현장 드론 매핑, 왜 촬영보다 처리 파이프라인이 먼저일까요?',
     description: '2026년 6월 17일 PIX4D와 2026년 5월 25일 DroneDeploy 공식 자료를 바탕으로, 반복 현장 드론 매핑에서 처리 자동화, QA, BIM 연계가 고객 납기와 활용도를 어떻게 바꾸는지 소개합니다.',
