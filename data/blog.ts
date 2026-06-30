@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-01-drone-data-security-governance',
+    title: '드론 데이터 서비스, 이제는 보안과 저장 위치까지 먼저 확인하셔야 합니다',
+    description: '2026년 7월 1일 기준으로 확인한 PIX4D 공식 자료를 바탕으로, 건설·공공·에너지 고객이 드론 데이터 도입 전에 왜 ISO 27001, SOC 2, 저장 지역, 오프라인 처리 가능성까지 함께 확인해야 하는지 소개합니다.',
+    thumbnail: '/images/blog/pix4d-data-security-hero.webp',
+    date: '2026-07-01',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['드론데이터보안', 'PIX4D', 'ISO27001', 'SOC2', '시설물점검', '공공안전', '건설모니터링', '데이터거버넌스'],
+    readTime: '6분',
+  },
+  {
     id: '2026-06-30-drone-site-data-speed',
     title: '건설·시설 현장 드론 데이터, 왜 ‘빨리 열리고 바로 찾는 기록’이어야 할까요?',
     description: '2026년 4월 30일과 2026년 6월 24일 DroneDeploy 공식 자료를 바탕으로, 건설·시설 현장에서 드론 데이터의 가치가 빠른 파노라마 열람, 검색 가능한 기록, 모바일 점검 워크플로우에서 어떻게 갈리는지 소개합니다.',
