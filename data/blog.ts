@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-02-construction-3d-site-walkthrough',
+    title: '건설 현장 기록, 왜 이제는 항공사진보다 3D 워크스루가 먼저일까요?',
+    description: '2026년 7월 1일 DroneDeploy 공식 자료와 2026년 3월 26일 DJI Enterprise Insights 사례를 바탕으로, 건설 현장 기록이 단순 항공 촬영에서 3D 워크스루·원격 검토·자동 순찰 중심으로 바뀌는 이유를 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-3d-site-walkthrough-construction.webp',
+    date: '2026-07-02',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['건설모니터링', '3D워크스루', 'DroneDeploy', 'DJI Dock 3', '원격검토', '현장기록', '스마트건설', 'FlightHub2'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-01-drone-data-security-governance',
     title: '드론 데이터 서비스, 이제는 보안과 저장 위치까지 먼저 확인하셔야 합니다',
     description: '2026년 7월 1일 기준으로 확인한 PIX4D 공식 자료를 바탕으로, 건설·공공·에너지 고객이 드론 데이터 도입 전에 왜 ISO 27001, SOC 2, 저장 지역, 오프라인 처리 가능성까지 함께 확인해야 하는지 소개합니다.',
