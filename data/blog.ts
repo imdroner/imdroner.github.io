@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-03-construction-reality-capture-standardization',
+    title: '건설 현장 드론 기록, 왜 이제는 한 번의 촬영보다 표준화가 중요할까요?',
+    description: '2026년 7월 2일 기준으로 확인한 DroneDeploy 공식 자료를 바탕으로, 건설 현장 드론 데이터의 가치가 단발성 촬영보다 표준화된 리얼리티 캡처와 누적 기록 체계로 이동하는 이유를 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-pcl-reality-capture-standardization.webp',
+    date: '2026-07-03',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['건설모니터링', '리얼리티캡처', 'DroneDeploy', '현장기록', '프로젝트관리', '360워크스루', '스마트건설', '공정관리'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-02-construction-3d-site-walkthrough',
     title: '건설 현장 기록, 왜 이제는 항공사진보다 3D 워크스루가 먼저일까요?',
     description: '2026년 7월 1일 DroneDeploy 공식 자료와 2026년 3월 26일 DJI Enterprise Insights 사례를 바탕으로, 건설 현장 기록이 단순 항공 촬영에서 3D 워크스루·원격 검토·자동 순찰 중심으로 바뀌는 이유를 소개합니다.',
