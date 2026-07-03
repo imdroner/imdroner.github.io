@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-04-automated-public-safety-drone-stations',
+    title: '공공안전 대응, 왜 이제는 순찰 차량보다 자동 드론 스테이션이 먼저일까요?',
+    description: '2026년 7월 3일 DJI Enterprise Insights 사용자 사례와 2025년 2월 27일 DJI Enterprise 공식 자료를 바탕으로, 공공안전 대응이 순찰 중심에서 자동 드론 스테이션·상황실 연동·초동 판단 데이터 중심으로 바뀌는 이유를 소개합니다.',
+    thumbnail: '/images/blog/dji-celaya-public-safety-dock-3.webp',
+    date: '2026-07-04',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['공공안전드론', 'DJI Dock 3', '자동드론스테이션', '긴급대응', 'FlightHub2', '항만감시', '산업단지보안', '원격관제'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-03-construction-reality-capture-standardization',
     title: '건설 현장 드론 기록, 왜 이제는 한 번의 촬영보다 표준화가 중요할까요?',
     description: '2026년 7월 2일 기준으로 확인한 DroneDeploy 공식 자료를 바탕으로, 건설 현장 드론 데이터의 가치가 단발성 촬영보다 표준화된 리얼리티 캡처와 누적 기록 체계로 이동하는 이유를 소개합니다.',
