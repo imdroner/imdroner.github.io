@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-05-construction-3d-dispute-records',
+    title: '건설 현장 분쟁 대응, 왜 사진 모음보다 날짜별 3D 기록이 먼저일까요?',
+    description: '2026년 7월 1일 공개된 DroneDeploy 공식 자료를 바탕으로, 건설 현장에서 분쟁 대응·준공 인계·가려지기 전 공정 검토를 위해 왜 날짜별 3D 기록 체계가 필요한지 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-construction-3d-dispute-record-hero.webp',
+    date: '2026-07-05',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['건설모니터링', '3D워크스루', '현장기록', '분쟁대응', '준공기록', 'MEP기록', 'DroneDeploy', '스마트건설'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-04-automated-public-safety-drone-stations',
     title: '공공안전 대응, 왜 이제는 순찰 차량보다 자동 드론 스테이션이 먼저일까요?',
     description: '2026년 7월 3일 DJI Enterprise Insights 사용자 사례와 2025년 2월 27일 DJI Enterprise 공식 자료를 바탕으로, 공공안전 대응이 순찰 중심에서 자동 드론 스테이션·상황실 연동·초동 판단 데이터 중심으로 바뀌는 이유를 소개합니다.',
