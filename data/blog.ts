@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-06-remote-drone-operations-infrastructure',
+    title: '24시간 드론 모니터링, 왜 기체보다 통신·운용 인프라를 먼저 보셔야 할까요?',
+    description: '2026년 6월 16일, 6월 12일, 3월 26일 DJI Enterprise Insights 공식 자료를 바탕으로, 24시간 드론 모니터링의 핵심이 기체 스펙보다 통신 인프라, 규정 대응, 반복 가능한 원격 운용 체계에 있는 이유를 소개합니다.',
+    thumbnail: '/images/blog/dji-o4-ground-station-remote-monitoring-infrastructure-2026.webp',
+    date: '2026-07-06',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['원격관제', 'DJI O4', 'Matrice 4D', 'DJI Dock 3', '건설모니터링', '시설물점검', '드론자동화', '통신인프라'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-05-construction-3d-dispute-records',
     title: '건설 현장 분쟁 대응, 왜 사진 모음보다 날짜별 3D 기록이 먼저일까요?',
     description: '2026년 7월 1일 공개된 DroneDeploy 공식 자료를 바탕으로, 건설 현장에서 분쟁 대응·준공 인계·가려지기 전 공정 검토를 위해 왜 날짜별 3D 기록 체계가 필요한지 소개합니다.',
