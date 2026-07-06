@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-07-drone-dock-compliance-checklist',
+    title: '드론 스테이션 도입, 왜 기체 스펙보다 승인·컴플라이언스 체크리스트가 먼저일까요?',
+    description: '2026년 6월 26일 기준 DJI Enterprise Insights sitemap에서 갱신이 확인된 Dock 3 컴플라이언스 자료와 2026년 6월 12일 Matrice 4D C6 준수 자료를 바탕으로, 드론 스테이션 도입에서 왜 승인·운용 문서·원격 운영 체계가 먼저 필요한지 소개합니다.',
+    thumbnail: '/images/blog/dji-dock-3-compliance-operational-success-2026.webp',
+    date: '2026-07-07',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['드론스테이션', 'DJI Dock 3', '컴플라이언스', '원격관제', 'Matrice4D', '시설물점검', '건설모니터링', '드론운영표준'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-06-remote-drone-operations-infrastructure',
     title: '24시간 드론 모니터링, 왜 기체보다 통신·운용 인프라를 먼저 보셔야 할까요?',
     description: '2026년 6월 16일, 6월 12일, 3월 26일 DJI Enterprise Insights 공식 자료를 바탕으로, 24시간 드론 모니터링의 핵심이 기체 스펙보다 통신 인프라, 규정 대응, 반복 가능한 원격 운용 체계에 있는 이유를 소개합니다.',
