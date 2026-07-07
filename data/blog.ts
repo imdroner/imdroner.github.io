@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-08-drone-data-social-impact-infrastructure',
+    title: '공공안전·환경 모니터링, 왜 이제는 드론 영상보다 반복 가능한 데이터 체계가 먼저일까요?',
+    description: '2026년 7월 6일 DroneDeploy 사회공헌 보고서, 2026년 7월 2일 DJI Enterprise Insights 공공안전 사례, 2026년 5월 28일 PIX4D 환경 매핑 자료를 바탕으로 공공안전·환경 모니터링에서 왜 드론 영상보다 반복 가능한 데이터 체계가 중요한지 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-social-impact-public-safety-environment-2025.webp',
+    date: '2026-07-08',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['공공안전드론', '환경모니터링', 'DroneDeploy', 'DJI Dock 3', 'PIX4Dmatic', '원격관제', '산림조사', '드론데이터'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-07-drone-dock-compliance-checklist',
     title: '드론 스테이션 도입, 왜 기체 스펙보다 승인·컴플라이언스 체크리스트가 먼저일까요?',
     description: '2026년 6월 26일 기준 DJI Enterprise Insights sitemap에서 갱신이 확인된 Dock 3 컴플라이언스 자료와 2026년 6월 12일 Matrice 4D C6 준수 자료를 바탕으로, 드론 스테이션 도입에서 왜 승인·운용 문서·원격 운영 체계가 먼저 필요한지 소개합니다.',
