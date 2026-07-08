@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-09-construction-monitoring-schedule-automation',
+    title: '건설 현장 드론 모니터링, 왜 이제는 촬영보다 공정 업데이트 속도가 중요할까요?',
+    description: '2026년 7월 8일 DroneDeploy Blog의 AI scheduling 자료와 2026년 3월 26일 DJI Enterprise Insights의 SK 에코플랜트 사례를 바탕으로, 건설 드론 데이터의 가치가 촬영 납품에서 공정 업데이트와 원격 판단 속도를 높이는 체계로 이동하는 이유를 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-ai-scheduling-construction-progress-2026.webp',
+    date: '2026-07-09',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['건설모니터링', 'AI스케줄링', 'DroneDeploy', 'DJI Dock 3', '공정관리', '원격관제', '스마트건설', '현장데이터'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-08-drone-data-social-impact-infrastructure',
     title: '공공안전·환경 모니터링, 왜 이제는 드론 영상보다 반복 가능한 데이터 체계가 먼저일까요?',
     description: '2026년 7월 6일 DroneDeploy 사회공헌 보고서, 2026년 7월 2일 DJI Enterprise Insights 공공안전 사례, 2026년 5월 28일 PIX4D 환경 매핑 자료를 바탕으로 공공안전·환경 모니터링에서 왜 드론 영상보다 반복 가능한 데이터 체계가 중요한지 소개합니다.',
