@@ -444,7 +444,7 @@ export default function DowonCncDroneAiDiagnosisProposalPage() {
             ))}
           </div>
           <div className="mt-8 rounded-3xl bg-amber-50 p-6 text-sm leading-7 text-amber-900 ring-1 ring-amber-200 dark:bg-amber-400/10 dark:text-amber-100 dark:ring-amber-400/20">
-            Matrice 4T·Mavic 3 Thermal 장비는 RGB와 열화상 동시 촬영이 가능하므로, 공사 수주 전 기본 점검 단계에서는 촬영·정리 효율을 반영한 합리적인 견적 구성이 가능합니다. 열화상 결과는 누수 원인을 확정하는 정밀진단이 아니라, 습기·열교·방수층 이상 의심 구간을 선별하는 참고자료로 활용합니다.
+            열화상 결과는 누수 원인을 확정하는 정밀진단이 아니라, 습기·열교·방수층 이상 의심 구간을 선별하는 참고자료로 활용합니다.
           </div>
           <div className="mt-8 rounded-3xl bg-slate-50 p-8 dark:bg-slate-900">
             <h3 className="text-xl font-bold">견적 산정 기준</h3>
