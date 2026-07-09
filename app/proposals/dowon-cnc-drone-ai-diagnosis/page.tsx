@@ -158,6 +158,132 @@ const pilotPackages = [
   },
 ];
 
+
+const caseImageBase = '/images/proposals/dowon-cnc/case-studies';
+
+const thermalCaseStudies = [
+  {
+    id: 'CASE 01',
+    title: '처마 하부·외벽 일부 온도 편차',
+    target: '외벽/처마',
+    thermal: `${caseImageBase}/dji_20230530135731_0035_t.jpg`,
+    rgb: `${caseImageBase}/dji_20230530135731_0035_v.jpg`,
+    finding: '처마 하부와 외벽 일부에서 주변과 다른 온도 분포가 확인되며, 외벽 중앙 세로형 저온 영역과 우측 하단 사선형 저온 영역이 나타났습니다.',
+    cause: '외벽 내부 수분·습기 분포 차이, 보수·재도장 이력, 철근콘크리트 열교, 마감층 두께·재질 차이 가능성',
+    action: '온도 이상 부위 중심 육안조사, 타진조사, 균열·누수 정밀 점검, 동일 부위 정기 모니터링',
+  },
+  {
+    id: 'CASE 02',
+    title: '처마 하부 연속 저온 및 세로형 저온 영역',
+    target: '외벽/차양부',
+    thermal: `${caseImageBase}/dji_20230530140020_0048_t.jpg`,
+    rgb: `${caseImageBase}/dji_20230530140020_0048_v.jpg`,
+    finding: '처마 하부와 외벽 상단을 따라 연속적인 저온 분포가 확인되고, 중앙부 세로 방향 저온 영역은 RGB 영상의 미세한 변색·보수 흔적과 일부 대응됩니다.',
+    cause: '처마·슬라브 접합부 열교, 외벽 내부 수분, 보수·재도장 이력, 미장·도장층 재질 차이 가능성',
+    action: '처마 하부와 세로형 저온 영역 현장 확인, 박리·들뜸 타진조사, 균열·누수 점검, 동일 조건 재촬영 비교',
+  },
+  {
+    id: 'CASE 03',
+    title: '원형 구조물 우측 세로형 저온 영역',
+    target: '원형 외벽',
+    thermal: `${caseImageBase}/dji_20230530140511_0077_t.jpg`,
+    rgb: `${caseImageBase}/dji_20230530140511_0077_v.jpg`,
+    finding: '원형 구조물 전반은 비교적 균일하나, 우측 외벽에 상부에서 하부로 이어지는 세로형 저온 영역이 뚜렷하게 확인됩니다.',
+    cause: '외벽 내부 수분, 보수·재도장 이력, 구조체 또는 기둥부 열교, 외벽 마감재 두께·재질 차이 가능성',
+    action: '세로형 이상 부위의 균열·백화·누수 흔적 확인, 타진조사, 함수율 측정 또는 누수 진단, 계절·시간대별 재촬영',
+  },
+  {
+    id: 'CASE 04',
+    title: '금속 지붕 표면 열화와 온도 편차',
+    target: '금속 지붕',
+    thermal: `${caseImageBase}/dji_20230530145937_0013_t.jpg`,
+    rgb: `${caseImageBase}/dji_20230530145937_0013_v.jpg`,
+    finding: '금속 지붕 일부 세로 패널에서 낮은 온도 영역이 반복 확인되며, RGB 영상에서는 광범위한 도막 박리와 노후화가 확인됩니다.',
+    cause: '지붕 도막 노후화·박리, 산화·풍화에 따른 방사율 변화, 오염·부식 초기 단계, 표면 마감 상태 차이 가능성',
+    action: '도막 박리 구간 부식 여부 점검, 국부 보수·재도장, 체결부·실링·누수 흔적 점검, 열화상 정기 모니터링',
+  },
+  {
+    id: 'CASE 05',
+    title: '외벽 패널 줄눈부 연속 저온',
+    target: '패널 외벽',
+    thermal: `${caseImageBase}/dji_20230530151712_0028_t.jpg`,
+    rgb: `${caseImageBase}/dji_20230530151712_0028_v.jpg`,
+    finding: '외벽 패널은 전반적으로 균일하나, 중앙부 세로 줄눈과 일부 수평 줄눈을 따라 주변보다 낮은 온도 영역이 연속적으로 나타납니다.',
+    cause: '외벽 패널 접합부 열교, 줄눈 내부 구조재·고정부 열전도 차이, 실링재 노후화 또는 충진 상태 차이 가능성',
+    action: '세로·수평 줄눈 실링재 균열·탈락·노후화 확인, 누수·접착 상태 점검, 동일 조건 재촬영, 필요 시 줄눈 보수',
+  },
+  {
+    id: 'CASE 06',
+    title: '태양광 모듈 스트링별 온도 불균형',
+    target: '태양광 모듈',
+    thermal: `${caseImageBase}/dji_20230531143627_0085_t.jpg`,
+    rgb: `${caseImageBase}/dji_20230531143627_0085_v.jpg`,
+    finding: '태양광 모듈 대부분은 균일하지만 일부 모듈과 스트링에서 국부적인 고온·저온 편차가 확인되며, 급격한 Hot Spot은 확인되지 않습니다.',
+    cause: '모듈·셀 출력 불균형, 셀 열화 또는 제조 편차, 스트링별 부하 차이, 부분 음영·오염, 커넥터·바이패스 다이오드 초기 이상 가능성',
+    action: 'IV Curve·발전량 점검, 스트링별 인버터 데이터 비교, 오염·음영·손상 확인, 커넥터·배선 점검, 정기 열화상 점검',
+  },
+  {
+    id: 'CASE 07',
+    title: '균열·도막 박리와 열적 이상 대응',
+    target: '외벽 균열',
+    thermal: `${caseImageBase}/dji_20230609122339_0097_t.jpg`,
+    rgb: `${caseImageBase}/dji_20230609122339_0097_v.jpg`,
+    finding: '외벽 중앙 사각형 온도 편차와 수평 균열 구간의 온도 차이가 확인되며, RGB 영상의 균열·도막 박리·보수 흔적과 공간적으로 연관됩니다.',
+    cause: '외벽 마감재 균열·박리, 균열을 통한 우수·습기 침투, 보수 이력, 내부 공동 또는 마감재 들뜸, 구조체 열교 가능성',
+    action: '균열·도막 박리 범위 육안조사, 타진조사, 함수율·누수 진단, 균열 보수·방수 보강·재도장, 보수 후 재촬영',
+  },
+  {
+    id: 'CASE 08',
+    title: '대형 세로형 저온 영역과 외벽 열화',
+    target: '노후 외벽',
+    thermal: `${caseImageBase}/dji_20230609122409_0102_t.jpg`,
+    rgb: `${caseImageBase}/dji_20230609122409_0102_v.jpg`,
+    finding: '외벽 중앙 상부에 대형 세로형 저온 영역이 확인되고, 수평·세로 균열 및 보수 흔적과 일부 대응되는 열적 이상이 나타납니다.',
+    cause: '균열을 통한 우수 침투와 내부 습기 축적, 기존 보수·재도장, 마감층 박리 또는 내부 공동, 장기 노출에 따른 방수 성능 저하 가능성',
+    action: '중앙부·균열 구간 육안조사, 타진조사, 함수율·누수 진단, 균열·도막 보수 및 방수 성능 점검, 보수 후 재촬영',
+  },
+  {
+    id: 'CASE 09',
+    title: '옹벽 표면 오염·풍화와 온도 불균일',
+    target: '콘크리트 옹벽',
+    thermal: `${caseImageBase}/dji_20230612154210_0002_t.jpg`,
+    rgb: `${caseImageBase}/dji_20230612154210_0002_v.jpg`,
+    finding: '옹벽 전면은 비교적 균일하지만 상부와 중앙부에 다수의 온도 불균일이 확인되며, RGB 영상의 오염·변색·풍화 상태와 일부 대응됩니다.',
+    cause: '콘크리트 표면 풍화·오염, 우수 유입과 건조 상태 차이, 타설 이음부 또는 보수 이력, 표면 마감재 열화, 일사·음영 조건 영향 가능성',
+    action: '옹벽 상부 및 온도 편차 구간 육안조사, 배수 상태 점검, 함수율·타진조사, 표면 세척 후 재점검, 정기 열화상 관리',
+  },
+  {
+    id: 'CASE 10',
+    title: '외벽 전면 도막 박리·부풀음과 불균일 열 분포',
+    target: '노후 외벽',
+    thermal: `${caseImageBase}/dji_20231121111917_0015_t.jpg`,
+    rgb: `${caseImageBase}/dji_20231121111917_0015_v.jpg`,
+    finding: '외벽 표면에 다수의 국부 온도 편차가 광범위하게 분포하며, RGB 영상의 도막 박리·부풀음·박락·풍화와 상당 부분 대응됩니다.',
+    cause: '장기 노후화, 방수 성능 저하와 수분 침투, 마감재 접착력 저하, 반복 일사·온도 변화, 과거 보수 이력 가능성',
+    action: '외벽 전면 손상 범위 조사, 타진조사, 함수율·누수 진단, 광범위 손상 구간 전체 재도장·방수 보강, 보수 후 열화상 재점검',
+  },
+  {
+    id: 'CASE 11',
+    title: '지붕 노후화와 일반적 열 분포',
+    target: '지붕/처마',
+    thermal: `${caseImageBase}/dji_20231122142416_0035_t.jpg`,
+    rgb: `${caseImageBase}/dji_20231122142416_0035_v.jpg`,
+    finding: '지붕면은 비교적 균일하며 국부 고온·저온 이상은 확인되지 않고, 처마 하부 저온 영역과 창호 주변 온도 차이는 구조·일사 조건에 따른 일반 패턴으로 판단됩니다.',
+    cause: '처마 슬래브·보 구조부 열교, 처마부 일사·음영 차이, 지붕 마감재 장기 노후화와 표면 오염, 구조·단열 배치 영향 가능성',
+    action: '지붕 체결·표면 손상·부식 정기 점검, 처마·창호 실링과 방수 상태 확인, 우천 후 누수 흔적 확인, 정기 열화상 모니터링',
+  },
+  {
+    id: 'CASE 12',
+    title: '타일 마감 외벽 저온 영역과 손상 의심',
+    target: '타일 외벽',
+    thermal: `${caseImageBase}/dji_20231122143352_0086_t.jpg`,
+    rgb: `${caseImageBase}/dji_20231122143352_0086_v.jpg`,
+    finding: '타일 마감 외벽 중앙부를 따라 광범위한 수평 저온 영역이 확인되며, RGB 영상의 균열·줄눈 손상·타일 박락·탈락 의심 부위와 일부 대응됩니다.',
+    cause: '타일 줄눈 균열과 우수 침투, 타일 마감층 들뜸·박리, 내부 수분 축적, 접착력 저하, 반복 온도 변화와 수분 침투 가능성',
+    action: '균열·타일 탈락 의심 부위 육안조사, 타진조사, 함수율·누수 진단, 위험 타일 긴급 보수, 줄눈 보수·방수 보강·재시공 검토',
+  },
+];
+
 function SectionHeading({ eyebrow, title, description }: { eyebrow: string; title: string; description?: string }) {
   return (
     <div className="mx-auto mb-10 max-w-3xl text-center">
@@ -342,6 +468,80 @@ export default function DowonCncDroneAiDiagnosisProposalPage() {
                 열화상은 균열 자체를 직접 판별하는 장비가 아니라, 누수·습기·열교 등으로 인한 온도 이상을 RGB 이미지와 함께 해석하는 보조 진단입니다.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="actual-thermal-cases" className="bg-slate-50 py-20 dark:bg-slate-900/60">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Actual Thermal Cases"
+            title="실제 열화상·RGB 분석 사례"
+            description="첨부된 열화상 분석 내용을 기준으로 외관상 확인이 어려운 이상 후보를 어떻게 선별하고, 현장조사 항목으로 연결하는지 보여주는 사례입니다."
+          />
+
+          <div className="overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-slate-200 dark:bg-slate-950 dark:ring-slate-800">
+            <div className="overflow-x-auto">
+              <table className="min-w-[920px] divide-y divide-slate-200 text-left text-sm dark:divide-slate-800">
+                <thead className="bg-slate-100 text-xs uppercase tracking-[0.18em] text-slate-500 dark:bg-slate-900 dark:text-slate-400">
+                  <tr>
+                    <th scope="col" className="px-5 py-4 font-bold">사례</th>
+                    <th scope="col" className="px-5 py-4 font-bold">대상</th>
+                    <th scope="col" className="px-5 py-4 font-bold">주요 분석 결과</th>
+                    <th scope="col" className="px-5 py-4 font-bold">권고 조치</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                  {thermalCaseStudies.map((item) => (
+                    <tr key={item.id} className="align-top">
+                      <td className="whitespace-nowrap px-5 py-4 font-bold text-sky-600 dark:text-sky-300">{item.id}</td>
+                      <td className="px-5 py-4 font-semibold text-slate-800 dark:text-slate-100">{item.target}</td>
+                      <td className="px-5 py-4 leading-7 text-slate-600 dark:text-slate-300">{item.finding}</td>
+                      <td className="px-5 py-4 leading-7 text-slate-600 dark:text-slate-300">{item.action}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="mt-8 rounded-3xl bg-amber-50 p-6 text-sm leading-7 text-amber-900 ring-1 ring-amber-200 dark:bg-amber-400/10 dark:text-amber-100 dark:ring-amber-400/20">
+            ※ 열화상 촬영은 외관상 확인이 어려운 이상 징후를 탐지하는 비파괴 진단 기법으로, 점검이 필요한 위치를 선정하기 위한 1차 진단 자료입니다. 열화상 결과만으로 결함을 확정할 수 없으며, 이상이 확인된 부위는 육안조사, 타진조사, 균열 및 누수 점검 등 추가 조사를 통해 종합적으로 판단하는 것이 바람직합니다.
+          </div>
+
+          <div className="mt-12 space-y-10">
+            {thermalCaseStudies.map((item) => (
+              <article key={item.id} className="overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-slate-200 dark:bg-slate-950 dark:ring-slate-800">
+                <div className="border-b border-slate-100 p-6 dark:border-slate-800 md:p-8">
+                  <p className="text-sm font-bold uppercase tracking-[0.2em] text-sky-600 dark:text-sky-300">{item.id} · {item.target}</p>
+                  <h3 className="mt-3 text-2xl font-bold text-slate-950 dark:text-white">{item.title}</h3>
+                </div>
+                <div className="grid gap-0 lg:grid-cols-2">
+                  <figure className="border-b border-slate-100 bg-slate-950 p-4 dark:border-slate-800 lg:border-b-0 lg:border-r">
+                    <img src={item.thermal} alt={`${item.title} 열화상 이미지`} className="h-80 w-full rounded-2xl object-contain" />
+                    <figcaption className="px-2 pt-3 text-sm font-semibold text-sky-200">열화상 이미지</figcaption>
+                  </figure>
+                  <figure className="bg-slate-100 p-4 dark:bg-slate-900">
+                    <img src={item.rgb} alt={`${item.title} RGB 이미지`} className="h-80 w-full rounded-2xl object-contain bg-white" />
+                    <figcaption className="px-2 pt-3 text-sm font-semibold text-slate-700 dark:text-slate-200">RGB 이미지</figcaption>
+                  </figure>
+                </div>
+                <div className="grid gap-5 p-6 md:grid-cols-3 md:p-8">
+                  <div className="rounded-3xl bg-slate-50 p-5 dark:bg-slate-900">
+                    <h4 className="text-sm font-bold text-sky-600 dark:text-sky-300">분석 내용</h4>
+                    <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{item.finding}</p>
+                  </div>
+                  <div className="rounded-3xl bg-slate-50 p-5 dark:bg-slate-900">
+                    <h4 className="text-sm font-bold text-sky-600 dark:text-sky-300">예상 원인</h4>
+                    <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{item.cause}</p>
+                  </div>
+                  <div className="rounded-3xl bg-slate-50 p-5 dark:bg-slate-900">
+                    <h4 className="text-sm font-bold text-sky-600 dark:text-sky-300">권고 조치사항</h4>
+                    <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{item.action}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
