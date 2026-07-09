@@ -480,31 +480,6 @@ export default function DowonCncDroneAiDiagnosisProposalPage() {
             description="첨부된 열화상 분석 내용을 기준으로 외관상 확인이 어려운 이상 후보를 어떻게 선별하고, 현장조사 항목으로 연결하는지 보여주는 사례입니다."
           />
 
-          <div className="overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-slate-200 dark:bg-slate-950 dark:ring-slate-800">
-            <div className="overflow-x-auto">
-              <table className="min-w-[920px] divide-y divide-slate-200 text-left text-sm dark:divide-slate-800">
-                <thead className="bg-slate-100 text-xs uppercase tracking-[0.18em] text-slate-500 dark:bg-slate-900 dark:text-slate-400">
-                  <tr>
-                    <th scope="col" className="px-5 py-4 font-bold">사례</th>
-                    <th scope="col" className="px-5 py-4 font-bold">대상</th>
-                    <th scope="col" className="px-5 py-4 font-bold">주요 분석 결과</th>
-                    <th scope="col" className="px-5 py-4 font-bold">권고 조치</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
-                  {thermalCaseStudies.map((item) => (
-                    <tr key={item.id} className="align-top">
-                      <td className="whitespace-nowrap px-5 py-4 font-bold text-sky-600 dark:text-sky-300">{item.id}</td>
-                      <td className="px-5 py-4 font-semibold text-slate-800 dark:text-slate-100">{item.target}</td>
-                      <td className="px-5 py-4 leading-7 text-slate-600 dark:text-slate-300">{item.finding}</td>
-                      <td className="px-5 py-4 leading-7 text-slate-600 dark:text-slate-300">{item.action}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
           <div className="mt-8 rounded-3xl bg-amber-50 p-6 text-sm leading-7 text-amber-900 ring-1 ring-amber-200 dark:bg-amber-400/10 dark:text-amber-100 dark:ring-amber-400/20">
             ※ 열화상 촬영은 외관상 확인이 어려운 이상 징후를 탐지하는 비파괴 진단 기법으로, 점검이 필요한 위치를 선정하기 위한 1차 진단 자료입니다. 열화상 결과만으로 결함을 확정할 수 없으며, 이상이 확인된 부위는 육안조사, 타진조사, 균열 및 누수 점검 등 추가 조사를 통해 종합적으로 판단하는 것이 바람직합니다.
           </div>
