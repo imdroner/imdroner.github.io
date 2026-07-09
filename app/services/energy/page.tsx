@@ -1,584 +1,523 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { SITE_NAME, SITE_URL } from '@/lib/config';
 import { services } from '@/data/services';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { 
-  Award,
-  CheckCircle2,
-  Shield,
-  Sparkles,
-  Zap,
-  FileText,
-  Map,
-  Settings,
-  Image as ImageIcon,
-  File,
-  BarChart3,
+  AlertTriangle,
   ArrowRight,
+  BarChart3,
+  BatteryCharging,
+  CheckCircle2,
+  ClipboardCheck,
+  Factory,
+  FileText,
+  Flame,
+  Gauge,
+  MapPinned,
   Phone,
-  Mail,
+  Radar,
+  ShieldCheck,
+  Sparkles,
+  SunMedium,
   Thermometer,
   Wind,
-  SunMedium,
-  Factory
+  Zap,
 } from 'lucide-react';
 
-const service = services.find(s => s.id === 'energy')!;
+const service = services.find((item) => item.id === 'energy')!;
+
+const pageDescription =
+  '태양광·풍력·송전·변전·산업 플랜트 설비를 드론 RGB·열화상 데이터로 안전하게 점검하고 이상 후보와 우선 조치 구간을 리포트로 제공하는 아이엠드론의 에너지 설비 점검 서비스입니다.';
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "/services/energy",
+    canonical: '/services/energy',
   },
   title: `${service.title} | ${SITE_NAME}`,
-  description: service.description,
+  description: pageDescription,
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
     url: `${SITE_URL}/services/energy`,
     siteName: SITE_NAME,
     title: `${service.title} | ${SITE_NAME}`,
-    description: service.description,
+    description: pageDescription,
     images: [{ url: `${SITE_URL}${service.image}`, width: 1200, height: 630 }],
   },
 };
 
+const heroStats = [
+  { label: 'Thermal Scan', value: '열화상 점검', detail: 'Hot Spot·온도 편차·과열 후보를 빠르게 선별' },
+  { label: 'Asset Mapping', value: '위치 기반 리포트', detail: '패널·블레이드·설비 ID와 좌표로 보수 지점 명확화' },
+  { label: 'Safety Operation', value: '비접촉 점검', detail: '고소·감전·정전 리스크를 줄이는 원격 점검 방식' },
+];
+
+const painPoints = [
+  {
+    icon: AlertTriangle,
+    title: '이상 설비를 늦게 발견합니다',
+    description: '패널 Hot Spot, 접속 불량, 블레이드 손상은 초기에 찾지 못하면 발전 효율과 유지보수 비용에 영향을 줍니다.',
+  },
+  {
+    icon: ShieldCheck,
+    title: '고소·전력 설비 접근이 위험합니다',
+    description: '송전선, 터빈, 플랜트 구조물, 지붕형 태양광은 작업자 접근 전 안전한 원격 확인이 필요합니다.',
+  },
+  {
+    icon: Gauge,
+    title: '넓은 설비를 빠르게 훑기 어렵습니다',
+    description: '대규모 발전소와 에너지 단지는 지상 점검만으로는 누락 없는 전수 확인과 반복 점검이 어렵습니다.',
+  },
+  {
+    icon: FileText,
+    title: '보수팀이 바로 움직일 자료가 부족합니다',
+    description: '단순 사진이 아니라 이상 위치, 유형, 심각도, 우선순위가 정리된 실행 가능한 리포트가 필요합니다.',
+  },
+];
+
+const solutionFlow = [
+  {
+    step: '01',
+    title: '설비 목적·범위 확인',
+    description: '태양광, 풍력, 송전·변전, 플랜트 등 설비 유형과 정기점검·고장진단·인수점검 목적을 정리합니다.',
+  },
+  {
+    step: '02',
+    title: '비행·안전 조건 검토',
+    description: '전력 설비, 장애물, 주변 지형, 비행 제한, 운영 시간, 현장 통제 조건을 확인해 안전 계획을 세웁니다.',
+  },
+  {
+    step: '03',
+    title: 'RGB·열화상 촬영 설계',
+    description: '열화상 촬영 시간대, 고도, 속도, 중첩률, 촬영 각도, 설비 ID 매칭 방식을 목적에 맞게 설계합니다.',
+  },
+  {
+    step: '04',
+    title: '드론 데이터 수집',
+    description: '자동 경로 비행과 근접 촬영을 병행해 RGB 이미지, 열화상 이미지, 영상, 위치 데이터를 수집합니다.',
+  },
+  {
+    step: '05',
+    title: '이상 후보 분류·분석',
+    description: '온도 편차, 패턴, 외관 손상, 오염, 부식, 구조물 변형 후보를 유형별로 분류하고 우선순위를 정리합니다.',
+  },
+  {
+    step: '06',
+    title: '점검 리포트 납품',
+    description: '이상 후보 목록, 위치 지도, 이미지 세트, 조치 우선순위, 정기점검 제안을 리포트로 제공합니다.',
+  },
+];
+
+const useCases = [
+  {
+    icon: SunMedium,
+    title: '태양광 발전소 패널 점검',
+    description: 'Hot Spot, String Failure, 접속 불량, 오염·파손 패널을 열화상과 RGB 이미지로 선별합니다.',
+    tags: ['Hot Spot', 'String Failure', '패널 위치'],
+  },
+  {
+    icon: Wind,
+    title: '풍력 터빈 블레이드·타워 점검',
+    description: '블레이드 크랙, 도장 박리, 침식, 오염, 타워 외관 이상을 다양한 각도에서 기록합니다.',
+    tags: ['블레이드', '고해상도 줌', '정지시간 절감'],
+  },
+  {
+    icon: Zap,
+    title: '송전선·변전소·배전 설비 점검',
+    description: '국부 과열, 이물질, 도체 처짐, 절연장치 손상 등 전력 설비 이상 후보를 안전거리에서 확인합니다.',
+    tags: ['국부 과열', '전력 설비', '안전거리'],
+  },
+  {
+    icon: Factory,
+    title: '산업 플랜트·저장탱크·배관 시설',
+    description: '저장탱크, 배관, 구조물의 누유·부식·단열재 손상 후보와 시설 전경을 항공 데이터로 정리합니다.',
+    tags: ['플랜트', '저장탱크', '위험구역'],
+  },
+  {
+    icon: BatteryCharging,
+    title: 'ESS·수소·복합 에너지 단지',
+    description: '복합 설비의 구역별 리스크와 우선점검 대상을 지도 기반으로 정리해 운영 의사결정을 돕습니다.',
+    tags: ['복합 단지', '운영 리스크', '정기점검'],
+  },
+];
+
+const deliverables = [
+  {
+    icon: Thermometer,
+    title: 'RGB·열화상 이미지 세트',
+    description: '이상 후보 지점의 실제 외관과 온도 상태를 함께 확인할 수 있습니다.',
+    items: ['고해상도 RGB 사진', '열화상 이미지', '원본 데이터 옵션'],
+  },
+  {
+    icon: MapPinned,
+    title: '이상 설비 위치 정보',
+    description: '보수팀이 바로 찾아갈 수 있도록 설비 ID, 구역, 좌표, 이미지 번호를 정리합니다.',
+    items: ['패널·터빈·설비 ID', '좌표·구역 정보', '지도형 표시'],
+  },
+  {
+    icon: Flame,
+    title: 'Hot Spot·온도 편차 분석',
+    description: '열 이상 유형과 심각도를 분류해 우선 조치 대상을 선별합니다.',
+    items: ['온도 편차', '결함 유형 분류', '심각도 단계'],
+  },
+  {
+    icon: BarChart3,
+    title: '점검 요약 리포트',
+    description: '의사결정자가 빠르게 판단할 수 있도록 결과를 표와 이미지로 요약합니다.',
+    items: ['이상 후보 목록', '우선순위', '조치 의견'],
+  },
+  {
+    icon: ClipboardCheck,
+    title: '정기점검 이력 관리',
+    description: '반복 촬영을 통해 설비 상태 변화를 누적하고 유지보수 계획에 활용합니다.',
+    items: ['시계열 비교', '반복 이상 추적', '점검 주기 제안'],
+  },
+  {
+    icon: Radar,
+    title: '운영·관제 연계 제안',
+    description: '필요 시 드론 관제, 드론 스테이션, 원격 모니터링 구성까지 확장 검토합니다.',
+    items: ['원격 모니터링', '관제 연계', '자동화 검토'],
+  },
+];
+
+const packages = [
+  {
+    name: '태양광 열화상 점검 패키지',
+    bestFor: '중대형 태양광 발전소, 지붕형 태양광, 인수·정기 점검',
+    includes: ['열화상 촬영', 'Hot Spot 목록', '패널 위치 리포트'],
+  },
+  {
+    name: '풍력 외관 점검 패키지',
+    bestFor: '블레이드·타워 외관 상태를 안전하게 기록해야 하는 현장',
+    includes: ['고해상도 근접 촬영', '손상 후보 이미지', '점검 요약표'],
+  },
+  {
+    name: '전력 인프라 점검 패키지',
+    bestFor: '송전선, 변전소, 배전 설비의 국부 과열·손상 확인',
+    includes: ['안전거리 촬영', '열 이상 후보', '위치 기반 결과표'],
+  },
+  {
+    name: '플랜트 위험구역 스캔 패키지',
+    bestFor: '저장탱크, 배관, 고소 구조물, 접근 제한 구역 점검',
+    includes: ['항공 전경', '위험 후보 이미지', '보수 우선순위'],
+  },
+];
+
+const faqs = [
+  {
+    question: '열화상 점검은 언제 촬영해야 효과적인가요?',
+    answer:
+      '태양광은 발전 중 온도 편차가 뚜렷하게 나타나는 조건에서 촬영하는 것이 좋습니다. 현장 목적에 따라 일사량, 시간대, 날씨, 설비 가동 상태를 함께 검토해 촬영 일정을 잡습니다.',
+  },
+  {
+    question: '점검 중 설비를 멈춰야 하나요?',
+    answer:
+      '대부분의 항공·열화상 점검은 비접촉 방식이므로 설비를 멈추지 않고 진행할 수 있습니다. 다만 현장 안전 규정, 전력 설비 접근 조건, 점검 목적에 따라 운영팀과 사전 협의가 필요합니다.',
+  },
+  {
+    question: '드론 점검 결과만으로 바로 수리 결정을 할 수 있나요?',
+    answer:
+      '드론 점검은 이상 후보를 빠르게 선별하고 보수 우선순위를 정하는 데 효과적입니다. 실제 교체·정밀 수리는 현장 확인 또는 전문 장비 진단과 함께 판단하는 것이 안전합니다.',
+  },
+  {
+    question: '보수 업체와 공유할 수 있는 형태로 받을 수 있나요?',
+    answer:
+      '네. 이상 후보 목록, 위치, 이미지 번호, 설비 ID를 표 형태로 정리해 보수 업체가 바로 현장 조치에 활용할 수 있도록 제공합니다. 필요 시 고객사 양식에 맞춘 리포트도 협의할 수 있습니다.',
+  },
+  {
+    question: '정기 점검도 가능한가요?',
+    answer:
+      '가능합니다. 월·분기·반기·연간 단위 정기점검을 통해 설비 상태 변화를 시계열로 비교하고, 반복 발생 구간과 우선 관리 대상을 누적 관리할 수 있습니다.',
+  },
+];
+
 export default function EnergyServicePage() {
-  const keyPoints = [
-    '광역 설비를 빠르게 스캔하는 항공·열화상 점검',
-    '고소 작업·정전 시간을 줄이는 비접촉 점검 방식',
-    '이상 패널·블레이드 위치를 좌표와 이미지로 리포트 제공'
-  ];
-
-  const overviewSteps = [
-    { icon: Thermometer, title: '설비 효율 저하 최소화', description: '조기 발견으로 효율 저하를 최소화합니다' },
-    { icon: Settings, title: '정비 인력·시간 절감', description: '드론 점검으로 인력과 시간을 절약합니다' },
-    { icon: Shield, title: '정전·사고 리스크 감소', description: '비접촉 방식으로 안전하게 점검합니다' },
-    { icon: BarChart3, title: '데이터 기반 의사결정', description: '정량 데이터로 정확한 판단을 지원합니다' }
-  ];
-
-  const applicationFields = [
-    {
-      icon: SunMedium,
-      title: '태양광 발전소 패널 점검',
-      description: '드론 열화상 촬영을 통해 Hot Spot, String Failure, 접속 불량, 오염·파손 패널 등을 빠르게 찾아냅니다. 문제 패널의 위치를 좌표·사진과 함께 리포트로 제공하여 교체·청소·보수 작업을 효율적으로 계획할 수 있습니다.'
-    },
-    {
-      icon: Wind,
-      title: '윈드터빈 블레이드·타워 점검',
-      description: '고해상도 줌 카메라로 블레이드, 허브, 타워를 다양한 각도에서 촬영해 크랙, 도장 박리, 침식, 오염, 볼트·부품 이상을 확인합니다. 로프 작업·정지 시간 없이도 외관 상태를 정밀하게 기록할 수 있습니다.'
-    },
-    {
-      icon: Zap,
-      title: '송전선·변전소·배전 설비 점검',
-      description: '철탑·송전선, 변전소의 주요 장비를 드론과 열화상 카메라로 촬영해 국부 과열, 이물질, 도체 처짐, 구조물 손상 등 전력 설비의 이상 징후를 탐지합니다.'
-    },
-    {
-      icon: Factory,
-      title: '산업 플랜트·저장탱크·배관 시설',
-      description: '정유·화학·가스 플랜트 등의 저장탱크와 배관, 구조물을 상공에서 관찰하여 누유·부식·단열재 손상 등 위험 요소를 확인합니다. 시설 전경·레이아웃을 파악하는 데도 도움을 줍니다.'
-    },
-    {
-      icon: Sparkles,
-      title: '신재생·친환경 에너지 단지 통합 점검',
-      description: '태양광·풍력·ESS·수소 등 복합 에너지 단지에서 여러 설비를 통합적으로 점검하고, 공간별 리스크·우선점검 구역을 지도 기반으로 정리해 드립니다.'
-    }
-  ];
-
-  const strengths = [
-    {
-      title: '안전한 비접촉 점검',
-      description: '사다리·로프·고소작업차 없이 드론으로 촬영해 인력의 추락·감전·폭발 위험을 크게 줄입니다. 운영 중 설비도 필요한 범위 내에서 안전하게 점검할 수 있습니다.'
-    },
-    {
-      title: '열화상 + RGB 복합 분석',
-      description: '열화상 카메라와 고해상도 RGB 카메라를 함께 사용해 온도 이상뿐 아니라 실제 육안 상태까지 하나의 데이터로 제공합니다. 이를 통해 고장 원인을 보다 정확히 판단할 수 있습니다.'
-    },
-    {
-      title: '대규모 설비 신속 커버',
-      description: '수백 MW급 태양광 단지, 수십 기 이상의 터빈 단지도 단시간에 촬영·스캔하여 점검 주기를 단축하고, 누락 없이 모든 설비를 확인할 수 있습니다.'
-    },
-    {
-      title: '좌표·위치 기반 리포트',
-      description: '이상이 발견된 패널이나 블레이드의 정확한 위치를 좌표·ID·사진과 함께 정리해 드려, 현장 보수팀이 즉시 해당 지점으로 이동하여 조치할 수 있습니다.'
-    }
-  ];
-
-  const processSteps = [
-    {
-      step: 'Step 1',
-      title: '상담 & 현장 분석',
-      description: '설비 위치, 규모, 종류, 점검 목적(정기 점검, 신규 점검, 사후 점검 등)을 확인합니다.'
-    },
-    {
-      step: 'Step 2',
-      title: '비행 가능 여부 검토',
-      description: '비행 제한 구역, 송전선·구조물·주변 지형 등 안전 요소를 검토하여 비행 계획을 수립하고, 필요 시 인허가 절차를 진행합니다.'
-    },
-    {
-      step: 'Step 3',
-      title: '비행 경로·촬영 모드 설계',
-      description: '설비 배치도·지도 등을 활용해 최적의 고도, 속도, 중첩률, 촬영 패턴을 결정합니다. 태양광·열화상 촬영 시에는 일사 조건·시간대도 함께 고려합니다.'
-    },
-    {
-      step: 'Step 4',
-      title: '현장 촬영',
-      description: '사전 안전 브리핑 후, 계획된 경로에 따라 드론 비행을 진행하면서 RGB 및 열화상 데이터를 수집합니다. 필요 시 현장 운영팀과 실시간으로 화면을 공유합니다.'
-    },
-    {
-      step: 'Step 5',
-      title: '데이터 처리·분석',
-      description: '촬영 데이터를 정리해 이상 패널/블레이드/설비를 분류하고, 온도 편차·패턴 분석 등 에너지 설비에 특화된 분석 작업을 수행합니다.'
-    },
-    {
-      step: 'Step 6',
-      title: '리포트 & 후속 컨설팅',
-      description: '점검 리포트와 원본 데이터를 전달하고, 우선 조치가 필요한 구간, 정기 점검 권장 주기, 향후 드론 점검 자동화 방안 등에 대해 컨설팅을 제공합니다.'
-    }
-  ];
-
-  const deliverables = [
-    {
-      icon: Map,
-      title: '이상 설비 목록 및 위치 정보',
-      items: ['문제가 발견된 패널/블레이드/설비의 ID, 좌표, 구역 정보']
-    },
-    {
-      icon: ImageIcon,
-      title: 'RGB & 열화상 이미지 세트',
-      items: ['각 이상 지점의 고해상도 사진과 열화상 이미지']
-    },
-    {
-      icon: BarChart3,
-      title: '온도·상태 분석 리포트',
-      items: ['Hot Spot, String Failure 등 유형별 분류 및 심각도 수준']
-    },
-    {
-      icon: FileText,
-      title: '현장 기반 시각화 이미지',
-      items: ['발전소/단지 평면도 위에 이상 구간을 표시한 지도 형식 이미지']
-    },
-    {
-      icon: File,
-      title: '원본 데이터(옵션)',
-      items: ['고객사의 자체 분석·축적용으로 원본 사진/열화상 데이터 제공']
-    }
-  ];
-
-  const faqs = [
-    {
-      question: 'Q1. 태양광 발전소는 어느 정도 크기부터 드론 점검이 효과적인가요?',
-      answer: '수 MW급 이상의 중대형 발전소는 드론 점검의 효율이 특히 높지만, 수백 kW급 소규모 설비도 인력·시간을 줄이고 누락 없이 점검하는 데 도움이 됩니다. 규모에 따라 적정 점검 주기와 방식을 제안해 드립니다.'
-    },
-    {
-      question: 'Q2. 드론 열화상 점검 정확도는 어느 정도인가요?',
-      answer: '전문 열화상 카메라와 적절한 비행 고도·속도를 사용하면, Hot Spot이나 String 이상 등 주요 결함을 높은 신뢰도로 탐지할 수 있습니다. 다만 미세한 크랙이나 내부 결함은 추가 정밀 검사가 필요할 수 있으며, 이는 리포트에 명시해 드립니다.'
-    },
-    {
-      question: 'Q3. 점검 중 설비를 멈춰야 하나요?',
-      answer: '대부분의 경우 설비를 정지하지 않아도 점검이 가능합니다. 다만 열화상 촬영의 경우 발전 중일 때 온도 편차가 명확하게 나타나므로, 가동 중 점검을 권장합니다. 안전거리를 확보하여 운영에 지장을 주지 않습니다.'
-    },
-    {
-      question: 'Q4. 점검 결과는 유지보수 업체와 공유해도 되나요?',
-      answer: '네, 물론입니다. 납품된 점검 리포트와 데이터는 고객사 소유이므로, 유지보수 업체나 보험사 등과 자유롭게 공유하실 수 있습니다. 필요 시 보수 업체가 이해하기 쉬운 형태로 리포트 포맷을 조정해 드릴 수도 있습니다.'
-    },
-    {
-      question: 'Q5. 정기 점검 계약도 가능한가요?',
-      answer: '네, 가능합니다. 월·분기·반기·연간 단위 정기 점검 계약을 체결하시면 할인된 가격으로 서비스를 제공하며, 점검 이력을 시계열로 관리하여 설비 상태 변화 추이를 함께 분석해 드립니다.'
-    }
-  ];
-
   return (
-    <main className="min-h-screen">
-      {/* 히어로 섹션 */}
-      <section className="relative py-20 lg:py-32">
-        {/* 배경 이미지 */}
-        <div className="absolute inset-0 z-0">
+    <main className="min-h-screen overflow-hidden bg-slate-950 text-white">
+      <section className="relative isolate min-h-[760px] px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+        <div className="absolute inset-0 -z-20">
           <img
             src="/images/services/energy.webp"
-            alt="에너지 설비 배경"
-            className="w-full h-full object-cover"
+            alt="드론으로 점검하는 에너지 설비"
+            className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-slate-950/80" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(14,165,233,0.25),transparent_32%),radial-gradient(circle_at_82%_14%,rgba(34,211,238,0.18),transparent_32%),linear-gradient(135deg,rgba(15,23,42,0.98),rgba(15,23,42,0.72)_44%,rgba(2,6,23,0.96))]" />
         </div>
+        <div className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-sky-300/50 to-transparent" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <div className="max-w-4xl">
-            <Badge variant="hero" className="mb-6">
-              <Zap className="h-3 w-3 mr-1" />
+        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
+          <div>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-300/30 bg-sky-400/10 px-4 py-2 text-sm font-medium text-sky-100 shadow-[0_0_40px_rgba(14,165,233,0.14)] backdrop-blur">
+              <Sparkles className="h-4 w-4 text-sky-300" />
               Energy Facility Inspection
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-white leading-tight">
-              에너지 설비 드론 점검
+            </div>
+            <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-7xl">
+              에너지 설비를
+              <span className="block bg-gradient-to-r from-sky-200 via-cyan-100 to-white bg-clip-text text-transparent">
+                안전하게 데이터로 점검합니다
+              </span>
             </h1>
-            <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed">
-              태양광 패널, 윈드터빈, 산업 플랜트까지.<br />
-              아이엠드론은 드론과 열화상·고해상도 영상으로<br />
-              에너지 설비의 이상 징후를 조기에 발견하는 점검 솔루션을 제공합니다.
+            <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">
+              태양광 패널, 풍력 터빈, 송전·변전 설비, 산업 플랜트까지. 아이엠드론은 RGB·열화상 드론 데이터로
+              이상 후보를 빠르게 찾고, 보수팀이 바로 활용할 수 있는 위치 기반 점검 리포트를 제공합니다.
             </p>
 
-            {/* 포인트 리스트 */}
-            <div className="space-y-3 mb-10">
-              {keyPoints.map((point, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-blue-400 mt-0.5 flex-shrink-0" />
-                  <p className="text-lg text-white/90">{point}</p>
-                </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {['열화상 점검', 'Hot Spot 탐지', '위치 기반 리포트', '비접촉 점검', '정기점검'].map((item) => (
+                <span key={item} className="rounded-full border border-white/10 bg-white/8 px-4 py-2 text-sm text-slate-100 backdrop-blur">
+                  {item}
+                </span>
               ))}
             </div>
 
-            {/* 버튼 */}
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" variant="primary-blue" asChild>
-                <Link href="#contact">
-                  상담하기
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <Button size="lg" className="bg-sky-400 text-slate-950 hover:bg-sky-300" asChild>
+                <Link href="/contact">
+                  에너지 설비 점검 상담하기
                   <Phone className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="hero-outline" asChild>
-                <Link href="/projects">
-                  포트폴리오
+              <Button size="lg" variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white" asChild>
+                <Link href="#deliverables">
+                  점검 산출물 보기
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* 특징 카드 (4개) */}
-      <section className="py-16 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card variant="hover-lg" className="text-center">
-              <CardContent className="pt-6">
-                <Award className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Certified Drone Experts</h3>
-                <p className="text-sm text-muted-foreground">
-                  국가자격취득·보험 가입 전문 조종자가 직접 운영합니다.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card variant="hover-lg" className="text-center">
-              <CardContent className="pt-6">
-                <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Safety First Operation</h3>
-                <p className="text-sm text-muted-foreground">
-                  비행 전 사전 점검과 리스크 분석으로 안전 우선 운영 원칙을 지킵니다.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card variant="hover-lg" className="text-center">
-              <CardContent className="pt-6">
-                <CheckCircle2 className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Industry-Proven Projects</h3>
-                <p className="text-sm text-muted-foreground">
-                  다양한 산업 현장에서 검증된 실적을 보유하고 있습니다.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card variant="hover-lg" className="text-center">
-              <CardContent className="pt-6">
-                <Sparkles className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Expert Pre-Sales Support</h3>
-                <p className="text-sm text-muted-foreground">
-                  구매 전 상담을 통해 용도에 맞는 제품을 추천해드립니다.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.07] p-6 shadow-2xl shadow-sky-950/40 backdrop-blur-xl">
+            <div className="mb-6 flex items-center justify-between gap-4">
+              <div>
+                <p className="text-sm uppercase tracking-[0.3em] text-sky-200/80">Inspection Data</p>
+                <h2 className="mt-2 text-2xl font-semibold text-white">Energy Asset Package</h2>
+              </div>
+              <Thermometer className="h-10 w-10 text-sky-300" />
+            </div>
+            <div className="space-y-4">
+              {heroStats.map((item) => (
+                <div key={item.label} className="rounded-2xl border border-white/10 bg-slate-950/55 p-5">
+                  <div className="flex items-center justify-between gap-4">
+                    <p className="text-xs font-medium uppercase tracking-[0.24em] text-slate-400">{item.label}</p>
+                    <CheckCircle2 className="h-5 w-5 text-sky-300" />
+                  </div>
+                  <p className="mt-3 text-2xl font-semibold text-white">{item.value}</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-300">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 rounded-2xl bg-gradient-to-r from-sky-400/20 to-cyan-300/10 p-5 text-sm leading-6 text-sky-50">
+              이상 후보를 찾는 데서 끝나지 않고, 설비 ID·위치·이미지·우선순위까지 현장 조치에 필요한 형태로 정리합니다.
+            </div>
           </div>
         </div>
       </section>
 
-      <Separator />
-
-      {/* Overview (서비스 개요) */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Overview</Badge>
-            <h2 className="text-4xl font-bold mb-4">에너지 드론 점검 서비스란?</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              아이엠드론의 에너지 드론 점검 서비스는 태양광 발전소, 윈드터빈, 송·변전 설비, 산업 플랜트 등을 대상으로 고해상도 RGB 및 열화상(적외선) 촬영을 수행하고, 그 데이터를 분석하여 고장·효율 저하·안전 위험 요인을 조기에 발견하는 솔루션입니다. 사람이 직접 올라가거나 넓은 부지를 일일이 걸어 다니지 않아도, 드론으로 단시간에 대규모 설비를 점검하여 설비 효율 저하 최소화, 정비 인력·시간 절감, 정전·사고 리스크 감소라는 효과를 얻을 수 있습니다.
-            </p>
+      <section className="border-y border-white/10 bg-slate-900/80 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Why Drone Inspection</p>
+            <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">에너지 설비 점검의 이런 문제를 해결합니다</h2>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {overviewSteps.map((step, index) => {
-              const Icon = step.icon;
-              return (
-                <Card key={index} variant="hover-xl">
-                  <CardHeader>
-                    <Icon className="h-10 w-10 text-primary mb-4" />
-                    <CardTitle className="text-lg">{step.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{step.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* 주요 적용 분야 */}
-      <section className="py-20 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Application Fields</Badge>
-            <h2 className="text-4xl font-bold mb-4">주요 적용 분야</h2>
-            <p className="text-xl text-muted-foreground">
-              이런 에너지 설비에 적용합니다.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {applicationFields.slice(0, 3).map((field, index) => {
-              const Icon = field.icon;
-              return (
-                <Card key={index} variant="hover-xl">
-                  <CardHeader>
-                    <Icon className="h-12 w-12 text-primary mb-4" />
-                    <CardTitle className="text-xl">{field.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">{field.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-            {applicationFields.slice(3).map((field, index) => {
-              const Icon = field.icon;
-              return (
-                <Card key={index + 3} variant="hover-xl">
-                  <CardHeader>
-                    <Icon className="h-12 w-12 text-primary mb-4" />
-                    <CardTitle className="text-xl">{field.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">{field.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* 아이엠드론의 강점 */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Strength</Badge>
-            <h2 className="text-4xl font-bold mb-4">아이엠드론의 강점</h2>
-            <p className="text-xl text-muted-foreground">
-              에너지 설비 점검, 왜 드론과 아이엠드론일까요?
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {strengths.map((strength, index) => (
-              <Card key={index} variant="hover-xl">
-                <CardHeader>
-                  <CheckCircle2 className="h-8 w-8 text-primary mb-3" />
-                  <CardTitle className="text-xl">{strength.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">{strength.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* 촬영 진행 프로세스 */}
-      <section className="py-20 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Process</Badge>
-            <h2 className="text-4xl font-bold mb-4">점검 진행 프로세스</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {processSteps.map((process, index) => (
-              <Card key={index} variant="hover-lg">
-                <CardHeader>
-                  <Badge className="mb-3 w-fit">{process.step}</Badge>
-                  <CardTitle className="text-lg">{process.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{process.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* 제공 결과물 */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Deliverables</Badge>
-            <h2 className="text-4xl font-bold mb-4">제공 결과물</h2>
-            <p className="text-xl text-muted-foreground">
-              어떤 결과를 받아볼 수 있나요?
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {deliverables.map((item, index) => {
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {painPoints.map((item) => {
               const Icon = item.icon;
               return (
-                <Card key={index} variant="hover-xl">
-                  <CardHeader>
-                    <Icon className="h-10 w-10 text-primary mb-4" />
-                    <CardTitle className="text-lg">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {item.items.map((text, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                          <span>{text}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
+                <div key={item.title} className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-sky-300/40 hover:bg-sky-400/10">
+                  <Icon className="h-9 w-9 text-sky-300" />
+                  <h3 className="mt-5 text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">{item.description}</p>
+                </div>
               );
             })}
           </div>
         </div>
       </section>
 
-      <Separator />
-
-      {/* 견적 안내 */}
-      <section className="py-20 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Estimate</Badge>
-            <h2 className="text-4xl font-bold mb-4">견적은 이렇게 산출됩니다</h2>
+      <section className="px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Workflow</p>
+              <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">비행에서 이상 후보 리포트까지</h2>
+              <p className="mt-6 text-lg leading-8 text-slate-300">
+                아이엠드론은 설비 유형과 점검 목적에 맞춰 촬영 조건을 설계하고, RGB·열화상 데이터를 분석해
+                유지보수 의사결정에 필요한 결과물로 정리합니다.
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {solutionFlow.map((item) => (
+                <div key={item.step} className="rounded-3xl border border-white/10 bg-slate-900/80 p-6 shadow-xl shadow-black/20">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sky-400/15 text-sm font-semibold text-sky-200">
+                    {item.step}
+                  </span>
+                  <h3 className="mt-5 text-xl font-semibold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">{item.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
-
-          <Card className="mb-8">
-            <CardContent className="pt-8">
-              <h3 className="text-2xl font-semibold mb-4">설비 규모와 점검 주기에 맞춘 맞춤 견적</h3>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                에너지 설비 드론 점검 비용은 설비 규모(용량·면적), 설비 종류, 촬영·분석 범위, 점검 주기에 따라 달라집니다.
-              </p>
-
-              <p className="text-muted-foreground mb-6">
-                아이엠드론은 다음과 같은 형태로 맞춤 패키지를 구성합니다:
-              </p>
-
-              <ul className="space-y-3 mb-8">
-                {[
-                  '소규모 태양광 발전소 1회 점검 패키지',
-                  '중·대규모 발전소 정기(분기/반기/연간) 점검 패키지',
-                  '풍력단지 블레이드 집중 점검 패키지',
-                  '사고·고장 발생 시 긴급 점검 패키지',
-                  '복합 에너지 단지 통합 점검 패키지'
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <p className="text-muted-foreground mb-6">
-                설비 위치와 규모, 원하는 점검 방식(열화상 포함 여부 등)을 알려주시면 전문 엔지니어가 검토 후 상세 견적과 작업 제안서를 보내드립니다.
-              </p>
-
-              <Button size="lg" variant="primary-blue" asChild>
-                <Link href="/contact">
-                  에너지 설비 드론 점검 견적 문의하기
-                  <Mail className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
-      <Separator />
-
-      {/* FAQ */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">FAQ</Badge>
-            <h2 className="text-4xl font-bold mb-4">자주 묻는 질문</h2>
+      <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Use Cases</p>
+              <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">적용 설비</h2>
+              <p className="mt-5 text-lg leading-8 text-slate-300">
+                신재생 에너지부터 전력 인프라와 산업 플랜트까지, 위험을 줄이고 점검 효율을 높이는 구성을 제안합니다.
+              </p>
+            </div>
+            <Button variant="outline" className="w-fit border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white" asChild>
+              <Link href="/projects">
+                관련 프로젝트 보기
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
 
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`faq-${index}`}>
-                <AccordionTrigger className="text-lg font-medium hover:text-primary text-left">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-muted-foreground leading-relaxed pt-2">
-                    {faq.answer}
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
+          <div className="grid gap-5 lg:grid-cols-3">
+            {useCases.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className={`rounded-3xl border border-white/10 bg-white/[0.045] p-6 ${index === 0 ? 'lg:col-span-2' : ''}`}
+                >
+                  <Icon className="h-10 w-10 text-sky-300" />
+                  <h3 className="mt-5 text-2xl font-semibold text-white">{item.title}</h3>
+                  <p className="mt-4 leading-7 text-slate-300">{item.description}</p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <span key={tag} className="rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium text-sky-100">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="deliverables" className="px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Deliverables</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">점검 데이터는 조치 가능한 리포트로 납품됩니다</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              단순 이미지 전달이 아니라 이상 후보, 위치, 유형, 우선순위를 정리해 현장 보수와 운영 의사결정에 활용할 수 있게 제공합니다.
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {deliverables.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="rounded-3xl border border-white/10 bg-slate-900/75 p-6">
+                  <Icon className="h-10 w-10 text-sky-300" />
+                  <h3 className="mt-5 text-xl font-semibold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">{item.description}</p>
+                  <ul className="mt-5 space-y-2">
+                    {item.items.map((text) => (
+                      <li key={text} className="flex gap-2 text-sm text-slate-300">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-300" />
+                        <span>{text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-slate-900/80 px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Package Guide</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">목적별 추천 구성</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              설비 유형과 운영 리스크에 따라 촬영 방식, 분석 범위, 리포트 깊이를 조정합니다.
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {packages.map((item) => (
+              <div key={item.name} className="rounded-3xl border border-white/10 bg-white/[0.045] p-6">
+                <h3 className="text-xl font-semibold text-white">{item.name}</h3>
+                <p className="mt-3 text-sm leading-6 text-sky-100">{item.bestFor}</p>
+                <ul className="mt-5 space-y-2">
+                  {item.includes.map((include) => (
+                    <li key={include} className="flex gap-2 text-sm text-slate-300">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-300" />
+                      <span>{include}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </Accordion>
+          </div>
         </div>
       </section>
 
-      <Separator />
+      <section className="px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.78fr_1.22fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">FAQ</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">자주 묻는 질문</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              열화상 촬영 조건, 설비 운영 여부, 리포트 활용 방식은 현장 목적에 맞춰 사전에 정리합니다.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <details key={faq.question} className="group rounded-3xl border border-white/10 bg-slate-900/75 p-6">
+                <summary className="cursor-pointer list-none text-lg font-semibold text-white marker:hidden">
+                  <span className="flex items-center justify-between gap-4">
+                    {faq.question}
+                    <span className="rounded-full bg-sky-400/10 px-3 py-1 text-sm text-sky-200 group-open:bg-sky-300 group-open:text-slate-950">
+                      보기
+                    </span>
+                  </span>
+                </summary>
+                <p className="mt-4 leading-7 text-slate-300">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* CTA (행동 유도) */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-foreground dark:text-white">
-            에너지 설비의 '보이지 않던 위험'을 찾아드립니다.
+      <section className="relative px-4 py-24 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(14,165,233,0.22),transparent_36%)]" />
+        <div className="mx-auto max-w-5xl rounded-[2rem] border border-sky-300/20 bg-gradient-to-br from-sky-400/15 via-white/[0.06] to-slate-900 p-8 text-center shadow-2xl shadow-sky-950/40 sm:p-12">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-200">From Flight to Insight</p>
+          <h2 className="mt-5 text-3xl font-semibold text-white sm:text-5xl">
+            설비 이상을 더 빠르게 찾고, 안전하게 조치할 수 있게 만듭니다.
           </h2>
-          <p className="text-xl text-foreground dark:text-white mb-8 leading-relaxed">
-            한 번의 드론 점검이 발전 효율 저하와 설비 사고를 막아 줄 수 있습니다.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-200">
+            아이엠드론이 에너지 설비 목적에 맞춰 드론 촬영, 열화상 분석, 위치 기반 리포트 구성을 제안드립니다.
+            정기점검부터 고장 후보 선별까지 필요한 결과물을 함께 설계해보세요.
           </p>
-          <p className="text-lg text-foreground dark:text-white mb-8">
-            아이엠드론과 함께 안전하고 효율적인 에너지 설비 운영을 시작해 보세요.<br />
-            아이엠드론은 비행과 데이터, 그리고 설비 운용의 안전을 연결하는 에너지 점검 파트너입니다.
-          </p>
-          <Button size="lg" variant="primary-blue" asChild>
-            <Link href="/contact">
-              에너지 설비 드론 점검 상담하기
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button size="lg" className="bg-sky-400 text-slate-950 hover:bg-sky-300" asChild>
+              <Link href="/contact">
+                에너지 설비 점검 상담하기
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white" asChild>
+              <Link href="/services">
+                전체 서비스 보기
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </main>
   );
 }
-
