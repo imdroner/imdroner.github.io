@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-10-bridge-inspection-remote-diagnosis',
+    title: '교량 점검, 왜 이제는 접근 장비보다 드론 3D 기록이 먼저일까요?',
+    description: '2026년 7월 9일 공개된 PIX4D 공식 교량 점검 사례를 바탕으로, 교량과 대형 구조물 점검에서 왜 드론 결과물이 단순 사진이 아니라 3D 기록, 원격 진단, 반복 비교가 가능한 운영 데이터가 되어야 하는지 소개합니다.',
+    thumbnail: '/images/blog/pix4d-bridge-inspection-bogota-hero-2026.webp',
+    date: '2026-07-10',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['교량점검', '시설물점검', 'PIX4D', '포토그래메트리', '3D매핑', '원격진단', '구조물점검', '인프라점검'],
+    readTime: '5분',
+  },
+  {
     id: '2026-07-09-construction-monitoring-schedule-automation',
     title: '건설 현장 드론 모니터링, 왜 이제는 촬영보다 공정 업데이트 속도가 중요할까요?',
     description: '2026년 7월 8일 DroneDeploy Blog의 AI scheduling 자료와 2026년 3월 26일 DJI Enterprise Insights의 SK 에코플랜트 사례를 바탕으로, 건설 드론 데이터의 가치가 촬영 납품에서 공정 업데이트와 원격 판단 속도를 높이는 체계로 이동하는 이유를 소개합니다.',
