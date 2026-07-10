@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-11-construction-capture-program-trust',
+    title: '건설 현장 드론 촬영, 왜 이제는 ‘파일 납품’보다 캡처 프로그램이 중요할까요?',
+    description: '2026년 7월 9일과 7월 1일 DroneDeploy 공식 자료를 바탕으로, 건설 드론 서비스의 기준이 단발성 촬영 납품에서 발주처와 시공팀이 함께 신뢰할 수 있는 반복 기록 프로그램으로 이동하는 이유를 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-capture-program-owners-trust-2026.webp',
+    date: '2026-07-11',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['건설모니터링', 'DroneDeploy', '리얼리티캡처', '현장기록', '3D워크스루', '공정관리', '분쟁대응', '스마트건설'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-10-bridge-inspection-remote-diagnosis',
     title: '교량 점검, 왜 이제는 접근 장비보다 드론 3D 기록이 먼저일까요?',
     description: '2026년 7월 9일 공개된 PIX4D 공식 교량 점검 사례를 바탕으로, 교량과 대형 구조물 점검에서 왜 드론 결과물이 단순 사진이 아니라 3D 기록, 원격 진단, 반복 비교가 가능한 운영 데이터가 되어야 하는지 소개합니다.',
