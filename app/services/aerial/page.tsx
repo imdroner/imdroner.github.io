@@ -1,239 +1,538 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { SITE_NAME, SITE_URL } from '@/lib/config';
 import { services } from '@/data/services';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { 
-  Award,
-  CheckCircle2,
-  Shield,
-  Sparkles,
-  Camera,
-  FileText,
-  Map,
-  Settings,
-  Video,
-  Image as ImageIcon,
-  File,
-  Layout,
   ArrowRight,
+  BadgeCheck,
+  Building2,
+  Camera,
+  CheckCircle2,
+  ClipboardCheck,
+  FileArchive,
+  Image as ImageIcon,
+  Landmark,
+  MapPinned,
+  Megaphone,
+  MonitorPlay,
+  Mountain,
+  Plane,
+  PlayCircle,
+  Route,
+  ShieldCheck,
+  Sparkles,
+  Target,
+  TimerReset,
+  Video,
+  Waves,
   Phone,
-  Mail
 } from 'lucide-react';
 
-const service = services.find(s => s.id === 'aerial')!;
+const service = services.find((item) => item.id === 'aerial')!;
+
+const pageDescription =
+  '브랜드, 부동산, 관광, 행사, 산업 현장을 고품질 항공 영상·사진과 웹·SNS·제안서에 바로 활용 가능한 콘텐츠로 제작하는 아이엠드론의 항공촬영·프리미엄 영상 서비스입니다.';
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "/services/aerial",
+    canonical: '/services/aerial',
   },
   title: `${service.title} | ${SITE_NAME}`,
-  description: service.description,
+  description: pageDescription,
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
     url: `${SITE_URL}/services/aerial`,
     siteName: SITE_NAME,
     title: `${service.title} | ${SITE_NAME}`,
-    description: service.description,
+    description: pageDescription,
     images: [{ url: `${SITE_URL}${service.image}`, width: 1200, height: 630 }],
   },
 };
 
+const heroStats = [
+  {
+    label: 'Premium Aerial',
+    value: '고품질 항공 영상·사진',
+    detail: '4K 이상 촬영, 안정적인 비행 동선, 현장 목적에 맞춘 컷 구성으로 브랜드 완성도 강화',
+  },
+  {
+    label: 'Content Ready',
+    value: '바로 쓰는 홍보 콘텐츠',
+    detail: '홈페이지, 유튜브, SNS, 제안서, 행사 리포트에 맞는 영상·이미지 형태로 납품',
+  },
+  {
+    label: 'Safe Operation',
+    value: '안전 중심 촬영 운영',
+    detail: '촬영 위치, 비행 가능 여부, 기상, 현장 동선을 검토해 안정적으로 촬영 진행',
+  },
+];
+
+const painPoints = [
+  {
+    icon: Mountain,
+    title: '현장의 규모와 입지가 지상 사진만으로 부족합니다',
+    description: '부동산, 리조트, 관광지, 산업단지는 주변 환경과 동선, 전체 규모가 중요합니다. 항공 시점은 공간의 가치를 한눈에 보여줍니다.',
+  },
+  {
+    icon: Megaphone,
+    title: '홍보 영상은 첫 장면에서 신뢰를 만들어야 합니다',
+    description: '고객은 몇 초 안에 브랜드의 규모와 분위기를 판단합니다. 안정적인 항공 오프닝과 주요 컷은 콘텐츠의 첫인상을 바꿉니다.',
+  },
+  {
+    icon: MonitorPlay,
+    title: '촬영 원본만으로는 활용이 어렵습니다',
+    description: '원본 파일은 크고 정리하기 어렵습니다. 웹, SNS, 제안서, 보고서에 맞게 편집·보정·선별된 산출물이 필요합니다.',
+  },
+  {
+    icon: ShieldCheck,
+    title: '비행 가능성과 안전 검토가 필요합니다',
+    description: '공항 주변, 도심, 행사장, 해상·산악 환경은 사전 검토와 현장 안전관리가 중요합니다. 촬영 전 조건을 먼저 확인합니다.',
+  },
+];
+
+const productionFlow = [
+  {
+    step: '01',
+    title: '촬영 목적·활용 채널 확인',
+    description: '브랜드 홍보, 부동산 분양, 관광 소개, 행사 기록, 산업 현장 설명 등 목적과 납품 채널을 먼저 정리합니다.',
+  },
+  {
+    step: '02',
+    title: '촬영 콘셉트·동선 설계',
+    description: '보여줘야 할 장면, 이동 동선, 고도, 시간대, 인물·시설 노출 범위를 정하고 필요한 컷 리스트를 구성합니다.',
+  },
+  {
+    step: '03',
+    title: '비행 조건·안전 검토',
+    description: '촬영 위치의 비행 제한, 기상, 장애물, 인파, 차량·선박 이동, 현장 통제 범위를 확인합니다.',
+  },
+  {
+    step: '04',
+    title: '항공·지상 복합 촬영',
+    description: '드론 촬영을 중심으로 필요 시 지상 카메라, 인터뷰, 현장 스케치, 타임랩스 컷을 함께 구성합니다.',
+  },
+  {
+    step: '05',
+    title: '선별·편집·색보정',
+    description: '핵심 컷을 선별하고 컷 편집, 색보정, 자막, 로고, BGM, 세로형 재편집 등 목적별 후반 작업을 진행합니다.',
+  },
+  {
+    step: '06',
+    title: '채널별 파일 납품',
+    description: '홈페이지, 유튜브, SNS, 제안서, 전시 화면에 맞는 해상도와 비율로 최종 영상·사진·원본 옵션을 제공합니다.',
+  },
+];
+
+const useCases = [
+  {
+    icon: Building2,
+    title: '부동산·상업시설 마케팅',
+    description: '단지 배치, 조망, 접근성, 주변 인프라를 항공 시점으로 보여줘 분양 자료와 투자자 설명 자료의 설득력을 높입니다.',
+    tags: ['분양 홍보', '상업시설', '입지 설명'],
+  },
+  {
+    icon: Waves,
+    title: '관광지·리조트·해양 레저',
+    description: '풍광, 이동 동선, 시설 규모, 계절감을 담아 관광 홍보 영상, 리조트 소개, 마리나·요트 콘텐츠로 제작합니다.',
+    tags: ['관광 홍보', '리조트', '해양 레저'],
+  },
+  {
+    icon: Landmark,
+    title: '행사·축제·지자체 홍보',
+    description: '행사장 전체 규모, 인파 흐름, 퍼레이드, 야간 경관, 지역 랜드마크를 담아 하이라이트 영상과 기록 콘텐츠로 남깁니다.',
+    tags: ['축제', '공공 홍보', '행사 기록'],
+  },
+  {
+    icon: Plane,
+    title: '기업·브랜드 홍보 영상',
+    description: '공장, 본사, 물류센터, 제품 시연, 현장 작업 장면을 항공 컷과 지상 컷으로 엮어 기업 소개 영상의 첫인상을 만듭니다.',
+    tags: ['기업 소개', '브랜드 필름', '현장 스케치'],
+  },
+  {
+    icon: Route,
+    title: '산업 현장·장기 프로젝트 기록',
+    description: '건설, 플랜트, 항만, 에너지 시설처럼 규모가 큰 현장을 정기적으로 기록해 진행 상황과 변화 과정을 콘텐츠로 축적합니다.',
+    tags: ['산업 현장', '정기 촬영', '프로젝트 기록'],
+  },
+];
+
+const deliverables = [
+  {
+    icon: Video,
+    title: '홍보용 편집 영상',
+    description: '브랜드와 현장의 분위기를 전달하는 본편 영상을 제공합니다.',
+    items: ['30초~3분 내외 편집본', '컷 편집·색보정', '자막·로고·BGM 옵션'],
+  },
+  {
+    icon: ImageIcon,
+    title: '고해상도 항공 사진',
+    description: '웹, 인쇄물, 제안서에 활용할 수 있는 주요 컷을 선별해 납품합니다.',
+    items: ['대표 항공 컷', '보정 이미지', '썸네일 후보'],
+  },
+  {
+    icon: PlayCircle,
+    title: '숏폼·SNS 콘텐츠',
+    description: '인스타그램, 유튜브 쇼츠, 릴스, 행사 홍보에 맞는 세로형 콘텐츠를 제작합니다.',
+    items: ['세로형 영상', '짧은 티저', 'SNS 업로드용 파일'],
+  },
+  {
+    icon: FileArchive,
+    title: '원본·선별 클립 옵션',
+    description: '추가 편집이나 내부 보관이 필요한 경우 원본 또는 선별 클립을 제공합니다.',
+    items: ['원본 영상 옵션', '선별 클립', '장기 보관용 파일'],
+  },
+  {
+    icon: ClipboardCheck,
+    title: '촬영 결과 리포트',
+    description: '촬영 일자, 장소, 컷 구성, 납품 파일, 활용 제안을 간단히 정리합니다.',
+    items: ['촬영 개요', '납품 목록', '활용 채널 제안'],
+  },
+  {
+    icon: MapPinned,
+    title: '정기 촬영 아카이브',
+    description: '장기 프로젝트는 동일 지점·유사 동선 기준으로 변화 과정을 기록할 수 있습니다.',
+    items: ['월별 비교 컷', '프로젝트 기록', '시계열 콘텐츠'],
+  },
+];
+
+const packages = [
+  {
+    name: '기본 항공촬영',
+    bestFor: '현장 사진과 짧은 항공 클립이 필요한 부동산·시설·행사',
+    includes: ['반일 촬영', '대표 사진', '선별 영상 클립'],
+  },
+  {
+    name: '홍보 영상 제작',
+    bestFor: '홈페이지, 유튜브, 제안서에 사용할 완성형 영상이 필요한 경우',
+    includes: ['촬영 기획', '편집·색보정', '자막·BGM'],
+  },
+  {
+    name: '행사·관광 콘텐츠',
+    bestFor: '축제, 관광지, 리조트, 해양 레저 현장을 홍보해야 하는 기관·기업',
+    includes: ['하이라이트 영상', 'SNS 컷', '홍보 이미지'],
+  },
+  {
+    name: '정기 기록 패키지',
+    bestFor: '건설·산업 현장, 장기 프로젝트, 계절별 관광 콘텐츠를 누적하려는 경우',
+    includes: ['반복 촬영', '비교 컷', '아카이브 관리'],
+  },
+];
+
+const faqs = [
+  {
+    question: '촬영 가능 지역은 어떻게 확인하나요?',
+    answer:
+      '촬영 위치를 알려주시면 공역, 주변 시설, 비행 제한, 현장 안전 조건을 먼저 확인합니다. 공항 인근, 군사시설, 도심 밀집 지역 등은 추가 협의나 제한이 있을 수 있습니다.',
+  },
+  {
+    question: '날씨가 좋지 않으면 촬영은 어떻게 진행되나요?',
+    answer:
+      '강풍, 비, 안개 등 안전과 화질에 영향을 주는 기상에서는 촬영 일정을 조정합니다. 중요한 행사나 프로젝트는 예비일을 함께 잡아두는 것을 권장드립니다.',
+  },
+  {
+    question: '촬영만 하고 편집은 제외할 수 있나요?',
+    answer:
+      '가능합니다. 촬영 원본 또는 선별 클립만 납품하는 방식도 가능합니다. 다만 바로 홍보에 활용해야 한다면 컷 편집, 색보정, 자막이 포함된 편집 패키지를 권장드립니다.',
+  },
+  {
+    question: '원본 파일도 받을 수 있나요?',
+    answer:
+      '프로젝트 범위에 따라 원본 파일 제공이 가능합니다. 원본은 용량이 크고 후반 작업 전 상태이므로, 필요한 경우 선별 원본 또는 납품용 변환 파일 형태로 안내드립니다.',
+  },
+  {
+    question: '납품 기간은 어느 정도 걸리나요?',
+    answer:
+      '촬영만 진행하는 경우 비교적 빠르게 납품 가능하며, 편집 영상은 분량과 수정 범위에 따라 일정이 달라집니다. 상담 시 활용 일정과 공개 예정일을 알려주시면 납품 일정을 맞춰 제안드립니다.',
+  },
+];
+
 export default function AerialServicePage() {
-  const keyPoints = [
-    '고해상도 4K 이상 촬영 · 시네마급 드론 운용',
-    '국가자격·보험 가입 전문 조종 인력',
-    '기획·촬영·편집·색보정·BGM 포함 원스톱 제작'
-  ];
-
-  const overviewSteps = [
-    { icon: FileText, title: '촬영 목적 분석', description: '프로젝트 목표와 활용 방안을 분석합니다' },
-    { icon: Map, title: '콘티·동선 기획', description: '최적의 촬영 구도와 동선을 설계합니다' },
-    { icon: Shield, title: '현장 안전 관리', description: '안전 우선 원칙으로 비행을 진행합니다' },
-    { icon: Settings, title: '후반 편집 & 색보정', description: '전문 편집으로 완성도 높은 결과물 제작' }
-  ];
-
-  const shootingFields = [
-    {
-      title: '부동산·상업시설 항공촬영',
-      description: '분양 현장, 단지 조감도, 상가·오피스·숙박시설 등 입지와 주변 환경을 한눈에 보여주는 항공샷으로 마케팅 경쟁력을 높여 드립니다. 지상 사진만으로 설명하기 어려운 접근성, 조망, 동선 등을 영상으로 설득력 있게 전달합니다.'
-    },
-    {
-      title: '골프장·리조트·관광지 브랜딩 영상',
-      description: '라운드 동선, 코스 레이아웃, 풍광을 드론으로 따라가며 촬영하여 코스 소개 영상, 프로모션 영상, 브랜딩 필름으로 제작합니다. 사계절 촬영을 통해 시즌별 홍보 콘텐츠도 구축할 수 있습니다.'
-    },
-    {
-      title: '요트·마리나·해양 레저 촬영',
-      description: '요트 세일링, 레저 스포츠, 해상 행사 등을 수면과 상공을 넘나드는 동선으로 촬영해 현장감 있는 영상을 제작합니다. 선박 이동 경로와 주변 경관을 함께 담아 브랜드 스토리를 강화합니다.'
-    },
-    {
-      title: '행사·축제·도시 홍보 영상',
-      description: '대규모 행사, 축제, 퍼레이드, 스포츠 이벤트 등을 상공에서 기록하여 행사 스케일과 분위기를 전달하는 하이라이트 영상을 제작합니다. 도시·지자체 홍보, 기업 행사 리포트 영상으로도 활용할 수 있습니다.'
-    },
-    {
-      title: '산업 현장·시설 촬영',
-      description: '플랜트, 항만, 물류단지, 산업단지 등 일반 촬영이 어려운 대규모 시설의 규모와 구조를 조감도로 표현합니다. 기업 홍보, 안전 교육, 투자자 대상 브리핑 자료로 활용하기 좋습니다.'
-    }
-  ];
-
-  const strengths = [
-    {
-      title: '기획부터 편집까지 One-Stop',
-      description: '단순한 항공 샷 나열이 아니라, 촬영 목적에 맞는 스토리 구조와 컷 플로우를 기획한 뒤 촬영합니다. 필요 시 자막, 로고 애니메이션, BGM까지 포함해 최종 영상으로 납품합니다.'
-    },
-    {
-      title: '전문 조종 인력 & 안전 기준 준수',
-      description: '국가 자격을 갖춘 조종자와 보조 인력이 팀을 구성하여, 비행 전 비행허가·협의, 현장 사전 점검 등 안전 우선 원칙에 따라 운영합니다. 비행 관련 책임보험에 가입해 고객과 현장의 리스크를 최소화합니다.'
-    },
-    {
-      title: '현장 이해 기반 촬영',
-      description: '단순히 \'예쁜 그림\'을 넘어, 부동산·건설·에너지·공공안전 등 산업 현장의 특성을 이해하고 실제 업무에 쓰기 좋은 시야와 구도로 촬영합니다.'
-    },
-    {
-      title: '고해상도 & 색보정',
-      description: '4K 이상 해상도, 로그(Log) 촬영, 짐벌 안정화 등을 활용해 편집과 색보정을 고려한 후반 작업 친화적인 소스를 제공합니다. 필요에 따라 세로영상(Shorts/Reels)용 컷도 함께 제작할 수 있습니다.'
-    }
-  ];
-
-  const processSteps = [
-    {
-      step: 'Step 1',
-      title: '상담 & 기획',
-      description: '촬영 목적, 활용 채널(홈페이지, 유튜브, 광고 등), 원하는 분위기와 예산을 파악하여 촬영 콘셉트와 기본 구성을 함께 정합니다.'
-    },
-    {
-      step: 'Step 2',
-      title: '비행 가능 여부 검토',
-      description: '촬영 장소의 비행 제한 구역, 고도, 주변 환경을 확인하고 필요 시 관할 기관 협의 및 비행 승인 절차를 진행합니다.'
-    },
-    {
-      step: 'Step 3',
-      title: '일정 확정 & 사전 점검',
-      description: '기상 조건과 현장 일정에 맞춰 촬영 일정을 확정하고, 장비·배터리·백업 장비를 포함한 체크리스트를 점검합니다.'
-    },
-    {
-      step: 'Step 4',
-      title: '현장 촬영',
-      description: '안전 브리핑 후 비행 동선을 공유하고, 필요 시 지상 카메라/타임랩스와 함께 복합 촬영도 진행합니다.'
-    },
-    {
-      step: 'Step 5',
-      title: '편집 & 후반 작업',
-      description: '선별된 컷을 기반으로 러프컷 → 본편 편집 → 색보정 → 자막/로고/BGM 순으로 작업합니다.'
-    },
-    {
-      step: 'Step 6',
-      title: '납품 & 추가 컨설팅',
-      description: '최종 영상/사진을 납품하고, 홈페이지·SNS·오프라인 등 활용 채널에 맞춰 추가 컷 분할, 썸네일 제작 등도 지원합니다.'
-    }
-  ];
-
-  const deliverables = [
-    {
-      icon: Video,
-      title: '완성 영상',
-      items: ['1~3분 내외 하이라이트 영상 (MP4, 4K/Full HD)', '필요 시 30초 버전/세로형 SNS 버전 추가 제작 가능']
-    },
-    {
-      icon: ImageIcon,
-      title: '스틸 이미지',
-      items: ['주요 구도 항공사진 10~30장 (JPG, 고해상도)', '보정 유무 선택 가능']
-    },
-    {
-      icon: File,
-      title: '원본 파일(옵션)',
-      items: ['고객 요청 시 원본 영상/사진 파일 별도 제공', '장기 프로젝트/재편집 계획이 있을 경우 추천']
-    },
-    {
-      icon: Layout,
-      title: '썸네일 이미지(옵션)',
-      items: ['유튜브·홈페이지용 대표 썸네일 디자인', '프레젠테이션·리포트용 캡쳐 이미지 세트']
-    }
-  ];
-
-  const faqs = [
-    {
-      question: 'Q1. 촬영 가능 지역이 정해져 있나요?',
-      answer: '기본적으로 국내 전 지역 촬영이 가능하지만, 공항 인근·군사 시설 등 비행 제한 구역은 비행 허가 절차가 필요하거나 촬영이 제한될 수 있습니다. 상담 시 촬영 위치를 알려 주시면 가능한지 먼저 검토해 드립니다.'
-    },
-    {
-      question: 'Q2. 날씨가 좋지 않으면 어떻게 되나요?',
-      answer: '드론은 기상 조건에 민감하므로, 강풍·강우 시 안전상 비행이 불가능할 수 있습니다. 예정일 기상이 좋지 않을 경우 대체 일정을 협의하며, 긴급 일정의 경우 예비일을 함께 잡아 드립니다.'
-    },
-    {
-      question: 'Q3. 촬영만 의뢰하고 편집은 직접 해도 되나요?',
-      answer: '네, 가능합니다. 촬영 원본 파일만 제공받는 "촬영 전용 패키지"도 운영 중입니다. 다만 원본 파일은 용량이 크고 색보정 전 상태이므로, 후반 작업이 가능하신 경우에 권장합니다.'
-    },
-    {
-      question: 'Q4. 촬영한 영상을 여러 채널에서 사용해도 되나요?',
-      answer: '네. 납품된 영상과 사진은 고객사 소유이므로, 홈페이지·유튜브·SNS·오프라인 전시 등 자유롭게 활용하실 수 있습니다. 단, 2차 판매나 재배포는 별도 협의가 필요합니다.'
-    },
-    {
-      question: 'Q5. 사람(고객·직원)이 촬영에 등장해도 괜찮나요?',
-      answer: '물론입니다. 행사, 단체 사진, 현장 작업 모습 등 사람이 포함된 촬영도 가능합니다. 다만 개인정보 보호를 위해 얼굴이 식별되는 촬영의 경우 사전 동의를 받아 주시거나, 후반 작업 시 블러 처리 등을 요청하실 수 있습니다.'
-    }
-  ];
-
   return (
-    <main className="min-h-screen">
-      {/* 히어로 섹션 */}
-      <section className="relative py-20 lg:py-32">
-        {/* 배경 이미지 */}
-        <div className="absolute inset-0 z-0">
+    <main className="min-h-screen overflow-hidden bg-slate-950 text-white">
+      <section className="relative isolate min-h-[760px] px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+        <div className="absolute inset-0 -z-20">
           <img
             src="/images/services/aerial-hero.jpg"
-            alt="항공촬영 배경"
-            className="w-full h-full object-cover"
+            alt="프리미엄 항공촬영과 영상 제작 현장"
+            className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-slate-950/78" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(14,165,233,0.24),transparent_32%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,0.16),transparent_30%),linear-gradient(135deg,rgba(15,23,42,0.98),rgba(15,23,42,0.68)_46%,rgba(2,6,23,0.96))]" />
         </div>
+        <div className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-sky-300/50 to-transparent" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <div className="max-w-4xl">
-            <Badge variant="hero" className="mb-6">
-              <Camera className="h-3 w-3 mr-1" />
-              Aerial Photography & Premium Video
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-white leading-tight">
-              항공촬영 & 프리미엄 영상 제작
+        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+          <div>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-300/30 bg-sky-400/10 px-4 py-2 text-sm font-medium text-sky-100 shadow-[0_0_40px_rgba(14,165,233,0.14)] backdrop-blur">
+              <Sparkles className="h-4 w-4 text-sky-300" />
+              Aerial Photography & Premium Video Production
+            </div>
+            <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              <span className="block">현장을 더 크게</span>
+              <span className="block bg-gradient-to-r from-sky-200 via-cyan-100 to-white bg-clip-text text-transparent">
+                항공 콘텐츠로
+              </span>
+              <span className="block bg-gradient-to-r from-sky-200 via-cyan-100 to-white bg-clip-text text-transparent">
+                보여드립니다
+              </span>
             </h1>
-            <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed">
-              부동산·골프장·요트·행사·관광지까지,<br />
-              아이엠드론의 항공촬영은 단순한 '하늘샷'이 아니라<br />
-              기획부터 편집까지 완성된 콘텐츠를 제공합니다.
+            <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">
+              아이엠드론은 브랜드, 부동산, 관광, 행사, 산업 현장을 고품질 항공 영상과 사진으로 담아
+              홈페이지·SNS·제안서에 바로 활용할 수 있는 콘텐츠로 제작합니다.
             </p>
 
-            {/* 포인트 리스트 */}
-            <div className="space-y-3 mb-10">
-              {keyPoints.map((point, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-blue-400 mt-0.5 flex-shrink-0" />
-                  <p className="text-lg text-white/90">{point}</p>
-                </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {['브랜드 홍보 영상', '부동산·상업시설', '관광·리조트', '행사·축제 기록', '산업 현장 콘텐츠'].map((item) => (
+                <span key={item} className="rounded-full border border-white/10 bg-white/8 px-4 py-2 text-sm text-slate-100 backdrop-blur">
+                  {item}
+                </span>
               ))}
             </div>
 
-            {/* 버튼 */}
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" variant="primary-blue" asChild>
-                <Link href="#contact">
-                  상담하기
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <Button size="lg" className="bg-sky-400 text-slate-950 hover:bg-sky-300" asChild>
+                <Link href="/contact">
+                  항공촬영 상담하기
                   <Phone className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="hero-outline" asChild>
+              <Button size="lg" variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white" asChild>
+                <Link href="#deliverables">
+                  제공 산출물 보기
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.07] p-6 shadow-2xl shadow-sky-950/40 backdrop-blur-xl">
+            <div className="mb-6 flex items-center justify-between gap-4">
+              <div>
+                <p className="text-sm uppercase tracking-[0.3em] text-sky-200/80">Aerial Content</p>
+                <h2 className="mt-2 text-2xl font-semibold text-white">Premium Flight Package</h2>
+              </div>
+              <Camera className="h-10 w-10 text-sky-300" />
+            </div>
+            <div className="space-y-4">
+              {heroStats.map((item) => (
+                <div key={item.label} className="rounded-2xl border border-white/10 bg-slate-950/55 p-5">
+                  <div className="flex items-center justify-between gap-4">
+                    <p className="text-xs font-medium uppercase tracking-[0.24em] text-slate-400">{item.label}</p>
+                    <CheckCircle2 className="h-5 w-5 text-sky-300" />
+                  </div>
+                  <p className="mt-3 text-2xl font-semibold text-white">{item.value}</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-300">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 rounded-2xl bg-gradient-to-r from-sky-400/20 to-cyan-300/10 p-5 text-sm leading-6 text-sky-50">
+              촬영 목적과 활용 채널을 먼저 정리한 뒤, 필요한 장면과 납품 형태까지 함께 설계합니다.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-slate-900/80 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Why Aerial Content</p>
+            <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">현장을 더 설득력 있게 보여줍니다</h2>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {painPoints.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-sky-300/40 hover:bg-sky-400/10">
+                  <Icon className="h-9 w-9 text-sky-300" />
+                  <h3 className="mt-5 text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">{item.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Workflow</p>
+              <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">기획부터 납품까지</h2>
+              <p className="mt-6 text-lg leading-8 text-slate-300">
+                항공촬영은 비행만으로 끝나지 않습니다. 목적, 장면, 안전, 날씨, 편집 방향, 납품 채널까지 정리해야
+                고객이 바로 사용할 수 있는 콘텐츠가 됩니다.
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {productionFlow.map((item) => (
+                <div key={item.step} className="rounded-3xl border border-white/10 bg-slate-900/80 p-6 shadow-xl shadow-black/20">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sky-400/15 text-sm font-semibold text-sky-200">
+                    {item.step}
+                  </span>
+                  <h3 className="mt-5 text-xl font-semibold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Use Cases</p>
+              <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">촬영 유형과 적용 분야</h2>
+              <p className="mt-5 text-lg leading-8 text-slate-300">
+                공간의 규모, 행사의 분위기, 브랜드의 첫인상, 산업 현장의 흐름을 항공 시점으로 명확하게 보여줍니다.
+              </p>
+            </div>
+            <Button variant="outline" className="w-fit border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white" asChild>
+              <Link href="/projects">
+                포트폴리오 보기
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="grid gap-5 lg:grid-cols-3">
+            {useCases.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className={`rounded-3xl border border-white/10 bg-white/[0.045] p-6 ${index === 0 ? 'lg:col-span-2' : ''}`}
+                >
+                  <Icon className="h-10 w-10 text-sky-300" />
+                  <h3 className="mt-5 text-2xl font-semibold text-white">{item.title}</h3>
+                  <p className="mt-4 leading-7 text-slate-300">{item.description}</p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <span key={tag} className="rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium text-sky-100">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="deliverables" className="px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Deliverables</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">항공 콘텐츠는 바로 활용 가능한 산출물로 납품됩니다</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              촬영 원본뿐 아니라 홍보 영상, 고해상도 이미지, 숏폼, 선별 클립, 촬영 기록까지 목적에 맞춰 제공합니다.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {deliverables.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="rounded-3xl border border-white/10 bg-slate-900/80 p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <Icon className="h-10 w-10 text-sky-300" />
+                    <BadgeCheck className="h-6 w-6 text-cyan-200" />
+                  </div>
+                  <h3 className="mt-5 text-xl font-semibold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">{item.description}</p>
+                  <ul className="mt-5 space-y-2">
+                    {item.items.map((text) => (
+                      <li key={text} className="flex gap-2 text-sm text-slate-300">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-300" />
+                        <span>{text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-slate-900/70 px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Packages</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">목적별 추천 구성</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              필요한 촬영 범위와 납품 형태에 따라 작게 시작하거나, 영상·사진·숏폼·정기 기록까지 묶어 진행할 수 있습니다.
+            </p>
+          </div>
+
+          <div className="grid gap-5 lg:grid-cols-4">
+            {packages.map((item) => (
+              <div key={item.name} className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.045] p-6">
+                <Target className="h-9 w-9 text-sky-300" />
+                <h3 className="mt-5 text-xl font-semibold text-white">{item.name}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-300">{item.bestFor}</p>
+                <div className="mt-6 space-y-2">
+                  {item.includes.map((text) => (
+                    <div key={text} className="rounded-2xl bg-slate-950/60 px-4 py-3 text-sm text-slate-200">
+                      {text}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">FAQ</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">자주 묻는 질문</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              촬영 가능 지역, 날씨, 원본 제공, 편집 범위, 납품 일정까지 시작 전에 자주 확인하는 내용을 정리했습니다.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <details key={faq.question} className="group rounded-3xl border border-white/10 bg-slate-900/80 p-6 open:border-sky-300/40">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-white">
+                  {faq.question}
+                  <TimerReset className="h-5 w-5 flex-shrink-0 text-sky-300 transition group-open:rotate-45" />
+                </summary>
+                <p className="mt-4 leading-7 text-slate-300">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 pb-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-sky-400/20 via-slate-900 to-slate-950 p-8 shadow-2xl shadow-sky-950/30 sm:p-12 lg:p-16">
+          <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-200">Contact</p>
+              <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">촬영 목적과 활용 채널을 알려주시면, 필요한 장면부터 제안하겠습니다</h2>
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
+                브랜드 홍보, 부동산 마케팅, 관광·행사 기록, 산업 현장 콘텐츠가 필요하다면 아이엠드론이
+                항공촬영 기획부터 편집·납품까지 함께 준비하겠습니다.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+              <Button size="lg" className="bg-white text-slate-950 hover:bg-sky-100" asChild>
+                <Link href="/contact">
+                  항공촬영 상담 요청
+                  <Phone className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white" asChild>
                 <Link href="/projects">
-                  포트폴리오
+                  포트폴리오 확인하기
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -241,300 +540,6 @@ export default function AerialServicePage() {
           </div>
         </div>
       </section>
-
-      {/* 특징 카드 (4개) */}
-      <section className="py-16 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card variant="hover-lg" className="text-center">
-              <CardContent className="pt-6">
-                <Award className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Certified Drone Experts</h3>
-                <p className="text-sm text-muted-foreground">
-                  국가자격취득·보험 가입 전문 조종자가 직접 운영합니다.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card variant="hover-lg" className="text-center">
-              <CardContent className="pt-6">
-                <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Safety First Operation</h3>
-                <p className="text-sm text-muted-foreground">
-                  비행 전 사전 점검과 리스크 분석으로 안전 우선 운영 원칙을 지킵니다.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card variant="hover-lg" className="text-center">
-              <CardContent className="pt-6">
-                <CheckCircle2 className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Industry-Proven Projects</h3>
-                <p className="text-sm text-muted-foreground">
-                  다양한 산업 현장에서 검증된 실적을 보유하고 있습니다.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card variant="hover-lg" className="text-center">
-              <CardContent className="pt-6">
-                <Sparkles className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Expert Pre-Sales Support</h3>
-                <p className="text-sm text-muted-foreground">
-                  구매 전 상담을 통해 용도에 맞는 제품을 추천해드립니다.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* Overview (서비스 개요) */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Overview</Badge>
-            <h2 className="text-4xl font-bold mb-4">항공촬영 서비스란?</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              아이엠드론의 항공촬영 서비스는 부동산, 골프장, 요트·마리나, 관광지, 산업 현장, 이벤트 등 다양한 공간과 순간을 하늘에서 입체적으로 담아내는 영상·사진 제작 서비스입니다. 단순한 항공촬영에 그치지 않고, 촬영 목적 분석부터 후반편집까지 포함한 토털 패키지로 제공하여, 바로 활용 가능한 결과물을 전달합니다.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {overviewSteps.map((step, index) => {
-              const Icon = step.icon;
-              return (
-                <Card key={index} variant="hover-xl">
-                  <CardHeader>
-                    <Icon className="h-10 w-10 text-primary mb-4" />
-                    <CardTitle className="text-lg">{step.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{step.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* 주요 촬영 분야 */}
-      <section className="py-20 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Shooting Fields</Badge>
-            <h2 className="text-4xl font-bold mb-4">주요 촬영 분야</h2>
-            <p className="text-xl text-muted-foreground">
-              이런 촬영에 특히 잘 어울립니다.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {shootingFields.map((field, index) => (
-              <Card key={index} variant="hover-xl">
-                <CardHeader>
-                  <CardTitle className="text-xl">{field.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">{field.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* 아이엠드론의 강점 */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Strength</Badge>
-            <h2 className="text-4xl font-bold mb-4">아이엠드론의 강점</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {strengths.map((strength, index) => (
-              <Card key={index} variant="hover-xl">
-                <CardHeader>
-                  <CheckCircle2 className="h-8 w-8 text-primary mb-3" />
-                  <CardTitle className="text-xl">{strength.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">{strength.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* 촬영 진행 프로세스 */}
-      <section className="py-20 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Process</Badge>
-            <h2 className="text-4xl font-bold mb-4">촬영 진행 프로세스</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {processSteps.map((process, index) => (
-              <Card key={index} variant="hover-lg">
-                <CardHeader>
-                  <Badge className="mb-3 w-fit">{process.step}</Badge>
-                  <CardTitle className="text-lg">{process.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{process.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* 제공 결과물 */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Deliverables</Badge>
-            <h2 className="text-4xl font-bold mb-4">제공 결과물</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {deliverables.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <Card key={index} variant="hover-xl">
-                  <CardHeader>
-                    <Icon className="h-10 w-10 text-primary mb-4" />
-                    <CardTitle className="text-lg">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {item.items.map((text, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                          <span>{text}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* 견적 안내 */}
-      <section className="py-20 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Estimate</Badge>
-            <h2 className="text-4xl font-bold mb-4">견적은 이렇게 산출됩니다</h2>
-          </div>
-
-          <Card className="mb-8">
-            <CardContent className="pt-8">
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                항공촬영 비용은 촬영 시간, 장소(이동 거리), 인력 구성, 편집 난이도, 사용 목적에 따라 달라집니다.
-                아이엠드론은 다음과 같은 기준으로 맞춤 견적을 제공합니다.
-              </p>
-
-              <ul className="space-y-3 mb-8">
-                {[
-                  '단일 장소·반일 기준 촬영 패키지',
-                  '하루 이상 장기 촬영 패키지',
-                  '편집 포함/촬영만 의뢰 옵션',
-                  '반복 촬영(정기 촬영·사계절 촬영) 할인 프로그램'
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <p className="text-muted-foreground mb-6">
-                아래 버튼을 눌러 촬영 목적과 희망 일정을 남겨 주시면, 담당자가 상세 상담 후 맞춤 견적서를 보내드립니다.
-              </p>
-
-              <Button size="lg" className="w-full lg:w-auto" asChild>
-                <Link href="/contact">
-                  항공촬영 견적 문의하기
-                  <Mail className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* FAQ */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">FAQ</Badge>
-            <h2 className="text-4xl font-bold mb-4">자주 묻는 질문</h2>
-          </div>
-
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`faq-${index}`}>
-                <AccordionTrigger className="text-lg font-medium hover:text-primary text-left">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-muted-foreground leading-relaxed pt-2">
-                    {faq.answer}
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* CTA (행동 유도) */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-foreground dark:text-white">
-            당신의 공간과 순간을 하늘에서 기록해 보세요.
-          </h2>
-          <p className="text-xl text-foreground mb-8 leading-relaxed dark:text-white">
-            한 번의 항공촬영이, 부동산 분양률 상승과 브랜드 인지도 향상,<br />
-            그리고 도시·현장을 보여 주는 새로운 관점을 만들어 냅니다.
-          </p>
-          <p className="text-lg text-foreground mb-8 dark:text-white">
-            아이엠드론과 함께 <strong className="font-semibold">비행에서 인사이트까지(From Flight to Insight)</strong><br />
-            이어지는 항공촬영을 시작해 보세요.
-          </p>
-          <Button size="lg" variant="primary-blue" asChild>
-            <Link href="/contact">
-              항공촬영 상담 요청하기
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
-      </section>
     </main>
   );
 }
-
