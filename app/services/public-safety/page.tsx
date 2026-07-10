@@ -1,581 +1,522 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { SITE_NAME, SITE_URL } from '@/lib/config';
 import { services } from '@/data/services';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { 
-  Award,
-  CheckCircle2,
-  Shield,
-  Sparkles,
-  FileText,
-  Map,
-  Settings,
-  Image as ImageIcon,
-  File,
-  BarChart3,
+  AlertTriangle,
+  Anchor,
   ArrowRight,
-  Phone,
-  Mail,
+  BellRing,
   Building2,
-  Landmark,
-  Waves,
+  CheckCircle2,
+  ClipboardCheck,
+  FileText,
   Flame,
-  TreePine,
-  AlertTriangle
+  Landmark,
+  MapPinned,
+  MonitorPlay,
+  Phone,
+  Radar,
+  Route,
+  Satellite,
+  ShieldCheck,
+  Sparkles,
+  Users,
+  Waves,
 } from 'lucide-react';
 
-const service = services.find(s => s.id === 'public-safety')!;
+const service = services.find((item) => item.id === 'public-safety')!;
+
+const pageDescription =
+  '공공 인프라, 항만·연안, 해상 안전, 재난 대응 현장을 드론 영상·위치·점검 데이터로 확인하고 의사결정 가능한 리포트로 정리하는 아이엠드론의 공공·해상안전관제 서비스입니다.';
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "/services/public-safety",
+    canonical: '/services/public-safety',
   },
   title: `${service.title} | ${SITE_NAME}`,
-  description: service.description,
+  description: pageDescription,
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
     url: `${SITE_URL}/services/public-safety`,
     siteName: SITE_NAME,
     title: `${service.title} | ${SITE_NAME}`,
-    description: service.description,
+    description: pageDescription,
     images: [{ url: `${SITE_URL}${service.image}`, width: 1200, height: 630 }],
   },
 };
 
+const heroStats = [
+  { label: 'Public Infra', value: '공공 인프라 점검', detail: '교량·제방·사면·문화재·항만 시설을 고해상도 이미지로 기록' },
+  { label: 'Marine Safety', value: '해상·항만 관제', detail: '연안, 선박 접근, 불법 조업, 위험 구역을 드론 시야로 확인' },
+  { label: 'Evidence Report', value: '증빙 리포트', detail: '위치, 일시, 사진·영상, 이상 지점을 행정 보고자료로 정리' },
+];
+
+const painPoints = [
+  {
+    icon: AlertTriangle,
+    title: '위험 구역을 사람이 먼저 확인합니다',
+    description: '교량 하부, 급경사지, 제방, 항만 구조물, 재난 현장은 접근 자체가 위험하거나 시간이 오래 걸립니다.',
+  },
+  {
+    icon: Waves,
+    title: '넓은 해상·연안 구역은 사각지대가 생깁니다',
+    description: '고정 CCTV와 육상 순찰만으로는 선박 이동, 위험 접근, 불법 조업, 해양 폐기물 발생 구역을 빠르게 훑기 어렵습니다.',
+  },
+  {
+    icon: FileText,
+    title: '현장 상황이 보고자료로 남지 않습니다',
+    description: '영상과 사진이 흩어져 있으면 민원 대응, 보수 요청, 사후 감사, 다음 예산 편성에 필요한 근거자료로 활용하기 어렵습니다.',
+  },
+  {
+    icon: BellRing,
+    title: '재난·사고 초동 판단이 늦어집니다',
+    description: '침수, 산불, 붕괴, 해상 사고처럼 빠른 공간 판단이 필요한 상황은 상공 영상과 위치 정보가 있어야 대응이 빨라집니다.',
+  },
+];
+
+const solutionFlow = [
+  {
+    step: '01',
+    title: '대상 구역·행정 목적 정의',
+    description: '시설 점검, 해상 관제, 재난 대응, 정기 순찰, 기록화 등 목적과 대상 구역, 보고 체계, 협의 기관을 먼저 정리합니다.',
+  },
+  {
+    step: '02',
+    title: '비행 가능성·안전 조건 검토',
+    description: '비행 제한, 관할 기관 협의, 개인정보·보안, 항만·해상 조건, 현장 접근성, 위험 요인을 확인해 운영 계획을 세웁니다.',
+  },
+  {
+    step: '03',
+    title: '촬영·관제 시나리오 설계',
+    description: '우선 확인 지점, 비행 경로, 고도, 촬영 각도, 실시간 공유 여부, 이상 지점 기록 방식을 현장 목적에 맞게 설계합니다.',
+  },
+  {
+    step: '04',
+    title: '드론 촬영·실시간 모니터링',
+    description: '계획된 구역을 드론으로 촬영하고 필요 시 현장 담당자·상황실과 영상을 공유해 위험 지점과 이상 상황을 함께 확인합니다.',
+  },
+  {
+    step: '05',
+    title: '이상 지점·상황 데이터 정리',
+    description: '사진, 영상, 위치, 시간, 현장 메모를 기준으로 점검 지점과 위험 후보를 분류하고 조치가 필요한 내용을 구조화합니다.',
+  },
+  {
+    step: '06',
+    title: '보고자료·정기 운영 제안',
+    description: '행정 보고, 보수 요청, 민원 대응, 재난 기록에 활용할 수 있는 결과물을 제공하고 정기 점검·상시 관제 확장안을 제안합니다.',
+  },
+];
+
+const useCases = [
+  {
+    icon: Building2,
+    title: '교량·제방·사면·공공 시설 점검',
+    description: '구조물 상부·측면·하부, 균열·누수·침식·변형 후보를 안전거리에서 확인하고 위치 기반 자료로 정리합니다.',
+    tags: ['교량', '제방·사면', '시설물 점검'],
+  },
+  {
+    icon: Anchor,
+    title: '항만·연안·해상 안전관제',
+    description: '항만 주변, 연안, 선박 이동 구역, 불법어선·위험 접근·해양 폐기물 후보를 드론 영상과 위치 정보로 확인합니다.',
+    tags: ['항만', '불법어선', '연안 안전'],
+  },
+  {
+    icon: Landmark,
+    title: '문화재·국가유산 기록화',
+    description: '사람이 접근하기 어려운 지붕·상부·외벽을 고해상도로 촬영해 보수·복원 계획과 디지털 아카이브 자료로 활용합니다.',
+    tags: ['문화재', '국가유산', '디지털 기록'],
+  },
+  {
+    icon: Flame,
+    title: '산불·침수·재난 현장 파악',
+    description: '연기, 침수 범위, 도로 단절, 고립 지점, 위험 접근로를 상공에서 확인해 초동 대응과 사후 복구 기록을 지원합니다.',
+    tags: ['산불', '침수', '재난 대응'],
+  },
+  {
+    icon: Users,
+    title: '공공 행사·관광지 안전관리',
+    description: '행사장, 공원, 관광지, 도심 밀집 구역의 인파 흐름과 위험 지점을 확인해 기존 CCTV와 현장 안전요원을 보완합니다.',
+    tags: ['행사 안전', '인파 흐름', 'CCTV 보완'],
+  },
+];
+
+const deliverables = [
+  {
+    icon: MonitorPlay,
+    title: '현장 영상·이미지 자료',
+    description: '공공·해상 현장을 이해하기 쉬운 항공 영상과 고해상도 이미지로 제공합니다.',
+    items: ['항공 영상 클립', '고해상도 사진', '주요 지점 확대 이미지'],
+  },
+  {
+    icon: MapPinned,
+    title: '위치 기반 이상 지점 목록',
+    description: '보수·단속·추가 확인이 필요한 위치를 지도와 목록으로 정리합니다.',
+    items: ['좌표·구역 정보', '이상 지점 번호', '현장 메모'],
+  },
+  {
+    icon: ClipboardCheck,
+    title: '점검·관제 결과 리포트',
+    description: '행정 보고와 내부 의사결정에 바로 활용할 수 있도록 결과를 구조화합니다.',
+    items: ['점검 개요', '주요 발견 사항', '조치 우선순위'],
+  },
+  {
+    icon: Route,
+    title: '순찰 경로·관제 구역도',
+    description: '정기 운영이 필요한 현장은 반복 가능한 순찰 경로와 우선 감시 구역을 제안합니다.',
+    items: ['비행 경로', '우선 감시 구역', '반복 점검 포인트'],
+  },
+  {
+    icon: Satellite,
+    title: '상황실·관제 연계안',
+    description: '실시간 공유가 필요한 경우 기존 상황실, 이동형 관제, 현장 모니터링 구성을 검토합니다.',
+    items: ['영상 공유 방식', '관제 화면 구성', '운영 로그'],
+  },
+  {
+    icon: Radar,
+    title: '정기점검·상시운영 로드맵',
+    description: '단발 촬영 이후 분기·반기·연간 점검과 드론 스테이션 확장 가능성을 함께 제안합니다.',
+    items: ['정기 점검 주기', '시계열 비교', '상시 관제 검토'],
+  },
+];
+
+const packages = [
+  {
+    name: '공공 시설 점검 패키지',
+    bestFor: '교량, 제방, 사면, 공공 건축물, 문화재 등 시설 상태 확인',
+    includes: ['고해상도 촬영', '이상 지점 목록', '점검 리포트'],
+  },
+  {
+    name: '해상·항만 모니터링 패키지',
+    bestFor: '항만, 연안, 어항, 해상 안전 구역의 순찰·감시',
+    includes: ['해상 순찰 영상', '위험 접근 확인', '관제 구역 기록'],
+  },
+  {
+    name: '재난 대응 긴급 촬영 패키지',
+    bestFor: '산불, 침수, 태풍, 붕괴, 고립 등 빠른 현장 파악이 필요한 상황',
+    includes: ['신속 출동', '상공 상황 영상', '피해 범위 기록'],
+  },
+  {
+    name: '정기 순찰·관제 확장 검토',
+    bestFor: '반복 점검, 상시 감시, 상황실 연계, 드론 스테이션 도입 검토',
+    includes: ['순찰 시나리오', '운영 주기 제안', '관제 확장안'],
+  },
+];
+
+const faqs = [
+  {
+    question: '공공기관 용역이나 시범사업 형태로 진행할 수 있나요?',
+    answer:
+      '가능합니다. 단발 점검, 시범사업, 정기 용역, 협약 기반 프로젝트 등 기관의 예산·사업 목적·행정 절차에 맞춰 범위를 협의합니다. 필요 시 제안요청서 작성 단계에서 필요한 산출물과 운영 범위를 함께 정리할 수 있습니다.',
+  },
+  {
+    question: '항만·해상 구역 촬영은 어떤 사전 협의가 필요한가요?',
+    answer:
+      '항만, 군사·보안 시설, 선박 통항 구역, 비행 제한 구역 여부에 따라 관계 기관 협의와 사전 허가가 필요할 수 있습니다. 아이엠드론은 촬영 목적, 구역, 시간, 안전 통제 조건을 확인한 뒤 필요한 절차를 함께 검토합니다.',
+  },
+  {
+    question: '야간 촬영이나 열화상 촬영도 가능한가요?',
+    answer:
+      '현장 목적과 비행 가능 조건에 따라 가능합니다. 야간·열화상 촬영은 안전관리, 재난 대응, 시설 이상 확인에 유용하지만 장비, 허가, 현장 통제, 기상 조건을 사전에 검토해야 합니다.',
+  },
+  {
+    question: '결과물은 어떤 형식으로 받을 수 있나요?',
+    answer:
+      '이미지, 영상, 위치 기반 목록, PDF 보고서, 지도형 자료, 원본 데이터 등으로 제공할 수 있습니다. 공공기관 내부 보고 양식이나 보수 업체 공유 양식이 있는 경우 해당 형식에 맞춰 정리하는 것도 협의 가능합니다.',
+  },
+  {
+    question: '정기 점검이나 상황실 연계 운영도 가능한가요?',
+    answer:
+      '가능합니다. 분기·반기·연간 점검처럼 반복 촬영을 통해 변화 이력을 축적하거나, 해상·시설 안전관제처럼 상황실과 실시간 영상을 공유하는 운영 방식까지 단계적으로 구성할 수 있습니다.',
+  },
+];
+
 export default function PublicSafetyServicePage() {
-  const keyPoints = [
-    '교량·시설물·문화재 드론 점검',
-    '항만·연안·불법어선·해양 안전 관제 지원',
-    '산불·재난·재해 현장 모니터링 및 상황 기록'
-  ];
-
-  const overviewSteps = [
-    { icon: Building2, title: '공공 인프라 점검', description: '교량·시설물을 안전하게 점검합니다' },
-    { icon: Shield, title: '불법·위험 행위 감시', description: '항만·연안 구역을 감시합니다' },
-    { icon: AlertTriangle, title: '위기 상황 모니터링·기록', description: '재난 현장을 신속하게 파악합니다' },
-    { icon: BarChart3, title: '데이터 기반 안전 관리', description: '점검 이력을 축적하고 분석합니다' }
-  ];
-
-  const applicationFields = [
-    {
-      icon: Building2,
-      title: '교량·시설물·공공 인프라 점검',
-      description: '교량, 도로 구조물, 옹벽, 저수지, 제방, 상하수도·환경 시설 등 공공 인프라를 드론으로 정기 점검합니다. 육안으로 확인하기 어려운 상부/측면/하부 등을 촬영해 균열, 누수, 부식, 변형 등 이상 징후를 기록하고, 보수 필요 구간을 식별합니다.'
-    },
-    {
-      icon: Landmark,
-      title: '문화재·국가유산 보호 및 디지털 기록',
-      description: '문화재·역사 건축물·기념물·국가유산을 드론으로 촬영·3D 모델링하여 정밀 기록·상태 점검·디지털트윈 구축에 활용합니다. 보수·복원 계획 수립, 관리 이력 축적, 방문객 안내 콘텐츠 제작 등 문화재 행정 전반에 활용 가능한 데이터 기반을 만듭니다.'
-    },
-    {
-      icon: Waves,
-      title: '항만·연안·불법어선 감시',
-      description: '항만 주변, 연안, 해상 구역을 드론으로 순찰하며 불법어선, 위험 선박, 기름 유출, 해양 폐기물 등을 감시합니다. CCTV나 육상·선박 순찰만으로 커버하기 어려운 구역을 보완하며, 위험 상황 발생 시 위치·영상 정보를 실시간으로 공유합니다.'
-    },
-    {
-      icon: Flame,
-      title: '산불·재난·재해 현장 모니터링',
-      description: '산불, 산사태, 홍수, 태풍 피해 등 재난 상황에서 드론으로 화재 확산 방향, 연기·불꽃 발생 지점, 도로 통제 상황, 침수 구역, 고립 지점을 파악합니다. 육상 접근이 어려운 구역의 상황과 대피·구조에 필요한 정보를 상공에서 제공합니다.'
-    },
-    {
-      icon: TreePine,
-      title: '도시 치안·공원·관광지 안전 관리 지원',
-      description: '공원, 관광지, 도심 축제 구역 등에서 드론을 활용해 인파 흐름, 위험 지역, 야간 조도 취약 구간 등을 확인합니다. 기존 CCTV와 병행 운용할 경우, 공중에서 사각지대를 보완하는 수단으로 활용됩니다.'
-    }
-  ];
-
-  const strengths = [
-    {
-      title: '공공 현장 경험 기반 운영',
-      description: '아이엠드론은 공공·지자체·행사·산업 현장 등 다양한 환경에서 드론을 운용한 경험을 기반으로 행정·안전 규정·협의 구조를 이해하고, 공공기관이 필요로 하는 데이터 포맷과 보고 방식에 맞춰 서비스를 제공합니다.'
-    },
-    {
-      title: '행정·규제 절차 이해',
-      description: '공공 업무는 비행 허가, 개인정보 보호, 시설 접근 승인 등 행정 절차가 필요한 경우가 많습니다. 아이엠드론은 관할 기관 협의와 허가 절차를 숙지하고 있어, 사전 준비부터 진행까지 원활하게 지원합니다.'
-    },
-    {
-      title: '디지털트윈·아카이브 구축 지원',
-      description: '단순 점검·감시를 넘어, 문화재·시설물의 3D 모델, 정사영상, 포인트클라우드를 생성하여 디지털트윈·디지털 아카이브 구축 프로젝트에 연계할 수 있습니다. 장기 보존·관리 이력·VR/AR 콘텐츠로 확장 가능합니다.'
-    },
-    {
-      title: '위기 대응 신속 출동',
-      description: '산불·재난·사고 등 긴급 상황 발생 시 신속 대응 체계를 갖추고 있습니다. 상황실과 협의하여 필요 시 즉시 현장으로 이동, 드론을 투입하여 실시간 영상을 제공하고 상황 파악을 지원합니다.'
-    }
-  ];
-
-  const processSteps = [
-    {
-      step: 'Step 1',
-      title: '상담 & 업무 범위 정의',
-      description: '점검·관제 목적(안전·감시·기록 등), 대상 시설·구역, 운영 주기, 협의 대상 기관 등을 파악하고 업무 범위를 정의합니다.'
-    },
-    {
-      step: 'Step 2',
-      title: '대상 시설·구역 사전 조사',
-      description: '점검 시설 목록, 위치, 규모, 기존 자료(도면·사진·보고서 등)를 공유받고, 비행 제한·접근성·위험 요인을 파악하여 비행 계획을 수립합니다.'
-    },
-    {
-      step: 'Step 3',
-      title: '인허가·협의 및 일정 조율',
-      description: '관할 기관과 협의, 비행 허가·촬영 허가가 필요한 경우 절차를 진행하고, 점검·관제 일정과 현장 담당자 일정에 맞춰 스케줄을 조정합니다.'
-    },
-    {
-      step: 'Step 4',
-      title: '현장 촬영·관제 수행',
-      description: '계획된 구역·시설에 대해 드론 촬영·관제를 수행합니다. 필요 시 현장 담당자/상황실과 화면을 실시간 공유하여 이상 징후 발견 시 즉시 대응할 수 있도록 돕습니다.'
-    },
-    {
-      step: 'Step 5',
-      title: '데이터 정리·분석',
-      description: '촬영된 영상·사진·기록을 정리하여 이상 구간, 위험 요소, 특이 사항을 분석하고, 정량·정성 정보를 함께 정리합니다.'
-    },
-    {
-      step: 'Step 6',
-      title: '결과 보고·후속 제안',
-      description: '점검·관제 결과를 보고서·이미지·영상 등으로 제공하고, 정기 사업 전환, 추가 점검 필요 구역, 데이터 활용 방안 등 후속 단계에 대한 제안도 함께 드립니다.'
-    }
-  ];
-
-  const deliverables = [
-    {
-      icon: FileText,
-      title: '점검·관제 결과 보고서',
-      items: ['점검 대상·방법·일시', '주요 이상·위험 요소 요약', '조치·권고 사항 정리']
-    },
-    {
-      icon: ImageIcon,
-      title: '주요 구간 사진·영상 자료',
-      items: ['교량·시설물·문화재·해상 구역 등', '이상 지점의 전·후·근접 사진 및 영상 클립']
-    },
-    {
-      icon: Map,
-      title: '지도·도면 기반 시각자료',
-      items: ['점검/관제 구역에 이상 지점 표시', '위험도·우선 조치 필요 구간 등 색상이나 레이어로 표현']
-    },
-    {
-      icon: File,
-      title: '디지털 아카이브 데이터(옵션)',
-      items: ['문화재·시설물의 항공사진, 3D 모델, 정사영상 등', '장기 보존과 향후 보수·복원 계획용 데이터']
-    }
-  ];
-
-  const faqs = [
-    {
-      question: 'Q1. 지자체/공공기관과의 계약 형태는 어떻게 되나요?',
-      answer: '용역 형태, 시범 사업, 협약 기반 프로젝트 등 기관 상황과 사업 목적에 맞는 형태로 협의 가능합니다. 제안요청서(RFP) 작성 단계부터 함께 논의해 드릴 수도 있습니다.'
-    },
-    {
-      question: 'Q2. 개인정보·초상권 문제는 어떻게 처리하나요?',
-      answer: '촬영 전 필요 시 안내문 게시, 촬영 구역 고지를 진행하며, 개인 식별이 가능한 얼굴이나 차량 번호가 포함된 경우 블러 처리나 모자이크를 적용할 수 있습니다. 공공 목적의 기록·감시 촬영은 관련 법규를 준수하여 진행합니다.'
-    },
-    {
-      question: 'Q3. 기존에 운영 중인 CCTV·관제센터와 연동할 수 있나요?',
-      answer: '네, 가능합니다. 드론 영상 피드를 기존 CCTV 통합관제센터 화면에 추가하거나, 영상 데이터를 녹화·저장 시스템에 연계하는 방식으로 구성할 수 있습니다. 시스템 환경에 따라 맞춤 설계를 제안해 드립니다.'
-    },
-    {
-      question: 'Q4. 단발성 점검이 아닌 정기 사업으로 운영해도 되나요?',
-      answer: '물론입니다. 분기별·반기별·연간 단위 정기 점검 사업으로 계약하면, 점검 이력을 시계열로 축적하여 시설 상태 변화를 추적하고, 보수 우선순위를 판단하는 데 활용할 수 있습니다.'
-    },
-    {
-      question: 'Q5. 위기 상황(산불·재난 등) 전용 플랜도 제공하나요?',
-      answer: '네, 산불·재난·사고 등 긴급 상황 대응을 위한 비상 출동 체계와 요금제를 운영하고 있습니다. 평소에는 대기 상태로 있다가, 상황 발생 시 신속 출동하여 현장 영상을 제공하는 형태로 계약할 수 있습니다.'
-    }
-  ];
-
   return (
-    <main className="min-h-screen">
-      {/* 히어로 섹션 */}
-      <section className="relative py-20 lg:py-32">
-        {/* 배경 이미지 */}
-        <div className="absolute inset-0 z-0">
+    <main className="min-h-screen overflow-hidden bg-slate-950 text-white">
+      <section className="relative isolate min-h-[760px] px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+        <div className="absolute inset-0 -z-20">
           <img
             src="/images/services/public-safety.webp"
-            alt="공공안전 배경"
-            className="w-full h-full object-cover"
+            alt="공공·해상안전 드론 관제와 시설 점검"
+            className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-slate-950/82" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(14,165,233,0.26),transparent_32%),radial-gradient(circle_at_82%_16%,rgba(56,189,248,0.18),transparent_30%),linear-gradient(135deg,rgba(15,23,42,0.98),rgba(15,23,42,0.72)_45%,rgba(2,6,23,0.96))]" />
         </div>
+        <div className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-sky-300/50 to-transparent" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <div className="max-w-4xl">
-            <Badge variant="hero" className="mb-6">
-              <Shield className="h-3 w-3 mr-1" />
-              Public Safety & Facility Inspection
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-white leading-tight">
-              공공·해상안전관제 &<br />시설·문화재 점검
+        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
+          <div>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-300/30 bg-sky-400/10 px-4 py-2 text-sm font-medium text-sky-100 shadow-[0_0_40px_rgba(14,165,233,0.14)] backdrop-blur">
+              <Sparkles className="h-4 w-4 text-sky-300" />
+              Public Safety & Marine Monitoring
+            </div>
+            <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              공공·해상 안전 현장을
+              <span className="block bg-gradient-to-r from-sky-200 via-cyan-100 to-white bg-clip-text text-transparent">
+                드론 데이터로 더 빠르게 확인합니다
+              </span>
             </h1>
-            <p className="text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed">
-              도시 인프라, 항만·연안, 문화재, 위험 시설까지.<br />
-              아이엠드론은 드론을 활용한 공공안전 점검·감시·기록 서비스로<br />
-              지자체·공공기관·공기업의 안전 관리 업무를 지원합니다.
+            <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">
+              아이엠드론은 공공 인프라, 항만·연안, 문화재, 재난 현장을 드론 영상·위치·점검 데이터로 확인하고
+              공공기관과 지자체가 바로 활용할 수 있는 보고자료로 정리합니다.
             </p>
 
-            {/* 포인트 리스트 */}
-            <div className="space-y-3 mb-10">
-              {keyPoints.map((point, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-blue-400 mt-0.5 flex-shrink-0" />
-                  <p className="text-lg text-white/90">{point}</p>
-                </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {['공공 인프라 점검', '해상·항만 관제', '재난 대응 촬영', '문화재 기록화', '위치 기반 리포트'].map((item) => (
+                <span key={item} className="rounded-full border border-white/10 bg-white/8 px-4 py-2 text-sm text-slate-100 backdrop-blur">
+                  {item}
+                </span>
               ))}
             </div>
 
-            {/* 버튼 */}
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" variant="primary-blue" asChild>
-                <Link href="#contact">
-                  상담하기
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <Button size="lg" className="bg-sky-400 text-slate-950 hover:bg-sky-300" asChild>
+                <Link href="/contact">
+                  공공안전 서비스 상담하기
                   <Phone className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="hero-outline" asChild>
-                <Link href="/projects">
-                  포트폴리오
+              <Button size="lg" variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white" asChild>
+                <Link href="#deliverables">
+                  제공 산출물 보기
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* 특징 카드 (4개) */}
-      <section className="py-16 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card variant="hover-lg" className="text-center">
-              <CardContent className="pt-6">
-                <Award className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Certified Drone Experts</h3>
-                <p className="text-sm text-muted-foreground">
-                  국가자격취득·보험 가입 전문 조종자가 직접 운영합니다.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card variant="hover-lg" className="text-center">
-              <CardContent className="pt-6">
-                <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Safety First Operation</h3>
-                <p className="text-sm text-muted-foreground">
-                  비행 전 사전 점검과 리스크 분석으로 안전 우선 운영 원칙을 지킵니다.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card variant="hover-lg" className="text-center">
-              <CardContent className="pt-6">
-                <CheckCircle2 className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Industry-Proven Projects</h3>
-                <p className="text-sm text-muted-foreground">
-                  다양한 산업 현장에서 검증된 실적을 보유하고 있습니다.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card variant="hover-lg" className="text-center">
-              <CardContent className="pt-6">
-                <Sparkles className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Expert Pre-Sales Support</h3>
-                <p className="text-sm text-muted-foreground">
-                  구매 전 상담을 통해 용도에 맞는 제품을 추천해드립니다.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.07] p-6 shadow-2xl shadow-sky-950/40 backdrop-blur-xl">
+            <div className="mb-6 flex items-center justify-between gap-4">
+              <div>
+                <p className="text-sm uppercase tracking-[0.3em] text-sky-200/80">Safety Data</p>
+                <h2 className="mt-2 text-2xl font-semibold text-white">Public Mission Package</h2>
+              </div>
+              <ShieldCheck className="h-10 w-10 text-sky-300" />
+            </div>
+            <div className="space-y-4">
+              {heroStats.map((item) => (
+                <div key={item.label} className="rounded-2xl border border-white/10 bg-slate-950/55 p-5">
+                  <div className="flex items-center justify-between gap-4">
+                    <p className="text-xs font-medium uppercase tracking-[0.24em] text-slate-400">{item.label}</p>
+                    <CheckCircle2 className="h-5 w-5 text-sky-300" />
+                  </div>
+                  <p className="mt-3 text-2xl font-semibold text-white">{item.value}</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-300">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 rounded-2xl bg-gradient-to-r from-sky-400/20 to-cyan-300/10 p-5 text-sm leading-6 text-sky-50">
+              단순 촬영으로 끝내지 않고, 누가·언제·어디서·무엇을 확인했는지 남는 행정·운영 데이터로 정리합니다.
+            </div>
           </div>
         </div>
       </section>
 
-      <Separator />
-
-      {/* Overview (서비스 개요) */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Overview</Badge>
-            <h2 className="text-4xl font-bold mb-4">공공안전 드론 서비스란?</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              아이엠드론의 공공안전 드론 서비스는 지자체·공공기관·공기업·공단을 대상으로, 교량·시설물·문화재 등 공공 인프라 점검, 항만·연안·해상 구역 불법·위험 행위 감시, 산불·재난·재해 등 위기 상황 모니터링·기록을 드론으로 수행하는 통합 안전 지원 솔루션입니다. 기존의 육상 순찰·CCTV·인력 의존 방식에 드론이라는 기동성 높은 공중 시야를 더해, 사각지대를 줄이고, 대응 속도를 높이며, 현장을 더 안전하게 관리할 수 있도록 돕습니다.
-            </p>
+      <section className="border-y border-white/10 bg-slate-900/80 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Why Drone Safety</p>
+            <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">공공안전 업무의 이런 문제를 해결합니다</h2>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {overviewSteps.map((step, index) => {
-              const Icon = step.icon;
-              return (
-                <Card key={index} variant="hover-xl">
-                  <CardHeader>
-                    <Icon className="h-10 w-10 text-primary mb-4" />
-                    <CardTitle className="text-lg">{step.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{step.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* 주요 적용 분야 */}
-      <section className="py-20 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Application Fields</Badge>
-            <h2 className="text-4xl font-bold mb-4">주요 적용 분야</h2>
-            <p className="text-xl text-muted-foreground">
-              이런 공공안전 업무에 활용됩니다.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {applicationFields.slice(0, 3).map((field, index) => {
-              const Icon = field.icon;
-              return (
-                <Card key={index} variant="hover-xl">
-                  <CardHeader>
-                    <Icon className="h-12 w-12 text-primary mb-4" />
-                    <CardTitle className="text-xl">{field.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">{field.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-            {applicationFields.slice(3).map((field, index) => {
-              const Icon = field.icon;
-              return (
-                <Card key={index + 3} variant="hover-xl">
-                  <CardHeader>
-                    <Icon className="h-12 w-12 text-primary mb-4" />
-                    <CardTitle className="text-xl">{field.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">{field.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* 아이엠드론의 강점 */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Strength</Badge>
-            <h2 className="text-4xl font-bold mb-4">아이엠드론의 강점</h2>
-            <p className="text-xl text-muted-foreground">
-              공공안전, 왜 아이엠드론과 함께해야 할까요?
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {strengths.map((strength, index) => (
-              <Card key={index} variant="hover-xl">
-                <CardHeader>
-                  <CheckCircle2 className="h-8 w-8 text-primary mb-3" />
-                  <CardTitle className="text-xl">{strength.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">{strength.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* 촬영 진행 프로세스 */}
-      <section className="py-20 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Process</Badge>
-            <h2 className="text-4xl font-bold mb-4">점검·관제 진행 프로세스</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {processSteps.map((process, index) => (
-              <Card key={index} variant="hover-lg">
-                <CardHeader>
-                  <Badge className="mb-3 w-fit">{process.step}</Badge>
-                  <CardTitle className="text-lg">{process.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{process.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Separator />
-
-      {/* 제공 결과물 */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Deliverables</Badge>
-            <h2 className="text-4xl font-bold mb-4">제공 결과물</h2>
-            <p className="text-xl text-muted-foreground">
-              어떤 결과물을 제공받게 되나요?
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {deliverables.map((item, index) => {
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {painPoints.map((item) => {
               const Icon = item.icon;
               return (
-                <Card key={index} variant="hover-xl">
-                  <CardHeader>
-                    <Icon className="h-10 w-10 text-primary mb-4" />
-                    <CardTitle className="text-lg">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {item.items.map((text, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                          <span>{text}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
+                <div key={item.title} className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-sky-300/40 hover:bg-sky-400/10">
+                  <Icon className="h-9 w-9 text-sky-300" />
+                  <h3 className="mt-5 text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">{item.description}</p>
+                </div>
               );
             })}
           </div>
         </div>
       </section>
 
-      <Separator />
-
-      {/* 견적 안내 */}
-      <section className="py-20 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">Estimate</Badge>
-            <h2 className="text-4xl font-bold mb-4">견적은 이렇게 산출됩니다</h2>
+      <section className="px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Workflow</p>
+              <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">현장 범위 협의에서 증빙 리포트까지</h2>
+              <p className="mt-6 text-lg leading-8 text-slate-300">
+                공공·해상안전 드론 운영은 비행만의 문제가 아닙니다. 목적, 허가, 안전 통제, 촬영 방식, 보고 형식을 함께 설계해야 실제 행정 업무에 활용됩니다.
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {solutionFlow.map((item) => (
+                <div key={item.step} className="rounded-3xl border border-white/10 bg-slate-900/80 p-6 shadow-xl shadow-black/20">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sky-400/15 text-sm font-semibold text-sky-200">
+                    {item.step}
+                  </span>
+                  <h3 className="mt-5 text-xl font-semibold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">{item.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
-
-          <Card className="mb-8">
-            <CardContent className="pt-8">
-              <h3 className="text-2xl font-semibold mb-4">업무 특성과 예산에 맞춘 맞춤형 패키지</h3>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                공공안전 드론 서비스의 비용은 대상 시설·구역의 규모, 점검/관제 범위, 기간(단기/정기), 데이터 처리 수준에 따라 달라집니다.
-              </p>
-
-              <p className="text-muted-foreground mb-6">
-                아이엠드론은 다음과 같은 형태로 패키지를 구성합니다:
-              </p>
-
-              <ul className="space-y-3 mb-8">
-                {[
-                  '교량·시설물·문화재 등 특정 대상 점검 패키지',
-                  '지자체 단위 도로·하천·제방·시설 정기 점검 패키지',
-                  '항만·연안·해상 구역 불법·위험 행위 감시 패키지',
-                  '산불·재난 등 위기 대응 시범 사업·파일럿 프로젝트',
-                  '디지털트윈·디지털 아카이브 구축 연계형 패키지'
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <p className="text-muted-foreground mb-6">
-                업무 범위와 목표를 공유해 주시면, 전문 담당자가 검토 후 맞춤 견적과 단계별 추진 제안을 드립니다.
-              </p>
-
-              <Button size="lg" variant="primary-blue" asChild>
-                <Link href="/contact">
-                  공공안전 드론 서비스 견적 문의하기
-                  <Mail className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
-      <Separator />
-
-      {/* FAQ */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12">
-            <Badge variant="outline" className="mb-4">FAQ</Badge>
-            <h2 className="text-4xl font-bold mb-4">자주 묻는 질문</h2>
+      <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Use Cases</p>
+              <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">적용 현장</h2>
+              <p className="mt-5 text-lg leading-8 text-slate-300">
+                지자체, 공공기관, 항만·해상안전, 시설관리, 재난 대응처럼 빠른 확인과 신뢰 가능한 기록이 필요한 현장에 맞춰 운영합니다.
+              </p>
+            </div>
+            <Button variant="outline" className="w-fit border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white" asChild>
+              <Link href="/projects">
+                관련 프로젝트 보기
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
 
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`faq-${index}`}>
-                <AccordionTrigger className="text-lg font-medium hover:text-primary text-left">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-muted-foreground leading-relaxed pt-2">
-                    {faq.answer}
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
+          <div className="grid gap-5 lg:grid-cols-3">
+            {useCases.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className={`rounded-3xl border border-white/10 bg-white/[0.045] p-6 ${index === 0 ? 'lg:col-span-2' : ''}`}
+                >
+                  <Icon className="h-10 w-10 text-sky-300" />
+                  <h3 className="mt-5 text-2xl font-semibold text-white">{item.title}</h3>
+                  <p className="mt-4 leading-7 text-slate-300">{item.description}</p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <span key={tag} className="rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium text-sky-100">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="deliverables" className="px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Deliverables</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">공공안전 데이터는 보고 가능한 산출물로 남습니다</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              영상과 사진을 전달하는 데서 끝나지 않고, 위치·일시·상황·조치 우선순위를 정리해 행정 보고와 현장 조치에 활용할 수 있게 제공합니다.
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {deliverables.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="rounded-3xl border border-white/10 bg-slate-900/75 p-6">
+                  <Icon className="h-10 w-10 text-sky-300" />
+                  <h3 className="mt-5 text-xl font-semibold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">{item.description}</p>
+                  <ul className="mt-5 space-y-2">
+                    {item.items.map((text) => (
+                      <li key={text} className="flex gap-2 text-sm text-slate-300">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-300" />
+                        <span>{text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-slate-900/80 px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Package Guide</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">목적별 추천 구성</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              공공기관의 사업 목적, 현장 위험도, 반복 운영 필요성에 따라 촬영·관제·리포트 범위를 조정합니다.
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {packages.map((item) => (
+              <div key={item.name} className="rounded-3xl border border-white/10 bg-white/[0.045] p-6">
+                <h3 className="text-xl font-semibold text-white">{item.name}</h3>
+                <p className="mt-3 text-sm leading-6 text-sky-100">{item.bestFor}</p>
+                <ul className="mt-5 space-y-2">
+                  {item.includes.map((include) => (
+                    <li key={include} className="flex gap-2 text-sm text-slate-300">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-300" />
+                      <span>{include}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </Accordion>
+          </div>
         </div>
       </section>
 
-      <Separator />
+      <section className="px-4 py-24 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.78fr_1.22fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">FAQ</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">자주 묻는 질문</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              공공·해상안전 드론 운영은 비행 가능 여부, 관계기관 협의, 개인정보, 보고 형식을 함께 검토해야 안정적으로 진행됩니다.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <details key={faq.question} className="group rounded-3xl border border-white/10 bg-slate-900/75 p-6">
+                <summary className="cursor-pointer list-none text-lg font-semibold text-white marker:hidden">
+                  <span className="flex items-center justify-between gap-4">
+                    {faq.question}
+                    <span className="rounded-full bg-sky-400/10 px-3 py-1 text-sm text-sky-200 group-open:bg-sky-300 group-open:text-slate-950">
+                      보기
+                    </span>
+                  </span>
+                </summary>
+                <p className="mt-4 leading-7 text-slate-300">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* CTA (행동 유도) */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-foreground dark:text-white">
-            도시와 바다, 문화유산의 안전을 드론으로 지켜보세요.
+      <section className="relative px-4 py-24 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(14,165,233,0.22),transparent_36%)]" />
+        <div className="mx-auto max-w-5xl rounded-[2rem] border border-sky-300/20 bg-gradient-to-br from-sky-400/15 via-white/[0.06] to-slate-900 p-8 text-center shadow-2xl shadow-sky-950/40 sm:p-12">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-200">From Flight to Public Insight</p>
+          <h2 className="mt-5 text-3xl font-semibold text-white sm:text-5xl">
+            공공·해상안전 현장을 촬영 결과물이 아니라 의사결정 가능한 점검 데이터로 정리합니다.
           </h2>
-          <p className="text-xl text-foreground dark:text-white mb-8 leading-relaxed">
-            공공안전 업무는 "혹시 모를 한 번"을 대비하는 일이지만,<br />
-            그 한 번의 대비가 시민의 생명과 도시의 자산을 지켜냅니다.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-200">
+            아이엠드론이 현장 목적과 행정 절차에 맞춰 드론 촬영, 실시간 관제, 위치 기반 리포트, 정기 운영 구성까지 단계적으로 제안드립니다.
           </p>
-          <p className="text-lg text-foreground dark:text-white mb-8">
-            아이엠드론은 <strong className="font-semibold">From Flight to Insight</strong>라는 이름 그대로,<br />
-            비행에서 데이터, 그리고 정책·현장 관리까지 이어지는 공공안전 드론 파트너가 되겠습니다.
-          </p>
-          <Button size="lg" variant="primary-blue" asChild>
-            <Link href="/contact">
-              공공안전 드론 서비스 상담 요청하기
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button size="lg" className="bg-sky-400 text-slate-950 hover:bg-sky-300" asChild>
+              <Link href="/contact">
+                공공안전 서비스 상담하기
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white" asChild>
+              <Link href="/services">
+                전체 서비스 보기
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </main>
   );
 }
-
