@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-12-urban-drone-safety-infrastructure',
+    title: '도심·공공시설 드론 운영, 왜 이제는 기체보다 안전장치와 전송 인프라를 먼저 보셔야 할까요?',
+    description: '2026년 7월 8일 DJI Enterprise Insights의 AP100 자료와 2026년 6월 16일 O4 Ground Station 자료를 바탕으로, 도심·공공시설 드론 운영에서 왜 기체 성능보다 안전장치와 전송 인프라를 포함한 운영 체계가 먼저 필요한지 소개합니다.',
+    thumbnail: '/images/blog/dji-ap100-parachute-compliant-operations-2026.webp',
+    date: '2026-07-12',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['공공안전드론', '도심드론운영', 'DJI AP100', 'DJI O4', '원격관제', '드론안전장치', '시설물점검', '반복운영'],
+    readTime: '5분',
+  },
+  {
     id: '2026-07-11-construction-capture-program-trust',
     title: '건설 현장 드론 촬영, 왜 이제는 ‘파일 납품’보다 캡처 프로그램이 중요할까요?',
     description: '2026년 7월 9일과 7월 1일 DroneDeploy 공식 자료를 바탕으로, 건설 드론 서비스의 기준이 단발성 촬영 납품에서 발주처와 시공팀이 함께 신뢰할 수 있는 반복 기록 프로그램으로 이동하는 이유를 소개합니다.',
