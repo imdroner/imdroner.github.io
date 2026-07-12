@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-13-reality-capture-scale-standards',
+    title: '드론 데이터가 현장 전체로 확장되지 않는 이유, 촬영보다 운영 표준이 먼저여야 합니다',
+    description: '2026년 7월 9일 DroneDeploy 공식 자료, 2026년 3월 26일 DJI Enterprise Insights의 SK에코플랜트 사례, 2026년 7월 9일 PIX4D 교량 점검 사례를 바탕으로, 건설·인프라 드론 데이터가 단발 촬영이 아니라 확장 가능한 운영 체계가 되어야 하는 이유를 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-reality-capture-scale-program-2026.webp',
+    date: '2026-07-13',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['리얼리티캡처', '건설모니터링', '시설물점검', 'DroneDeploy', 'DJI Dock 3', 'PIX4D', '현장데이터', '운영표준'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-12-urban-drone-safety-infrastructure',
     title: '도심·공공시설 드론 운영, 왜 이제는 기체보다 안전장치와 전송 인프라를 먼저 보셔야 할까요?',
     description: '2026년 7월 8일 DJI Enterprise Insights의 AP100 자료와 2026년 6월 16일 O4 Ground Station 자료를 바탕으로, 도심·공공시설 드론 운영에서 왜 기체 성능보다 안전장치와 전송 인프라를 포함한 운영 체계가 먼저 필요한지 소개합니다.',
