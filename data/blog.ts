@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-14-owner-capture-program-checklist',
+    title: '드론 촬영이 몇 번 하다 멈춘다면, 발주처는 무엇부터 표준화해야 할까요?',
+    description: '2026년 7월 14일과 7월 7일 DroneDeploy 공식 자료를 바탕으로, 건설·산업 현장에서 드론 도입이 파일 납품으로 끝나지 않도록 발주처가 처음부터 정해야 할 캡처 기준, 데이터 소유권, 워크플로우 연동, 운영 습관을 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-owner-capture-program-scale-2026-07-14.webp',
+    date: '2026-07-14',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['건설모니터링', '리얼리티캡처', 'DroneDeploy', '현장데이터', '데이터소유권', '공정관리', '발주처체크리스트', '운영표준'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-13-reality-capture-scale-standards',
     title: '드론 데이터가 현장 전체로 확장되지 않는 이유, 촬영보다 운영 표준이 먼저여야 합니다',
     description: '2026년 7월 9일 DroneDeploy 공식 자료, 2026년 3월 26일 DJI Enterprise Insights의 SK에코플랜트 사례, 2026년 7월 9일 PIX4D 교량 점검 사례를 바탕으로, 건설·인프라 드론 데이터가 단발 촬영이 아니라 확장 가능한 운영 체계가 되어야 하는 이유를 소개합니다.',
