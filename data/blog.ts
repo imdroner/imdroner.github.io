@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-15-construction-capture-program-proposal',
+    title: '건설 현장 드론 서비스, 왜 이제는 촬영 견적보다 정기 캡처 운영안부터 보셔야 할까요?',
+    description: '2026년 7월 14일, 7월 8일, 7월 1일 DroneDeploy 공식 자료를 바탕으로, 건설 고객이 드론 서비스 제안서를 검토할 때 촬영 횟수보다 정기 캡처 주기, 공정표 연계, 3D 워크스루, 데이터 운영권을 먼저 확인해야 하는 이유를 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-capture-program-operations-2026-07-15.webp',
+    date: '2026-07-15',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['건설모니터링', '리얼리티캡처', 'DroneDeploy', '공정관리', '3D워크스루', '정기촬영', '현장기록', '발주처체크리스트'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-14-owner-capture-program-checklist',
     title: '드론 촬영이 몇 번 하다 멈춘다면, 발주처는 무엇부터 표준화해야 할까요?',
     description: '2026년 7월 14일과 7월 7일 DroneDeploy 공식 자료를 바탕으로, 건설·산업 현장에서 드론 도입이 파일 납품으로 끝나지 않도록 발주처가 처음부터 정해야 할 캡처 기준, 데이터 소유권, 워크플로우 연동, 운영 습관을 소개합니다.',
