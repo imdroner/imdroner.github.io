@@ -1,328 +1,407 @@
 import type { Metadata } from 'next';
-import { SITE_NAME, SITE_URL } from '@/lib/config';
 import Link from 'next/link';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { 
-  HelpCircle,
-  FileQuestion,
-  DollarSign,
+} from '@/components/ui/accordion';
+import {
+  ArrowRight,
+  BadgeCheck,
+  BarChart3,
+  CalendarClock,
   Camera,
-  Shield,
-  FileCheck,
-  Settings,
-  Phone,
-  Mail,
+  CheckCircle2,
   ChevronRight,
-  Clock,
-  CheckCircle2
+  ClipboardCheck,
+  CloudSun,
+  Database,
+  FileText,
+  HelpCircle,
+  Layers3,
+  Mail,
+  MapPin,
+  Phone,
+  Radar,
+  ShieldCheck,
+  Sparkles,
+  Wrench,
 } from 'lucide-react';
+
+const pageDescription =
+  '드론 촬영, 산업 점검, 비행 승인, 산출물, 비용과 일정까지 아이엠드론 서비스 의뢰 전 자주 묻는 질문을 고객 관점으로 정리했습니다.';
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "/faq",
+    canonical: '/faq',
   },
   title: `자주 묻는 질문 | ${SITE_NAME}`,
-  description: '드론 서비스 이용에 관한 자주 묻는 질문',
+  description: pageDescription,
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
     url: `${SITE_URL}/faq`,
     siteName: SITE_NAME,
     title: `자주 묻는 질문 | ${SITE_NAME}`,
-    description: '드론 서비스 이용에 관한 자주 묻는 질문',
+    description: pageDescription,
   },
 };
 
-export default function FAQPage() {
-  const categories = [
-    {
-      id: 'general',
-      title: '서비스 일반',
-      icon: HelpCircle,
-      color: 'text-blue-600',
-      description: '아이엠드론의 서비스와 이용 방법에 대한 기본 정보'
-    },
-    {
-      id: 'pricing',
-      title: '견적 및 비용',
-      icon: DollarSign,
-      color: 'text-green-600',
-      description: '가격 정책, 견적 요청, 결제 방법에 관한 안내'
-    },
-    {
-      id: 'shooting',
-      title: '촬영 및 작업',
-      icon: Camera,
-      color: 'text-purple-600',
-      description: '촬영 진행 과정, 준비사항, 현장 작업 관련 정보'
-    },
-    {
-      id: 'legal',
-      title: '법규 및 안전',
-      icon: Shield,
-      color: 'text-red-600',
-      description: '드론 비행 허가, 보험, 안전 관리에 대한 설명'
-    },
-    {
-      id: 'delivery',
-      title: '결과물 및 납품',
-      icon: FileCheck,
-      color: 'text-orange-600',
-      description: '작업물 포맷, 수정, 납품 일정 관련 안내'
-    },
-    {
-      id: 'technical',
-      title: '기술 및 장비',
-      icon: Settings,
-      color: 'text-indigo-600',
-      description: '드론 장비, 촬영 범위, 기술 스펙에 대한 정보'
-    }
-  ];
+const quickStats = [
+  { label: '상담 전 확인', value: '6개 영역', detail: '서비스·비용·안전·산출물까지' },
+  { label: '검토 기준', value: '현장 조건', detail: '위치·공역·목적·일정 기준' },
+  { label: '연결 CTA', value: '즉시 문의', detail: '전화·메일·상담 페이지로 이동' },
+];
 
-  const faqData = {
-    general: [
-      {
-        question: '아이엠드론에서는 어떤 서비스를 제공하나요?',
-        answer: '아이엠드론은 항공촬영 및 영상 제작, 건설·건축 모니터링, 에너지 설비 점검, 드론 관제 및 실시간 모니터링, 공공·해상안전관제, 스마트 농업(NDVI 분석), 수소 연료전지 솔루션, 홈페이지 및 디지털 콘텐츠 제작 등 다양한 드론 기반 솔루션을 제공합니다.'
-      },
-      {
-        question: '드론 촬영이 처음인데, 어디서부터 시작해야 하나요?',
-        answer: '먼저 전화(010-4790-6650) 또는 이메일(imdrone.site@gmail.com)로 문의해 주세요. 촬영 목적, 장소, 일정 등을 간단히 알려주시면 맞춤 상담과 견적을 제공해 드립니다. 포트폴리오 페이지에서 유사 프로젝트 사례도 확인하실 수 있습니다.'
-      },
-      {
-        question: '상담과 견적은 무료인가요?',
-        answer: '네, 초기 상담과 견적은 모두 무료입니다. 프로젝트 내용을 상세히 논의한 후 정확한 견적서를 제공해 드립니다.'
-      },
-      {
-        question: '개인도 서비스를 이용할 수 있나요?',
-        answer: '물론입니다. 기업, 공공기관뿐만 아니라 개인 고객(결혼식, 가족 행사, 부동산 촬영 등)도 서비스를 이용하실 수 있습니다.'
-      },
-      {
-        question: '어떤 산업군과 주로 협업하시나요?',
-        answer: '건설·토목, 부동산, 에너지(태양광·풍력), 농업, 관광·리조트, 골프장, 제조업, 공공기관, 방송·영상 제작사 등 다양한 산업과 협업하고 있습니다.'
-      }
-    ],
-    pricing: [
-      {
-        question: '드론 촬영 비용은 얼마인가요?',
-        answer: '프로젝트의 규모, 촬영 시간, 장소, 결과물의 종류(사진/영상/3D 모델링 등)에 따라 달라집니다. 기본 항공촬영은 수십만 원부터 시작하며, 정밀 3D 모델링이나 장기 모니터링 프로젝트는 별도 견적이 필요합니다.'
-      },
-      {
-        question: '견적은 어떻게 받을 수 있나요?',
-        answer: '전화, 이메일, 또는 SNS(Instagram, 블로그)를 통해 프로젝트 내용(목적, 장소, 일정, 예산 등)을 알려주시면 24시간 내로 맞춤 견적을 제공해 드립니다.'
-      },
-      {
-        question: '추가 비용이 발생하는 경우는 언제인가요?',
-        answer: '원거리 출장(교통비), 특수 장비 사용, 야간 촬영, 긴급 프로젝트, 추가 편집 요청 등의 경우 추가 비용이 발생할 수 있으며, 사전에 투명하게 안내해 드립니다.'
-      },
-      {
-        question: '결제는 어떻게 진행되나요?',
-        answer: '정식 견적 확정 후 계약서를 작성하며, 착수금(보통 총액의 50%)을 입금하신 후 작업을 시작합니다. 최종 결과물 전달 시 잔금을 정산합니다. 세금계산서 발행이 가능합니다.'
-      },
-      {
-        question: '할인이나 패키지 상품이 있나요?',
-        answer: '장기 계약(정기 모니터링, 시즌별 촬영 등)이나 대규모 프로젝트의 경우 협의를 통해 합리적인 가격을 제안해 드립니다. 문의 시 프로젝트 규모와 일정을 알려주세요.'
-      }
-    ],
-    shooting: [
-      {
-        question: '촬영은 전국 어디든 가능한가요?',
-        answer: '네, 전국 어디든 출장 촬영이 가능합니다. 제주도, 도서 지역도 가능하며, 원거리의 경우 교통비와 숙박비가 별도로 발생할 수 있습니다.'
-      },
-      {
-        question: '촬영 소요 시간은 얼마나 되나요?',
-        answer: '프로젝트에 따라 다르지만, 기본 항공촬영은 현장에서 1~3시간 정도 소요됩니다. 대규모 부지나 정밀 3D 모델링의 경우 하루 이상 걸릴 수 있습니다.'
-      },
-      {
-        question: '날씨가 안 좋으면 어떻게 하나요?',
-        answer: '드론 촬영은 날씨에 매우 민감합니다. 비, 강풍(초속 10m 이상), 안개 등의 경우 안전을 위해 연기하며, 대체 일정을 협의합니다. 취소 수수료는 발생하지 않습니다.'
-      },
-      {
-        question: '긴급 프로젝트도 가능한가요?',
-        answer: '일정에 따라 조율이 가능합니다. 긴급한 경우 먼저 전화로 문의해 주시면 최대한 빠르게 대응해 드리겠습니다. 긴급 프로젝트는 추가 비용이 발생할 수 있습니다.'
-      },
-      {
-        question: '촬영 전에 준비해야 할 것이 있나요?',
-        answer: '촬영 장소의 접근 권한(사유지인 경우 소유주 동의), 주변 장애물 정보(고압선, 건물 등), 원하는 구도나 샷 리스트 등을 미리 준비해 주시면 더욱 원활한 촬영이 가능합니다.'
-      },
-      {
-        question: '야간 촬영도 가능한가요?',
-        answer: '네, 야간 촬영이 가능합니다. 단, 조명 장비와 특수 촬영 기법이 필요하며, 비행 승인 절차가 까다로울 수 있어 사전 협의가 필수입니다.'
-      }
-    ],
-    legal: [
-      {
-        question: '드론 비행 허가는 어떻게 진행되나요?',
-        answer: '비행 승인이 필요한 지역(공항 인근, 통제구역 등)의 경우 국토교통부, 지방항공청 등에 비행 승인을 신청합니다. 저희가 모든 절차를 대행하며, 보통 3~7일 정도 소요됩니다.'
-      },
-      {
-        question: '관제권이나 비행 금지 구역에서도 촬영 가능한가요?',
-        answer: '공항 인근 관제권, 군사시설 주변, 청와대 등 비행 금지 구역은 원칙적으로 불가능하지만, 특별 허가를 통해 가능한 경우도 있습니다. 사전에 위치를 알려주시면 가능 여부를 확인해 드립니다.'
-      },
-      {
-        question: '드론 보험에 가입되어 있나요?',
-        answer: '네, 아이엠드론은 초경량비행장치 사용사업자로 정식 등록되어 있으며, 드론 배상책임보험에 가입되어 있습니다. 혹시 모를 사고에 대비하여 철저히 준비하고 있습니다.'
-      },
-      {
-        question: '조종사 자격은 보유하고 있나요?',
-        answer: '네, 국토교통부 인증 초경량비행장치 조종자 자격증(무인멀티콥터)을 보유한 전문 조종사가 모든 비행을 진행합니다. 교관 과정도 이수하여 안전하고 숙련된 비행이 가능합니다.'
-      },
-      {
-        question: '안전 관리는 어떻게 하나요?',
-        answer: '비행 전 현장 사전 답사, 기상 체크, 장비 점검을 필수로 진행하며, 비행 중에는 안전 거리 확보, 관제 소통, 비상 대응 체계를 갖추고 있습니다. 안전을 최우선으로 작업합니다.'
-      }
-    ],
-    delivery: [
-      {
-        question: '결과물은 언제 받을 수 있나요?',
-        answer: '기본 항공사진은 촬영 후 1~3일, 편집 영상은 7~14일, 정밀 3D 모델링은 2~4주 정도 소요됩니다. 긴급한 경우 일정 조율이 가능하며, 추가 비용이 발생할 수 있습니다.'
-      },
-      {
-        question: '어떤 포맷으로 제공되나요?',
-        answer: '사진은 JPG/RAW, 영상은 MP4/MOV, 3D 모델은 OBJ/FBX/LAS 등 다양한 포맷으로 제공 가능합니다. 원하시는 용도에 맞게 포맷을 선택하실 수 있습니다.'
-      },
-      {
-        question: '원본 파일도 제공받을 수 있나요?',
-        answer: '네, 계약 시 원본 파일 제공 여부를 협의합니다. 기본 계약에는 편집된 최종본이 포함되며, 원본 파일이 필요한 경우 추가 비용이나 저작권 계약이 필요할 수 있습니다.'
-      },
-      {
-        question: '수정이 가능한가요?',
-        answer: '기본 계약에 1~2회의 수정이 포함되어 있습니다. 간단한 색보정, 자막 수정 등은 무료이며, 대규모 재편집이나 추가 촬영이 필요한 경우 별도 협의합니다.'
-      },
-      {
-        question: '저작권은 누구에게 있나요?',
-        answer: '기본적으로 저작권은 아이엠드론에 있으며, 고객님은 계약된 용도 내에서 사용권을 갖습니다. 저작권 전체 양도가 필요한 경우 계약 시 협의 가능합니다.'
-      },
-      {
-        question: '결과물을 웹사이트나 SNS에 사용해도 되나요?',
-        answer: '네, 고객사의 마케팅 목적(웹사이트, SNS, 홍보 영상 등)으로 자유롭게 사용하실 수 있습니다. 단, 제3자에게 재판매하거나 라이선스를 부여하는 것은 불가합니다.'
-      }
-    ],
-    technical: [
-      {
-        question: '어떤 드론 장비를 사용하나요?',
-        answer: 'DJI Mavic 3 시리즈, Matrice 4 시리즈, Matrice M350 시리즈 등 엔터프라이즈급 드론을 사용하며, 프로젝트 특성에 따라 최적의 장비를 선택합니다. 4K 이상 고해상도 촬영이 가능합니다.'
-      },
-      {
-        question: '최대 촬영 고도와 범위는 어느 정도인가요?',
-        answer: '법적 허가 범위 내에서 최대 150m 고도까지 촬영 가능하며(특별 승인 시 더 높게 가능), 넓은 부지는 여러 비행으로 커버할 수 있습니다. 정밀 측량은 수백 헥타르까지 가능합니다.'
-      },
-      {
-        question: '3D 모델링은 어떻게 진행되나요?',
-        answer: '드론으로 다각도 항공사진을 촬영한 후, 포토그래메트리(Photogrammetry) 기법으로 3차원 모델을 생성합니다. 건물, 지형, 구조물 등을 정밀하게 디지털화할 수 있습니다.'
-      },
-      {
-        question: '정사영상(Orthophoto)과 일반 항공사진의 차이는 무엇인가요?',
-        answer: '일반 항공사진은 원근감이 있는 반면, 정사영상은 왜곡을 보정하여 지도처럼 정확한 측정이 가능한 이미지입니다. 건설 현장, 토지 측량 등에 주로 사용됩니다.'
-      },
-      {
-        question: 'NDVI 분석이 무엇인가요?',
-        answer: 'NDVI(Normalized Difference Vegetation Index)는 식생 지수로, 작물의 생육 상태, 스트레스, 병충해 등을 시각적으로 분석할 수 있는 기술입니다. 스마트 농업에서 정밀 농업을 위해 활용됩니다.'
-      },
-      {
-        question: '열화상 촬영도 가능한가요?',
-        answer: '네, 열화상(Thermal Imaging) 카메라를 탑재하여 태양광 패널 점검, 건물 단열 진단, 전력 설비 점검 등이 가능합니다. 별도 장비가 필요하므로 사전 문의 바랍니다.'
-      }
-    ]
-  };
+const categoryHighlights = [
+  {
+    id: 'before',
+    icon: HelpCircle,
+    title: '의뢰 전 확인사항',
+    description: '처음 문의할 때 필요한 정보와 상담 흐름을 먼저 확인합니다.',
+    points: ['현장 위치', '서비스 목적', '희망 일정'],
+  },
+  {
+    id: 'safety',
+    icon: ShieldCheck,
+    title: '비행 승인·안전',
+    description: '공역, 날씨, 현장 안전, 보험과 조종 자격 기준을 안내합니다.',
+    points: ['비행 가능성', '허가 검토', '안전 계획'],
+  },
+  {
+    id: 'service',
+    icon: Camera,
+    title: '촬영·점검 범위',
+    description: '건설, 시설, 농업, 콘텐츠 현장에서 가능한 업무를 정리합니다.',
+    points: ['항공촬영', '열화상 점검', 'NDVI 분석'],
+  },
+  {
+    id: 'deliverable',
+    icon: Database,
+    title: '산출물·데이터',
+    description: '사진, 영상, 리포트, 정사영상, 3D 모델 등 납품 형태를 확인합니다.',
+    points: ['PDF 리포트', '원본 데이터', '지도·모델'],
+  },
+  {
+    id: 'budget',
+    icon: CalendarClock,
+    title: '비용·일정',
+    description: '견적 기준, 반복 촬영, 긴급 일정, 추가 비용 발생 조건을 설명합니다.',
+    points: ['무료 상담', '맞춤 견적', '정기 운영'],
+  },
+  {
+    id: 'after',
+    icon: Wrench,
+    title: '후속 활용·운영',
+    description: '납품 이후 활용, 반복 모니터링, 장비 도입 상담까지 연결합니다.',
+    points: ['후속 분석', '운영 컨설팅', '장비 도입'],
+  },
+];
 
+const faqSections = [
+  {
+    id: 'before',
+    eyebrow: 'Start Here',
+    title: '서비스 의뢰 전 확인사항',
+    description: '처음 문의하시는 고객이 가장 먼저 궁금해하는 내용을 정리했습니다.',
+    icon: HelpCircle,
+    faqs: [
+      {
+        question: '드론 서비스가 처음인데 무엇부터 준비하면 되나요?',
+        answer:
+          '현장 주소, 원하는 목적, 희망 일정, 필요한 결과물만 알려주셔도 상담을 시작할 수 있습니다. 목적이 명확하지 않아도 “현장을 기록하고 싶다”, “점검 리포트가 필요하다”, “홍보 영상이 필요하다”처럼 상황을 말씀해주시면 아이엠드론이 적합한 촬영·점검·분석 방식을 함께 정리합니다.',
+        links: [{ label: '문의하기', href: '/contact' }],
+      },
+      {
+        question: '아이엠드론은 어떤 서비스를 제공하나요?',
+        answer:
+          '항공촬영, 건설·건축 모니터링, 에너지 설비 점검, 드론 관제, 공공·해상안전관제, 스마트 농업·NDVI 분석, 수소 연료전지 관련 컨설팅, 홈페이지·미디어 콘텐츠 제작까지 드론 기반 데이터 서비스를 제공합니다.',
+        links: [{ label: '서비스 전체 보기', href: '/services' }],
+      },
+      {
+        question: '개인도 의뢰할 수 있나요?',
+        answer:
+          '가능합니다. 다만 아이엠드론은 기업, 공공기관, 건설·시설·농업·콘텐츠 현장처럼 산출물 활용 목적이 명확한 프로젝트를 중심으로 상담합니다. 개인 고객의 부동산, 행사, 관광 홍보 촬영도 현장 조건과 일정에 따라 검토할 수 있습니다.',
+      },
+      {
+        question: '비슷한 사례를 먼저 볼 수 있나요?',
+        answer:
+          '가능합니다. 프로젝트 페이지에서 항공촬영, 3D 매핑, 시설 점검, 홍보 콘텐츠 등 주요 사례를 확인하실 수 있습니다. 상담 시 업종과 목적을 알려주시면 참고할 만한 사례 중심으로 설명드리겠습니다.',
+        links: [{ label: '프로젝트 보기', href: '/projects' }],
+      },
+    ],
+  },
+  {
+    id: 'safety',
+    eyebrow: 'Flight & Safety',
+    title: '비행 승인·안전·날씨',
+    description: '드론 비행은 촬영 품질보다 먼저 안전과 허가 가능성을 검토해야 합니다.',
+    icon: ShieldCheck,
+    faqs: [
+      {
+        question: '드론 비행 승인은 누가 진행하나요?',
+        answer:
+          '비행 승인이 필요한 지역은 현장 위치, 고도, 촬영 목적, 일정에 따라 사전 검토가 필요합니다. 아이엠드론은 비행 가능 여부를 확인하고 필요한 승인 절차와 준비사항을 안내합니다. 공항 주변, 군사시설 인근, 통제구역 등은 일정 여유를 두고 문의해주시는 것이 좋습니다.',
+      },
+      {
+        question: '날씨가 좋지 않으면 촬영은 어떻게 되나요?',
+        answer:
+          '비, 강풍, 짙은 안개, 시야 확보가 어려운 날씨에는 안전을 위해 일정을 조정합니다. 특히 점검·측량·정사영상 작업은 데이터 품질에도 영향을 받기 때문에 대체 일정을 협의해 안정적인 조건에서 진행합니다.',
+      },
+      {
+        question: '현장 안전 관리는 어떻게 하나요?',
+        answer:
+          '비행 전 장애물, 작업자 동선, 차량 이동, 전선, 구조물, 이착륙 지점을 확인합니다. 필요 시 현장 담당자와 작업 구역을 분리하고, 비행 중에는 안전 거리와 비상 대응 절차를 유지합니다.',
+      },
+      {
+        question: '보험과 조종 자격은 준비되어 있나요?',
+        answer:
+          '아이엠드론은 사업용 드론 운용에 필요한 조종 자격과 안전 기준을 기반으로 현장을 운영합니다. 프로젝트 성격에 따라 보험, 승인, 안전 계획 등 필요한 항목을 상담 단계에서 확인해드립니다.',
+      },
+    ],
+  },
+  {
+    id: 'service',
+    eyebrow: 'Service Scope',
+    title: '촬영·점검 가능 대상',
+    description: '현장 목적에 따라 항공촬영, 열화상, 3D, 관제, 농업 데이터를 조합합니다.',
+    icon: Camera,
+    faqs: [
+      {
+        question: '건설 현장 모니터링은 어떤 방식으로 진행되나요?',
+        answer:
+          '공사 구역을 주기적으로 촬영해 공정 변화, 자재 배치, 토공 범위, 위험 구간을 기록합니다. 목적에 따라 정사영상, 3D 모델, 포인트클라우드, 공정 리포트 형태로 납품할 수 있습니다.',
+        links: [{ label: '건설 모니터링 보기', href: '/services/construction' }],
+      },
+      {
+        question: '태양광·플랜트·고소 구조물 점검도 가능한가요?',
+        answer:
+          '가능합니다. 고해상도 RGB 이미지와 열화상 데이터를 활용해 태양광 패널 이상, 설비 발열, 접근이 어려운 구조물의 이상 후보를 확인합니다. 점검 목적과 설비 종류에 따라 촬영 방식과 리포트 항목을 설계합니다.',
+        links: [{ label: '에너지 점검 보기', href: '/services/energy' }],
+      },
+      {
+        question: '농업·골프장·필드 관리는 어떤 데이터를 받을 수 있나요?',
+        answer:
+          'NDVI 등 식생지수 기반으로 작물·잔디 상태를 구역별로 확인할 수 있습니다. 생육 불균일, 스트레스 후보, 관리 우선순위 등을 지도와 표 형태로 정리해 의사결정에 활용할 수 있습니다.',
+        links: [{ label: '스마트 농업 보기', href: '/services/smart-agri' }],
+      },
+      {
+        question: '홍보 영상과 홈페이지 콘텐츠 제작도 함께 가능한가요?',
+        answer:
+          '가능합니다. 드론 촬영 결과물을 단순 납품으로 끝내지 않고 홈페이지, 회사소개 영상, SNS 콘텐츠, 프로젝트 소개자료로 연결할 수 있습니다. 촬영 기획부터 문구·이미지 구성까지 목적에 맞게 제안합니다.',
+        links: [{ label: '콘텐츠 제작 보기', href: '/services/contents' }],
+      },
+    ],
+  },
+  {
+    id: 'deliverable',
+    eyebrow: 'Data & Reports',
+    title: '산출물·리포트·데이터 형식',
+    description: '촬영 파일보다 중요한 것은 고객 업무에 바로 쓸 수 있는 결과물입니다.',
+    icon: FileText,
+    faqs: [
+      {
+        question: '어떤 형태로 결과물을 받을 수 있나요?',
+        answer:
+          '프로젝트 목적에 따라 고해상도 사진, 편집 영상, 숏폼 클립, 열화상 이미지, PDF 점검 리포트, 정사영상, 3D 모델, 포인트클라우드, 원본 데이터 등을 납품할 수 있습니다. 상담 단계에서 활용 목적에 맞는 포맷을 먼저 정합니다.',
+      },
+      {
+        question: '원본 파일도 제공되나요?',
+        answer:
+          '원본 제공 여부는 계약 범위에 따라 조정할 수 있습니다. 일반 홍보 촬영은 편집본 중심, 점검·분석 프로젝트는 원본 이미지와 분석 파일이 필요한 경우가 많으므로 납품 범위를 사전에 명확히 안내합니다.',
+      },
+      {
+        question: '정사영상과 3D 모델은 일반 사진과 무엇이 다른가요?',
+        answer:
+          '일반 사진은 시각 확인에 적합하고, 정사영상은 지도처럼 왜곡을 보정해 면적·거리 확인에 활용합니다. 3D 모델과 포인트클라우드는 구조물, 지형, 토공량, 공간 변화를 입체적으로 검토할 때 유용합니다.',
+      },
+      {
+        question: '보고서에는 어떤 내용이 포함되나요?',
+        answer:
+          '점검 대상, 촬영 조건, 주요 이미지, 이상 후보, 위치 정보, 권고 조치, 후속 확인 항목 등을 목적에 맞게 구성합니다. 건설 현장은 공정 비교, 시설 점검은 이상 후보와 위치, 농업은 구역별 상태와 관리 우선순위를 중심으로 정리합니다.',
+      },
+    ],
+  },
+  {
+    id: 'budget',
+    eyebrow: 'Budget & Schedule',
+    title: '비용·일정·반복 촬영',
+    description: '드론 프로젝트 비용은 촬영 시간보다 현장 조건과 산출물 범위에 더 크게 영향을 받습니다.',
+    icon: CalendarClock,
+    faqs: [
+      {
+        question: '견적은 어떤 기준으로 산정되나요?',
+        answer:
+          '현장 위치, 작업 범위, 비행 횟수, 장비 구성, 인력, 승인 필요 여부, 후처리 난이도, 납품 산출물에 따라 달라집니다. 초기 상담은 무료이며, 필요한 정보를 확인한 뒤 실행 가능한 범위와 비용을 안내합니다.',
+      },
+      {
+        question: '상담과 견적 요청은 무료인가요?',
+        answer:
+          '네. 기본 상담과 견적 검토는 무료입니다. 다만 상세 현장 답사, 전문 분석 설계, 장기 운영 컨설팅 등 별도 업무가 필요한 경우에는 사전에 비용 여부를 안내합니다.',
+      },
+      {
+        question: '촬영부터 납품까지 기간은 얼마나 걸리나요?',
+        answer:
+          '단순 사진 촬영은 비교적 빠르게 납품할 수 있지만, 편집 영상, 정사영상, 3D 모델, 열화상 분석 리포트는 후처리 시간이 필요합니다. 긴급 일정은 가능 여부를 먼저 확인하고, 품질과 안전을 해치지 않는 범위에서 조정합니다.',
+      },
+      {
+        question: '정기 모니터링이나 장기 계약도 가능한가요?',
+        answer:
+          '가능합니다. 건설 현장, 시설 점검, 농업·골프장 관리처럼 변화 추적이 중요한 프로젝트는 월간·분기·시즌 단위로 반복 촬영을 설계할 수 있습니다. 반복 촬영은 동일 기준으로 비교 가능한 데이터를 축적하는 장점이 있습니다.',
+      },
+    ],
+  },
+  {
+    id: 'after',
+    eyebrow: 'Next Step',
+    title: '후속 활용·장비 도입·운영 상담',
+    description: '한 번의 촬영 이후에도 데이터 활용과 운영 체계까지 이어질 수 있습니다.',
+    icon: Wrench,
+    faqs: [
+      {
+        question: '촬영 후 결과물을 어떻게 활용하면 좋을지 상담할 수 있나요?',
+        answer:
+          '가능합니다. 결과물을 발주처 보고, 내부 의사결정, 홍보 콘텐츠, 유지관리 기록, 다음 촬영 기준으로 활용할 수 있도록 후속 활용 방향을 함께 제안합니다.',
+      },
+      {
+        question: '드론 장비 구매나 운용 체계 도입도 상담할 수 있나요?',
+        answer:
+          '가능합니다. 장비 자체보다 현장 목적, 운용 인력, 센서, 소프트웨어, 교육, 유지관리 조건을 함께 봐야 합니다. 아이엠드론은 필요한 경우 서비스 수행과 장비 도입 검토를 함께 연결해드립니다.',
+        links: [{ label: '장비·솔루션 보기', href: '/products' }],
+      },
+      {
+        question: '드론 관제나 자동화 운영은 어떤 현장에 적합한가요?',
+        answer:
+          '항만, 공공시설, 넓은 산업단지, 반복 순찰이 필요한 시설, 위험 구역 모니터링처럼 정기적인 확인이 필요한 현장에 적합합니다. 통신 환경, 비행 가능 구역, 운영 시간, 보안 조건을 먼저 검토합니다.',
+        links: [{ label: '드론 관제 보기', href: '/services/control' }],
+      },
+      {
+        question: 'FAQ에 없는 질문은 어디로 문의하면 되나요?',
+        answer:
+          '전화 또는 이메일로 현장 정보를 보내주시면 빠르게 확인하겠습니다. 아직 서비스 범위가 정해지지 않은 경우에도 목적과 장소만 알려주시면 적합한 진행 방향을 안내합니다.',
+        links: [{ label: '상담 문의하기', href: '/contact' }],
+      },
+    ],
+  },
+];
+
+const serviceLinks = [
+  { label: '항공촬영', href: '/services/aerial', icon: Camera },
+  { label: '건설 모니터링', href: '/services/construction', icon: Layers3 },
+  { label: '에너지 점검', href: '/services/energy', icon: BarChart3 },
+  { label: '드론 관제', href: '/services/control', icon: Radar },
+  { label: '프로젝트 사례', href: '/projects', icon: ClipboardCheck },
+  { label: '문의하기', href: '/contact', icon: Phone },
+];
+
+function SectionHeading({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
   return (
-    <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/10 via-background to-background">
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-          <Badge variant="secondary" className="mb-6">
-            Frequently Asked Questions
-          </Badge>
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-foreground leading-tight">
-            자주 묻는 질문
+    <div className="mx-auto mb-12 max-w-3xl text-center">
+      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">{eyebrow}</p>
+      <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">{title}</h2>
+      <p className="mt-4 text-base leading-7 text-slate-300">{description}</p>
+    </div>
+  );
+}
+
+export default function FAQPage() {
+  return (
+    <main className="min-h-screen overflow-hidden bg-slate-950 text-white">
+      <section className="relative isolate px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_15%_12%,rgba(14,165,233,0.26),transparent_30%),radial-gradient(circle_at_88%_18%,rgba(56,189,248,0.14),transparent_28%),linear-gradient(135deg,#020617,#0f172a_55%,#020617)]" />
+        <div className="absolute inset-0 -z-10 bg-[url('/images/services/aerial-hero.jpg')] bg-cover bg-center opacity-15" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-950/40 via-slate-950/75 to-slate-950" />
+
+        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
+          <div>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-300/30 bg-sky-400/10 px-4 py-2 text-sm font-medium text-sky-100 backdrop-blur">
+              <Sparkles className="h-4 w-4 text-sky-300" />
+              IMDRONE FAQ Desk
+            </div>
+            <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              <span className="block">드론 서비스 문의 전</span>
+              <span className="mt-2 block bg-gradient-to-r from-sky-200 via-cyan-100 to-white bg-clip-text text-transparent">
+                꼭 확인할 질문들
+              </span>
             </h1>
-            <p className="text-xl lg:text-2xl text-muted-foreground mb-8 leading-relaxed">
-            고객님들이 자주 궁금해하시는 내용을 정리했습니다.<br />
-            원하시는 카테고리를 선택하여 확인해보세요.
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+              촬영 가능 여부, 비행 승인, 비용, 일정, 산출물까지 고객이 가장 자주 묻는 내용을 현장 의사결정 기준으로 정리했습니다.
+              답변을 확인한 뒤 바로 상담으로 이어질 수 있도록 관련 서비스와 문의 경로를 함께 안내합니다.
             </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg" className="bg-sky-400 px-6 text-slate-950 hover:bg-sky-300">
+                <Link href="/contact">
+                  질문 남기기
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-white/20 bg-white/5 px-6 text-white hover:bg-white/10 hover:text-white">
+                <Link href="/services">
+                  서비스 먼저 보기
+                  <ChevronRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-sky-950/30 backdrop-blur">
+            <div className="mb-6 flex items-center justify-between gap-4">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-300">Quick Guide</p>
+                <h2 className="mt-2 text-2xl font-bold text-white">상담 전 빠른 체크</h2>
+              </div>
+              <BadgeCheck className="h-10 w-10 text-sky-300" />
+            </div>
+            <div className="space-y-4">
+              {quickStats.map((item) => (
+                <div key={item.label} className="rounded-2xl border border-white/10 bg-slate-950/55 p-5">
+                  <div className="flex items-start justify-between gap-5">
+                    <div>
+                      <p className="text-sm text-slate-400">{item.label}</p>
+                      <p className="mt-1 text-2xl font-bold text-white">{item.value}</p>
+                    </div>
+                    <CheckCircle2 className="mt-1 h-5 w-5 text-sky-300" />
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">{item.detail}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
+      <section className="px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow="Question Map"
+            title="궁금한 내용을 목적별로 먼저 찾으세요"
+            description="드론 프로젝트는 분야보다 목적이 먼저입니다. 문의 전 가장 가까운 상황을 선택하면 필요한 답변과 관련 서비스로 바로 이동할 수 있습니다."
+          />
 
-
-
-      {/* <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: 'url(/images/team/team-hero.webp)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'brightness(0.4)'
-          }}
-        />
-        <div className="relative z-10 text-center px-4 py-20">
-          <Badge variant="hero" className="mb-6 text-base px-6 py-2">
-            Frequently Asked Questions
-          </Badge>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            자주 묻는 질문
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            고객님들이 자주 궁금해하시는 내용을 정리했습니다.<br />
-            원하시는 카테고리를 선택하여 확인해보세요.
-          </p>
-        </div>
-      </section> */}
-
-      {/* Category Cards */}
-      <section className="py-20 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4">FAQ Categories</Badge>
-            <h2 className="text-4xl font-bold mb-4">카테고리별 질문</h2>
-            <p className="text-xl text-muted-foreground">
-              궁금하신 내용의 카테고리를 선택해주세요
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {categories.map((category) => {
-              const IconComponent = category.icon;
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {categoryHighlights.map((category) => {
+              const Icon = category.icon;
               return (
                 <a
                   key={category.id}
                   href={`#${category.id}`}
-                  className="group"
+                  className="group rounded-[1.6rem] border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-sky-300/40 hover:bg-sky-400/10"
                 >
-                  <Card variant="hover-lg" className="h-full">
-                    <CardHeader className="text-center space-y-4">
-                      <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <IconComponent className={`h-8 w-8 ${category.color}`} />
-                      </div>
-                      <div>
-                        <CardTitle className="text-2xl mb-2">{category.title}</CardTitle>
-                        <CardDescription className="text-base leading-relaxed">
-                          {category.description}
-                        </CardDescription>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="text-center">
-                      <Badge variant="outline" className="group-hover:bg-primary group-hover:text-white transition-colors">
-                        {faqData[category.id as keyof typeof faqData].length}개의 질문
-                      </Badge>
-                    </CardContent>
-                  </Card>
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-400/12 text-sky-300 ring-1 ring-sky-300/20 transition group-hover:bg-sky-300 group-hover:text-slate-950">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                  <p className="mt-3 min-h-14 text-sm leading-6 text-slate-300">{category.description}</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {category.points.map((point) => (
+                      <span key={point} className="rounded-full border border-white/10 bg-slate-900/80 px-3 py-1 text-xs font-medium text-slate-200">
+                        {point}
+                      </span>
+                    ))}
+                  </div>
                 </a>
               );
             })}
@@ -330,195 +409,145 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <Separator />
-
-      {/* FAQ Sections */}
-      {categories.map((category, index) => {
-        const IconComponent = category.icon;
-        const isEven = index % 2 === 0;
-        
-        return (
-          <div key={category.id}>
-            <section 
-              id={category.id}
-              className={`py-20 scroll-mt-20 ${isEven ? 'bg-background' : 'bg-muted/50'}`}
-            >
-              <div className="max-w-5xl mx-auto px-4">
-                <div className="text-center mb-12">
-                  <div className="inline-flex items-center gap-3 mb-4">
-                    <div className={`w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center`}>
-                      <IconComponent className={`h-6 w-6 ${category.color}`} />
-                    </div>
-                    <h2 className="text-4xl font-bold">{category.title}</h2>
+      <section className="relative px-4 py-20 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(14,165,233,0.16),transparent_36%)]" />
+        <div className="mx-auto max-w-5xl space-y-10">
+          {faqSections.map((section) => {
+            const Icon = section.icon;
+            return (
+              <section key={section.id} id={section.id} className="scroll-mt-24 rounded-[2rem] border border-white/10 bg-white/[0.045] p-5 shadow-xl shadow-slate-950/30 backdrop-blur sm:p-8">
+                <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-300">{section.eyebrow}</p>
+                    <h2 className="mt-3 text-2xl font-bold text-white sm:text-3xl">{section.title}</h2>
+                    <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300 sm:text-base">{section.description}</p>
                   </div>
-                  <p className="text-xl text-muted-foreground">
-                    {category.description}
-                  </p>
-                </div>
-
-                <Card>
-                  <CardContent className="p-6">
-                    <Accordion type="single" collapsible className="w-full">
-                      {faqData[category.id as keyof typeof faqData].map((faq, faqIndex) => (
-                        <AccordionItem key={faqIndex} value={`${category.id}-${faqIndex}`}>
-                          <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">
-                            <div className="flex items-start gap-3">
-                              <FileQuestion className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                              <span>{faq.question}</span>
-                            </div>
-                          </AccordionTrigger>
-                          <AccordionContent className="text-base text-muted-foreground leading-relaxed pl-8">
-                            {faq.answer}
-                          </AccordionContent>
-                        </AccordionItem>
-                      ))}
-                    </Accordion>
-                  </CardContent>
-                </Card>
-              </div>
-            </section>
-            {index < categories.length - 1 && <Separator />}
-          </div>
-        );
-      })}
-
-      <Separator />
-
-      {/* Quick Stats */}
-      {/* <section className="py-20 bg-muted/50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card variant="hover-sm" className="text-center">
-              <CardContent className="pt-8 pb-6">
-                <div className="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle2 className="h-8 w-8 text-blue-600" />
-                </div>
-                <div className="text-4xl font-bold mb-2">36+</div>
-                <p className="text-muted-foreground">자주 묻는 질문</p>
-              </CardContent>
-            </Card>
-
-            <Card variant="hover-sm" className="text-center">
-              <CardContent className="pt-8 pb-6">
-                <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-4">
-                  <HelpCircle className="h-8 w-8 text-green-600" />
-                </div>
-                <div className="text-4xl font-bold mb-2">6</div>
-                <p className="text-muted-foreground">카테고리</p>
-              </CardContent>
-            </Card>
-
-            <Card variant="hover-sm" className="text-center">
-              <CardContent className="pt-8 pb-6">
-                <div className="w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mx-auto mb-4">
-                  <Clock className="h-8 w-8 text-purple-600" />
-                </div>
-                <div className="text-4xl font-bold mb-2">24h</div>
-                <p className="text-muted-foreground">답변 제공</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Still Have Questions */}
-      <section className="py-20 bg-background">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="mb-8">
-            <Badge variant="outline" className="mb-4">Need More Help?</Badge>
-            <h2 className="text-4xl font-bold mb-4">
-              궁금한 점이 해결되지 않으셨나요?
-            </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              FAQ에서 원하는 답변을 찾지 못하셨다면,<br />
-              언제든지 문의해 주세요. 빠르고 정확하게 답변해 드리겠습니다.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-8">
-            <Card variant="lift" className="group">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Phone className="h-6 w-6 text-blue-600" />
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-sky-400/12 text-sky-300 ring-1 ring-sky-300/20">
+                    <Icon className="h-7 w-7" />
                   </div>
-                  <div className="flex-1 text-left">
-                    <h3 className="font-bold mb-1">전화 문의</h3>
-                    <a 
-                      href="tel:010-4790-6650"
-                      className="text-sm text-primary hover:underline"
+                </div>
+
+                <Accordion type="single" collapsible className="space-y-3">
+                  {section.faqs.map((faq, index) => (
+                    <AccordionItem
+                      key={faq.question}
+                      value={`${section.id}-${index}`}
+                      className="rounded-2xl border border-white/10 bg-slate-950/50 px-5 data-[state=open]:border-sky-300/40 data-[state=open]:bg-slate-900/85"
                     >
-                      010-4790-6650
-                    </a>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card variant="lift" className="group">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Mail className="h-6 w-6 text-green-600" />
-                  </div>
-                  <div className="flex-1 text-left">
-                    <h3 className="font-bold mb-1">이메일 문의</h3>
-                    <a 
-                      href="mailto:imdrone.site@gmail.com"
-                      className="text-sm text-primary hover:underline truncate block"
-                    >
-                      imdrone.site@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Button asChild size="lg" variant="primary-blue" className="text-lg px-8 py-6">
-            <Link href="/contact">
-              문의하기 페이지로 이동
-              <ChevronRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+                      <AccordionTrigger className="gap-4 py-5 text-left text-base font-semibold text-white hover:no-underline sm:text-lg">
+                        <span className="flex items-start gap-3">
+                          <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-400/15 text-xs font-bold text-sky-200 ring-1 ring-sky-300/20">
+                            Q
+                          </span>
+                          <span>{faq.question}</span>
+                        </span>
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-5 pl-0 text-base leading-7 text-slate-300 sm:pl-9">
+                        <p>{faq.answer}</p>
+                        {faq.links ? (
+                          <div className="mt-4 flex flex-wrap gap-2">
+                            {faq.links.map((link) => (
+                              <Link
+                                key={link.href}
+                                href={link.href}
+                                className="inline-flex items-center rounded-full border border-sky-300/20 bg-sky-400/10 px-3 py-1.5 text-sm font-medium text-sky-100 transition hover:border-sky-300/50 hover:bg-sky-400/20"
+                              >
+                                {link.label}
+                                <ChevronRight className="ml-1 h-4 w-4" />
+                              </Link>
+                            ))}
+                          </div>
+                        ) : null}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </section>
+            );
+          })}
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white dark:text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            지금 바로 프로젝트를 시작하세요
-          </h2>
-          <p className="text-xl md:text-2xl mb-10 text-white/90 dark:text-white/90">
-            전문가와 상담하고 견적을 받아보세요
+      <section className="px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-slate-900/70 p-6 sm:p-8 lg:p-10">
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-300">Related Pages</p>
+              <h2 className="mt-3 text-3xl font-bold text-white">답변을 확인했다면 다음 단계로 이동하세요</h2>
+              <p className="mt-4 text-base leading-7 text-slate-300">
+                FAQ는 상담 전 불확실성을 줄이기 위한 안내입니다. 구체적인 현장 조건은 서비스 페이지와 사례를 확인한 뒤 문의해주시면 더 빠르게 검토할 수 있습니다.
+              </p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {serviceLinks.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="group flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-slate-950/60 p-4 transition hover:border-sky-300/40 hover:bg-sky-400/10"
+                  >
+                    <span className="flex items-center gap-3">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-400/10 text-sky-300 ring-1 ring-sky-300/20">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <span className="font-semibold text-white">{item.label}</span>
+                    </span>
+                    <ArrowRight className="h-4 w-4 text-slate-500 transition group-hover:translate-x-1 group-hover:text-sky-300" />
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative px-4 py-20 sm:px-6 lg:px-8">
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-72 bg-gradient-to-t from-sky-950/25 to-transparent" />
+        <div className="mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-sky-300/20 bg-gradient-to-br from-sky-500/16 via-slate-900 to-slate-950 p-8 text-center shadow-2xl shadow-sky-950/40 sm:p-12">
+          <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-300 text-slate-950">
+            <CloudSun className="h-7 w-7" />
+          </div>
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">현장 조건은 상담에서 바로 확인해드리겠습니다</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-300">
+            주소, 목적, 일정, 필요한 산출물을 알려주시면 비행 가능성, 장비 구성, 예상 일정과 견적 범위를 빠르게 정리해드립니다.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              asChild 
-              size="lg" 
-              className="bg-white text-blue-600 hover:bg-white/90 text-lg px-8 py-6"
-            >
-              <a href="tel:010-4790-6650">
-                <Phone className="mr-2 h-5 w-5" />
-                무료 상담 신청
-              </a>
-            </Button>
-            <Button 
-              asChild 
-              size="lg" 
-              variant="outline"
-              className="border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-6"
-            >
-              <Link href="/projects">
-                포트폴리오 보기
-                <ChevronRight className="ml-2 h-5 w-5" />
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button asChild size="lg" className="bg-sky-300 px-7 text-slate-950 hover:bg-sky-200">
+              <Link href="/contact">
+                상담 문의하기
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
+            <Button asChild size="lg" variant="outline" className="border-white/20 bg-white/5 px-7 text-white hover:bg-white/10 hover:text-white">
+              <a href="tel:061-920-9297">
+                <Phone className="mr-2 h-5 w-5" />
+                061-920-9297
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-white/20 bg-white/5 px-7 text-white hover:bg-white/10 hover:text-white">
+              <a href="mailto:imdrone.site@gmail.com">
+                <Mail className="mr-2 h-5 w-5" />
+                이메일 문의
+              </a>
+            </Button>
+          </div>
+          <div className="mt-8 flex flex-wrap justify-center gap-2 text-sm text-slate-300">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
+              <MapPin className="h-4 w-4 text-sky-300" />
+              현장 위치 확인
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
+              <ShieldCheck className="h-4 w-4 text-sky-300" />
+              비행 가능성 검토
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
+              <FileText className="h-4 w-4 text-sky-300" />
+              산출물 범위 제안
+            </span>
           </div>
         </div>
       </section>
     </main>
   );
 }
-
