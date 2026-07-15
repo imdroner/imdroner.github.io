@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-16-long-duration-industrial-drone-platforms',
+    title: '산업 현장 드론 점검, 왜 이제는 ‘장시간 비행’과 ‘상시 운영’ 역량을 함께 보셔야 할까요?',
+    description: '2026년 7월 16일 기준으로 다시 확인한 2025년 6월 10일 DJI Matrice 400 자료와 2025년 2월 27일 DJI Dock 3 공식 자료를 바탕으로, 산업 현장 점검에서 왜 장시간 비행 플랫폼과 원격 상시 운영 체계를 함께 검토해야 하는지 소개합니다.',
+    thumbnail: '/images/blog/dji-matrice-400-industrial-drone-platform-2025.webp',
+    date: '2026-07-16',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['산업용드론', 'DJIMatrice400', 'DJIDock3', '원격관제', '시설물점검', '장시간비행', '산업단지점검', '정기모니터링'],
+    readTime: '5분',
+  },
+  {
     id: '2026-07-15-construction-capture-program-proposal',
     title: '건설 현장 드론 서비스, 왜 이제는 촬영 견적보다 정기 캡처 운영안부터 보셔야 할까요?',
     description: '2026년 7월 14일, 7월 8일, 7월 1일 DroneDeploy 공식 자료를 바탕으로, 건설 고객이 드론 서비스 제안서를 검토할 때 촬영 횟수보다 정기 캡처 주기, 공정표 연계, 3D 워크스루, 데이터 운영권을 먼저 확인해야 하는 이유를 소개합니다.',
