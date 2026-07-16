@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-17-earthwork-volume-verification',
+    title: '토공 현장 물량 산출, 왜 이제는 ‘촬영 결과’보다 ‘검증 가능한 기록’이 먼저일까요?',
+    description: '2026년 7월 17일 기준으로 확인한 2026년 7월 16일과 7월 14일 DroneDeploy 공식 자료를 바탕으로, 토공 현장에서 왜 드론 데이터의 기준이 공정 사진이 아니라 체크포인트 검증, 체적 산출, 반복 비교가 가능한 물량 기록으로 이동하는지 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-heavy-civil-material-verification-2026.webp',
+    date: '2026-07-17',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['토공물량산출', '드론측량', 'DroneDeploy', '건설모니터링', '체적계산', '절성토', '기성관리', '현장데이터'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-16-long-duration-industrial-drone-platforms',
     title: '산업 현장 드론 점검, 왜 이제는 ‘장시간 비행’과 ‘상시 운영’ 역량을 함께 보셔야 할까요?',
     description: '2026년 7월 16일 기준으로 다시 확인한 2025년 6월 10일 DJI Matrice 400 자료와 2025년 2월 27일 DJI Dock 3 공식 자료를 바탕으로, 산업 현장 점검에서 왜 장시간 비행 플랫폼과 원격 상시 운영 체계를 함께 검토해야 하는지 소개합니다.',
