@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-18-pre-entry-hazard-mapping',
+    title: '위험 지형 점검, 왜 이제는 사람이 들어가기 전에 드론 지도가 먼저여야 할까요?',
+    description: '2026년 7월 18일 기준으로 확인한 2026년 7월 14일 DJI Enterprise Insights 공식 자료를 바탕으로, 위험 지역 점검에서 왜 사람이 직접 들어간 뒤 판단하는 방식보다 사전 드론 매핑과 시계열 비교 데이터가 먼저 필요한지 소개합니다.',
+    thumbnail: '/images/blog/dji-khumbu-icefall-m4e-terra-hero-2026.webp',
+    date: '2026-07-18',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['위험지역매핑', '드론매핑', 'DJIMatrice4E', 'DJITerra', '재난대응', '사면점검', '공공안전드론', '3D매핑'],
+    readTime: '5분',
+  },
+  {
     id: '2026-07-17-earthwork-volume-verification',
     title: '토공 현장 물량 산출, 왜 이제는 ‘촬영 결과’보다 ‘검증 가능한 기록’이 먼저일까요?',
     description: '2026년 7월 17일 기준으로 확인한 2026년 7월 16일과 7월 14일 DroneDeploy 공식 자료를 바탕으로, 토공 현장에서 왜 드론 데이터의 기준이 공정 사진이 아니라 체크포인트 검증, 체적 산출, 반복 비교가 가능한 물량 기록으로 이동하는지 소개합니다.',
