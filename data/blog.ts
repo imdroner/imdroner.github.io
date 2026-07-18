@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-19-remote-drone-operations-stack',
+    title: '원격 드론 운영 도입, 왜 이제는 기체보다 승인 문서·통신·관제 소프트웨어를 함께 보셔야 할까요?',
+    description: '2026년 7월 19일 기준으로 확인한 2026년 7월 14일, 6월 16일, 4월 2일 DJI Enterprise Insights 공식 자료를 바탕으로, 원격 드론 운영의 경쟁력이 왜 기체 성능보다 승인 패키지, 전송 인프라, 관제 소프트웨어를 함께 갖춘 운영 체계로 이동하는지 소개합니다.',
+    thumbnail: '/images/blog/dji-dock-3-sail-iii-oso-2026.webp',
+    date: '2026-07-19',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['원격드론운영', 'DJIDock3', 'Matrice4D', 'DJIO4GroundStation', 'FlightHub2', 'BVLOS', '드론스테이션', '시설물점검'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-18-pre-entry-hazard-mapping',
     title: '위험 지형 점검, 왜 이제는 사람이 들어가기 전에 드론 지도가 먼저여야 할까요?',
     description: '2026년 7월 18일 기준으로 확인한 2026년 7월 14일 DJI Enterprise Insights 공식 자료를 바탕으로, 위험 지역 점검에서 왜 사람이 직접 들어간 뒤 판단하는 방식보다 사전 드론 매핑과 시계열 비교 데이터가 먼저 필요한지 소개합니다.',
