@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-20-construction-progress-volume-workflow',
+    title: '건설 현장 드론 데이터, 왜 이제는 공정 업데이트와 물량 검증을 한 흐름으로 보셔야 할까요?',
+    description: '2026년 7월 20일 기준으로 확인한 2026년 7월 16일, 7월 8일, 7월 14일 DroneDeploy 공식 자료를 바탕으로, 건설 고객이 드론 데이터를 공정 업데이트용 시각 자료와 물량 검증용 수치 데이터를 하나의 워크플로로 연결해 보셔야 하는 이유를 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-construction-volume-verification-2026-07-20.jpg',
+    date: '2026-07-20',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['건설모니터링', '토공물량산출', '공정관리', 'DroneDeploy', 'AI스케줄링', '체적계산', '현장데이터', '정기촬영'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-19-remote-drone-operations-stack',
     title: '원격 드론 운영 도입, 왜 이제는 기체보다 승인 문서·통신·관제 소프트웨어를 함께 보셔야 할까요?',
     description: '2026년 7월 19일 기준으로 확인한 2026년 7월 14일, 6월 16일, 4월 2일 DJI Enterprise Insights 공식 자료를 바탕으로, 원격 드론 운영의 경쟁력이 왜 기체 성능보다 승인 패키지, 전송 인프라, 관제 소프트웨어를 함께 갖춘 운영 체계로 이동하는지 소개합니다.',
