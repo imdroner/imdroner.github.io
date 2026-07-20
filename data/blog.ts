@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-21-industrial-stack-3d-inspection',
+    title: '고소 산업 설비 점검, 왜 이제는 접근 장비보다 3D 원격 기록이 먼저일까요?',
+    description: '2026년 7월 21일 기준으로 확인한 2026년 6월 23일 PIX4D 배기 스택 점검 사례와 2026년 7월 7일/9일 확인된 교량 점검 사례를 바탕으로, 에너지·산업·인프라 고객이 왜 고소 구조물 점검을 사진 수집이 아니라 3D 원격 기록과 반복 비교 체계로 보셔야 하는지 소개합니다.',
+    thumbnail: '/images/blog/pix4d-industrial-stack-inspection-hero-2026-07-21.webp',
+    date: '2026-07-21',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['산업시설점검', '배기스택점검', '에너지설비점검', 'PIX4D', '3D매핑', '원격진단', '교량점검', '포토그래메트리'],
+    readTime: '5분',
+  },
+  {
     id: '2026-07-20-construction-progress-volume-workflow',
     title: '건설 현장 드론 데이터, 왜 이제는 공정 업데이트와 물량 검증을 한 흐름으로 보셔야 할까요?',
     description: '2026년 7월 20일 기준으로 확인한 2026년 7월 16일, 7월 8일, 7월 14일 DroneDeploy 공식 자료를 바탕으로, 건설 고객이 드론 데이터를 공정 업데이트용 시각 자료와 물량 검증용 수치 데이터를 하나의 워크플로로 연결해 보셔야 하는 이유를 소개합니다.',
