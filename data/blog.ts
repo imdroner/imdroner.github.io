@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-24-repeatable-drone-records-construction-infrastructure',
+    title: '건설·인프라 드론 데이터, 왜 이제는 ‘잘 찍은 한 번’보다 반복 가능한 검증 기록이 먼저일까요?',
+    description: '2026년 7월 24일 기준으로 확인한 2026년 7월 21일·16일 DroneDeploy 공식 자료와 2026년 6월 23일 PIX4D 공식 자료를 바탕으로, 건설·인프라 고객이 왜 드론 서비스를 단발 촬영보다 반복 가능한 검증 기록 체계로 보셔야 하는지 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-civil-contractors-material-verification-2026-07-24.webp',
+    date: '2026-07-24',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['건설모니터링', '인프라점검', '토공물량산출', '정기측량', 'DroneDeploy', 'PIX4D', '원격점검', '3D매핑'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-23-bridge-remote-survey-operations',
     title: '교량·SOC 현장 드론 운영, 왜 이제는 단발 점검보다 정기 원격 측량 체계를 먼저 보셔야 할까요?',
     description: '2026년 7월 23일 기준으로 확인한 2026년 7월 21일 DroneDeploy, 7월 7일 PIX4D, 7월 14일 DJI Enterprise Insights 공식 자료를 바탕으로, 교량·인프라 고객이 왜 드론 서비스를 단발 촬영보다 정기 원격 측량과 반복 비교가 가능한 운영 모델로 보셔야 하는지 소개합니다.',
