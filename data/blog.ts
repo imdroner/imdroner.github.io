@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-25-smart-agriculture-layer-workflow',
+    title: '스마트 농업 드론 데이터, 왜 이제는 NDVI 한 장보다 필지별 레이어 운영이 먼저일까요?',
+    description: '2026년 7월 25일 기준으로 확인한 2026년 6월 24일 PIX4D 공식 자료를 바탕으로, 스마트 농업 고객이 왜 드론 데이터를 단발 지수맵보다 필지 경계·위성 레이어·처방 지도까지 연결되는 운영 체계로 보셔야 하는지 소개합니다.',
+    thumbnail: '/images/blog/pix4dfields-2-13-basemap-layers-hero-2026-07-25.webp',
+    date: '2026-07-25',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['스마트농업', '정밀농업', 'PIX4Dfields', 'NDVI', '드론방제', '위성데이터', '필지관리', '처방지도'],
+    readTime: '5분',
+  },
+  {
     id: '2026-07-24-repeatable-drone-records-construction-infrastructure',
     title: '건설·인프라 드론 데이터, 왜 이제는 ‘잘 찍은 한 번’보다 반복 가능한 검증 기록이 먼저일까요?',
     description: '2026년 7월 24일 기준으로 확인한 2026년 7월 21일·16일 DroneDeploy 공식 자료와 2026년 6월 23일 PIX4D 공식 자료를 바탕으로, 건설·인프라 고객이 왜 드론 서비스를 단발 촬영보다 반복 가능한 검증 기록 체계로 보셔야 하는지 소개합니다.',
