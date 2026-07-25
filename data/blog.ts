@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-26-repeatable-3d-inspection-infrastructure',
+    title: '교량·고소 구조물 점검, 왜 이제는 단발 근접점검보다 반복 가능한 3D 기록 체계가 먼저일까요?',
+    description: '2026년 7월 26일 기준으로 확인한 2026년 7월 21일 DroneDeploy, 2026년 7월 8일 PIX4D, 2026년 6월 24일 PIX4D 공식 자료를 바탕으로, 인프라·에너지·산업시설 고객이 왜 구조물 점검을 단발 촬영보다 반복 가능한 3D 기록 체계로 보셔야 하는지 소개합니다.',
+    thumbnail: '/images/blog/pix4d-bridge-inspection-hero-2026-07-26.webp',
+    date: '2026-07-26',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['교량점검', '구조물점검', '3D매핑', 'PIX4D', 'DroneDeploy', '원격점검', '인프라점검', '반복측량'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-25-smart-agriculture-layer-workflow',
     title: '스마트 농업 드론 데이터, 왜 이제는 NDVI 한 장보다 필지별 레이어 운영이 먼저일까요?',
     description: '2026년 7월 25일 기준으로 확인한 2026년 6월 24일 PIX4D 공식 자료를 바탕으로, 스마트 농업 고객이 왜 드론 데이터를 단발 지수맵보다 필지 경계·위성 레이어·처방 지도까지 연결되는 운영 체계로 보셔야 하는지 소개합니다.',
