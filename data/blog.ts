@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-28-drone-safety-compliance-package',
+    title: '도심·인프라 상시 드론 운영, 왜 이제는 기체 성능보다 안전 증빙 패키지를 먼저 보셔야 할까요?',
+    description: '2026년 7월 28일 기준으로 확인한 2026년 7월 14일 DJI Enterprise Insights의 SAIL III OSO 선언 자료, 2026년 7월 8일 DJI AP100 낙하산 자료, 2026년 7월 21일 DroneDeploy의 HOCHTIEF 원격 운용 사례를 바탕으로, 도심·인프라 고객이 왜 드론 서비스를 기체 사양보다 안전 증빙 패키지와 반복 운용 체계 중심으로 검토하셔야 하는지 소개합니다.',
+    thumbnail: '/images/blog/dji-dock-3-sail-iii-safety-package-2026-07-28.webp',
+    date: '2026-07-28',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '법규/규정',
+    tags: ['드론안전운용', 'DJIDock3', 'Matrice4D', 'DJIAP100', 'SORA', 'SAILIII', '원격드론운영', '인프라점검'],
+    readTime: '5분',
+  },
+  {
     id: '2026-07-27-drone-data-processing-qa-automation',
     title: '드론 데이터 서비스, 왜 이제는 촬영보다 처리 자동화와 QA 체계가 먼저일까요?',
     description: '2026년 7월 27일 기준으로 확인한 2026년 6월 16일 PIX4D, 2026년 7월 21일 DroneDeploy, 2026년 7월 14일/15일 DroneDeploy 공식 자료를 바탕으로, 반복 촬영이 필요한 건설·토공·자산관리 고객이 왜 드론 서비스를 비행 자체보다 처리 자동화, QA, 납기 안정성 중심으로 보셔야 하는지 소개합니다.',
