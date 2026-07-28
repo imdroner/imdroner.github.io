@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-29-lidar-gaussian-splatting-deliverables',
+    title: '드론 3D 매핑, 왜 이제는 정사영상 한 장보다 LiDAR 처리와 Gaussian Splatting 결과까지 함께 보셔야 할까요?',
+    description: '2026년 7월 29일 기준으로 확인한 2026년 7월 14일 DJI Enterprise Insights의 Terra V5.1 자료, 2026년 5월 11일 PIX4Dmatic Gaussian Splatting 자료, 2026년 6월 23일/24일 PIX4D National Grid 배기 스택 점검 자료를 바탕으로, 산업·인프라 고객이 왜 드론 3D 매핑을 정사영상 단일 납품이 아니라 LiDAR 처리와 3D 시각화 조합으로 검토하셔야 하는지 소개합니다.',
+    thumbnail: '/images/blog/pix4d-national-grid-gaussian-splatting-stack-2026-07-29.webp',
+    date: '2026-07-29',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['LiDAR', 'GaussianSplatting', 'DJITerra', 'PIX4Dmatic', '3D매핑', '산업점검', '인프라점검', '정사영상'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-28-drone-safety-compliance-package',
     title: '도심·인프라 상시 드론 운영, 왜 이제는 기체 성능보다 안전 증빙 패키지를 먼저 보셔야 할까요?',
     description: '2026년 7월 28일 기준으로 확인한 2026년 7월 14일 DJI Enterprise Insights의 SAIL III OSO 선언 자료, 2026년 7월 8일 DJI AP100 낙하산 자료, 2026년 7월 21일 DroneDeploy의 HOCHTIEF 원격 운용 사례를 바탕으로, 도심·인프라 고객이 왜 드론 서비스를 기체 사양보다 안전 증빙 패키지와 반복 운용 체계 중심으로 검토하셔야 하는지 소개합니다.',
