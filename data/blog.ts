@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-30-smart-agriculture-prescription-maps',
+    title: '스마트 농업 드론 데이터, 왜 이제는 NDVI 한 장보다 처방지도와 작업 구역 결정이 먼저일까요?',
+    description: '2026년 7월 30일 기준으로 확인한 2026년 7월 29일 PIX4D의 지속가능 커피 농업 사례와 2026년 6월 24일 PIX4Dfields 2.13 공식 자료를 바탕으로, 스마트 농업 고객이 왜 드론 데이터를 단순 식생지수 이미지보다 처방지도와 구역별 작업 의사결정 흐름으로 보셔야 하는지 소개합니다.',
+    thumbnail: '/images/blog/pix4d-coffee-farming-hero-2026-07-30.webp',
+    date: '2026-07-30',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['스마트농업', '정밀농업', 'PIX4Dfields', 'GNDVI', '처방지도', '다중분광', '변량살포', '농업드론'],
+    readTime: '5분',
+  },
+  {
     id: '2026-07-29-lidar-gaussian-splatting-deliverables',
     title: '드론 3D 매핑, 왜 이제는 정사영상 한 장보다 LiDAR 처리와 Gaussian Splatting 결과까지 함께 보셔야 할까요?',
     description: '2026년 7월 29일 기준으로 확인한 2026년 7월 14일 DJI Enterprise Insights의 Terra V5.1 자료, 2026년 5월 11일 PIX4Dmatic Gaussian Splatting 자료, 2026년 6월 23일/24일 PIX4D National Grid 배기 스택 점검 자료를 바탕으로, 산업·인프라 고객이 왜 드론 3D 매핑을 정사영상 단일 납품이 아니라 LiDAR 처리와 3D 시각화 조합으로 검토하셔야 하는지 소개합니다.',
