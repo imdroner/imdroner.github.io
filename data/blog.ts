@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-07-31-drone-data-operations-system',
+    title: '건설·점검·농업 드론 데이터, 왜 이제는 결과물 한 번보다 운영 체계를 먼저 보셔야 할까요?',
+    description: '2026년 7월 31일 기준으로 확인한 2026년 7월 16일·21일 DroneDeploy 자료와 2026년 6월 23일, 6월 24일, 7월 7일, 7월 28일 PIX4D 공식 자료를 바탕으로, 건설·인프라·스마트 농업 고객이 왜 드론 서비스를 단발 촬영 납품보다 검증·점검·처방까지 연결되는 운영 체계로 보셔야 하는지 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-reality-capture-operations-system-2026-07-31.webp',
+    date: '2026-07-31',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['드론데이터운영', '건설모니터링', '인프라점검', '스마트농업', 'DroneDeploy', 'PIX4D', '반복측량', '처방지도'],
+    readTime: '6분',
+  },
+  {
     id: '2026-07-30-smart-agriculture-prescription-maps',
     title: '스마트 농업 드론 데이터, 왜 이제는 NDVI 한 장보다 처방지도와 작업 구역 결정이 먼저일까요?',
     description: '2026년 7월 30일 기준으로 확인한 2026년 7월 29일 PIX4D의 지속가능 커피 농업 사례와 2026년 6월 24일 PIX4Dfields 2.13 공식 자료를 바탕으로, 스마트 농업 고객이 왜 드론 데이터를 단순 식생지수 이미지보다 처방지도와 구역별 작업 의사결정 흐름으로 보셔야 하는지 소개합니다.',
