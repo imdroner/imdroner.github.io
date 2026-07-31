@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-08-01-solar-inspection-defect-workflow',
+    title: '태양광 발전소 점검, 왜 이제는 패널 사진보다 RGB+열화상+위치기반 결함 기록이 먼저일까요?',
+    description: '2026년 8월 1일 기준으로 확인한 DJI Enterprise KR 태양광 발전소 점검 솔루션 페이지, DroneDeploy Dock Automation 제품 페이지, 2026년 6월 23일 PIX4D 공식 자료를 바탕으로, 태양광 발전소 고객이 왜 단순 촬영보다 RGB+열화상+위치기반 결함 기록 중심으로 점검 체계를 보셔야 하는지 소개합니다.',
+    thumbnail: '/images/blog/dji-enterprise-solar-inspection-rgb-thermal-2026-08-01.webp',
+    date: '2026-08-01',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['태양광점검', '열화상드론', '에너지시설점검', 'DJIEnterprise', 'DroneDeploy', 'PIX4D', '예방정비', '결함기록'],
+    readTime: '5분',
+  },
+  {
     id: '2026-07-31-drone-data-operations-system',
     title: '건설·점검·농업 드론 데이터, 왜 이제는 결과물 한 번보다 운영 체계를 먼저 보셔야 할까요?',
     description: '2026년 7월 31일 기준으로 확인한 2026년 7월 16일·21일 DroneDeploy 자료와 2026년 6월 23일, 6월 24일, 7월 7일, 7월 28일 PIX4D 공식 자료를 바탕으로, 건설·인프라·스마트 농업 고객이 왜 드론 서비스를 단발 촬영 납품보다 검증·점검·처방까지 연결되는 운영 체계로 보셔야 하는지 소개합니다.',
