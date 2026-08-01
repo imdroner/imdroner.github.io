@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-08-02-thermal-orthomosaic-video-3d-inspection',
+    title: '에너지·산업 설비 드론 점검, 왜 이제는 열화상 한 장보다 열화상 정사영상과 영상 기반 3D 기록을 함께 보셔야 할까요?',
+    description: '2026년 8월 2일 기준으로 확인한 DJI Enterprise Insights의 2026년 7월 DJI Terra 업데이트 소개 페이지와 2026년 6월 24일 PIX4D의 National Grid 배기 스택 점검 공식 자료를 바탕으로, 산업·에너지 고객이 왜 설비 점검 결과물을 단일 열화상 이미지보다 열화상 정사영상과 영상 기반 3D 기록 조합으로 보셔야 하는지 소개합니다.',
+    thumbnail: '/images/blog/dji-terra-thermal-video-3d-update-2026-08-02.png',
+    date: '2026-08-02',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['열화상드론', '산업시설점검', '에너지설비점검', 'DJITerra', 'PIX4Dcloud', '3D매핑', 'GaussianSplatting', '원격점검'],
+    readTime: '5분',
+  },
+  {
     id: '2026-08-01-solar-inspection-defect-workflow',
     title: '태양광 발전소 점검, 왜 이제는 패널 사진보다 RGB+열화상+위치기반 결함 기록이 먼저일까요?',
     description: '2026년 8월 1일 기준으로 확인한 DJI Enterprise KR 태양광 발전소 점검 솔루션 페이지, DroneDeploy Dock Automation 제품 페이지, 2026년 6월 23일 PIX4D 공식 자료를 바탕으로, 태양광 발전소 고객이 왜 단순 촬영보다 RGB+열화상+위치기반 결함 기록 중심으로 점검 체계를 보셔야 하는지 소개합니다.',
