@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-08-03-long-range-lidar-mapping-platform',
+    title: '대규모 부지·회랑 측량, 왜 이제는 ‘드론 카메라’보다 장거리 LiDAR와 장시간 플랫폼 조합을 먼저 보셔야 할까요?',
+    description: '2026년 8월 3일 기준으로 확인한 DJI Enterprise KR 뉴스룸의 2025년 11월 4일 Zenmuse L3 자료와 2025년 6월 10일 Matrice 400 자료를 바탕으로, 대규모 부지·회랑 측량과 인프라 점검 고객이 왜 카메라 해상도보다 장거리 LiDAR 센서 성능과 장시간 비행 플랫폼 조합을 함께 검토하셔야 하는지 소개합니다.',
+    thumbnail: '/images/blog/dji-zenmuse-l3-long-range-lidar-2026-08-03.webp',
+    date: '2026-08-03',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['LiDAR측량', '대규모부지측량', '회랑점검', 'DJIZenmuseL3', 'DJIMatrice400', '드론측량', '인프라점검', '3D매핑'],
+    readTime: '5분',
+  },
+  {
     id: '2026-08-02-thermal-orthomosaic-video-3d-inspection',
     title: '에너지·산업 설비 드론 점검, 왜 이제는 열화상 한 장보다 열화상 정사영상과 영상 기반 3D 기록을 함께 보셔야 할까요?',
     description: '2026년 8월 2일 기준으로 확인한 DJI Enterprise Insights의 2026년 7월 DJI Terra 업데이트 소개 페이지와 2026년 6월 24일 PIX4D의 National Grid 배기 스택 점검 공식 자료를 바탕으로, 산업·에너지 고객이 왜 설비 점검 결과물을 단일 열화상 이미지보다 열화상 정사영상과 영상 기반 3D 기록 조합으로 보셔야 하는지 소개합니다.',
