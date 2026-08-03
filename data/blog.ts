@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-08-04-cultural-heritage-3d-archive-workflow',
+    title: '문화재·관광지 드론 촬영, 왜 이제는 홍보 영상 한 편보다 3D 디지털 자산이 먼저일까요?',
+    description: '2026년 8월 4일 기준으로 확인한 2026년 8월 3일 DJI Enterprise Insights의 World Heritage 3D Conservation Initiative 공식 자료와 2026년 7월 31일 DJI Terra 업데이트 자료를 바탕으로, 공공기관·문화재·관광지 고객이 왜 단발 항공 영상보다 3D 디지털 아카이브와 재활용 가능한 공간 자산 중심으로 드론 프로젝트를 검토하셔야 하는지 소개합니다.',
+    thumbnail: '/images/blog/dji-world-heritage-3d-conservation-2026-08-04.webp',
+    date: '2026-08-04',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['문화재드론', '관광홍보', '3D매핑', '디지털아카이브', 'DJIEnterprise', 'DJITerra', '공공드론', '디지털트윈'],
+    readTime: '5분',
+  },
+  {
     id: '2026-08-03-long-range-lidar-mapping-platform',
     title: '대규모 부지·회랑 측량, 왜 이제는 ‘드론 카메라’보다 장거리 LiDAR와 장시간 플랫폼 조합을 먼저 보셔야 할까요?',
     description: '2026년 8월 3일 기준으로 확인한 DJI Enterprise KR 뉴스룸의 2025년 11월 4일 Zenmuse L3 자료와 2025년 6월 10일 Matrice 400 자료를 바탕으로, 대규모 부지·회랑 측량과 인프라 점검 고객이 왜 카메라 해상도보다 장거리 LiDAR 센서 성능과 장시간 비행 플랫폼 조합을 함께 검토하셔야 하는지 소개합니다.',
