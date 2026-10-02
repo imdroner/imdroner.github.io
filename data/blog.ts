@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-03-drone-ground-3d-gis-asset-management',
+    title: '시설물 자산관리, 왜 이제는 드론 지도와 지상 3D를 GIS에서 함께 보셔야 할까요?',
+    description: '2026년 10월 3일 기준으로 확인한 2026년 9월 15일 PIX4D 공식 자료를 바탕으로, 시설물·산업단지·공공 인프라 고객이 왜 드론 정사영상과 지상 3D 캡처를 GIS 기반 자산관리 데이터로 연결해 보셔야 하는지 소개합니다.',
+    thumbnail: '/images/blog/pix4dcatch-enterprise-gis-3d-context-2026-10-03.webp',
+    date: '2026-10-03',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['GIS자산관리', 'PIX4Dcatch', '3D매핑', '시설물점검', '드론정사영상', '지상3D캡처', '인프라점검', '디지털트윈'],
+    readTime: '5분',
+  },
+  {
     id: '2026-08-04-cultural-heritage-3d-archive-workflow',
     title: '문화재·관광지 드론 촬영, 왜 이제는 홍보 영상 한 편보다 3D 디지털 자산이 먼저일까요?',
     description: '2026년 8월 4일 기준으로 확인한 2026년 8월 3일 DJI Enterprise Insights의 World Heritage 3D Conservation Initiative 공식 자료와 2026년 7월 31일 DJI Terra 업데이트 자료를 바탕으로, 공공기관·문화재·관광지 고객이 왜 단발 항공 영상보다 3D 디지털 아카이브와 재활용 가능한 공간 자산 중심으로 드론 프로젝트를 검토하셔야 하는지 소개합니다.',
