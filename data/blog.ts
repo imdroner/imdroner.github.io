@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-04-thermal-orthomosaic-inspection-map',
+    title: '열화상 드론 점검, 왜 이제는 ‘사진’보다 좌표 기반 열지도가 먼저일까요?',
+    description: '2026년 10월 4일 기준으로 확인한 2026년 9월 2일 PIX4D 공식 자료를 바탕으로, 태양광·산업 설비·건물·도시 환경·스마트 농업 고객이 왜 열화상 사진보다 좌표 기반 열 정사영상과 반복 비교 가능한 열지도를 먼저 검토하셔야 하는지 소개합니다.',
+    thumbnail: '/images/blog/pix4d-thermal-mapping-orthomosaic-2026-10-04.webp',
+    date: '2026-10-04',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['열화상드론', '열정사영상', 'PIX4Dmatic', '태양광점검', '산업설비점검', '도시열섬', '스마트농업', 'GIS리포트'],
+    readTime: '6분',
+  },
+  {
     id: '2026-10-03-drone-ground-3d-gis-asset-management',
     title: '시설물 자산관리, 왜 이제는 드론 지도와 지상 3D를 GIS에서 함께 보셔야 할까요?',
     description: '2026년 10월 3일 기준으로 확인한 2026년 9월 15일 PIX4D 공식 자료를 바탕으로, 시설물·산업단지·공공 인프라 고객이 왜 드론 정사영상과 지상 3D 캡처를 GIS 기반 자산관리 데이터로 연결해 보셔야 하는지 소개합니다.',
