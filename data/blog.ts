@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-05-measurable-3d-construction-records',
+    title: '건설 현장 기록, 왜 이제는 사진보다 ‘측정 가능한 3D 기록’이 먼저일까요?',
+    description: '2026년 10월 5일 기준으로 확인한 2026년 9월 22일 DroneDeploy Ground Pro 출시 자료와 2026년 8월 26일 리얼리티 캡처 운영 설계 자료를 바탕으로, 건설 현장 기록이 왜 2D 사진에서 측정 가능한 3D 운영 데이터로 이동하는지 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-ground-pro-3d-records-procore-2026-10-05.webp',
+    date: '2026-10-05',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['건설모니터링', '리얼리티캡처', 'DroneDeploy', '3D현장기록', 'Procore', '360워크스루', '분쟁대응', '준공인수인계'],
+    readTime: '6분',
+  },
+  {
     id: '2026-10-04-thermal-orthomosaic-inspection-map',
     title: '열화상 드론 점검, 왜 이제는 ‘사진’보다 좌표 기반 열지도가 먼저일까요?',
     description: '2026년 10월 4일 기준으로 확인한 2026년 9월 2일 PIX4D 공식 자료를 바탕으로, 태양광·산업 설비·건물·도시 환경·스마트 농업 고객이 왜 열화상 사진보다 좌표 기반 열 정사영상과 반복 비교 가능한 열지도를 먼저 검토하셔야 하는지 소개합니다.',
