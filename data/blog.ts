@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-06-ai-flighthub-closed-loop-operations',
+    title: '드론 관제, 왜 이제는 비행 화면보다 ‘분석까지 닫히는 운영 루프’가 먼저일까요?',
+    description: '2026년 10월 6일 기준으로 확인한 2026년 8월 18일 DJI FlightHub 2 업데이트 자료를 바탕으로, 원격 드론 관제가 왜 비행 모니터링에서 수집·분석·보고까지 연결되는 폐루프 운영 체계로 이동하는지 소개합니다.',
+    thumbnail: '/images/blog/dji-flighthub-2-copilot-route-generation-2026-10-06.webp',
+    date: '2026-10-06',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['드론관제', 'FlightHub2', 'DJIEnterprise', 'AI변화감지', '원격운영', '시설물점검', '공공안전', '자동화워크플로'],
+    readTime: '6분',
+  },
+  {
     id: '2026-10-05-measurable-3d-construction-records',
     title: '건설 현장 기록, 왜 이제는 사진보다 ‘측정 가능한 3D 기록’이 먼저일까요?',
     description: '2026년 10월 5일 기준으로 확인한 2026년 9월 22일 DroneDeploy Ground Pro 출시 자료와 2026년 8월 26일 리얼리티 캡처 운영 설계 자료를 바탕으로, 건설 현장 기록이 왜 2D 사진에서 측정 가능한 3D 운영 데이터로 이동하는지 소개합니다.',
