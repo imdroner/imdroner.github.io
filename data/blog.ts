@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-10-buried-utility-3d-gis-records',
+    title: '지중 시설 기록, 왜 되메우기 전에 3D·GIS 데이터로 남겨야 할까요?',
+    description: '2026년 10월 10일 기준으로 확인한 2026년 9월 2일 PIX4D Multinet 통신 인프라 사례와 2026년 9월 14일 PIX4Dcatch Enterprise GIS 통합 자료를 바탕으로, 지중 시설과 매몰부 기록을 왜 사진이 아니라 좌표가 있는 3D·GIS 데이터로 남겨야 하는지 소개합니다.',
+    thumbnail: '/images/blog/pix4d-multinet-trench-rtk-scan-2026-10-10.jpg',
+    date: '2026-10-10',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['지중시설기록', '매몰부기록', 'PIX4Dcatch', 'RTK스캔', 'GIS자산관리', '통신인프라', '건설모니터링', '3D현장기록'],
+    readTime: '6분',
+  },
+  {
     id: '2026-10-09-low-light-360-interior-documentation',
     title: '실내 공정 기록, 왜 이제는 저조도 360 캡처 품질까지 확인해야 할까요?',
     description: '2026년 10월 9일 기준으로 확인한 2026년 9월 23일 DroneDeploy의 Insta360 X6 지원 자료와 2026년 9월 22일 Ground Pro 자료를 바탕으로, 실내 현장 기록에서 왜 저조도 판독성과 360 캡처 품질이 중요한지 소개합니다.',
