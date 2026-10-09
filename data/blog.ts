@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-09-low-light-360-interior-documentation',
+    title: '실내 공정 기록, 왜 이제는 저조도 360 캡처 품질까지 확인해야 할까요?',
+    description: '2026년 10월 9일 기준으로 확인한 2026년 9월 23일 DroneDeploy의 Insta360 X6 지원 자료와 2026년 9월 22일 Ground Pro 자료를 바탕으로, 실내 현장 기록에서 왜 저조도 판독성과 360 캡처 품질이 중요한지 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-insta360-x6-ground-banner-2026-10-09.webp',
+    date: '2026-10-09',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['건설모니터링', '360워크스루', 'DroneDeploy', 'Insta360X6', '실내현장기록', '저조도캡처', '준공인수인계', '리얼리티캡처'],
+    readTime: '5분',
+  },
+  {
     id: '2026-10-06-ai-flighthub-closed-loop-operations',
     title: '드론 관제, 왜 이제는 비행 화면보다 ‘분석까지 닫히는 운영 루프’가 먼저일까요?',
     description: '2026년 10월 6일 기준으로 확인한 2026년 8월 18일 DJI FlightHub 2 업데이트 자료를 바탕으로, 원격 드론 관제가 왜 비행 모니터링에서 수집·분석·보고까지 연결되는 폐루프 운영 체계로 이동하는지 소개합니다.',
