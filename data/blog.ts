@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-11-dfr-security-governance-public-safety',
+    title: '공공안전 드론 관제, 왜 장비보다 데이터 보안·운영 거버넌스가 먼저일까요?',
+    description: '2026년 10월 11일 기준으로 확인한 DJI Enterprise Insights의 2026년 8월 DFR 자료를 바탕으로, 공공안전·항만·산업시설 드론 관제에서 왜 기체 성능보다 데이터 저장 위치, 접근 권한, 개인정보 보호, 운영 거버넌스가 먼저인지 소개합니다.',
+    thumbnail: '/images/blog/dji-dfr-data-security-trust-2026-10-11.webp',
+    date: '2026-10-11',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['공공안전드론', 'DFR', '드론관제', 'DJIEnterprise', '데이터보안', '개인정보보호', '항만감시', '산업단지보안'],
+    readTime: '7분',
+  },
+  {
     id: '2026-10-10-buried-utility-3d-gis-records',
     title: '지중 시설 기록, 왜 되메우기 전에 3D·GIS 데이터로 남겨야 할까요?',
     description: '2026년 10월 10일 기준으로 확인한 2026년 9월 2일 PIX4D Multinet 통신 인프라 사례와 2026년 9월 14일 PIX4Dcatch Enterprise GIS 통합 자료를 바탕으로, 지중 시설과 매몰부 기록을 왜 사진이 아니라 좌표가 있는 3D·GIS 데이터로 남겨야 하는지 소개합니다.',
