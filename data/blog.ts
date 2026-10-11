@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-12-linear-infrastructure-reality-capture-standard',
+    title: '선형 인프라 현장, 왜 한 번의 드론 촬영보다 ‘반복 가능한 기록 표준’이 먼저일까요?',
+    description: '2026년 10월 12일 기준으로 확인한 2026년 9월 2일 DroneDeploy의 Stacy Witbeck 철도 회랑 리얼리티 캡처 사례를 바탕으로, 장거리 선형 인프라 현장에서 왜 단발 촬영보다 항공·지상 캡처를 결합한 반복 기록 표준이 중요한지 소개합니다.',
+    thumbnail: '/images/blog/dronedeploy-stacy-witbeck-rail-corridor-reality-capture-2026-10-12.webp',
+    date: '2026-10-12',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['선형인프라', '철도현장', '건설모니터링', 'DroneDeploy', '리얼리티캡처', 'RTK드론', '정사영상', '공정관리'],
+    readTime: '6분',
+  },
+  {
     id: '2026-10-11-dfr-security-governance-public-safety',
     title: '공공안전 드론 관제, 왜 장비보다 데이터 보안·운영 거버넌스가 먼저일까요?',
     description: '2026년 10월 11일 기준으로 확인한 DJI Enterprise Insights의 2026년 8월 DFR 자료를 바탕으로, 공공안전·항만·산업시설 드론 관제에서 왜 기체 성능보다 데이터 저장 위치, 접근 권한, 개인정보 보호, 운영 거버넌스가 먼저인지 소개합니다.',
