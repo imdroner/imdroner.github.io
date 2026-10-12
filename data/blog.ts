@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-13-urban-airspace-data-governance',
+    title: '도심 드론 운영, 왜 비행 허가보다 데이터·공역 거버넌스가 먼저일까요?',
+    description: '2026년 10월 13일 기준으로 확인한 2026년 10월 12일 ABC News의 베이징 드론 소유 제한 보도와 2026년 8월 DJI Enterprise Insights 자료를 바탕으로, 도심·공공·산업 드론 운영에서 왜 비행 허가보다 공역 통제, 데이터 저장 위치, 접근 권한, 감사 로그가 먼저인지 소개합니다.',
+    thumbnail: '/images/blog/abc-beijing-drone-ownership-ban-2026-10-13.webp',
+    date: '2026-10-13',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['도심드론', '공공안전드론', '드론관제', '데이터거버넌스', 'FlightHub2', 'DFR', '저고도경제', '공역관리'],
+    readTime: '7분',
+  },
+  {
     id: '2026-10-12-linear-infrastructure-reality-capture-standard',
     title: '선형 인프라 현장, 왜 한 번의 드론 촬영보다 ‘반복 가능한 기록 표준’이 먼저일까요?',
     description: '2026년 10월 12일 기준으로 확인한 2026년 9월 2일 DroneDeploy의 Stacy Witbeck 철도 회랑 리얼리티 캡처 사례를 바탕으로, 장거리 선형 인프라 현장에서 왜 단발 촬영보다 항공·지상 캡처를 결합한 반복 기록 표준이 중요한지 소개합니다.',
