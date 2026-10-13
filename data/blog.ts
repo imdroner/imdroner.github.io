@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-14-lidar-accuracy-qa-workflow',
+    title: '드론 LiDAR 측량, 왜 ‘cm급 정확도’보다 검증 절차가 먼저일까요?',
+    description: '2026년 10월 14일 기준으로 확인한 DJI Enterprise Insights의 Zenmuse L3 정확도 평가 자료와 2025년 11월 4일 DJI Terra V5.1 자료를 바탕으로, 드론 LiDAR 측량에서 왜 장비 사양보다 기준점, RMSE, 포인트클라우드 처리, 납품 검수 절차가 중요한지 소개합니다.',
+    thumbnail: '/images/blog/dji-zenmuse-l3-accuracy-test-unit-2026-10-14.webp',
+    date: '2026-10-14',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['LiDAR측량', 'ZenmuseL3', 'DJITerra', '포인트클라우드', 'RMSE', '드론측량', '인프라점검', '품질관리'],
+    readTime: '7분',
+  },
+  {
     id: '2026-10-13-urban-airspace-data-governance',
     title: '도심 드론 운영, 왜 비행 허가보다 데이터·공역 거버넌스가 먼저일까요?',
     description: '2026년 10월 13일 기준으로 확인한 2026년 10월 12일 ABC News의 베이징 드론 소유 제한 보도와 2026년 8월 DJI Enterprise Insights 자료를 바탕으로, 도심·공공·산업 드론 운영에서 왜 비행 허가보다 공역 통제, 데이터 저장 위치, 접근 권한, 감사 로그가 먼저인지 소개합니다.',
