@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-15-dock-4-rapid-redeployment',
+    title: '드론 스테이션의 다음 경쟁력은 ‘재출동 시간’입니다',
+    description: '2026년 10월 14일 발표된 DJI Dock 4의 25초 자동 배터리 교체 사례를 바탕으로, 상시 대기형 드론 운영에서 출동 간격·임무 우선순위·영상 활용·국내 운영 조건을 함께 설계해야 하는 이유를 소개합니다.',
+    thumbnail: '/images/blog/dji-dock-4-automated-battery-swap-2026-10-15.jpg',
+    date: '2026-10-15',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['드론스테이션', 'DJIDock4', 'Matrice5TD', '원격관제', '인프라점검', '공공안전', '재출동시간'],
+    readTime: '5분',
+  },
+  {
     id: '2026-10-14-lidar-accuracy-qa-workflow',
     title: '드론 LiDAR 측량, 왜 ‘cm급 정확도’보다 검증 절차가 먼저일까요?',
     description: '2026년 10월 14일 기준으로 확인한 DJI Enterprise Insights의 Zenmuse L3 정확도 평가 자료와 2025년 11월 4일 DJI Terra V5.1 자료를 바탕으로, 드론 LiDAR 측량에서 왜 장비 사양보다 기준점, RMSE, 포인트클라우드 처리, 납품 검수 절차가 중요한지 소개합니다.',
