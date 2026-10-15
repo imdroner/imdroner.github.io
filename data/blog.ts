@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-16-drone-dock-environmental-validation',
+    title: '상시 운용 드론 스테이션, 내환경 시험만으로 충분할까요?',
+    description: '2026년 10월 15일 DJI Enterprise가 공개한 Dock 4·Matrice 5TD 분진 및 신뢰성 시험을 바탕으로, 해안·산업시설 드론 스테이션의 현장 적합성 검증 항목을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-dock-4-ip5x-dust-chamber-2026-10-16.webp',
+    date: '2026-10-16',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['드론스테이션', 'DJIDock4', 'Matrice5TD', '내환경시험', '분진시험', '산업시설점검', '해안설비', '원격관제'],
+    readTime: '5분',
+  },
+  {
     id: '2026-10-15-dock-4-rapid-redeployment',
     title: '드론 스테이션의 다음 경쟁력은 ‘재출동 시간’입니다',
     description: '2026년 10월 14일 발표된 DJI Dock 4의 25초 자동 배터리 교체 사례를 바탕으로, 상시 대기형 드론 운영에서 출동 간격·임무 우선순위·영상 활용·국내 운영 조건을 함께 설계해야 하는 이유를 소개합니다.',
