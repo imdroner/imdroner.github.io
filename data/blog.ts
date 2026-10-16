@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-17-drone-dock-alert-to-action-workflow',
+    title: '드론 관제의 출발점은 ‘출동’이 아니라 경보 이후의 판단입니다',
+    description: '2026년 10월 16일 공개된 DJI Dock 4 공식 설명 영상을 바탕으로, 설비 경보부터 영상 확인·담당자 판단·조치 기록까지 연결하는 드론 관제 운영 기준을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-dock-4-workflow-video-2026-10-17.jpg',
+    date: '2026-10-17',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['드론관제', 'DJIDock4', 'Matrice5TD', 'FlightHub2', '산업시설점검', 'AI탐지', '경보대응', '점검이력'],
+    readTime: '5분',
+  },
+  {
     id: '2026-10-16-drone-dock-environmental-validation',
     title: '상시 운용 드론 스테이션, 내환경 시험만으로 충분할까요?',
     description: '2026년 10월 15일 DJI Enterprise가 공개한 Dock 4·Matrice 5TD 분진 및 신뢰성 시험을 바탕으로, 해안·산업시설 드론 스테이션의 현장 적합성 검증 항목을 살펴봅니다.',
