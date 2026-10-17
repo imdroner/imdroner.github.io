@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-18-open-trench-safe-asbuilt-survey',
+    title: '개착 관로 준공측량, 되메우기 전 ‘안전하게’ 얼마나 남길 수 있을까요?',
+    description: '2026년 10월 14일 PIX4D의 TPI 개착 관로 사례를 바탕으로, 굴착부에 진입하지 않는 지상 3D 캡처와 RTK 좌표 검증, CAD/GIS 준공 납품의 조건을 살펴봅니다.',
+    thumbnail: '/images/blog/pix4d-tpi-trench-camera-positions-2026-10-18.jpg',
+    date: '2026-10-18',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '프로젝트 사례',
+    tags: ['개착관로', '준공측량', 'PIX4Dcatch', 'PIX4Dmatic', 'RTK', '3D현장기록', 'CADGIS', '인프라점검'],
+    readTime: '5분',
+  },
+  {
     id: '2026-10-17-drone-dock-alert-to-action-workflow',
     title: '드론 관제의 출발점은 ‘출동’이 아니라 경보 이후의 판단입니다',
     description: '2026년 10월 16일 공개된 DJI Dock 4 공식 설명 영상을 바탕으로, 설비 경보부터 영상 확인·담당자 판단·조치 기록까지 연결하는 드론 관제 운영 기준을 살펴봅니다.',
