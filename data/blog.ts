@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-19-renewables-aerial-ground-inspection-handoff',
+    title: '재생에너지 설비 점검, 드론이 찾은 이상을 지상 확인으로 어떻게 연결할까요?',
+    description: '2026년 10월 19일 확인한 DroneDeploy 재생에너지 솔루션 자료를 바탕으로 태양광·풍력·변전 설비에서 항공 점검과 지상 확인을 자산번호, 작업지시, 재점검으로 연결하는 기준을 살펴봅니다.',
+    thumbnail: '/images/blog/dronedeploy-renewables-aerial-inspection-2026-10-19.webp',
+    date: '2026-10-19',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['재생에너지', '태양광점검', '풍력점검', 'DroneDeploy', '드론열화상', '지상점검', '자산관리', '점검인계'],
+    readTime: '5분',
+  },
+  {
     id: '2026-10-18-open-trench-safe-asbuilt-survey',
     title: '개착 관로 준공측량, 되메우기 전 ‘안전하게’ 얼마나 남길 수 있을까요?',
     description: '2026년 10월 14일 PIX4D의 TPI 개착 관로 사례를 바탕으로, 굴착부에 진입하지 않는 지상 3D 캡처와 RTK 좌표 검증, CAD/GIS 준공 납품의 조건을 살펴봅니다.',
