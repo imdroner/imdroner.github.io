@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-20-visual-evidence-maintenance-work-order',
+    title: '점검 영상이 쌓이는데, 정비팀은 왜 현장을 다시 방문할까요?',
+    description: '2026년 10월 19일 DroneDeploy의 시각 기록·유지보수 업무 연결 자료를 바탕으로, 드론 지도와 360도·SLAM·LiDAR를 목적에 따라 선택하고 점검 결과를 자산번호와 작업지시로 인계하는 방법을 살펴봅니다.',
+    thumbnail: '/images/blog/dronedeploy-visual-evidence-work-management-banner-2026-10-20.webp',
+    date: '2026-10-20',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['시설유지보수', '드론점검', '작업지시', 'DroneDeploy', '리얼리티캡처', '자산관리', '360도캡처', 'LiDAR'],
+    readTime: '5분',
+  },
+  {
     id: '2026-10-19-renewables-aerial-ground-inspection-handoff',
     title: '재생에너지 설비 점검, 드론이 찾은 이상을 지상 확인으로 어떻게 연결할까요?',
     description: '2026년 10월 19일 확인한 DroneDeploy 재생에너지 솔루션 자료를 바탕으로 태양광·풍력·변전 설비에서 항공 점검과 지상 확인을 자산번호, 작업지시, 재점검으로 연결하는 기준을 살펴봅니다.',
