@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-21-phone-3d-scan-measurement-boundary',
+    title: '휴대전화 사진 120장으로 만든 3D 모델, 현장 치수까지 맡겨도 될까요?',
+    description: '2026년 10월 19일 DroneDeploy의 휴대전화 3D 시연을 바탕으로, 현황 공유용 모델의 치수 확인과 시공·준공 검측에 필요한 정확도 검증을 구분합니다.',
+    thumbnail: '/images/blog/dronedeploy-broadhurst-phone-3d-demo-2026-10-21.webp',
+    date: '2026-10-21',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['건설모니터링', '3D현장기록', '휴대전화3D스캔', 'DroneDeploy', '치수검증', '항공지상캡처'],
+    readTime: '4분',
+  },
+  {
     id: '2026-10-20-visual-evidence-maintenance-work-order',
     title: '점검 영상이 쌓이는데, 정비팀은 왜 현장을 다시 방문할까요?',
     description: '2026년 10월 19일 DroneDeploy의 시각 기록·유지보수 업무 연결 자료를 바탕으로, 드론 지도와 360도·SLAM·LiDAR를 목적에 따라 선택하고 점검 결과를 자산번호와 작업지시로 인계하는 방법을 살펴봅니다.',
