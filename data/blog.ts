@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-22-night-thermal-drone-comparison-field-test',
+    title: '야간 열화상 비교 영상, 우리 현장에서도 같은 사람이 보일까요?',
+    description: '2026년 10월 21일 DJI Enterprise의 Dock 4·Dock 3 야간 비교 게시물을 바탕으로, 감시 거리·줌·열화상 설정을 맞춘 현장 시연과 관제 판정 기준을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-dock-4-dock-3-night-thermal-comparison-2026-10-22.webp',
+    date: '2026-10-22',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['야간관제', '열화상드론', 'DJIDock4', 'DJIDock3', '공공안전', '시설경계', '현장검증'],
+    readTime: '4분',
+  },
+  {
     id: '2026-10-21-phone-3d-scan-measurement-boundary',
     title: '휴대전화 사진 120장으로 만든 3D 모델, 현장 치수까지 맡겨도 될까요?',
     description: '2026년 10월 19일 DroneDeploy의 휴대전화 3D 시연을 바탕으로, 현황 공유용 모델의 치수 확인과 시공·준공 검측에 필요한 정확도 검증을 구분합니다.',
