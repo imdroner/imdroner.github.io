@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-23-night-scene-visible-light-evaluation',
+    title: '야간 관제용 드론, Night Scene 비교 영상만으로 선택할 수 있을까요?',
+    description: '2026년 10월 22일 DJI Enterprise의 Matrice 5TD·4TD Night Scene 비교 영상을 바탕으로 저조도 가시광과 열화상을 구분하고 현장 관제 성능을 평가할 조건을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-matrice-5td-4td-night-scene-comparison-2026-10-23.webp',
+    date: '2026-10-23',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['야간관제', '저조도영상', 'NightScene', 'Matrice5TD', 'Matrice4TD', '산업시설점검', '현장검증'],
+    readTime: '4분',
+  },
+  {
     id: '2026-10-22-night-thermal-drone-comparison-field-test',
     title: '야간 열화상 비교 영상, 우리 현장에서도 같은 사람이 보일까요?',
     description: '2026년 10월 21일 DJI Enterprise의 Dock 4·Dock 3 야간 비교 게시물을 바탕으로, 감시 거리·줌·열화상 설정을 맞춘 현장 시연과 관제 판정 기준을 살펴봅니다.',
