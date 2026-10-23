@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-24-cableway-dock-aerial-observation',
+    title: '케이블카 시설 관찰, 드론 도크가 할 수 있는 일과 할 수 없는 일',
+    description: '2026년 10월 23일 DJI Enterprise의 케이블카 항공 관찰 소개를 바탕으로, 도크형 드론의 반복 기록과 설비 담당자 인계, 기상·통신 조건 및 안전점검의 경계를 살펴봅니다.',
+    thumbnail: '/images/blog/dji-dock-3-cableway-resort-observation-2026-10-24.webp',
+    date: '2026-10-24',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['케이블카점검', '산악인프라', 'DJIDock3', '원격관제', '시설물점검', '반복관찰', '안전점검'],
+    readTime: '4분',
+  },
+  {
     id: '2026-10-23-night-scene-visible-light-evaluation',
     title: '야간 관제용 드론, Night Scene 비교 영상만으로 선택할 수 있을까요?',
     description: '2026년 10월 22일 DJI Enterprise의 Matrice 5TD·4TD Night Scene 비교 영상을 바탕으로 저조도 가시광과 열화상을 구분하고 현장 관제 성능을 평가할 조건을 살펴봅니다.',
