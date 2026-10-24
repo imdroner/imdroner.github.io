@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-25-facade-cleaning-aerial-maintenance-records',
+    title: '외벽 청소 드론을 도입하기 전에, 건물 상태는 어떻게 기록하고 있나요?',
+    description: '2026년 10월 24일 DJI Enterprise의 계류식 외벽 청소 영상을 바탕으로, 청소 작업과 항공 상태 기록을 구분하고 전후 비교·안전 검토에 필요한 기준을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-matrice-400-tethered-facade-cleaning-2026-10-25.webp',
+    date: '2026-10-25',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['외벽유지관리', '드론청소', 'Matrice400', '건물점검', '항공기록', '전후비교', '현장안전'],
+    readTime: '4분',
+  },
+  {
     id: '2026-10-24-cableway-dock-aerial-observation',
     title: '케이블카 시설 관찰, 드론 도크가 할 수 있는 일과 할 수 없는 일',
     description: '2026년 10월 23일 DJI Enterprise의 케이블카 항공 관찰 소개를 바탕으로, 도크형 드론의 반복 기록과 설비 담당자 인계, 기상·통신 조건 및 안전점검의 경계를 살펴봅니다.',
