@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-26-roof-envelope-precover-capture',
+    title: '지붕 방수층이 덮이기 전, 어떤 기록을 남겨야 할까요?',
+    description: '2026년 9월 9일 DroneDeploy의 은폐 전 기록 프레임을 바탕으로, 지붕 방수·관통부 촬영 시점과 근접 사진·드론 항공기록을 연결하는 방법을 살펴봅니다.',
+    thumbnail: '/images/blog/dronedeploy-construction-hidden-milestones-banner-2026-10-26.webp',
+    date: '2026-10-26',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['지붕방수', '건물외피', '은폐전기록', 'DroneDeploy', '드론항공기록', '시설유지관리', '건설모니터링'],
+    readTime: '4분',
+  },
+  {
     id: '2026-10-25-facade-cleaning-aerial-maintenance-records',
     title: '외벽 청소 드론을 도입하기 전에, 건물 상태는 어떻게 기록하고 있나요?',
     description: '2026년 10월 24일 DJI Enterprise의 계류식 외벽 청소 영상을 바탕으로, 청소 작업과 항공 상태 기록을 구분하고 전후 비교·안전 검토에 필요한 기준을 살펴봅니다.',
