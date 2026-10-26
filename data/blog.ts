@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-27-aerial-ground-construction-records',
+    title: '현장 기록은 드론 비행만으로 완성되지 않습니다',
+    description: '2026년 9월 DroneDeploy Ground Pro 자료를 바탕으로, 건설 현장의 항공 기록과 실내 360도 순회·매립 전 3D 기록을 구분하고 측정 정확도의 한계를 살펴봅니다.',
+    thumbnail: '/images/blog/dronedeploy-ground-pro-site-capture-banner-2026-10-27.webp',
+    date: '2026-10-27',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['건설모니터링', '현장기록', '드론항공촬영', '360도순회', '3D스캔', 'DroneDeploy', 'GroundPro'],
+    readTime: '4분',
+  },
+  {
     id: '2026-10-26-roof-envelope-precover-capture',
     title: '지붕 방수층이 덮이기 전, 어떤 기록을 남겨야 할까요?',
     description: '2026년 9월 9일 DroneDeploy의 은폐 전 기록 프레임을 바탕으로, 지붕 방수·관통부 촬영 시점과 근접 사진·드론 항공기록을 연결하는 방법을 살펴봅니다.',
