@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-28-urban-drone-video-link-field-validation',
+    title: '도심 드론 관제, 영상이 끊기는 구간부터 확인해야 합니다',
+    description: '2026년 10월 27일 DJI Enterprise의 도심 전송 비교 시연을 바탕으로, 제조사 거리 수치의 한계와 시설물 점검·원격 관제에서 필요한 영상 링크 현장 검증 기준을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-matrice-5td-4td-urban-link-test-2026-10-28.webp',
+    date: '2026-10-28',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['도심드론관제', '영상전송', '원격관제', '시설물점검', 'Matrice5TD', 'Matrice4TD', '현장검증'],
+    readTime: '4분',
+  },
+  {
     id: '2026-10-27-aerial-ground-construction-records',
     title: '현장 기록은 드론 비행만으로 완성되지 않습니다',
     description: '2026년 9월 DroneDeploy Ground Pro 자료를 바탕으로, 건설 현장의 항공 기록과 실내 360도 순회·매립 전 3D 기록을 구분하고 측정 정확도의 한계를 살펴봅니다.',
