@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-29-drone-dock-inspection-photo-handoff',
+    title: '정기 드론 점검, 촬영한 사진이 고객 시스템까지 도착해야 합니다',
+    description: '2026년 10월 28일 DJI Enterprise의 Dock 3·FlightHub Sync 소개를 바탕으로, 정기 점검 사진을 고객의 설비 기록과 후속 조치로 연결할 때 확인할 인계 조건을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-dock-3-flighthub-sync-inspection-2026-10-29.webp',
+    date: '2026-10-29',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['정기드론점검', 'DJIDock3', 'FlightHubSync', '시설물점검', '사진인계', '자산관리', '원격관제'],
+    readTime: '4분',
+  },
+  {
     id: '2026-10-28-urban-drone-video-link-field-validation',
     title: '도심 드론 관제, 영상이 끊기는 구간부터 확인해야 합니다',
     description: '2026년 10월 27일 DJI Enterprise의 도심 전송 비교 시연을 바탕으로, 제조사 거리 수치의 한계와 시설물 점검·원격 관제에서 필요한 영상 링크 현장 검증 기준을 살펴봅니다.',
