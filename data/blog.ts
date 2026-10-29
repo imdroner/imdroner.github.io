@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-30-castle-aerial-ground-3d-capture',
+    title: '높은 곳에서 찍은 사진만으로 건물의 입면을 기록할 수 있을까요?',
+    description: '2026년 10월 28일 PIX4D의 La Iruela 성 3D 시연을 바탕으로, 항공·지상 촬영을 결합할 때 보완되는 시야와 정확도 검증의 경계를 살펴봅니다.',
+    thumbnail: '/images/blog/pix4d-la-iruela-castle-aerial-ground-3d-2026-10-30.webp',
+    date: '2026-10-30',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['건축물3D기록', '항공지상촬영', 'PIX4Dcatch', 'PIX4Dmatic', '문화유산기록', '포토그래메트리', '입면기록'],
+    readTime: '4분',
+  },
+  {
     id: '2026-10-29-drone-dock-inspection-photo-handoff',
     title: '정기 드론 점검, 촬영한 사진이 고객 시스템까지 도착해야 합니다',
     description: '2026년 10월 28일 DJI Enterprise의 Dock 3·FlightHub Sync 소개를 바탕으로, 정기 점검 사진을 고객의 설비 기록과 후속 조치로 연결할 때 확인할 인계 조건을 살펴봅니다.',
