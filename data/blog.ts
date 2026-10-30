@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-10-31-buried-utility-records-maintenance-handoff',
+    title: '되메운 관로 기록, 다음 정비 작업자가 찾을 수 있나요?',
+    description: '2026년 10월 PIX4D의 개착 관로 사례와 DroneDeploy의 작업관리 글을 바탕으로, 매립 전 3D 기록을 자산번호·좌표·준공 데이터·정비 작업지시에 연결할 인계 조건을 살펴봅니다.',
+    thumbnail: '/images/blog/pix4d-trench-utility-distance-record-2026-10-31.webp',
+    date: '2026-10-31',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['관로준공기록', '매립전3D기록', '시설물유지관리', '자산관리', '작업지시', 'PIX4D', 'DroneDeploy'],
+    readTime: '4분',
+  },
+  {
     id: '2026-10-30-castle-aerial-ground-3d-capture',
     title: '높은 곳에서 찍은 사진만으로 건물의 입면을 기록할 수 있을까요?',
     description: '2026년 10월 28일 PIX4D의 La Iruela 성 3D 시연을 바탕으로, 항공·지상 촬영을 결합할 때 보완되는 시야와 정확도 검증의 경계를 살펴봅니다.',
