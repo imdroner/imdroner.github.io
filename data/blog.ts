@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-01-mobile-dock-multi-site-inspection',
+    title: '여러 현장을 순회 점검한다면, 드론 도크를 어디에 배치해야 할까요?',
+    description: '2026년 10월 31일 DJI Enterprise의 차량 탑재 Dock 3 소개와 공식 FAQ를 바탕으로, 분산 설비 점검에서 고정형·이동형 도크의 배치 조건과 현장 검증 항목을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-dock-3-vehicle-mounted-multi-site-2026-11-01.webp',
+    date: '2026-11-01',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['DJIDock3', '차량탑재형도크', '다현장점검', '시설물점검', '원격관제', '이동식배치'],
+    readTime: '4분',
+  },
+  {
     id: '2026-10-31-buried-utility-records-maintenance-handoff',
     title: '되메운 관로 기록, 다음 정비 작업자가 찾을 수 있나요?',
     description: '2026년 10월 PIX4D의 개착 관로 사례와 DroneDeploy의 작업관리 글을 바탕으로, 매립 전 3D 기록을 자산번호·좌표·준공 데이터·정비 작업지시에 연결할 인계 조건을 살펴봅니다.',
