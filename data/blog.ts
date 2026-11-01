@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-02-railway-night-thermal-visual-records',
+    title: '철도 야간 점검, 열화상과 가시광 영상을 같은 기록으로 보지 마세요',
+    description: '2026년 11월 1일 DJI Enterprise의 Matrice 4T 철도 야간 촬영 소개를 바탕으로, 열 패턴과 저조도 가시광 기록을 구분하고 선형 인프라 점검 자료를 인계할 때 필요한 조건을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-matrice-4t-railway-night-thermal-preview-2026-11-02.webp',
+    date: '2026-11-02',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['철도야간점검', '열화상드론', '저조도가시광', 'Matrice4T', '선형인프라', '시설물점검', '점검기록'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-01-mobile-dock-multi-site-inspection',
     title: '여러 현장을 순회 점검한다면, 드론 도크를 어디에 배치해야 할까요?',
     description: '2026년 10월 31일 DJI Enterprise의 차량 탑재 Dock 3 소개와 공식 FAQ를 바탕으로, 분산 설비 점검에서 고정형·이동형 도크의 배치 조건과 현장 검증 항목을 살펴봅니다.',
