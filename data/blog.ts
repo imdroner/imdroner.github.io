@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-03-construction-progress-record-capture-cadence',
+    title: '공정 사진은 쌓이는데, 지난주와 비교할 수 있나요?',
+    description: '2026년 11월 DroneDeploy의 Ariat Arena 회고와 8월 New Augusta Arena 사례를 바탕으로, 건설 현장 반복 촬영의 간격과 공정별 기록 시점, 비교 가능한 자료의 인계 조건을 살펴봅니다.',
+    thumbnail: '/images/blog/dronedeploy-augusta-arena-pcl-capture-2026-11-03.webp',
+    date: '2026-11-03',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '프로젝트 사례',
+    tags: ['건설모니터링', '공정기록', '반복항공촬영', '현장시계열', 'DroneDeploy', '360도현장기록', '자료인계'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-02-railway-night-thermal-visual-records',
     title: '철도 야간 점검, 열화상과 가시광 영상을 같은 기록으로 보지 마세요',
     description: '2026년 11월 1일 DJI Enterprise의 Matrice 4T 철도 야간 촬영 소개를 바탕으로, 열 패턴과 저조도 가시광 기록을 구분하고 선형 인프라 점검 자료를 인계할 때 필요한 조건을 살펴봅니다.',
