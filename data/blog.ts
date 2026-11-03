@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-04-aerial-map-alignment-control-points',
+    title: '서로 다른 날짜의 드론 지도를 겹칠 때, 무엇을 먼저 확인해야 할까요?',
+    description: '2026년 11월 2일 DroneDeploy의 10월 제품 릴리스를 바탕으로, 지상기준점 태깅과 수평 지도 정렬의 차이 및 현장 비교 자료의 정확도 확인 조건을 살펴봅니다.',
+    thumbnail: '/images/blog/dronedeploy-october-2026-release-aerial-mapping-2026-11-04.webp',
+    date: '2026-11-04',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['항공지도로비교', '지상기준점', 'GCP', '지도정렬', '건설모니터링', 'DroneDeploy', '정확도검증'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-03-construction-progress-record-capture-cadence',
     title: '공정 사진은 쌓이는데, 지난주와 비교할 수 있나요?',
     description: '2026년 11월 DroneDeploy의 Ariat Arena 회고와 8월 New Augusta Arena 사례를 바탕으로, 건설 현장 반복 촬영의 간격과 공정별 기록 시점, 비교 가능한 자료의 인계 조건을 살펴봅니다.',
