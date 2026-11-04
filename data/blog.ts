@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-05-wetland-wildlife-drone-ai-monitoring',
+    title: '습지의 새를 셀 때, 드론과 AI만으로 충분할까요?',
+    description: '2026년 11월 4일 DJI Enterprise의 플라밍고 관찰 소개를 바탕으로, 습지 드론 촬영·AI 계수 후보·전문가 검수를 구분하고 반복 조사 자료의 인계 조건을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-flamingo-wetland-monitoring-2026-11-05.webp',
+    date: '2026-11-05',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['습지모니터링', '야생동물조사', '플라밍고', '드론영상', 'AI개체계수', '둥지관찰', '환경조사'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-04-aerial-map-alignment-control-points',
     title: '서로 다른 날짜의 드론 지도를 겹칠 때, 무엇을 먼저 확인해야 할까요?',
     description: '2026년 11월 2일 DroneDeploy의 10월 제품 릴리스를 바탕으로, 지상기준점 태깅과 수평 지도 정렬의 차이 및 현장 비교 자료의 정확도 확인 조건을 살펴봅니다.',
