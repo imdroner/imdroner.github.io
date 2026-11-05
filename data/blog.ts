@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-06-matrice-5t-solar-thermal-inspection-records',
+    title: '태양광 열화상 점검, ‘뜨거운 사진’에서 설비별 이상 기록으로',
+    description: '2026년 11월 5일 DJI Matrice 5T 발표를 바탕으로, 태양광 열화상 지도와 가시광 사진을 설비별 이상 후보 기록 및 현장 재확인으로 연결하는 조건을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-matrice-5t-solar-inspection-2026-11-06.webp',
+    date: '2026-11-06',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['태양광점검', '열화상드론', 'Matrice5T', 'DJITerra', '설비이상기록', '에너지설비점검'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-05-wetland-wildlife-drone-ai-monitoring',
     title: '습지의 새를 셀 때, 드론과 AI만으로 충분할까요?',
     description: '2026년 11월 4일 DJI Enterprise의 플라밍고 관찰 소개를 바탕으로, 습지 드론 촬영·AI 계수 후보·전문가 검수를 구분하고 반복 조사 자료의 인계 조건을 살펴봅니다.',
