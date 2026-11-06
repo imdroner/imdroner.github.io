@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-07-drone-data-operational-digital-twin-handoff',
+    title: '드론 지도는 어디에 저장되나요? 운영형 디지털 트윈을 위한 데이터 인계',
+    description: '2026년 11월 4일 DroneDeploy 기고문을 바탕으로 드론 지도·점검 사진을 자산번호, GIS, 시설관리 작업 기록에 연결할 때 필요한 인계 기준을 살펴봅니다.',
+    thumbnail: '/images/blog/dronedeploy-operational-digital-twin-2026-11-07.webp',
+    date: '2026-11-07',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '산업 동향',
+    tags: ['드론데이터', '운영형디지털트윈', '시설물점검', '자산관리', 'GIS', 'CMMS', '자료인계'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-06-matrice-5t-solar-thermal-inspection-records',
     title: '태양광 열화상 점검, ‘뜨거운 사진’에서 설비별 이상 기록으로',
     description: '2026년 11월 5일 DJI Matrice 5T 발표를 바탕으로, 태양광 열화상 지도와 가시광 사진을 설비별 이상 후보 기록 및 현장 재확인으로 연결하는 조건을 살펴봅니다.',
