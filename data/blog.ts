@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-08-field-ar-gis-asset-verification',
+    title: 'GIS에 있는 설비, 현장에서 같은 위치를 찾을 수 있나요?',
+    description: '2026년 9월 14일 PIX4D의 PIX4Dcatch 기업 GIS 연계 소개를 바탕으로, 지상 3D 기록과 현장 AR 자산 조회를 드론 항공기록과 어떻게 구분하고 검증할지 살펴봅니다.',
+    thumbnail: '/images/blog/pix4dcatch-ar-gis-field-overlay-2026-11-08.webp',
+    date: '2026-11-08',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['GIS자산관리', 'PIX4Dcatch', '현장AR', '지상3D기록', '매설물관리', '항공촬영', '시설물점검'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-07-drone-data-operational-digital-twin-handoff',
     title: '드론 지도는 어디에 저장되나요? 운영형 디지털 트윈을 위한 데이터 인계',
     description: '2026년 11월 4일 DroneDeploy 기고문을 바탕으로 드론 지도·점검 사진을 자산번호, GIS, 시설관리 작업 기록에 연결할 때 필요한 인계 기준을 살펴봅니다.',
