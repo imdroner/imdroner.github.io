@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-09-demolition-site-mixed-imagery-3d-records',
+    title: '철거 현장의 사진과 영상, 3D 기록으로 이어지려면',
+    description: '2026년 11월 8일 철거 현장 희소 점군 개인 시연과 PIX4D의 2018년 쇼핑센터 사례를 구분해, 드론·지상 촬영 자료의 역할과 3D 기록의 검증 조건을 살펴봅니다.',
+    thumbnail: '/images/blog/pix4d-shopping-center-demolition-drone-map-2026-11-09.webp',
+    date: '2026-11-09',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['철거현장기록', '포토그래메트리', '드론매핑', '지상촬영', '희소점군', '건설모니터링', '정합품질'],
+    readTime: '5분',
+  },
+  {
     id: '2026-11-08-field-ar-gis-asset-verification',
     title: 'GIS에 있는 설비, 현장에서 같은 위치를 찾을 수 있나요?',
     description: '2026년 9월 14일 PIX4D의 PIX4Dcatch 기업 GIS 연계 소개를 바탕으로, 지상 3D 기록과 현장 AR 자산 조회를 드론 항공기록과 어떻게 구분하고 검증할지 살펴봅니다.',
