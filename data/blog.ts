@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-10-construction-aerial-360-progress-timelapse',
+    title: '공정 기록의 빈 공간, 실외 드론 촬영과 실내 360 워크로 메우기',
+    description: '2026년 11월 9일 DroneDeploy의 실내 360 워크 타임랩스 데모를 바탕으로, 실외 항공 촬영과 실내 기록의 역할 및 날짜·위치별 공정 자료 인계 기준을 살펴봅니다.',
+    thumbnail: '/images/blog/dronedeploy-office-renovation-360-timelapse-2026-11-10.webp',
+    date: '2026-11-10',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['건설현장기록', '실내360워크', '드론항공촬영', '공정모니터링', '타임랩스', 'DroneDeploy', '자료인계'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-09-demolition-site-mixed-imagery-3d-records',
     title: '철거 현장의 사진과 영상, 3D 기록으로 이어지려면',
     description: '2026년 11월 8일 철거 현장 희소 점군 개인 시연과 PIX4D의 2018년 쇼핑센터 사례를 구분해, 드론·지상 촬영 자료의 역할과 3D 기록의 검증 조건을 살펴봅니다.',
