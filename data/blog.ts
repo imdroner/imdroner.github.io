@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-11-construction-360-walk-capture-time-and-coverage',
+    title: '360 워크로 한 층을 17분 만에 기록했다면, 무엇까지 남았을까요?',
+    description: '2026년 11월 10일 DroneDeploy의 10,000제곱피트·17분 미만 360 워크 시연을 바탕으로, 촬영 속도와 실제 기록 범위·도면 위치·검수 시간을 구분합니다.',
+    thumbnail: '/images/blog/dronedeploy-ground-360-floor-walk-2026-11-11.webp',
+    date: '2026-11-11',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['건설현장기록', '실내360워크', 'DroneDeploy', '도면연계', '공정모니터링', '촬영범위', '자료인계'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-10-construction-aerial-360-progress-timelapse',
     title: '공정 기록의 빈 공간, 실외 드론 촬영과 실내 360 워크로 메우기',
     description: '2026년 11월 9일 DroneDeploy의 실내 360 워크 타임랩스 데모를 바탕으로, 실외 항공 촬영과 실내 기록의 역할 및 날짜·위치별 공정 자료 인계 기준을 살펴봅니다.',
