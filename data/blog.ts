@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-12-water-utility-ground-3d-capture-at-scale',
+    title: '14개 현장의 관로 기록을 같은 방식으로 남기려면',
+    description: '2026년 11월 10일 PIX4D의 MWH Treatment 사례를 통해 개착부 지상 RTK 기록의 다현장 운영·자료 인계 기준과 드론 항공 촬영의 역할을 구분합니다.',
+    thumbnail: '/images/blog/pix4d-mwh-water-utility-rtk-field-scan-2026-11-12.png',
+    date: '2026-11-12',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '프로젝트 사례',
+    tags: ['수자원인프라', '관로준공기록', 'PIX4Dcatch', '지상RTK', '시설물자산관리', '항공현장모니터링', '자료인계'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-11-construction-360-walk-capture-time-and-coverage',
     title: '360 워크로 한 층을 17분 만에 기록했다면, 무엇까지 남았을까요?',
     description: '2026년 11월 10일 DroneDeploy의 10,000제곱피트·17분 미만 360 워크 시연을 바탕으로, 촬영 속도와 실제 기록 범위·도면 위치·검수 시간을 구분합니다.',
