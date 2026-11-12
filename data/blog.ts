@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-13-plant-growth-4d-photogrammetry-digital-twin',
+    title: '식물이 자라는 모습을 3D로 남긴다면, 무엇을 비교할 수 있을까요?',
+    description: '2026년 11월 12일 공개된 타르투대 식물 디지털 트윈 연구를 바탕으로, 날짜별 사진측량 정합과 3DGS 탐색의 차이, 항공·지상 촬영의 역할을 살펴봅니다.',
+    thumbnail: '/images/blog/pensoft-fern-growth-4d-2026-11-13.webp',
+    date: '2026-11-13',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['식생모니터링', '식물디지털트윈', '사진측량', '3DGS', '시계열3D', '환경조사', '항공지상촬영'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-12-water-utility-ground-3d-capture-at-scale',
     title: '14개 현장의 관로 기록을 같은 방식으로 남기려면',
     description: '2026년 11월 10일 PIX4D의 MWH Treatment 사례를 통해 개착부 지상 RTK 기록의 다현장 운영·자료 인계 기준과 드론 항공 촬영의 역할을 구분합니다.',
