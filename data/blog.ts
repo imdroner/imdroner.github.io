@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-14-browser-local-photogrammetry-data-control',
+    title: '현장 사진을 외부 서버에 올리기 어렵다면, 정사영상은 어떻게 만들까요?',
+    description: '2026년 11월 확인한 WebSfM 베타의 브라우저 로컬 사진측량 방식을 바탕으로, 사진 반출 제약이 있는 현장의 보안·위치 정확도·자료 인계 검증 조건을 살펴봅니다.',
+    thumbnail: '/images/blog/websfm-aukerman-orthophoto-2026-11-14.webp',
+    date: '2026-11-14',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['사진측량', '정사영상', 'WebSfM', '로컬처리', '데이터보안', '지상기준점', '공간정보'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-13-plant-growth-4d-photogrammetry-digital-twin',
     title: '식물이 자라는 모습을 3D로 남긴다면, 무엇을 비교할 수 있을까요?',
     description: '2026년 11월 12일 공개된 타르투대 식물 디지털 트윈 연구를 바탕으로, 날짜별 사진측량 정합과 3DGS 탐색의 차이, 항공·지상 촬영의 역할을 살펴봅니다.',
