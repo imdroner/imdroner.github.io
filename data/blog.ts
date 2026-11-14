@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-15-gaussian-splat-visual-edit-vs-inspection-evidence',
+    title: '3D 현장 모델의 빈 곳을 메워도 될까요? 시각화와 점검 증거를 나누는 기준',
+    description: '2026년 11월 개인 개발자의 Gaussian Splat 편집 시연을 통해, 고객용 3D 시각화의 메움·제거 작업과 시설물 점검·측량 원본을 구분하는 기준을 살펴봅니다.',
+    thumbnail: '/images/blog/nicolas-drum-gaussian-splat-editor-demo-2026-11-15.jpg',
+    date: '2026-11-15',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['3D현장모델', '가우시안스플래팅', '시설물점검', '원본보존', '시각화', '점검증거', '드론3D매핑'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-14-browser-local-photogrammetry-data-control',
     title: '현장 사진을 외부 서버에 올리기 어렵다면, 정사영상은 어떻게 만들까요?',
     description: '2026년 11월 확인한 WebSfM 베타의 브라우저 로컬 사진측량 방식을 바탕으로, 사진 반출 제약이 있는 현장의 보안·위치 정확도·자료 인계 검증 조건을 살펴봅니다.',
