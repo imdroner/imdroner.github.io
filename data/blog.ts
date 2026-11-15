@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-16-underground-culvert-drone-3d-inspection',
+    title: '배수 암거가 막혔는지, 사람 없이 내부 상태를 확인할 수 있을까요?',
+    description: '2021년 11월 PIX4D·Flyability 배수 암거 점검 사례를 바탕으로, 접근이 어려운 지하 시설의 드론 내부 촬영·3D 기록과 자료 검수 범위를 살펴봅니다.',
+    thumbnail: '/images/blog/pix4d-flyability-culvert-interior-2026-11-16.webp',
+    date: '2026-11-16',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '프로젝트 사례',
+    tags: ['배수암거점검', '지하시설물', '실내드론', '3D현장기록', 'PIX4D', 'Flyability', '공공인프라'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-15-gaussian-splat-visual-edit-vs-inspection-evidence',
     title: '3D 현장 모델의 빈 곳을 메워도 될까요? 시각화와 점검 증거를 나누는 기준',
     description: '2026년 11월 개인 개발자의 Gaussian Splat 편집 시연을 통해, 고객용 3D 시각화의 메움·제거 작업과 시설물 점검·측량 원본을 구분하는 기준을 살펴봅니다.',
