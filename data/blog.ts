@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-17-offshore-wind-drone-moving-vessel-recovery',
+    title: '해상풍력 드론 점검, 촬영보다 먼저 확인할 ‘선박 복귀’ 조건',
+    description: '2025년 DJI Matrice 400 발표와 2026년 11월 선박 기반 해상풍력 점검 소개를 구분해, 이동 선박 회수 조건과 설비별 촬영 자료 인계 기준을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-matrice-400-ship-landing-2026-11-17.webp',
+    date: '2026-11-17',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['해상풍력점검', '선박기반드론', '이동선박착륙', 'Matrice400', 'ZenmuseH30', '시설물점검', '자료인계'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-16-underground-culvert-drone-3d-inspection',
     title: '배수 암거가 막혔는지, 사람 없이 내부 상태를 확인할 수 있을까요?',
     description: '2021년 11월 PIX4D·Flyability 배수 암거 점검 사례를 바탕으로, 접근이 어려운 지하 시설의 드론 내부 촬영·3D 기록과 자료 검수 범위를 살펴봅니다.',
