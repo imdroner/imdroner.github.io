@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-18-dock-bvlos-operator-risk-documents',
+    title: '드론 도크를 설치하면 원격 비행 준비도 끝날까요?',
+    description: '2026년 11월 17일 DJI Dock 4 유럽 BVLOS 문서 패키지를 바탕으로, 제조사의 장비 안전 증빙과 운영자의 현장별 위험평가·운용계획을 구분합니다.',
+    thumbnail: '/images/blog/dji-dock-4-bvlos-compliance-2026-11-18.webp',
+    date: '2026-11-18',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['드론도크', '원격드론운용', 'BVLOS', 'DJIDock4', '현장위험평가', '시설물점검', '운용계획'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-17-offshore-wind-drone-moving-vessel-recovery',
     title: '해상풍력 드론 점검, 촬영보다 먼저 확인할 ‘선박 복귀’ 조건',
     description: '2025년 DJI Matrice 400 발표와 2026년 11월 선박 기반 해상풍력 점검 소개를 구분해, 이동 선박 회수 조건과 설비별 촬영 자료 인계 기준을 살펴봅니다.',
