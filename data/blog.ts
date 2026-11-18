@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-19-construction-close-in-quality-records',
+    title: '벽을 닫기 전 현장 기록, 나중에 무엇을 확인할 수 있어야 할까요?',
+    description: '2026년 11월 16일 DroneDeploy의 건설 품질기록 안내를 바탕으로, 마감 전 실내 360도 촬영과 실외 드론 촬영의 역할, 도면·날짜별 자료 인계와 품질검사 한계를 살펴봅니다.',
+    thumbnail: '/images/blog/dronedeploy-construction-quality-pre-pour-2026-11-19.webp',
+    date: '2026-11-19',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['건설현장기록', '마감전촬영', '실내360도워크', '드론항공촬영', '품질기록', '자료인계', 'DroneDeploy'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-18-dock-bvlos-operator-risk-documents',
     title: '드론 도크를 설치하면 원격 비행 준비도 끝날까요?',
     description: '2026년 11월 17일 DJI Dock 4 유럽 BVLOS 문서 패키지를 바탕으로, 제조사의 장비 안전 증빙과 운영자의 현장별 위험평가·운용계획을 구분합니다.',
