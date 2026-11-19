@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-20-stockpile-volume-repeat-survey-baseline',
+    title: '골재 야적량을 매번 다르게 계산하지 않으려면 무엇을 고정해야 할까요?',
+    description: '2026년 11월 19일 DJI Enterprise 적치물 추적 데모와 2025년 FlightHub 2 공식 자료를 바탕으로, 정기 체적 비교에 필요한 기준면·촬영 경계·검토 가능한 물량 이력을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-flighthub2-aec-analyzer-2026-11-20.png',
+    date: '2026-11-20',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['야적량관리', '적치물체적', '드론측량', '반복촬영', '기준면', 'DJIFlightHub2', '토공물량'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-19-construction-close-in-quality-records',
     title: '벽을 닫기 전 현장 기록, 나중에 무엇을 확인할 수 있어야 할까요?',
     description: '2026년 11월 16일 DroneDeploy의 건설 품질기록 안내를 바탕으로, 마감 전 실내 360도 촬영과 실외 드론 촬영의 역할, 도면·날짜별 자료 인계와 품질검사 한계를 살펴봅니다.',
