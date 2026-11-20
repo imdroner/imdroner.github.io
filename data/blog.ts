@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-21-mine-survey-data-to-tailings-planning',
+    title: '광산 드론 측량 결과가 광미댐 계획에 쓰이려면',
+    description: '2026년 11월 19일 PIX4D의 Bulyanhulu 금광 사례를 바탕으로, 기준점과 정사영상·표면모델을 폐석 물량 분석 및 설계팀 자료 인계로 연결하는 과정을 살펴봅니다.',
+    thumbnail: '/images/blog/pix4d-bulyanhulu-drone-survey-field-2026-11-21.webp',
+    date: '2026-11-21',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '프로젝트 사례',
+    tags: ['광산드론측량', '사진측량', '광미댐계획', '정사영상', '지상기준점', '토공자료인계', 'PIX4D'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-20-stockpile-volume-repeat-survey-baseline',
     title: '골재 야적량을 매번 다르게 계산하지 않으려면 무엇을 고정해야 할까요?',
     description: '2026년 11월 19일 DJI Enterprise 적치물 추적 데모와 2025년 FlightHub 2 공식 자료를 바탕으로, 정기 체적 비교에 필요한 기준면·촬영 경계·검토 가능한 물량 이력을 살펴봅니다.',
