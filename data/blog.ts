@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-22-bridge-inspection-underside-evidence',
+    title: '교량 점검 드론 사진, ‘찍힌 곳’까지 확인할 수 있어야 합니다',
+    description: '2026년 7월 PIX4D의 보고타 교량 16곳 사례를 바탕으로, 상판·하부 분리 촬영과 사진·3D 모델의 위치 기록이 시설물 점검 자료에 갖는 의미를 살펴봅니다.',
+    thumbnail: '/images/blog/pix4d-bogota-bridge-inspection-2026-11-22.webp',
+    date: '2026-11-22',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '프로젝트 사례',
+    tags: ['교량점검', '드론시설물점검', '교량하부촬영', '3D점군', '위치기반기록', 'PIX4D'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-21-mine-survey-data-to-tailings-planning',
     title: '광산 드론 측량 결과가 광미댐 계획에 쓰이려면',
     description: '2026년 11월 19일 PIX4D의 Bulyanhulu 금광 사례를 바탕으로, 기준점과 정사영상·표면모델을 폐석 물량 분석 및 설계팀 자료 인계로 연결하는 과정을 살펴봅니다.',
