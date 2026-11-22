@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-23-offshore-wind-blade-inspection-report-handoff',
+    title: '해상풍력 블레이드 점검, 사진을 정비 판단으로 연결하려면',
+    description: '2026년 11월 17일 DJI Enterprise의 벨기에 해상풍력 사례를 바탕으로, 반복 촬영과 블레이드별 자료 식별, AI 의심 부위 검토 및 정비팀 인계 기준을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-offshore-wind-turbines-2026-11-23.webp',
+    date: '2026-11-23',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '프로젝트 사례',
+    tags: ['해상풍력점검', '블레이드점검', '드론시설물점검', '점검보고서', '자료인계', 'DJIEnterprise'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-22-bridge-inspection-underside-evidence',
     title: '교량 점검 드론 사진, ‘찍힌 곳’까지 확인할 수 있어야 합니다',
     description: '2026년 7월 PIX4D의 보고타 교량 16곳 사례를 바탕으로, 상판·하부 분리 촬영과 사진·3D 모델의 위치 기록이 시설물 점검 자료에 갖는 의미를 살펴봅니다.',
