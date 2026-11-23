@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-24-powerline-corridor-drone-relay-link-planning',
+    title: '송전선로 뒤쪽 구간, 드론 화면이 끊기면 어떻게 점검할까요?',
+    description: '2026년 11월 5일 DJI Enterprise Matrice 5T 자료를 바탕으로 산악 송전선로 점검에서 중계 기체와 통신 차폐 구간, 현장 검증·자료 인계 기준을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-matrice-5t-powerline-corridor-2026-11-24.webp',
+    date: '2026-11-24',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['송전선로점검', '산악인프라', '드론통신중계', 'Matrice5T', '시설물점검', '현장통신검증'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-23-offshore-wind-blade-inspection-report-handoff',
     title: '해상풍력 블레이드 점검, 사진을 정비 판단으로 연결하려면',
     description: '2026년 11월 17일 DJI Enterprise의 벨기에 해상풍력 사례를 바탕으로, 반복 촬영과 블레이드별 자료 식별, AI 의심 부위 검토 및 정비팀 인계 기준을 살펴봅니다.',
