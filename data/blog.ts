@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-25-telecom-trench-gis-asbuilt-handoff',
+    title: '광케이블 공사 후, 매설 위치를 GIS에서 다시 찾을 수 있을까요?',
+    description: '2026년 9월 2일 PIX4D의 스위스 통신망 사례를 바탕으로, 매설 전 스마트폰 스캔부터 3D 모델·GIS 인계까지 준공 자료의 연결 조건을 살펴봅니다.',
+    thumbnail: '/images/blog/pix4d-multinet-telecom-trench-2026-11-25.webp',
+    date: '2026-11-25',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '프로젝트 사례',
+    tags: ['통신관로', '광케이블', '준공기록', '지상3D스캔', 'GIS자료인계', 'PIX4D', '인프라유지관리'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-24-powerline-corridor-drone-relay-link-planning',
     title: '송전선로 뒤쪽 구간, 드론 화면이 끊기면 어떻게 점검할까요?',
     description: '2026년 11월 5일 DJI Enterprise Matrice 5T 자료를 바탕으로 산악 송전선로 점검에서 중계 기체와 통신 차폐 구간, 현장 검증·자료 인계 기준을 살펴봅니다.',
