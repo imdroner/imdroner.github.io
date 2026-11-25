@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-26-smart-oblique-3d-model-capture-verification',
+    title: '사진 192장으로 만든 3D 모델, 우리 현장에서도 같은 결과가 나올까요?',
+    description: '2026년 11월 24일 DJI Enterprise의 Smart Oblique 시연을 바탕으로 수직·경사 촬영의 역할과 3D 모델의 현장 검측·인계 조건을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-smart-oblique-matrice400-p1-demo-2026-11-26.webp',
+    date: '2026-11-26',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['드론3D매핑', 'SmartOblique', 'ZenmuseP1', 'Matrice400', '경사촬영', '3D모델검증', '건설현장기록'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-25-telecom-trench-gis-asbuilt-handoff',
     title: '광케이블 공사 후, 매설 위치를 GIS에서 다시 찾을 수 있을까요?',
     description: '2026년 9월 2일 PIX4D의 스위스 통신망 사례를 바탕으로, 매설 전 스마트폰 스캔부터 3D 모델·GIS 인계까지 준공 자료의 연결 조건을 살펴봅니다.',
