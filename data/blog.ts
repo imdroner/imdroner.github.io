@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-27-powerline-anomaly-laser-location-handoff',
+    title: '송전설비 이상 위치, 레이저로 찍으면 바로 정비할 수 있을까요?',
+    description: '2026년 11월 5일 DJI Enterprise의 Matrice 5T 기능 설명을 바탕으로 레이저 표식과 설비 부품 식별의 차이, 열·가시광 기록의 정비팀 인계 조건을 살펴봅니다.',
+    thumbnail: '/images/blog/dji-matrice5t-powerline-inspection-location-2026-11-27.webp',
+    date: '2026-11-27',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['송전설비점검', '레이저거리측정', 'Matrice5T', '열화상점검', '설비부품식별', '정비자료인계'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-26-smart-oblique-3d-model-capture-verification',
     title: '사진 192장으로 만든 3D 모델, 우리 현장에서도 같은 결과가 나올까요?',
     description: '2026년 11월 24일 DJI Enterprise의 Smart Oblique 시연을 바탕으로 수직·경사 촬영의 역할과 3D 모델의 현장 검측·인계 조건을 살펴봅니다.',
