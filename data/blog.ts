@@ -22,6 +22,18 @@ export const blogCategories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '2026-11-28-roof-thermal-image-versus-leak-diagnosis',
+    title: '지붕 열화상에서 밝게 보이는 곳, 바로 누수 지점일까요?',
+    description: '2026년 11월 26일 DJI의 지붕 점검 장비 소개와 2023년 지붕 촬영 워크플로를 바탕으로 열 패턴의 해석 한계와 현장 재확인 자료를 살펴봅니다.',
+    thumbnail: '/images/blog/dji-roof-visual-thermal-2026-11-28.webp',
+    date: '2026-11-28',
+    author: '박영진',
+    authorId: 'youngjin-park',
+    category: '드론 기술',
+    tags: ['지붕점검', '건물외피', '드론열화상', '누수의심', '가시광촬영', '시설물점검', 'DJIEnterprise'],
+    readTime: '4분',
+  },
+  {
     id: '2026-11-27-powerline-anomaly-laser-location-handoff',
     title: '송전설비 이상 위치, 레이저로 찍으면 바로 정비할 수 있을까요?',
     description: '2026년 11월 5일 DJI Enterprise의 Matrice 5T 기능 설명을 바탕으로 레이저 표식과 설비 부품 식별의 차이, 열·가시광 기록의 정비팀 인계 조건을 살펴봅니다.',
